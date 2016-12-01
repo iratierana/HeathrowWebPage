@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.connection.password">123</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/HeathrowAirport</property>		
+		<property name="connection_pool_size">1</property>		
+		<property name="hbm2ddl.auto">update</property>				
+		<property name="show_sql">false</property> <!-- Hibernatek sortzen daben sql dana printeau -->
+		
+		<mapping class="domain.dao.DAOAirline"/>	
+		<mapping class="domain.model.Airline"/>
+		
+		<mapping class="domain.dao.DAOAirlineManager"/>		
+		<mapping class="domain.model.AirlineManager"/>
+		
+		<mapping class="domain.dao.DAOAirplane"/>	
+		<mapping class="domain.model.Airplane"/>
+		
+		<mapping class="domain.dao.DAOAirplanePhoto"/>	
+		<mapping class="domain.model.AirplanePhoto"/>
+		
+		<mapping class="domain.dao.DAOAirportController"/>
+		<mapping class="domain.model.AirportController"/>
+		
+		<mapping class="domain.dao.DAODirection"/>	
+		<mapping class="domain.model.Direction"/>
+		
+		<mapping class="domain.dao.DAOFlight"/>		
+		<mapping class="domain.model.Flight"/>
+		
+		<mapping class="domain.dao.DAOPassanger"/>	
+		<mapping class="domain.model.Passanger"/>
+		
+		<mapping class="domain.dao.DAOPlanePosition"/>	
+		<mapping class="domain.model.PlanePosition"/>
+		
+		<mapping class="domain.dao.DAORunway"/>	
+		<mapping class="domain.model.Runway"/>
+		
+		<mapping class="domain.dao.DAOAirport"/>	
+		<mapping class="domain.model.Airport"/>
+		
+	</session-factory>
+</hibernate-configuration>
