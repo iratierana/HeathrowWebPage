@@ -22,5 +22,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JUnit"/>
+	<classpathentry kind="lib" path="lib/postgresql-9.4.1212.jre6.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
