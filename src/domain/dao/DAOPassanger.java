@@ -49,14 +49,20 @@ private static Session session;
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static Passanger loadPassanger(Integer id){
+		List<Passanger> passangerList = null;
 		Passanger p = new Passanger();
+		p = null;
 		try{
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			
-			p = (Passanger) session.load(Passanger.class, id);
-		
+			TypedQuery<Passanger> query = session.createQuery("from Passanger");
+			passangerList = query.getResultList();
+			if(!passangerList.isEmpty()){
+				p=passangerList.get(0);
+			}
 			ConnectHibernate.after();
 			
 		}catch (Exception e) {
@@ -69,14 +75,17 @@ private static Session session;
 		return p;
 	}
 	
+	
+	@SuppressWarnings("unchecked")
 	public static List<Passanger> loadAllPassangers() {
 		List<Passanger> passangerList = null;
 		try {
+			
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			@SuppressWarnings("unchecked")
 			TypedQuery<Passanger> query = session.createQuery("from Passanger");
 			passangerList = query.getResultList();
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
