@@ -4,6 +4,7 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+	<constant name="struts.ui.theme" value="simple" />
 	<package name="default" extends="struts-default" namespace="/">
 		<action name="login" class="actions.login.LoginAction">
 			<result name="success">/pages/welcome.jsp</result>

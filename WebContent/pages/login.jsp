@@ -1,20 +1,31 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<html>
+
+<!DOCTYPE html>
+<html >
 <head>
-<title>Login</title>
-<link rel="stylesheet" href="css/login.css"/>
+  <meta charset="UTF-8">
+  <title>Heathrow Airport</title>
+  <link rel="stylesheet" type="text/css" href="../css/loginStyle.css">
+
 </head>
+
 <body>
-<div id="loginDiv">
-<h1>Login</h1>
-<s:form action="login" method="post">
-	<div id="userPassLogin">
-	<s:textfield label="Username" name="username"></s:textfield>
-	<s:password label="Password" name="password"></s:password>
-	<s:submit label="login" method="execute"></s:submit>
-	</div>
-</s:form>
-</div>
+  <div class="body"></div>
+		<div class="header">
+			<div>Log<span>In</span></div>
+		</div>
+		<br>
+		<s:form action="login" method="post">
+			<div class="login">
+					<s:textfield label="Username" name="username" placeholder="Username"></s:textfield>
+					<s:password label="Password" name="password" placeholder="Password"></s:password><br>
+					<s:submit method="execute"></s:submit>
+			</div>
+		</s:form>
+
+  
 </body>
-</html> 
+</html>
+
+
