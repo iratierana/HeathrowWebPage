@@ -9,11 +9,8 @@ public class LoginAction {
 	private String password;
 
 	public String execute() { 
-		
-		if ((this.username.equals("admin")) && (this.password.equals("admin"))) {
-			Passanger p= new Passanger();
-//			DAOPassanger.loadAllPassangers();
-			p=DAOPassanger.loadPassanger(1);
+		Passanger p= new Passanger();
+		if (DAOPassanger.loadPassanger(this.username, this.password)!=null) {			
 			System.out.println(p.getFirstName());
 			return "success";
 		} else {		
