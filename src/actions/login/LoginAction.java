@@ -3,7 +3,7 @@ package actions.login;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
-public class LoginAction {
+public class LoginAction{
 
 	private String username;
 	private String password;
