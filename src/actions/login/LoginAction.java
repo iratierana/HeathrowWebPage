@@ -1,16 +1,20 @@
 package actions.login;
 
+import domain.dao.DAOPassanger;
+import domain.model.Passanger;
+
 public class LoginAction {
 
 	private String username;
 	private String password;
 
-	public String execute() {
-
-		if (this.username.equals("admin") 
-				&& this.password.equals("admin")) {
+	public String execute() { 
+		Passanger p= new Passanger();
+		if (DAOPassanger.loadPassanger(this.username, this.password)!=null) {			
+			System.out.println(p.getFirstName());
 			return "success";
-		} else {		return "error";
+		} else {		
+			return "error";
 		}
 	}
 
