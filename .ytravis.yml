@@ -1,6 +1,14 @@
+sudo: required
+
 language: java
 jdk:
   - oraclejdk8
+
+# safelist
+branches:
+  only:
+  - Development
+  
 
 install: 
     - ant clean
