@@ -1,11 +1,16 @@
 package domain.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -46,6 +51,65 @@ public class Airplane {
 	
 	@NotNull
 	private Integer hoursOfFlight;
+	
+	@OneToMany
+	private Collection<AirplanePhoto> airplanePhotoList = new ArrayList<AirplanePhoto>();
+	
+	@OneToOne
+	private Airline airline;
+	
+	@OneToOne
+	private Airport airport;
+	
+	@OneToOne
+	private PlanePosition planePosition;
+	
+	@ManyToMany(mappedBy="airportController")
+	private Collection<AirportController> airportControllerList = new ArrayList<AirportController>();
+	
+	
+	
+	
+
+	public Collection<AirplanePhoto> getAirplanePhotoList() {
+		return airplanePhotoList;
+	}
+
+	public void setAirplanePhotoList(Collection<AirplanePhoto> airplanePhotoList) {
+		this.airplanePhotoList = airplanePhotoList;
+	}
+
+	public Airline getAirline() {
+		return airline;
+	}
+
+	public void setAirline(Airline airline) {
+		this.airline = airline;
+	}
+
+	public Airport getAirport() {
+		return airport;
+	}
+
+	public void setAirport(Airport airport) {
+		this.airport = airport;
+	}
+
+	public PlanePosition getPlanePosition() {
+		return planePosition;
+	}
+
+	public void setPlanePosition(PlanePosition planePosition) {
+		this.planePosition = planePosition;
+	}
+
+	public Collection<AirportController> getAirportControllerList() {
+		return airportControllerList;
+	}
+
+	public void setAirportControllerList(Collection<AirportController> airportControllerList) {
+		this.airportControllerList = airportControllerList;
+	}
 
 	public Integer getAirplaneId() {
 		return airplaneId;

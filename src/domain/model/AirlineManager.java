@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -43,6 +44,30 @@ public class AirlineManager {
 	
 	@NotNull
 	private String password;
+
+	@OneToOne
+	private Direction direction;
+	
+	@OneToOne
+	private  Airline airline;
+	
+	
+	
+	public Direction getDirection() {
+		return direction;
+	}
+
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
+
+	public Airline getAirline() {
+		return airline;
+	}
+
+	public void setAirline(Airline airline) {
+		this.airline = airline;
+	}
 
 	public Integer getAirlineManagerId() {
 		return airlineManagerId;

@@ -1,12 +1,16 @@
 package domain.model;
 
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -15,8 +19,7 @@ import javax.validation.constraints.NotNull;
 public class Passanger {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer passangerId;
-	
+	private Integer passangerId;	
 	 	
 	@NotNull
  	private String firstName;
@@ -48,16 +51,42 @@ public class Passanger {
 	@NotNull
 	private String password;
 	
+	@OneToOne
+	private Direction direction;
+	
+	@ManyToMany
+	private Collection<Flight> flihtList = new ArrayList<Flight>();
+	
+	@ManyToMany
+	private Collection<Airline> airlineList = new ArrayList<Airline>();
 	
 	
 	
+	
+	public Direction getDirection() {
+		return direction;
+	}
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
+	public Collection<Flight> getFlihtList() {
+		return flihtList;
+	}
+	public void setFlihtList(Collection<Flight> flihtList) {
+		this.flihtList = flihtList;
+	}
+	public Collection<Airline> getAirlineList() {
+		return airlineList;
+	}
+	public void setAirlineList(Collection<Airline> airlineList) {
+		this.airlineList = airlineList;
+	}
 	public Integer getPassangerId() {
 		return passangerId;
 	}
 	public void setPassangerId(Integer passangerId) {
 		this.passangerId = passangerId;
-	}
-	
+	}	
 	public String getFirstName() {
 		return firstName;
 	}
