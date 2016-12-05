@@ -60,7 +60,7 @@ public class AirportController {
 	@ManyToMany
 	private Collection<Airplane> airplaneList = new ArrayList<Airplane>();
 	
-	@ManyToMany(mappedBy="planePosition")
+	@ManyToMany//(mappedBy="planePosition")
 	private Collection<PlanePosition> planePositionList = new ArrayList<PlanePosition>();
 	
 	

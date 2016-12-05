@@ -39,7 +39,7 @@ public class Flight {
 	@ManyToMany
 	private Collection<AirportController> ariportControllerList = new ArrayList<AirportController>();
 	
-	@ManyToMany(mappedBy="passanger")
+	@ManyToMany//(mappedBy="passanger")
 	private Collection<Passanger> passangerList = new ArrayList<Passanger>();
 	
 	@OneToOne

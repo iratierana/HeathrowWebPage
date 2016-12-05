@@ -64,7 +64,7 @@ public class Airplane {
 	@OneToOne
 	private PlanePosition planePosition;
 	
-	@ManyToMany(mappedBy="airportController")
+	@ManyToMany//(mappedBy="airportController")
 	private Collection<AirportController> airportControllerList = new ArrayList<AirportController>();
 	
 	

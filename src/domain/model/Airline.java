@@ -31,10 +31,10 @@ public class Airline {
 	@OneToMany
 	private Collection<Airplane> airplaneList = new ArrayList<Airplane>();
 	
-	@ManyToMany(mappedBy="passanger")
+	@ManyToMany //(mappedBy="passanger")
 	private Collection<Passanger> passangerList = new ArrayList<Passanger>();
 	
-	@ManyToMany(mappedBy="passanger")
+	@ManyToMany //(mappedBy="passanger")
 	private Collection<Flight> flightList = new ArrayList<Flight>();
 	
 	
