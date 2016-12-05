@@ -13,7 +13,7 @@
 <body>
   <div class="body"></div>
 		<div class="header">
-			<div>Log<span>In</span></div>
+			<div>Heathrow<br><span>Airport</span></div>
 		</div>
 		<br>
 		<s:form action="login" method="post">
