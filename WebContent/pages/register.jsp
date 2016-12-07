@@ -22,7 +22,7 @@
 			<s:textfield name="firstName" placeholder="First Name"></s:textfield>
 			<s:textfield name="secondName" placeholder="Second Name"></s:textfield>
 			<s:textfield name="dniPassport" placeholder="Dni/Passport"></s:textfield>
-			<s:textfield name="birthDate" placeholder="Birth Date"></s:textfield>
+			<s:textfield type="date" name="birthDate" placeholder="Birth Date"></s:textfield>
 			<input type="button" name="next" class="next action-button" value="Next" onclick="goToStep2()" />
 		</fieldset>
 		<fieldset id="step2" class="hideme">
