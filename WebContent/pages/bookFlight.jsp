@@ -6,11 +6,11 @@
 </head>
 <body>
 <s:form action="book" method="post">
-		<s:textfield label="From" name="from"></s:textfield>
-		<s:textfield label="To" name="to"></s:textfield>
-		<s:textfield label="Departure" name="departure"></s:textfield>
-		<s:textfield label="Arrival" name="arrival"></s:textfield>
-		<s:textfield label="How Many" name="howMany"></s:textfield>
+		<s:textfield label="From" name="from"></s:textfield><br>
+		<s:textfield label="To" name="to"></s:textfield><br>
+		<s:textfield label="Departure" name="departure"></s:textfield><br>
+		<s:textfield label="Arrival" name="arrival"></s:textfield><br>
+		<s:textfield label="How Many" name="howMany"></s:textfield><br>
 </s:form>
 
 <s:form action="bookFlight" method="post">

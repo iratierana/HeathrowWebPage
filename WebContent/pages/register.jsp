@@ -3,7 +3,6 @@
 <html>
 <head>
 <title>Register</title>
-<link rel="stylesheet" href="css/register.css"/>
 </head>
 <body>
 <header>

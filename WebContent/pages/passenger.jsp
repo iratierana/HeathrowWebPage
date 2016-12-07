@@ -3,7 +3,6 @@
 <html>
 <head>
 <title>Passenger Page</title>
-<link rel="stylesheet" href="css/passengerMenu.css"/>
 </head>
 <body>
 <nav id="passengerNav">

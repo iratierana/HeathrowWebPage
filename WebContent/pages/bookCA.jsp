@@ -3,7 +3,6 @@
 <html>
 <head>
 <title>Book Form</title>
-<link rel="stylesheet" href="css/bookForm.css"/>
 </head>
 <body>
 <div id="bookFormDiv">
