@@ -13,7 +13,7 @@ public class LoginAction{
 		if (DAOPassanger.loadPassanger(this.username, this.password)!=null) {			
 			System.out.println(p.getFirstName());
 			return "success";
-		} else if(this.username.equals("ariz") && this.password.equals("ariz")){	//TODO
+		} else if(this.username.equals("123") && this.password.equals("123")){	//TODO
 			return "passenger";
 		}else{
 			return "error";
