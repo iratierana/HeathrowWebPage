@@ -12,11 +12,9 @@
 			<result name="success">/pages/welcome.jsp</result>
 			<result name="passenger">/pages/passenger.jsp</result>
 			<result name="error">/pages/login.jsp</result>
-		</action>
-		
-		<action name="login" class="actions.login.LoginAction">
 			<result name="register">/pages/register.jsp</result>
 		</action>
+				
 		
 		<action name="register" class="actions.register.RegisterAction">
 			<result name="register2">/pages/register2.jsp</result>			
