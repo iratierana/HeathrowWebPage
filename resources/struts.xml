@@ -8,28 +8,28 @@
 	<package name="default" extends="struts-default" namespace="/">
 		<action name="login" class="actions.login.LoginAction">
 			<result name="success">/pages/welcome.jsp</result>
-			<result name="passenger">/passenger.jsp</result>
+			<result name="passenger">/pages/passenger.jsp</result>
 			<result name="error">/pages/login.jsp</result>
 		</action>
 		
-		<action name="register" class="register.action.RegisterAction">
-			<result name="register">/register.jsp</result>
+		<action name="register" class="actions.register.RegisterAction">
+			<result name="register">/pages/register.jsp</result>
 		</action>
 		
-		<action name="register2" class="register.action.RegisterAction2">
-			<result name="register2">/register2.jsp</result>
+		<action name="register2" class="actions.register.RegisterAction2">
+			<result name="register2">/pages/register2.jsp</result>
 		</action>
 		
-		<action name="register3" class="register.action.RegisterAction3">
-			<result name="register3">/register3.jsp</result>
+		<action name="register3" class="actions.register.RegisterAction3">
+			<result name="register3">/pages/register3.jsp</result>
 		</action>
 		
-		<action name="bookFlight" class="book.action.BookAction">
-			<result name="book">/bookForm.jsp</result>
+		<action name="bookFlight" class="actions.book.BookAction">
+			<result name="book">/pages/bookForm.jsp</result>
 		</action>
 		
-		<action name="bookCA" class="book.action.BookActionCA">
-			<result name="bookCA">/bookCA.jsp</result>
+		<action name="bookCA" class="actions.book.BookActionCA">
+			<result name="bookCA">/pages/bookCA.jsp</result>
 		</action>
 		
 	</package>
