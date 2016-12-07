@@ -23,6 +23,10 @@
 					<s:submit method="execute"></s:submit>
 			</div>
 		</s:form>
+		
+		<s:form action="register" method="post">
+			<s:submit value="sign up" method="execute"></s:submit>
+		</s:form>
 
   
 </body>
