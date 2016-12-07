@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Runway {
 	
-	@Id@GeneratedValue(strategy=GenerationType.AUTO)
+	@Id@GeneratedValue(strategy=GenerationType.SEQUENCE )
 	private Integer runwayId;
 	
 	@NotNull

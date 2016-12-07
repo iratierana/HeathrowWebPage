@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Direction {
 	
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
 	private Integer directionId;
 	
 	@NotNull

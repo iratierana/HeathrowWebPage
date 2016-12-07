@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class AirportController {
 	
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
 	private Integer airportControllerId;
 	
 	@NotNull

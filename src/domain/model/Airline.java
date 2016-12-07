@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Airline {
 	
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE  )
 	private Integer airlineId;
 	
 	@NotNull
@@ -31,7 +31,7 @@ public class Airline {
 	@OneToMany
 	private Collection<Airplane> airplaneList = new ArrayList<Airplane>();
 	
-	@ManyToMany //(mappedBy="passanger")
+	@ManyToMany //(mappedBy="Passanger")
 	private Collection<Passanger> passangerList = new ArrayList<Passanger>();
 	
 	@ManyToMany //(mappedBy="passanger")
