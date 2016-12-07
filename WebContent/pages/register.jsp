@@ -2,38 +2,47 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-<title>Register</title>
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="../css/registrationStyle.css">
+	<script src="../js/registerSteps.js" type="text/javascript"></script>
 </head>
 <body>
-<header>
-<h1>Register 1</h1>
-</header>
-<div id="signUpDiv">
-<s:form action="register" method="post">
-	<div class="userPassLogin">
-		<s:label>First Name: </s:label>
-		<s:textfield name="firstName"></s:textfield>
-		
-		<s:label>Last Name 1: </s:label>
-		<s:textfield name="lastName1"></s:textfield>
-		
-		<s:label>Last Name 2</s:label>
-		<s:textfield name="lastName2"></s:textfield>
-		
-		<s:label>DNI/Passport</s:label>
-		<s:textfield  name="dni_passport"></s:textfield>
-		
-		<s:label>Birthday Date</s:label>
-		<s:textfield name="birthday_date"></s:textfield>
-		
-		<s:submit id="bNext" value="Next Step" method="execute"></s:submit>
-		
-	</div>
-</s:form>
 
+	<s:form action="register" method="post" id="msform">
 	
+		<ul id="progressbar">
+			<li id="pb1" class="active">Account Setup</li>
+			<li id="pb2">Social Profiles</li>
+			<li id="pb3">Personal Details</li>
+		</ul>
+		<!-- fieldsets -->
+		<fieldset id="step1">
+			<h2 class="fs-title">User data</h2>
+			<s:textfield name="name" placeholder="Name"></s:textfield>
+			<s:textfield name="firstName" placeholder="First Name"></s:textfield>
+			<s:textfield name="secondName" placeholder="Second Name"></s:textfield>
+			<s:textfield name="dniPassport" placeholder="Dni/Passport"></s:textfield>
+			<s:textfield name="birthDate" placeholder="Birth Date"></s:textfield>
+			<input type="button" name="next" class="next action-button" value="Next" onclick="goToStep2()" />
+		</fieldset>
+		<fieldset id="step2" class="hideme">
+			<h2 class="fs-title">Contact</h2>
+			<s:textfield name="homeTlf" placeholder="Home Tlf"></s:textfield>
+			<s:textfield name="movileTlf" placeholder="Movile Tlf"></s:textfield>
+			<s:textfield name="email" placeholder="E-Mail"></s:textfield>
+			<input type="button" name="previous" class="previous action-button"	value="Previous" onclick="goToStep1()" />
+			<input type="button" name="next" class="next action-button" value="Next" onclick="goToStep3()"/>
+		</fieldset>
+		<fieldset id="step3" class="hideme">
+			<h2 class="fs-title">Account Details</h2>
+			<s:textfield name="username" placeholder="Username"></s:textfield>
+			<s:textfield name="password" placeholder="Password"></s:textfield>
+			<s:textfield name="repPassword" placeholder="Repeat Password"></s:textfield>
+			<input type="button" name="previous" class="previous action-button"	value="Previous" onclick="goToStep2()"/>
+			
+			<input type="submit" name="submit" class="submit action-button" value="Submit" />
+		</fieldset>
+	</s:form>
 
-
-</div>
 </body>
-</html> 
+</html>

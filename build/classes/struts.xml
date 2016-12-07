@@ -17,16 +17,9 @@
 				
 		
 		<action name="register" class="actions.register.RegisterAction">
-			<result name="register2">/pages/register2.jsp</result>			
+			<result name="login">/pages/login.jsp</result>			
 		</action>
-		
-		<action name="register2" class="actions.register.RegisterAction2">
-			<result name="register3">/pages/register3.jsp</result>
-		</action>
-		
-		<action name="register3" class="actions.register.RegisterAction3">
-			<result name="login">/pages/login.jsp</result>
-		</action>	
+	
 		
 		<action name="bookFlight" class="actions.book.BookAction">
 			<result name="book">/pages/bookForm.jsp</result>
