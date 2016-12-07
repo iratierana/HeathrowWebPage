@@ -8,8 +8,9 @@ public class RegisterAction {
 	private String email;
 	
 	
-	public String execute(){		
-		return "register2";
+	public String execute(){	
+		//TODO Hemen datubasera erabiltzailia sartubiakozan
+		return "login";
 	}
 	
 	

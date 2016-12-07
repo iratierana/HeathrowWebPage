@@ -40,7 +40,7 @@
 			<s:textfield name="repPassword" placeholder="Repeat Password"></s:textfield>
 			<input type="button" name="previous" class="previous action-button"	value="Previous" onclick="goToStep2()"/>
 			
-			<input type="submit" name="submit" class="submit action-button" value="Submit" />
+			<s:submit value="Submit" method="execute" class="submit action-button"></s:submit>
 		</fieldset>
 	</s:form>
 
