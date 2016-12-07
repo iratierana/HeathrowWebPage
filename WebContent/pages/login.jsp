@@ -20,15 +20,10 @@
 			<div class="login">
 					<s:textfield label="Username" name="username" placeholder="Username"></s:textfield>
 					<s:password label="Password" name="password" placeholder="Password"></s:password><br>
-					<s:submit method="execute"></s:submit>
+					<s:submit value="Log In" method="execute"></s:submit>
+					<s:submit value="Sign Up" method="register"></s:submit>
 			</div>
-		</s:form>
-		
-		<s:form action="register" method="post">
-			<s:submit value="sign up" method="execute"></s:submit>
-		</s:form>
-
-  
+		</s:form>  
 </body>
 </html>
 

@@ -2,32 +2,40 @@ package actions.register;
 
 public class RegisterAction2 {
 
-	private Integer homeTlf;
-	private Integer movileTlf;
+	private String homeTlf;
+	private String movileTlf;
 	private String email;
 	
-	
 	public String execute(){
-		System.out.println("Bigarren regist -ean");
-		return "register2";
+		return "register3";
 	}
-	
-	public Integer getHomeTlf() {
+
+	public String getHomeTlf() {
 		return homeTlf;
 	}
-	public void setHomeTlf(Integer homeTlf) {
+
+	public void setHomeTlf(String homeTlf) {
 		this.homeTlf = homeTlf;
 	}
-	public Integer getMovileTlf() {
+
+	public String getMovileTlf() {
 		return movileTlf;
 	}
-	public void setMovileTlf(Integer movileTlf) {
+
+	public void setMovileTlf(String movileTlf) {
 		this.movileTlf = movileTlf;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
+	
+	
+
 }

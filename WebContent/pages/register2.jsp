@@ -3,25 +3,23 @@
 <html>
 <head>
 <title>Register2</title>
-<link rel="stylesheet" href="css/register.css"/>
 </head>
 <body>
-<header>
-<h1>Sign Up</h1>
-</header>
-<div id="signUpDiv">
-<s:form action="register2" method="post">
-	<div class="userPassLogin">
-		<s:textfield label="Home Tlf" name="homeTlf"></s:textfield>
-		<s:textfield label="Moviel Tlf" name="movileTlf"></s:textfield>
-		<s:textfield label="E-mail" name="email"></s:textfield>
-	</div>
-</s:form>
+	<header>
+	<h1>Register 2</h1>
+	</header>
 
-<s:form action="register3" method="post">
-	<s:submit id="bNext" value="Next Step" method="execute"></s:submit>
-</s:form>
-
-</div>
+	<s:form action="register2" method="post">
+		<s:label>Home Tlf: </s:label>
+		<s:textfield name="homeTlf"></s:textfield>
+		
+		<s:label>Movile Tlf: </s:label>
+		<s:textfield name="movileTlf"></s:textfield>
+		
+		<s:label>E-mail: </s:label>
+		<s:textfield name="email"></s:textfield>		
+		<s:submit id="bNext" value="Next Step" method="execute"></s:submit>
+	
+	</s:form>
 </body>
 </html> 

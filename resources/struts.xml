@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
 	<constant name="struts.ui.theme" value="simple" />
-	<package name="default" extends="struts-default" namespace="/">
+	
+	<package name="default" extends="struts-default" namespace="/" >
 		<action name="login" class="actions.login.LoginAction">
 			<result name="success">/pages/welcome.jsp</result>
 			<result name="passenger">/pages/passenger.jsp</result>
 			<result name="error">/pages/login.jsp</result>
 		</action>
 		
-		<action name="register" class="actions.register.RegisterAction">
+		<action name="login" class="actions.login.LoginAction">
 			<result name="register">/pages/register.jsp</result>
 		</action>
 		
+		<action name="register" class="actions.register.RegisterAction">
+			<result name="register2">/pages/register2.jsp</result>			
+		</action>
+		
 		<action name="register2" class="actions.register.RegisterAction2">
-			<result name="register2">/pages/register2.jsp</result>
+			<result name="register3">/pages/register3.jsp</result>
 		</action>
 		
 		<action name="register3" class="actions.register.RegisterAction3">
-			<result name="register3">/pages/register3.jsp</result>
-		</action>
+			<result name="login">/pages/login.jsp</result>
+		</action>	
 		
 		<action name="bookFlight" class="actions.book.BookAction">
 			<result name="book">/pages/bookForm.jsp</result>

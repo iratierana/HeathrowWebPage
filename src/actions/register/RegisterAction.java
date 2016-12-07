@@ -1,60 +1,36 @@
 package actions.register;
 
+
 public class RegisterAction {
+
+	private Integer homeTlf;
+	private Integer movileTlf;
+	private String email;
 	
-	private String firstName;
-	private String lastName1;
-	private String lastName2;
-	private String dni_passport;
-	private String birthday_date;
 	
-	public String execute(){
-		System.out.println("sartu da!");
-		return "register";
-	}
-	
-	public String nextStep1(){
+	public String execute(){		
 		return "register2";
 	}
-
-	public String getFirstName() {
-		return firstName;
+	
+	
+	
+	//Getters and setters
+	public Integer getHomeTlf() {
+		return homeTlf;
 	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setHomeTlf(Integer homeTlf) {
+		this.homeTlf = homeTlf;
 	}
-
-	public String getLastName1() {
-		return lastName1;
+	public Integer getMovileTlf() {
+		return movileTlf;
 	}
-
-	public void setLastName1(String lastName1) {
-		this.lastName1 = lastName1;
+	public void setMovileTlf(Integer movileTlf) {
+		this.movileTlf = movileTlf;
 	}
-
-	public String getLastName2() {
-		return lastName2;
+	public String getEmail() {
+		return email;
 	}
-
-	public void setLastName2(String lastName2) {
-		this.lastName2 = lastName2;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
-	public String getDni_passport() {
-		return dni_passport;
-	}
-
-	public void setDni_passport(String dni_passport) {
-		this.dni_passport = dni_passport;
-	}
-
-	public String getBirthday_date() {
-		return birthday_date;
-	}
-
-	public void setBirthday_date(String birthday_date) {
-		this.birthday_date = birthday_date;
-	}
-
 }

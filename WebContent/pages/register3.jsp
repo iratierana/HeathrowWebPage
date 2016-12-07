@@ -3,25 +3,26 @@
 <html>
 <head>
 <title>Register3</title>
-<link rel="stylesheet" href="css/register.css"/>
 </head>
 <body>
 <header>
-<h1>Sign Up</h1>
+<h1>Register 3</h1>
 </header>
 <div id="signUpDiv">
 <s:form action="register3" method="post">
 	<div class="userPassLogin">
+		<s:label>Username: </s:label>
 		<s:textfield label="Username" name="username"></s:textfield>
-		<s:password label="Password" name="password"></s:password>
-		<s:password label="Repeat Password" name="repeatPassword"></s:password>
+		
+		<s:label>Password: </s:label>
+		<s:password name="password"></s:password>
+		
+		<s:label>Repeat Password: </s:label>
+		<s:password name="repeatPassword"></s:password>
+		
+		<s:submit id="bNext" value="Register" method="execute"></s:submit>
 	</div>
 </s:form>
-
-<s:form action="login" method="post">
-	<s:submit id="bNext" value="Log in" method="execute"></s:submit>
-</s:form>
-
 </div>
 </body>
 </html> 

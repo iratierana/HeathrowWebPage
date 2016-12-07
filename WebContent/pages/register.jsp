@@ -6,23 +6,33 @@
 </head>
 <body>
 <header>
-<h1>Sign Up</h1>
+<h1>Register 1</h1>
 </header>
 <div id="signUpDiv">
 <s:form action="register" method="post">
 	<div class="userPassLogin">
-		<s:textfield label="First Name" name="firstName"></s:textfield>
-		<s:textfield label="Last Name 1" name="lastName1"></s:textfield>
-		<s:textfield label="Last Name 2" name="lastName2"></s:textfield>
-		<s:textfield label="DNI/Passport" name="dni_passport"></s:textfield>
-		<s:textfield label="Birthday Date" name="birthday_date"></s:textfield>
+		<s:label>First Name: </s:label>
+		<s:textfield name="firstName"></s:textfield>
+		
+		<s:label>Last Name 1: </s:label>
+		<s:textfield name="lastName1"></s:textfield>
+		
+		<s:label>Last Name 2</s:label>
+		<s:textfield name="lastName2"></s:textfield>
+		
+		<s:label>DNI/Passport</s:label>
+		<s:textfield  name="dni_passport"></s:textfield>
+		
+		<s:label>Birthday Date</s:label>
+		<s:textfield name="birthday_date"></s:textfield>
+		
+		<s:submit id="bNext" value="Next Step" method="execute"></s:submit>
 		
 	</div>
 </s:form>
 
-<s:form action="register2" method="post">
-	<s:submit id="bNext" value="Next Step" method="execute"></s:submit>
-</s:form>
+	
+
 
 </div>
 </body>
