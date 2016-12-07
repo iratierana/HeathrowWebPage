@@ -29,5 +29,13 @@
 			<result name="bookCA">/pages/bookCA.jsp</result>
 		</action>
 		
+		<action name="myProfile" class="actions.myProfile.MyProfileAction">
+			<result name="myProfile">/pages/myProfile.jsp</result>
+		</action>
+		
+		<action name="changeProfile" class="actions.myProfile.ChangeProfileAction">
+			<result name="changeProfile">/pages/passenger.jsp</result>
+		</action>
+		
 	</package>
 </struts>
