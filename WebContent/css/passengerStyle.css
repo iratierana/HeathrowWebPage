@@ -1,0 +1,94 @@
+
+* {
+	padding: 0;
+	margin: 0;
+	
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+body{
+	background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg);
+}
+
+nav {
+	width: 90%;
+	margin: 50px auto;	
+}
+ 
+nav ul {
+	list-style: none;
+	overflow: hidden;
+}
+
+nav li div {
+	background: #444;
+	border-right: 1px solid #fff;
+	color: #fff;
+	display: block;
+	float: left;
+	font: 400 13px/1.4 'Cutive', Helvetica, Verdana, Arial, sans-serif;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 12.5%;
+	
+	/*TRANSISTIONS*/
+	-webkit-transition: background 0.5s ease;
+	   -moz-transition: background 0.5s ease;
+	     -o-transition: background 0.5s ease;
+	    -ms-transition: background 0.5s ease;
+	        transition: background 0.5s ease;
+}
+
+img, h1{
+	display: none;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+
+nav li div:hover {
+	background: #222;
+}
+
+nav li:last-child div {
+	border: none;
+}
+
+
+
+
+@media only screen and (max-width : 580px),only screen and (max-device-width : 580px){
+	nav li div {
+		width: 50%;
+		height: 40%;
+		font: 400 12px/1.4 'Cutive', Helvetica, Verdana, Arial, sans-serif;
+		padding: 12px;
+		margin-top: 2px;
+	}
+	
+	h1{
+		display: block;
+		text-align: center;
+		
+	}
+	
+	img{
+		height:calc(60%);
+		width: auto;
+		display: inline;
+		margin-top: 10%;
+	}
+	
+	nav li:nth-child(even) div {
+		border-right: none;
+	}
+	
+	
+}

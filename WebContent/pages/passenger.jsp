@@ -3,13 +3,41 @@
 <html>
 <head>
 <title>Passenger Page</title>
-</head>
+<link rel="stylesheet" href="../css/passengerStyle.css"></head>
 <body>
-<nav id="passengerNav">
-	<s:a href="bookFlight.jsp" name="book"><img src="../img/book.png"><br>Book a Flight</s:a>
-	<s:a href="myFlights.jsp" name="myFlights"><img src="../img/myFlights.png"><br>My Flights</s:a>
-	<s:a href="allFlights.jsp" name="allFlights"><img src="../img/allFlights.png"><br>All Flights</s:a>
-	<s:a href="myProfile.jsp" name="myProfile"><img src="../img/profile.png"><br>My Profile</s:a>
-</nav>
+	<header>
+		<h1>Menu</h1>
+	</header>
+	<nav>
+		<ul>		
+			<li>
+				<div>
+					<a href="bookFlight.jsp">Book a Flight</a>
+					<img src="../img/book.png">
+				</div>
+				
+			</li>			
+			<li>
+				<div>	
+					<a href="myFlights.jsp">My Flights</a>
+					<img src="../img/myFlights.png">
+				</div>
+			</li>			
+			<li>
+				<div>
+					<a href="allFlights.jsp">All Flights</a>
+					<img src="../img/allFlights.png">
+				</div>
+			</li>			
+			<li>
+				<div>
+					<a href="myProfile.jsp">My Profile</a>
+					<img src="../img/profile.png">
+				</div>
+			</li>	
+				
+		</ul>
+	</nav>
+	
 </body>
 </html> 
