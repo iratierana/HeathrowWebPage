@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -18,30 +17,10 @@ public class Runway {
 	
 	@NotNull
 	private boolean state;
-	
-	@OneToOne
-	private Airport airport;
+
 	
 	
 	
-	
-
-	public Airport getAirport() {
-		return airport;
-	}
-
-	public void setAirport(Airport airport) {
-		this.airport = airport;
-	}
-
-	public boolean isState() {
-		return state;
-	}
-
-	public void setState(boolean state) {
-		this.state = state;
-	}
-
 	public Integer getRunwayId() {
 		return runwayId;
 	}
@@ -58,8 +37,12 @@ public class Runway {
 		this.tipo = tipo;
 	}
 
+	public boolean isState() {
+		return state;
+	}
 
-	
-	
+	public void setState(boolean state) {
+		this.state = state;
+	}
 
 }

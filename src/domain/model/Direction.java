@@ -25,11 +25,13 @@ public class Direction {
 	
 	@NotNull
 	private String address;
-	
 
 	public Integer getDirectionId() {
 		return directionId;
 	}
+	
+	
+	
 
 	public void setDirectionId(Integer directionId) {
 		this.directionId = directionId;
@@ -67,7 +69,8 @@ public class Direction {
 		this.address = address;
 	}
 	
-	
+
+
 	
 
 }

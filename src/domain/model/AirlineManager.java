@@ -46,28 +46,10 @@ public class AirlineManager {
 	private String password;
 
 	@OneToOne
-	private Direction direction;
+	Airline airline;
 	
 	@OneToOne
-	private  Airline airline;
-	
-	
-	
-	public Direction getDirection() {
-		return direction;
-	}
-
-	public void setDirection(Direction direction) {
-		this.direction = direction;
-	}
-
-	public Airline getAirline() {
-		return airline;
-	}
-
-	public void setAirline(Airline airline) {
-		this.airline = airline;
-	}
+	Direction direction;
 
 	public Integer getAirlineManagerId() {
 		return airlineManagerId;
@@ -156,6 +138,24 @@ public class AirlineManager {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public Airline getAirline() {
+		return airline;
+	}
+
+	public void setAirline(Airline airline) {
+		this.airline = airline;
+	}
+
+	public Direction getDirection() {
+		return direction;
+	}
+
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
 	
 	
+	
+
 }

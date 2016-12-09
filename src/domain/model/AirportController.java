@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
@@ -48,64 +49,18 @@ public class AirportController {
 	@NotNull
 	private String password;
 	
-	@OneToOne
-	private Airport airport;
+	
+	@ManyToMany(mappedBy="cotrollerList")
+	Collection<Airplane> airplaneList = new ArrayList<Airplane>();
 	
 	@OneToOne
-	private Direction direction;
+	Airport airport;
 	
-	@ManyToMany
-	private Collection<Flight> flightList = new ArrayList<Flight>();
+	@ManyToMany(mappedBy="cortrollerList")
+	Collection<Flight> flightList  = new ArrayList<Flight>();
 	
-	@ManyToMany
-	private Collection<Airplane> airplaneList = new ArrayList<Airplane>();
-	
-	@ManyToMany//(mappedBy="planePosition")
-	private Collection<PlanePosition> planePositionList = new ArrayList<PlanePosition>();
-	
-	
-	
-	
-
-	public Airport getAirport() {
-		return airport;
-	}
-
-	public void setAirport(Airport airport) {
-		this.airport = airport;
-	}
-
-	public Direction getDirection() {
-		return direction;
-	}
-
-	public void setDirection(Direction direction) {
-		this.direction = direction;
-	}
-
-	public Collection<Flight> getFlightList() {
-		return flightList;
-	}
-
-	public void setFlightList(Collection<Flight> flightList) {
-		this.flightList = flightList;
-	}
-
-	public Collection<Airplane> getAirplaneList() {
-		return airplaneList;
-	}
-
-	public void setAirplaneList(Collection<Airplane> airplaneList) {
-		this.airplaneList = airplaneList;
-	}
-
-	public Collection<PlanePosition> getPlanePositionList() {
-		return planePositionList;
-	}
-
-	public void setPlanePositionList(Collection<PlanePosition> planePositionList) {
-		this.planePositionList = planePositionList;
-	}
+	@OneToOne
+	Direction direction;
 
 	public Integer getAirportControllerId() {
 		return airportControllerId;
@@ -194,7 +149,40 @@ public class AirportController {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 
+	public Collection<Airplane> getAirplaneList() {
+		return airplaneList;
+	}
+
+	public void setAirplaneList(Collection<Airplane> airplaneList) {
+		this.airplaneList = airplaneList;
+	}
+
+	public Airport getAirport() {
+		return airport;
+	}
+
+	public void setAirport(Airport airport) {
+		this.airport = airport;
+	}
+
+	public Collection<Flight> getFlightList() {
+		return flightList;
+	}
+
+	public void setFlightList(Collection<Flight> flightList) {
+		this.flightList = flightList;
+	}
+
+	public Direction getDirection() {
+		return direction;
+	}
+
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
+	
+	
+	
+	
 }

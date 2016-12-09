@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
@@ -36,24 +37,25 @@ public class Flight {
 	@NotNull
 	private Integer departureTerminal;
 	
+	
+	
+	@ManyToMany 
+	@JoinTable(name="ControlFlight")
+	Collection<AirportController> cortrollerList=new ArrayList<AirportController>();
+	
+	@OneToOne
+	Airport departAirport;
+	
+	@OneToOne
+	Airport arriveAirport;
+	
 	@ManyToMany
-	private Collection<AirportController> ariportControllerList = new ArrayList<AirportController>();
-	
-	@ManyToMany//(mappedBy="passanger")
-	private Collection<Passanger> passangerList = new ArrayList<Passanger>();
-	
-	@OneToOne
-	private Airline airline;
-	
-	@OneToOne
-	private Airplane airplane;
-	
-	@OneToOne
-	private Airport irtenAirport;
+	@JoinTable(name="Booking")
+	Collection<Passanger> passangerList = new ArrayList<Passanger>();
 
-	@OneToOne
-	private Airport helduAirport;
-
+	
+	
+	
 	public Integer getFlightId() {
 		return flightId;
 	}
@@ -110,12 +112,28 @@ public class Flight {
 		this.departureTerminal = departureTerminal;
 	}
 
-	public Collection<AirportController> getAriportControllerList() {
-		return ariportControllerList;
+	public Collection<AirportController> getCortrollerList() {
+		return cortrollerList;
 	}
 
-	public void setAriportControllerList(Collection<AirportController> ariportControllerList) {
-		this.ariportControllerList = ariportControllerList;
+	public void setCortrollerList(Collection<AirportController> cortrollerList) {
+		this.cortrollerList = cortrollerList;
+	}
+
+	public Airport getDepartAirport() {
+		return departAirport;
+	}
+
+	public void setDepartAirport(Airport departAirport) {
+		this.departAirport = departAirport;
+	}
+
+	public Airport getArriveAirport() {
+		return arriveAirport;
+	}
+
+	public void setArriveAirport(Airport arriveAirport) {
+		this.arriveAirport = arriveAirport;
 	}
 
 	public Collection<Passanger> getPassangerList() {
@@ -125,40 +143,5 @@ public class Flight {
 	public void setPassangerList(Collection<Passanger> passangerList) {
 		this.passangerList = passangerList;
 	}
-
-	public Airline getAirline() {
-		return airline;
-	}
-
-	public void setAirline(Airline airline) {
-		this.airline = airline;
-	}
-
-	public Airplane getAirplane() {
-		return airplane;
-	}
-
-	public void setAirplane(Airplane airplane) {
-		this.airplane = airplane;
-	}
-
-	public Airport getIrtenAirport() {
-		return irtenAirport;
-	}
-
-	public void setIrtenAirport(Airport irtenAirport) {
-		this.irtenAirport = irtenAirport;
-	}
-
-	public Airport getHelduAirport() {
-		return helduAirport;
-	}
-
-	public void setHelduAirport(Airport helduAirport) {
-		this.helduAirport = helduAirport;
-	}
-	
-	
-	
 	
 }

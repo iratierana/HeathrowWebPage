@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -94,6 +95,15 @@ public class TestDAOPassanger {
 		p= DAOPassanger.loadPassanger(1);
 		
 		assertNotNull("Error loading the passanger", p);
+	}
+	
+	@Test
+	public void testToLoadPassangersFromDirections(){
+		List<Passanger> passangerList = null;
+		
+		passangerList= DAOPassanger.loadAllPassangersFromOneCity("Bergara");
+		
+		assertNotNull("Error loading the passanger", passangerList);
 	}
 	
 	@Test

@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -52,63 +54,35 @@ public class Airplane {
 	@NotNull
 	private Integer hoursOfFlight;
 	
+	
 	@OneToMany
-	private Collection<AirplanePhoto> airplanePhotoList = new ArrayList<AirplanePhoto>();
+	@JoinColumn(name="AIRPLANE_ID", nullable=false)
+	Collection<Flight> flightList = new ArrayList<Flight>();
 	
 	@OneToOne
-	private Airline airline;
+	Airport airport;
+	
+	@ManyToMany
+	@JoinTable(name="ControlAirplane")
+	Collection<AirportController> cotrollerList= new ArrayList<AirportController>();
 	
 	@OneToOne
-	private Airport airport;
+	PlanePosition planePosition;
+
 	
-	@OneToOne
-	private PlanePosition planePosition;
-	
-	@ManyToMany//(mappedBy="airportController")
-	private Collection<AirportController> airportControllerList = new ArrayList<AirportController>();
-	
+	@OneToMany
+	@JoinColumn(name="AIRPLANE_ID", nullable=false)
+	Collection<AirplanePhoto> photoList=new ArrayList<AirplanePhoto>();
 	
 	
 	
-
-	public Collection<AirplanePhoto> getAirplanePhotoList() {
-		return airplanePhotoList;
+	
+	public Collection<AirplanePhoto> getPhotoList() {
+		return photoList;
 	}
 
-	public void setAirplanePhotoList(Collection<AirplanePhoto> airplanePhotoList) {
-		this.airplanePhotoList = airplanePhotoList;
-	}
-
-	public Airline getAirline() {
-		return airline;
-	}
-
-	public void setAirline(Airline airline) {
-		this.airline = airline;
-	}
-
-	public Airport getAirport() {
-		return airport;
-	}
-
-	public void setAirport(Airport airport) {
-		this.airport = airport;
-	}
-
-	public PlanePosition getPlanePosition() {
-		return planePosition;
-	}
-
-	public void setPlanePosition(PlanePosition planePosition) {
-		this.planePosition = planePosition;
-	}
-
-	public Collection<AirportController> getAirportControllerList() {
-		return airportControllerList;
-	}
-
-	public void setAirportControllerList(Collection<AirportController> airportControllerList) {
-		this.airportControllerList = airportControllerList;
+	public void setPhotoList(Collection<AirplanePhoto> photoList) {
+		this.photoList = photoList;
 	}
 
 	public Integer getAirplaneId() {
@@ -206,7 +180,41 @@ public class Airplane {
 	public void setHoursOfFlight(Integer hoursOfFlight) {
 		this.hoursOfFlight = hoursOfFlight;
 	}
-	
-	
 
+	public Collection<Flight> getFlightList() {
+		return flightList;
+	}
+
+	public void setFlightList(Collection<Flight> flightList) {
+		this.flightList = flightList;
+	}
+
+	public Airport getAirport() {
+		return airport;
+	}
+
+	public void setAirport(Airport airport) {
+		this.airport = airport;
+	}
+
+	public Collection<AirportController> getCotrollerList() {
+		return cotrollerList;
+	}
+
+	public void setCotrollerList(Collection<AirportController> cotrollerList) {
+		this.cotrollerList = cotrollerList;
+	}
+
+	public PlanePosition getPlanePosition() {
+		return planePosition;
+	}
+
+	public void setPlanePosition(PlanePosition planePosition) {
+		this.planePosition = planePosition;
+	}
+
+
+	
+	
+	
 }

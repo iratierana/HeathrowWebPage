@@ -50,103 +50,118 @@ public class Passanger {
 	
 	@NotNull
 	private String password;
+
+	
+	@ManyToMany(mappedBy="passangerList")
+	Collection<Flight> flightList = new ArrayList<Flight>();
 	
 	@OneToOne
-	private Direction direction;
-	
-	@ManyToMany
-	private Collection<Flight> flihtList = new ArrayList<Flight>();
-	
-	@ManyToMany
-	private Collection<Airline> airlineList = new ArrayList<Airline>();
+	Direction direction;
+
 	
 	
-	
-	
-	public Direction getDirection() {
-		return direction;
-	}
-	public void setDirection(Direction direction) {
-		this.direction = direction;
-	}
-	public Collection<Flight> getFlihtList() {
-		return flihtList;
-	}
-	public void setFlihtList(Collection<Flight> flihtList) {
-		this.flihtList = flihtList;
-	}
-	public Collection<Airline> getAirlineList() {
-		return airlineList;
-	}
-	public void setAirlineList(Collection<Airline> airlineList) {
-		this.airlineList = airlineList;
-	}
 	public Integer getPassangerId() {
 		return passangerId;
 	}
+
 	public void setPassangerId(Integer passangerId) {
 		this.passangerId = passangerId;
-	}	
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 	public String getLastName1() {
 		return lastName1;
 	}
+
 	public void setLastName1(String lastName1) {
 		this.lastName1 = lastName1;
 	}
+
 	public String getLastName2() {
 		return lastName2;
 	}
+
 	public void setLastName2(String lastName2) {
 		this.lastName2 = lastName2;
 	}
+
 	public String getDni_passport() {
 		return dni_passport;
 	}
+
 	public void setDni_passport(String dni_passport) {
 		this.dni_passport = dni_passport;
 	}
+
 	public String getHomeTlf() {
 		return homeTlf;
 	}
+
 	public void setHomeTlf(String homeTlf) {
 		this.homeTlf = homeTlf;
 	}
+
 	public String getMovileTlf() {
 		return movileTlf;
 	}
+
 	public void setMovileTlf(String movileTlf) {
 		this.movileTlf = movileTlf;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public Date getBirthDate() {
 		return birthDate;
 	}
+
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
+
 	public String getUsername() {
 		return username;
 	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+	public Collection<Flight> getFlightList() {
+		return flightList;
+	}
+
+	public void setFlightList(Collection<Flight> flightList) {
+		this.flightList = flightList;
+	}
+
+	public Direction getDirection() {
+		return direction;
+	}
+
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
 	
 }

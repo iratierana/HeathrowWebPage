@@ -58,7 +58,7 @@ private static Session session;
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			
-			TypedQuery<Passanger> query = session.createQuery("from Passanger");
+			TypedQuery<Passanger> query = session.createQuery("from Passanger where passangerid="+id);
 			passangerList = query.getResultList();
 			if(!passangerList.isEmpty()){
 				p=passangerList.get(0);
@@ -101,7 +101,6 @@ private static Session session;
 		return p;
 	}
 	
-	
 	@SuppressWarnings("unchecked")
 	public static List<Passanger> loadAllPassangers() {
 		List<Passanger> passangerList = null;
@@ -120,4 +119,20 @@ private static Session session;
 		
 		return passangerList;
 	}
+
+	@SuppressWarnings("unchecked")
+	public static List<Passanger> loadAllPassangersFromOneCity(String city){
+		List<Passanger> passangerList = null;
+		try{
+			ConnectHibernate.before();
+			session = ConnectHibernate.getSession();
+			TypedQuery<Passanger> query = session.createQuery("from passanger p join direction d on p.direction_directionid=d.directionid where d.city='"+city+"'");
+			passangerList = query.getResultList();
+		}catch(Exception e){
+			
+		}
+		ConnectHibernate.after();		
+		return passangerList;
+	}
+
 }
