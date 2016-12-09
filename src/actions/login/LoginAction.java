@@ -1,7 +1,8 @@
 package actions.login;
 
+import domain.dao.DAOAirlineManager;
+import domain.dao.DAOAirportController;
 import domain.dao.DAOPassanger;
-import domain.model.Passanger;
 
 public class LoginAction{
 	
@@ -11,16 +12,19 @@ public class LoginAction{
 
 
 	public String execute() { 
-		Passanger p= new Passanger();
-		if (DAOPassanger.loadPassanger(this.username, this.password)!=null) {			
-			System.out.println(p.getFirstName());
-			return "success";
-		} else if(this.username.equals("123") && this.password.equals("123")){	//TODO
+		
+		if (DAOPassanger.loadPassanger(this.username, this.password)!=null) {	
 			return "passenger";
+		} else if(DAOAirportController.loadAirportController(this.username, this.password)!=null){
+			return "airportController";
+		}else if(DAOAirlineManager.loadAirportController(this.username, this.password)!=null){
+			return "airlineManager"; //TODO airlineManager.jsp faltada itxia
 		}else{
 			return "error";
 		}
 	}
+	
+	
 	
 	public String register(){
 		return "register";

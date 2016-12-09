@@ -17,7 +17,7 @@ private static Session session;
 	public static boolean insertAirportController(AirportController aController){
 		try {
 			
-			ConnectHibernate.before();
+			ConnectHibernate.before(); 
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
 			session.save(aController); //erlazinuak itxen dianian save kendu eta persist ipinibiada eta eralazinuan cascade cascade type.persist
@@ -66,4 +66,29 @@ private static Session session;
 		return cotrollerList;
 	}
 
+	@SuppressWarnings("unchecked")
+	public static AirportController loadAirportController(String username, String pass){
+		List<AirportController> controllerList = null;
+		AirportController aC = new AirportController();
+		aC = null;
+		try{
+			ConnectHibernate.before();
+			session = ConnectHibernate.getSession();
+			
+			TypedQuery<AirportController> query = session.createQuery("from AirportController where password='"+pass+"' and username='"+username+"'");
+			controllerList = query.getResultList();
+			if(!controllerList.isEmpty()){
+				aC=controllerList.get(0);
+			}
+			ConnectHibernate.after();
+			
+		}catch (Exception e) {
+			session.getTransaction().rollback();
+			ConnectHibernate.after();
+			return null;
+		}
+		
+		ConnectHibernate.after();
+		return aC;
+	}
 }

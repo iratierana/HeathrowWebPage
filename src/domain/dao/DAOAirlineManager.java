@@ -65,4 +65,29 @@ public class DAOAirlineManager {
 		return airlineManagerList;	
 	}
 	
+	@SuppressWarnings("unchecked")
+	public static AirlineManager loadAirportController(String username, String pass){
+		List<AirlineManager> managerList = null;
+		AirlineManager aM = new AirlineManager();
+		aM = null;
+		try{
+			ConnectHibernate.before();
+			session = ConnectHibernate.getSession();
+			
+			TypedQuery<AirlineManager> query = session.createQuery("from AirlineManager where password='"+pass+"' and username='"+username+"'");
+			managerList = query.getResultList();
+			if(!managerList.isEmpty()){
+				aM=managerList.get(0);
+			}
+			ConnectHibernate.after();
+			
+		}catch (Exception e) {
+			session.getTransaction().rollback();
+			ConnectHibernate.after();
+			return null;
+		}
+		
+		ConnectHibernate.after();
+		return aM;
+	}
 }

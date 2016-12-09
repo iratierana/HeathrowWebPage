@@ -88,14 +88,6 @@ public class TestDAOPassanger {
 		assertFalse("Error deleting a passanger", result);
 	}
 	
-	@Test
-	public void testToLoadOnePassanger(){
-		Passanger p = new Passanger();
-		
-		p= DAOPassanger.loadPassanger(1);
-		
-		assertNotNull("Error loading the passanger", p);
-	}
 	
 	@Test
 	public void testToLoadPassangersFromDirections(){

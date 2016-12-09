@@ -49,31 +49,6 @@ private static Session session;
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
-	public static Passanger loadPassanger(Integer id){
-		List<Passanger> passangerList = null;
-		Passanger p = new Passanger();
-		p = null;
-		try{
-			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();
-			
-			TypedQuery<Passanger> query = session.createQuery("from Passanger where passangerid="+id);
-			passangerList = query.getResultList();
-			if(!passangerList.isEmpty()){
-				p=passangerList.get(0);
-			}
-			ConnectHibernate.after();
-			
-		}catch (Exception e) {
-			session.getTransaction().rollback();
-			ConnectHibernate.after();
-			return null;
-		}
-		
-		ConnectHibernate.after();
-		return p;
-	}
 	
 	@SuppressWarnings("unchecked")
 	public static Passanger loadPassanger(String username, String pass){
@@ -126,10 +101,11 @@ private static Session session;
 		try{
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			TypedQuery<Passanger> query = session.createQuery("from passanger p join direction d on p.direction_directionid=d.directionid where d.city='"+city+"'");
+			TypedQuery<Passanger> query = session.createQuery("FROM Passanger as p where p.direction.city = :city");
+			query.setParameter("city", city);
 			passangerList = query.getResultList();
 		}catch(Exception e){
-			
+			e.printStackTrace();
 		}
 		ConnectHibernate.after();		
 		return passangerList;
