@@ -89,17 +89,5 @@ public class TestDAOPassanger {
 	}
 	
 	
-	@Test
-	public void testToLoadPassangersFromDirections(){
-		List<Passanger> passangerList = null;
-		
-		passangerList= DAOPassanger.loadAllPassangersFromOneCity("Bergara");
-		
-		assertNotNull("Error loading the passanger", passangerList);
-	}
 	
-	@Test
-	public void testToLoadAllPassangers(){
-		assertNotNull("Error loading al the passangers", DAOPassanger.loadAllPassangers());
-	}
 }

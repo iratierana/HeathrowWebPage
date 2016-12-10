@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="../css/bookingStyle.css">
+	<link rel="stylesheet" type="text/css" href="../css/bookingAndRegisterStyle.css">
 	<script src="../js/bookingSteps.js" type="text/javascript"></script>
 </head>
 <body>

@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="../css/registrationStyle.css">
+	<link rel="stylesheet" type="text/css" href="../css/bookingAndRegisterStyle.css">
 	<script src="../js/registerSteps.js" type="text/javascript"></script>
 </head>
 <body>
@@ -14,6 +14,7 @@
 			<li id="pb1" class="active">Account Setup</li>
 			<li id="pb2">Social Profiles</li>
 			<li id="pb3">Personal Details</li>
+			<li id="pb4">Personal Details</li>
 		</ul>
 		<!-- fieldsets -->
 		<fieldset id="step1">
@@ -39,6 +40,16 @@
 			<s:textfield name="password" placeholder="Password"></s:textfield>
 			<s:textfield name="repPassword" placeholder="Repeat Password"></s:textfield>
 			<input type="button" name="previous" class="previous action-button"	value="Previous" onclick="goToStep2()"/>
+			<input type="button" name="next" class="next action-button" value="Next" onclick="goToStep4()"/>
+			
+		</fieldset>
+		<fieldset id="step4" class="hideme">
+			<h2 class="fs-title">Direction</h2>
+			<s:textfield name="address" placeholder="Address"></s:textfield>
+			<s:textfield name="city" placeholder="City"></s:textfield>
+			<s:textfield name="codPost" placeholder="Post Code"></s:textfield>
+			<s:textfield name="state" placeholder="State"></s:textfield>
+			<input type="button" name="previous" class="previous action-button"	value="Previous" onclick="goToStep3()"/>
 			
 			<s:submit value="Submit" method="execute" class="submit action-button"></s:submit>
 		</fieldset>

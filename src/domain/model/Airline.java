@@ -25,7 +25,7 @@ public class Airline {
 	private String description;
 
 	@OneToMany
-	@JoinColumn(name="AIRPLANE_ID", nullable=false)
+	@JoinColumn(name="AIRLINE_ID", nullable=false)
 	Collection<Airplane> airplaneList = new ArrayList<Airplane>();
 	
 	

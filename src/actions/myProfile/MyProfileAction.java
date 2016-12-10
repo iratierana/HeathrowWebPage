@@ -1,5 +1,6 @@
 package actions.myProfile;
 
+
 public class MyProfileAction {
 	
 	private String firstName;

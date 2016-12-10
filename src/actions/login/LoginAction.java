@@ -3,22 +3,36 @@ package actions.login;
 import domain.dao.DAOAirlineManager;
 import domain.dao.DAOAirportController;
 import domain.dao.DAOPassanger;
+import domain.model.AirlineManager;
+import domain.model.AirportController;
+import domain.model.Passanger;
 
 public class LoginAction{
 	
-	//Logeatzeko
+	//Login paginatik jasotako username eta passaword 
 	private String username;
 	private String password;
-
+	
+	private Passanger loggedPassanger=null;
+	private AirportController loggedAirportController=null;
+	private AirlineManager loggedAirlineManager=null;
 
 	public String execute() { 
 		
-		if (DAOPassanger.loadPassanger(this.username, this.password)!=null) {	
+		loggedPassanger = DAOPassanger.loadPassanger(this.username, this.password);
+		loggedAirportController = DAOAirportController.loadAirportController(this.username, this.password);
+		loggedAirlineManager = DAOAirlineManager.loadAirportController(this.username, this.password);
+		
+		if (loggedPassanger != null) {			
+//			DAOPassanger.loadPassangerFlights(loggedPassanger.getPassangerId());			
 			return "passenger";
-		} else if(DAOAirportController.loadAirportController(this.username, this.password)!=null){
+			
+		} else if(loggedAirportController != null){
 			return "airportController";
-		}else if(DAOAirlineManager.loadAirportController(this.username, this.password)!=null){
+			
+		}else if(loggedAirlineManager != null){
 			return "airlineManager"; //TODO airlineManager.jsp faltada itxia
+			
 		}else{
 			return "error";
 		}

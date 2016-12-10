@@ -7,6 +7,7 @@ import javax.persistence.TypedQuery;
 import org.hibernate.Session;
 
 import configurations.ConnectHibernate;
+import domain.model.Flight;
 import domain.model.Passanger;
 
 public class DAOPassanger {
@@ -75,40 +76,22 @@ private static Session session;
 		ConnectHibernate.after();
 		return p;
 	}
-	
-	@SuppressWarnings("unchecked")
-	public static List<Passanger> loadAllPassangers() {
-		List<Passanger> passangerList = null;
-		try {
-			
-			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();
-			TypedQuery<Passanger> query = session.createQuery("from Passanger");
-			passangerList = query.getResultList();
-		
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		ConnectHibernate.after();
 
-		
-		return passangerList;
-	}
 
-	@SuppressWarnings("unchecked")
-	public static List<Passanger> loadAllPassangersFromOneCity(String city){
-		List<Passanger> passangerList = null;
+	@SuppressWarnings({ "unchecked", "deprecation" })
+	public static List<Flight> loadPassangerFlights(int id){
+		List<Flight> flightList = null;
 		try{
 			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();
-			TypedQuery<Passanger> query = session.createQuery("FROM Passanger as p where p.direction.city = :city");
-			query.setParameter("city", city);
-			passangerList = query.getResultList();
+			session = ConnectHibernate.getSession();			
+			flightList=session.createSQLQuery("SELECT * "
+											+ " FROM (flight f JOIN booking b ON f.flightid=b.flightlist_flightid)"
+											+ " JOIN passanger p ON p.passangerid=b.passangerlist_passangerid"
+											+ " WHERE p.passangerid="+id).list();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		ConnectHibernate.after();		
-		return passangerList;
+		return flightList;
 	}
-
 }
