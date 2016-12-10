@@ -21,7 +21,7 @@ private static Session session;
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
-			session.persist(passanger);
+			session.save(passanger);
 			session.getTransaction().commit();
 			ConnectHibernate.after();
 			return true;

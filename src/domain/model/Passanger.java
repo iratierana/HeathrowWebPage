@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -55,7 +56,7 @@ public class Passanger {
 	@ManyToMany(mappedBy="passangerList")
 	Collection<Flight> flightList = new ArrayList<Flight>();
 	
-	@OneToOne
+	@OneToOne(  cascade = CascadeType.ALL)
 	Direction direction;
 
 	

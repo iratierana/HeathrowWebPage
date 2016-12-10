@@ -2,7 +2,6 @@ package actions.register;
 
 import java.util.Date;
 
-import domain.dao.DAODirection;
 import domain.dao.DAOPassanger;
 import domain.model.Direction;
 import domain.model.Passanger;
@@ -31,7 +30,6 @@ public class RegisterAction {
 	
 	
 	public String execute(){	
-		DAODirection.insertDirection(createDirectionObject());
 		DAOPassanger.insertPassanger(createPassangerObject());		
 		return "login";
 	}
@@ -50,6 +48,7 @@ public class RegisterAction {
 		passanger.setEmail(this.email);
 		passanger.setUsername(this.username);
 		passanger.setPassword(this.password);
+		passanger.setDirection(createDirectionObject());
 		
 		return passanger;
 	}
