@@ -12,26 +12,26 @@
 		<ul>		
 			<li>
 				<div>
-					<a href="bookFlight.jsp">Book a Flight</a>
+					<s:a action="bookAFlight">Book a Flight</s:a>
 					<img src="../img/book.png">
 				</div>
 				
 			</li>			
 			<li>
 				<div>	
-					<a href="myFlights.jsp">My Flights</a>
+					<s:a action="myFlights">My Flights</s:a>
 					<img src="../img/myFlights.png">
 				</div>
 			</li>			
 			<li>
 				<div>
-					<a href="allFlights.jsp">All Flights</a>
+					<s:a action="allFlights">All Flights</s:a>
 					<img src="../img/allFlights.png">
 				</div>
 			</li>			
 			<li>
 				<div>
-					<a href="myProfile.jsp">My Profile</a>
+					<s:a action="myProfile">My Profile</s:a>
 					<img src="../img/profile.png">
 				</div>
 			</li>	

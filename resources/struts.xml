@@ -32,5 +32,22 @@
 			<result name="changeProfile">/pages/passenger.jsp</result>
 		</action>
 		
+		<action name="bookAFlight" class="actions.passengerMenu.BookAFlightAction">
+			<result name="bookAFlight">/pages/bookFlight.jsp</result>
+		</action>
+		
+		<action name="myFlights" class="actions.passengerMenu.MyFlightsAction">
+			<result name="myFlights">/pages/myFlights.jsp</result>
+		</action>
+		
+		<action name="allFlights" class="actions.passengerMenu.AllFlightsAction">
+			<result name="allFlights">/pages/allFlights.jsp</result>
+		</action>
+		
+		<action name="myProfile" class="actions.passengerMenu.MyProfileAction">
+			<result name="myProfileAction">/pages/myProfile.jsp</result>
+		</action>
+		
+		
 	</package>
 </struts>
