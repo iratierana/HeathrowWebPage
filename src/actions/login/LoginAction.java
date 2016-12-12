@@ -48,7 +48,6 @@ public class LoginAction{
 			session.put("loggedAirportController", null);
 			session.put("loggedAirlineManager", this.loggedAirlineManager);
 			return "airlineManager"; //TODO airlineManager.jsp faltada itxia
-			
 		}else{
 			return "error";
 		}

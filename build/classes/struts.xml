@@ -13,6 +13,7 @@
 			<result name="passenger">/pages/passenger.jsp</result>
 			<result name="error">/pages/login.jsp</result>
 			<result name="register">/pages/register.jsp</result>
+			<result name="airlineManager">/pages/airlineManagerList.jsp</result>
 		</action>
 				
 		
@@ -50,6 +51,10 @@
 		
 		<action name="myProfileSaveChanges" class="actions.passengerMenu.MyProfileSaveChagesAction">
 			<result name="passanger">/pages/passenger.jsp</result>
+		</action>
+		
+		<action name="airlineInformation" class="actions.airlineManager.AirlineInformationAction">
+			<result name="airlineInfo">pages/airlineInformation.jsp</result>
 		</action>
 		
 		
