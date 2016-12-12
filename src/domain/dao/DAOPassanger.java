@@ -85,10 +85,7 @@ private static Session session;
 		try{
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();			
-			flightList=session.createSQLQuery("SELECT * "
-											+ " FROM (flight f JOIN booking b ON f.flightid=b.flightlist_flightid)"
-											+ " JOIN passanger p ON p.passangerid=b.passangerlist_passangerid"
-											+ " WHERE p.passangerid="+id).list();
+			flightList = 
 		}catch(Exception e){
 			e.printStackTrace();
 		}
