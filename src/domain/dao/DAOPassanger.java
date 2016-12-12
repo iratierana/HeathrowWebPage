@@ -85,7 +85,8 @@ private static Session session;
 		try{
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();			
-			flightList = 
+			Query query = session.createQuery("select p.flightList from Passanger as p where p.id ="+id);
+			flightList = query.getResultList();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
