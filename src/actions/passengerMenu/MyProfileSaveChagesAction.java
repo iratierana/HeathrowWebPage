@@ -5,13 +5,11 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
 
+import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
-
-public class MyProfileAction {
+public class MyProfileSaveChagesAction {
 	
-	//User data
-	private Integer id;
 	private String name;
 	private String firstName;
 	private String secondName;
@@ -23,41 +21,37 @@ public class MyProfileAction {
 	private String username;
 	private String password;
 	private String repPassword;
-
 	
 	public String execute(){
-		loadLoggedPassangerAtributes();
-		return "myProfileAction";
+		DAOPassanger.updatePassanger(createPassangerObject());
+		return "passanger";
 	}
 	
+	
+	
 	@SuppressWarnings("rawtypes")
-	private void loadLoggedPassangerAtributes(){
+	private Passanger createPassangerObject(){
+		Passanger passanger=new Passanger();
+		
 		Map session = ActionContext.getContext().getSession();	
+		Passanger auxPass = (Passanger) session.get("loggedPassanger");
 		
-		Passanger p = (Passanger) session.get("loggedPassanger");
+		passanger.setPassangerId(auxPass.getPassangerId());
+		passanger.setFirstName(this.name);
+		passanger.setLastName1(this.firstName);
+		passanger.setLastName2(this.secondName);
+		passanger.setDni_passport(this.dniPassport);
+		passanger.setBirthDate(this.birthDate);
+		passanger.setHomeTlf(this.homeTlf);
+		passanger.setMovileTlf(this.movileTlf);
+		passanger.setEmail(this.email);
+		passanger.setUsername(this.username);
+		passanger.setPassword(this.password);
 		
-		this.setId(p.getPassangerId());
-		this.setName(p.getFirstName());
-		this.setFirstName(p.getLastName1());
-		this.setSecondName(p.getLastName2());
-		this.setDniPassport(p.getDni_passport());
-		this.setBirthDate(p.getBirthDate());
-		this.setHomeTlf(p.getHomeTlf());
-		this.setMovileTlf(p.getMovileTlf());
-		this.setEmail(p.getEmail());
-		this.setUsername(p.getUsername());
-		this.setPassword(p.getPassword());
-		
+		return passanger;
 	}
 
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
@@ -190,5 +184,5 @@ public class MyProfileAction {
 	}
 	
 	
-	
+
 }

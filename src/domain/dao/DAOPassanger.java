@@ -2,6 +2,7 @@ package domain.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
@@ -93,5 +94,33 @@ private static Session session;
 		}
 		ConnectHibernate.after();		
 		return flightList;
+	}
+	
+	public static boolean updatePassanger(Passanger passanger){
+		try{
+			ConnectHibernate.before();			
+			session = ConnectHibernate.getSession();
+			session.getTransaction().begin();
+			String hql="UPDATE Passanger"
+					+ " SET firstName = '"+passanger.getFirstName()+"',"
+					+ " lastName1 = '"+passanger.getLastName1()+"',"
+					+ " lastName2 = '"+ passanger.getLastName2()+"',"
+					+ " dni_passport = '"+passanger.getDni_passport()+"',"
+					+ " homeTlf = '"+passanger.getHomeTlf()+"',"
+					+ " movileTlf = '"+passanger.getMovileTlf()+"',"
+					+ " email = '"+ passanger.getEmail()+"',"
+					+ " birthDate = '"+passanger.getBirthDate()+"',"
+					+ " username = '"+passanger.getUsername()+"',"
+					+ " password = '"+passanger.getPassword()+"'"
+					+ " WHERE passangerId = "+passanger.getPassangerId();
+			Query query = session.createQuery(hql);
+			query.executeUpdate();
+			session.getTransaction().commit();		
+		}catch(Exception e){			
+			e.printStackTrace();
+			return false;
+		}
+		ConnectHibernate.after();		
+		return true;
 	}
 }

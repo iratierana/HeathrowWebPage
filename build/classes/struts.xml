@@ -48,6 +48,10 @@
 			<result name="myProfileAction">/pages/myProfile.jsp</result>
 		</action>
 		
+		<action name="myProfileSaveChanges" class="actions.passengerMenu.MyProfileSaveChagesAction">
+			<result name="passanger">/pages/passenger.jsp</result>
+		</action>
+		
 		
 	</package>
 </struts>
