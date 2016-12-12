@@ -79,7 +79,7 @@ private static Session session;
 	}
 
 
-	@SuppressWarnings({ "unchecked", "deprecation" })
+	@SuppressWarnings({ "unchecked" })
 	public static List<Flight> loadPassangerFlights(int id){
 		List<Flight> flightList = null;
 		try{
