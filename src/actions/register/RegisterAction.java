@@ -6,6 +6,17 @@ import domain.dao.DAOPassanger;
 import domain.model.Direction;
 import domain.model.Passanger;
 
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * Class where are made all the processes and loads for registering a passenger.
+ *  
+ */
 public class RegisterAction {
 
 	//User data
@@ -28,13 +39,23 @@ public class RegisterAction {
 	private String state;
 	
 	
-	
+	/**
+	 * 
+	 * This function insert a new passenger and direction and link both of them 
+	 * 
+	 * @return the page where we want to go
+	 */
 	public String execute(){	
 		DAOPassanger.insertPassanger(createPassangerObject());		
 		return "login";
 	}
 
-	
+	/**
+	 * 
+	 * This function creates the passenger object with the data of the jsp
+	 * 
+	 * @return passenger The passenger created in the jsp
+	 */
 	private Passanger createPassangerObject(){
 		Passanger passanger=new Passanger();
 		
@@ -53,6 +74,12 @@ public class RegisterAction {
 		return passanger;
 	}
 	
+	/**
+	 * 
+	 * This function creates the direction with the data in the register.jsp
+	 * 
+	 * @return direction The direction with the data of the register.jsp
+	 */
 	private Direction createDirectionObject(){
 		Direction direction = new Direction();
 		
