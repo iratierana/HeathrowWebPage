@@ -11,6 +11,17 @@ import domain.model.AirlineManager;
 import domain.model.AirportController;
 import domain.model.Passanger;
 
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * Class where are made all the processes and loads of the login process.
+ *  
+ */
 public class LoginAction{
 	
 	//Login paginatik jasotako username eta passaword 
@@ -20,7 +31,15 @@ public class LoginAction{
 	private Passanger loggedPassanger=null;
 	private AirportController loggedAirportController=null;
 	private AirlineManager loggedAirlineManager=null;
-
+	
+	/**
+	 * 
+	 * This function verifies the type of the user that has been logged and 
+	 * depending on that it redirect to a different pages.
+	 * The logged user is loaded to the session
+	 * 
+	 * @return The name of the page depending on the type of user logged in
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String execute() { 
 		Map session = ActionContext.getContext().getSession();	
@@ -54,7 +73,9 @@ public class LoginAction{
 	}
 	
 	
-	
+	/**
+	 * This function clears the user that was previously loaded in the session
+	 */
 	@SuppressWarnings("rawtypes")
 	private void clearAllLoggedUsers() {
 		Map session = ActionContext.getContext().getSession();
@@ -64,7 +85,12 @@ public class LoginAction{
 	}
 
 
-
+	/**
+	 * 
+	 * This function redirects the flow to the register page, when the register button in clicked.
+	 * 
+	 * @return the name of the page we want to go
+	 */
 	public String register(){
 		return "register";
 	}	
