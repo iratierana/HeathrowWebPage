@@ -4,7 +4,7 @@
 <head>
 	<title>Register</title>
 	<link rel="stylesheet" type="text/css" href="../css/bookingAndRegisterStyle.css">
-	<script src="../js/registerSteps.js" type="text/javascript"></script>
+	<script type="text/javascript" src="<s:url value="/js/registerSteps.js"/>"></script>
 </head>
 <body>
 

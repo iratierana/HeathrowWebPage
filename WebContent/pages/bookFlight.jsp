@@ -3,8 +3,8 @@
 <html>
 <head>
 	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="../css/bookingAndRegisterStyle.css">
-	<script src="../js/bookingSteps.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="<s:url value="/css/bookingAndRegisterStyle.css"/>">
+	<script type="text/javascript" src="<s:url value="/js/bookingSteps.js"/>"></script>
 </head>
 <body>
 

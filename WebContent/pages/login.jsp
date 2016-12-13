@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Heathrow Airport</title>
-  <link rel="stylesheet" type="text/css" href="../css/loginStyle.css">
+  <link rel="stylesheet" type="text/css" href="<s:url value="/css/loginStyle.css"/>">
 
 </head>
 

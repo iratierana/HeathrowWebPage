@@ -3,7 +3,8 @@
 <html>
 <head>
 <title>Passenger Page</title>
-<link rel="stylesheet" href="../css/passengerStyle.css"></head>
+<link rel="stylesheet" href="<s:url value="/css/passengerStyle.css"/>">
+</head>
 <body>
 	<header>
 		<h1>Menu</h1>
