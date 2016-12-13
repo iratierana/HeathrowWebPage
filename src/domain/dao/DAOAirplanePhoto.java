@@ -10,10 +10,28 @@ import configurations.ConnectHibernate;
 import domain.model.AirplanePhoto;
 
 public class DAOAirplanePhoto {
-	
+
+	/**
+	 * 
+	 * @author Xabier Jauregi
+	 * @author Irati Eraña
+	 * @author Mikel Arizmendiarrieta 
+	 * @version 1.0
+	 * @since   2016-12-13
+	 * 
+	 * Class where are all the needed functions related with AirplanePhoto, in order to work with the database
+	 *  
+	 */
 private static Session session;
 	
-	
+/**
+ * 
+ * This function insert a photo in the database
+ * 
+ * @param photo the photo to insert in the database
+ * @return true if the insert is correct
+ * @return false if and error occurs during the insert
+ */
 	public static boolean insertAirplanePhoto(AirplanePhoto photo){
 		try {
 			
@@ -32,7 +50,14 @@ private static Session session;
 		}
 	}
 
-	
+	/**
+	 * 
+	 * This function delete a photo from the database
+	 * 
+	 * @param photo the photo to delete from the database
+	 * @return true if the delete is correct
+	 * @return false if and error occurs during the delete
+	 */
 	public static boolean deleteAirplanePhoto(AirplanePhoto photo){
 		try{
 			
@@ -49,6 +74,14 @@ private static Session session;
 		}
 	}
 	
+	
+	/**
+	 * 
+	 * This function load all the photos of the database
+	 * 
+	 * @return the list of photos if the load is correct
+	 * @return null if an error occurs during the load
+	 */
 	public static List<AirplanePhoto> loadAllAirplanePhotos() {
 		List<AirplanePhoto> photoList = null;
 		try {

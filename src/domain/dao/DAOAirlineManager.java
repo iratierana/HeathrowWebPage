@@ -9,11 +9,29 @@ import org.hibernate.Session;
 import configurations.ConnectHibernate;
 import domain.model.AirlineManager;
 
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * Class where are all the needed functions related with AirlineManager, in order to work with the database
+ *  
+ */
 public class DAOAirlineManager {
 
 	private static Session session;
 	
-	
+	/**
+	 * 
+	 * This function insert a airline manager in the database
+	 * 
+	 * @param airlineManager the manager to insert in the databse
+	 * @return true if the insert is correct
+	 * @return false if and error occurs during the insert
+	 */
 	public static boolean insertAirlineManager(AirlineManager airlineManager){
 		try {
 			
@@ -32,6 +50,14 @@ public class DAOAirlineManager {
 		}
 	}
 	
+	/**
+	 * 
+	 * This function delete an airline manager from the database
+	 * 
+	 * @param airlineManager the manager to delete from the databse
+	 * @return true if the delete is correct
+	 * @return false if and error occurs during the delete
+	 */
 	public static boolean deleteAirlineManager(AirlineManager airlienManager){
 		try{
 			
@@ -48,6 +74,14 @@ public class DAOAirlineManager {
 		}
 	}
 	
+	/**
+	 * 
+	 * This function load all the airline managers of the database
+	 * 
+	 * @param airlineManager the manager to insert in the databse
+	 * @return true if the load is correct
+	 * @return false if and error occurs during the load
+	 */
 	public static List<AirlineManager> loadAllAirlineManagers(){
 		List<AirlineManager> airlineManagerList = null;
 		try {
@@ -65,8 +99,16 @@ public class DAOAirlineManager {
 		return airlineManagerList;	
 	}
 	
+	/**
+	 * 
+	 * This function load an airline manager from the database
+	 * 
+	 * @param username the usename of the irline manager
+	 * @param pass the username of the airline manager
+	 * @return the airline manager if the manager exists else null.
+	 */
 	@SuppressWarnings("unchecked")
-	public static AirlineManager loadAirportController(String username, String pass){
+	public static AirlineManager loadAirLineManager(String username, String pass){
 		List<AirlineManager> managerList = null;
 		AirlineManager aM = new AirlineManager();
 		aM = null;

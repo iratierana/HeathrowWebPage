@@ -9,11 +9,30 @@ import org.hibernate.Session;
 import configurations.ConnectHibernate;
 import domain.model.Airplane;
 
+
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * Class where are all the needed functions related with Airplane, in order to work with the database
+ *  
+ */
 public class DAOAirplane {
 	
 private static Session session;
 	
-	
+/**
+ * 
+ * This function insert aan airplane in the database
+ * 
+ * @param airplane the airplane to insert in the database
+ * @return true if the insert is correct
+ * @return false if and error occurs during the insert
+ */
 	public static boolean insertAirplane(Airplane airplane){
 		try {
 			
@@ -32,7 +51,14 @@ private static Session session;
 		}
 	}
 
-	
+	/**
+	 * 
+	 * This function delete an airplane from the database
+	 * 
+	 * @param airplane the airplane to delete from the database
+	 * @return true if the delete is correct
+	 * @return false if and error occurs during the delete
+	 */
 	public static boolean deleteAirplane(Airplane airplane){
 		try{
 			
@@ -49,6 +75,13 @@ private static Session session;
 		}
 	}
 	
+	/**
+	 * 
+	 * This function load all the Airplanes of the database
+	 * 
+	 * @return the list if the load is correct
+	 * @return null if and error occurs during the load
+	 */
 	public static List<Airplane> loadAllAirplanes() {
 		List<Airplane> airplaneList = null;
 		try {

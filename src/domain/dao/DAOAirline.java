@@ -10,12 +10,30 @@ import configurations.ConnectHibernate;
 import domain.model.Airline;
 import domain.model.Airplane;
 
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * Class where are all the needed functions related with Airline, in order to work with the database
+ *  
+ */
 
 public class DAOAirline {
 	
 	private static Session session;
 	
-	
+	/**
+	 * 
+	 * This function insert an Airline in the database
+	 * 
+	 * @param airline to insert an entire airline in the database
+	 * @return true if the insert is correct
+	 * @return false if and error occurs during the insert
+	 */
 	public static boolean insertAirline(Airline airline){
 		try {
 			
@@ -33,21 +51,27 @@ public class DAOAirline {
 			return false;		
 		}
 	}
-	
+		
+	/**
+	 * 
+	 * Loads all the planes of an specific airline
+	 * 
+	 * @param airline 
+	 * @return listOfPlanes the list of planes of the specified airline
+	 */
 	public static List<Airplane> loadPlanesOfAirline(Airline airline){
-		List<Airplane> airplaneList = null;
-		try{
-			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();
-			//TODO Erlaziñuak eta datubasia ondo pini hau in baiño lenau
-			return airplaneList;
-		}catch(Exception e){
-			e.printStackTrace();
-			return null;
-		}
+		//TODO loadPlanesOfAirline
+		return null;
 	}
 
-	
+	/**
+	 * 
+	 * Deletes the airline from the database
+	 * 
+	 * @param airline the airline to delete
+	 * @return true if the airline is deleted
+	 * @return false if an error occurs
+	 */
 	public static boolean deleteAirline(Airline airline){
 		try{
 			
@@ -64,6 +88,13 @@ public class DAOAirline {
 		}
 	}
 	
+	/**
+	 * 
+	 * This function loads all the airlines of the database
+	 * 
+	 * @return a list of all the airlines of the database
+	 * @return null if an error occurs during the load
+	 */
 	@SuppressWarnings("unchecked")
 	public static List<Airline> loadAllAirlines() {
 		List<Airline> airlineList = null;

@@ -27,7 +27,7 @@ public class LoginAction{
 		
 		loggedPassanger = DAOPassanger.loadPassanger(this.username, this.password);
 		loggedAirportController = DAOAirportController.loadAirportController(this.username, this.password);
-		loggedAirlineManager = DAOAirlineManager.loadAirportController(this.username, this.password);
+		loggedAirlineManager = DAOAirlineManager.loadAirLineManager(this.username, this.password);
 		
 		clearAllLoggedUsers();
 		

@@ -11,11 +11,30 @@ import configurations.ConnectHibernate;
 import domain.model.Flight;
 import domain.model.Passanger;
 
+
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * Class where are all the needed functions related with passanger, in order to work with the database
+ *  
+ */
 public class DAOPassanger {
 
 private static Session session;
 	
-	
+	/**
+	 * 
+	 * This function insert a passenger in the database
+	 * 
+	 * @param passanger the passenger to insert in the database
+	 * @return true if the insert is correct
+	 * @return false if and error occurs during the insert
+	 */
 	public static boolean insertPassanger(Passanger passanger){
 		try {
 			
@@ -34,7 +53,14 @@ private static Session session;
 		}
 	}
 
-	
+	/**
+	 * 
+	 * This function delete a passenger from the database
+	 * 
+	 * @param passanger the passenger to delete from the database
+	 * @return true if the delete is correct
+	 * @return false if and error occurs during the delete
+	 */
 	public static boolean deletePassanger(Passanger passanger){
 		try{
 			
@@ -51,7 +77,14 @@ private static Session session;
 		}
 	}
 	
-	
+	/**
+	 * 
+	 * This function load a specific passenger
+	 * 
+	 * @param username the username of the passenger
+	 * @param pass the password of the passenger
+	 * @return the passenger object if the passenger exists, else null
+	 */
 	@SuppressWarnings("unchecked")
 	public static Passanger loadPassanger(String username, String pass){
 		List<Passanger> passangerList = null;
@@ -78,7 +111,13 @@ private static Session session;
 		return p;
 	}
 
-
+	/**
+	 * 
+	 * This function loads al the fights of a specific passenger
+	 * 
+	 * @param id the id of the passenger
+	 * @return the list of flights if the passanger exists, else null
+	 */
 	@SuppressWarnings({ "unchecked" })
 	public static List<Flight> loadPassangerFlights(int id){
 		List<Flight> flightList = null;
@@ -94,6 +133,14 @@ private static Session session;
 		return flightList;
 	}
 	
+	/**
+	 * 
+	 * This function save the changes that have been done in a passenger
+	 * 
+	 * @param passanger Passenger to update
+	 * @return true if the update goes OK
+	 * @return false if an error occurs
+	 */
 	public static boolean updatePassanger(Passanger passanger){
 		try{
 			ConnectHibernate.before();			
