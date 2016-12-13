@@ -7,7 +7,17 @@ import com.opensymphony.xwork2.ActionContext;
 
 import domain.model.Passanger;
 
-
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * Class where are made all the processes and loads for charge the profile page.
+ *  
+ */
 public class MyProfileAction {
 	
 	//User data
@@ -24,13 +34,22 @@ public class MyProfileAction {
 	private String password;
 	private String repPassword;
 
-	
+	/**
+	 * 
+	 * This function load all the data of the user logger in session and save it in
+	 * the private parameters to auto complete the jsp file
+	 * 
+	 * @return the page where we want to go
+	 */
 	public String execute(){
 		loadLoggedPassangerAtributes();
 		return "myProfileAction";
 	}
 	
 	@SuppressWarnings("rawtypes")
+	/**
+	 * This function charge the session passenger in local parameters
+	 */
 	private void loadLoggedPassangerAtributes(){
 		Map session = ActionContext.getContext().getSession();	
 		

@@ -8,6 +8,17 @@ import com.opensymphony.xwork2.ActionContext;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * Class where are made all the processes and loads for finishing the update of the passenger.
+ *  
+ */
 public class MyProfileSaveChagesAction {
 	
 	private String name;
@@ -22,13 +33,24 @@ public class MyProfileSaveChagesAction {
 	private String password;
 	private String repPassword;
 	
+	/**
+	 * 
+	 * This function update the passenger in the database and redirect to the menu page
+	 * 
+	 * @return the page where we want to go
+	 */
 	public String execute(){
 		DAOPassanger.updatePassanger(createPassangerObject());
 		return "passanger";
 	}
 	
 	
-	
+	/**
+	 * 
+	 * This function get the data from the jsp and creates the passenger object
+	 * 
+	 * @return passenger the passenger with the changes made in the jsp file
+	 */
 	@SuppressWarnings("rawtypes")
 	private Passanger createPassangerObject(){
 		Passanger passanger=new Passanger();

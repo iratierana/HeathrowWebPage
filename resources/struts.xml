@@ -20,19 +20,7 @@
 		<action name="register" class="actions.register.RegisterAction">
 			<result name="login">/pages/login.jsp</result>			
 		</action>	
-		
-		<action name="bookFlight" class="actions.book.BookAction">
-			<result name="passanger">/pages/passenger.jsp</result>
-		</action>	
-		
-		<action name="myProfile" class="actions.myProfile.MyProfileAction">
-			<result name="myProfile">/pages/myProfile.jsp</result>
-		</action>
-		
-		<action name="changeProfile" class="actions.myProfile.ChangeProfileAction">
-			<result name="changeProfile">/pages/passenger.jsp</result>
-		</action>
-		
+					
 		<action name="bookAFlight" class="actions.passengerMenu.BookAFlightAction">
 			<result name="bookAFlight">/pages/bookFlight.jsp</result>
 		</action>
