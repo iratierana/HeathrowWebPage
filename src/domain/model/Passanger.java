@@ -18,6 +18,20 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Passanger {
+	
+	/**
+	 * 
+	 * @author Xabier Jauregi
+	 * @author Irati Eraña
+	 * @author Mikel Arizmendiarrieta 
+	 * @version 1.0
+	 * @since   2016-12-13
+	 * 
+	 * General Entity of Passanger class.
+	 * Is connected with hibernate to generate the table Passanger and the needed relationshihps.
+	 * Is needed in order to save and work with the data of a passanger
+	 * 
+	 */
 
 	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
 	private Integer passangerId;	

@@ -15,6 +15,20 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class AirportController {
 	
+	/**
+	 * 
+	 * @author Xabier Jauregi
+	 * @author Irati Eraña
+	 * @author Mikel Arizmendiarrieta 
+	 * @version 1.0
+	 * @since   2016-12-13
+	 * 
+	 * General Entity of Airport Controller class.
+	 * Is connected with hibernate to generate the table Airport Controller and the needed relationshihps.
+	 * Is used to save and work with the information of a the airport controller user.
+	 * 
+	 */
+	
 	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
 	private Integer airportControllerId;
 	
