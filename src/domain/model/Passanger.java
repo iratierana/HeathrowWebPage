@@ -7,6 +7,7 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,9 +16,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 public class Passanger {
@@ -70,7 +68,7 @@ public class Passanger {
 	private String password;
 
 	
-	@ManyToMany(mappedBy="passangerList")
+	@ManyToMany(mappedBy="passangerList",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	Collection<Flight> flightList = new ArrayList<Flight>();
 	
 	@OneToOne(cascade = CascadeType.ALL)

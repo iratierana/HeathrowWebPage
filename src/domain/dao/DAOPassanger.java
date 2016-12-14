@@ -1,5 +1,6 @@
 package domain.dao;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -179,22 +180,23 @@ private static Session session;
 	 * @return true if the insert is OK
 	 * @return false if an error occurs during the insert
 	 */
+	@SuppressWarnings("rawtypes")
 	public static boolean addFlightToLoggedPassenger(Flight flight){
 		try{
 			ConnectHibernate.before();			
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
 			
-//			Map sessio = ActionContext.getContext().getSession();				
-//			Passanger p = (Passanger) sessio.get("loggedPassanger");
-//			p.getFlightList().add(flight);
-//			
-//			String hql="UPDATE Passanger p"
-//					+ " SET p.flightList="+p.getFlightList()
-//					+ " WHERE p.passangerId="+p.getPassangerId();
-//			
-//			Query query = session.createQuery(hql);
-//			query.executeUpdate();
+			Map sessio = ActionContext.getContext().getSession();				
+			Passanger p = (Passanger) sessio.get("loggedPassanger");
+			
+			Collection<Flight> flightList = p.getFlightList();
+			if (flightList != null){ 
+				flightList.add(flight);
+			}
+			p.setFlightList(flightList);
+			
+			session.saveOrUpdate(p);
 			
 			session.getTransaction().commit();	
 		}catch (Exception e) {
