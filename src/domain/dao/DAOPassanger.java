@@ -1,11 +1,14 @@
 package domain.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
+
+import com.opensymphony.xwork2.ActionContext;
 
 import configurations.ConnectHibernate;
 import domain.model.Flight;
@@ -162,6 +165,39 @@ private static Session session;
 			query.executeUpdate();
 			session.getTransaction().commit();		
 		}catch(Exception e){			
+			e.printStackTrace();
+			return false;
+		}
+		ConnectHibernate.after();		
+		return true;
+	}
+	
+	/**
+	 * This function adds book a flight for a passenger and adds it to the flightList of passenger
+	 * @param passengerId The ID of the passenger
+	 * @param flight The flight to add
+	 * @return true if the insert is OK
+	 * @return false if an error occurs during the insert
+	 */
+	public static boolean addFlightToLoggedPassenger(Flight flight){
+		try{
+			ConnectHibernate.before();			
+			session = ConnectHibernate.getSession();
+			session.getTransaction().begin();
+			
+//			Map sessio = ActionContext.getContext().getSession();				
+//			Passanger p = (Passanger) sessio.get("loggedPassanger");
+//			p.getFlightList().add(flight);
+//			
+//			String hql="UPDATE Passanger p"
+//					+ " SET p.flightList="+p.getFlightList()
+//					+ " WHERE p.passangerId="+p.getPassangerId();
+//			
+//			Query query = session.createQuery(hql);
+//			query.executeUpdate();
+			
+			session.getTransaction().commit();	
+		}catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}

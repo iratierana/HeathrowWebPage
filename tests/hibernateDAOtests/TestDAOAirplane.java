@@ -25,7 +25,6 @@ public class TestDAOAirplane {
 		try {
 			d = sdf.parse("28/08/1996");
 			a.setAirplaneId(1);
-			a.setCnMsn("4A45S");
 			a.setCurrentRegistration("R");
 			a.setDeliberyDate(d);
 			a.setEngineModel("TurboBoost");
@@ -51,7 +50,6 @@ public class TestDAOAirplane {
 		boolean result;
 		
 		a.setAirplaneId(1);
-		a.setCnMsn("4A45S");
 		a.setCurrentRegistration("R");
 		a.setDeliberyDate(null);
 		a.setEngineModel("TurboBoost");
@@ -79,7 +77,6 @@ public class TestDAOAirplane {
 		try {
 			d = sdf.parse("28/08/1996");
 			a.setAirplaneId(1);
-			a.setCnMsn("4A45S");
 			a.setCurrentRegistration("R");
 			a.setDeliberyDate(d);
 			a.setEngineModel("TurboBoost");
@@ -120,7 +117,6 @@ public class TestDAOAirplane {
 		try {
 			d = sdf.parse("28/08/1996");
 			a.setAirplaneId(1);
-			a.setCnMsn("4A45S");
 			a.setCurrentRegistration("R");
 			a.setDeliberyDate(d);
 			a.setEngineModel("TurboBoost");

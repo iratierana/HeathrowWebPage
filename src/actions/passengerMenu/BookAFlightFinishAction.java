@@ -3,7 +3,10 @@ package actions.passengerMenu;
 import java.util.Date;
 import java.util.Random;
 
+import domain.dao.DAOFlight;
+import domain.dao.DAOPassanger;
 import domain.model.Airport;
+import domain.model.Flight;
 import domain.model.Passanger;
 
 /**
@@ -41,7 +44,9 @@ public class BookAFlightFinishAction {
 	Passanger passenger;
 	Airport controller;
 	
-	public String execute(){	
+	public String execute(){
+		Flight f = DAOFlight.checkIfFlightIsBookable(from, to, arrivalDay, departureDay);
+		DAOPassanger.addFlightToLoggedPassenger(f);
 		return "passenger";
 	}
 		

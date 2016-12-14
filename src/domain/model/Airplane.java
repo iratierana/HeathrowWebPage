@@ -40,10 +40,7 @@ public class Airplane {
 	
 	@NotNull
 	private String serialNumb;
-	
-	@NotNull
-	private String cnMsn;
-	
+		
 	@NotNull
 	private Integer lineNumber;
 	
@@ -123,14 +120,7 @@ public class Airplane {
 		this.serialNumb = serialNumb;
 	}
 
-	public String getCnMsn() {
-		return cnMsn;
-	}
-
-	public void setCnMsn(String cnMsn) {
-		this.cnMsn = cnMsn;
-	}
-
+	
 	public Integer getLineNumber() {
 		return lineNumber;
 	}
