@@ -70,7 +70,7 @@ public class Passanger {
 	@ManyToMany(mappedBy="passangerList")
 	Collection<Flight> flightList = new ArrayList<Flight>();
 	
-	@OneToOne(  cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	Direction direction;
 
 	

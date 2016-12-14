@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<s:form action="bookFlight" method="post" id="msform">
+	<s:form action="finishBookingAFlight" method="post" id="msform">
 	
 		<ul id="progressbar">
 			<li id="pb1" class="active">Select flight</li>

@@ -25,6 +25,10 @@
 			<result name="bookAFlight">/pages/bookFlight.jsp</result>
 		</action>
 		
+		<action name="finishBookingAFlight" class="actions.passengerMenu.BookAFlightFinishAction">
+			<result name="passenger">/pages/passenger.jsp</result>
+		</action>
+		
 		<action name="myFlights" class="actions.passengerMenu.MyFlightsAction">
 			<result name="myFlights">/pages/myFlights.jsp</result>
 		</action>

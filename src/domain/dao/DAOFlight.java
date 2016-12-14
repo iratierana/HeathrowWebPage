@@ -38,7 +38,7 @@ private static Session session;
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
-			session.persist(flight);
+			session.save(flight);
 			session.getTransaction().commit();
 			ConnectHibernate.after();
 			return true;

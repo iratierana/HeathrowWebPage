@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -53,14 +54,14 @@ public class Flight {
 	
 	
 	
-	@ManyToMany 
+	@ManyToMany (cascade = CascadeType.ALL)
 	@JoinTable(name="ControlFlight")
 	Collection<AirportController> cortrollerList=new ArrayList<AirportController>();
 	
-	@OneToOne
+	@OneToOne (cascade = CascadeType.ALL)
 	Airport departAirport;
 	
-	@OneToOne
+	@OneToOne (cascade = CascadeType.ALL)
 	Airport arriveAirport;
 	
 	@ManyToMany
