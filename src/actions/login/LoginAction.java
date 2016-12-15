@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
 
+import databaseListener.MyNotifyListener;
 import domain.dao.DAOAirlineManager;
 import domain.dao.DAOAirportController;
 import domain.dao.DAOPassanger;
@@ -60,6 +61,9 @@ public class LoginAction{
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", this.loggedAirportController);
 			session.put("loggedAirlineManager", null);
+			//Thear bat sortu eta listenerra aktibau airplane tablan
+			MyNotifyListener listener = new MyNotifyListener();
+			listener.start();
 			return "airportController";
 			
 		}else if(loggedAirlineManager != null){
