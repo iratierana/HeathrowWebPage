@@ -11,6 +11,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -68,7 +70,10 @@ public class Passanger {
 	private String password;
 
 	
-	@ManyToMany(mappedBy="passangerList",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinTable(name="booking", joinColumns={
+			@JoinColumn(name="passengerId", nullable=false, updatable=false)},
+			inverseJoinColumns={@JoinColumn(name="flightId", nullable=false, updatable=false)}) 
 	Collection<Flight> flightList = new ArrayList<Flight>();
 	
 	@OneToOne(cascade = CascadeType.ALL)

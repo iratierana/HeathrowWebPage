@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -64,8 +65,7 @@ public class Flight {
 	@OneToOne (cascade = CascadeType.ALL)
 	Airport arriveAirport;
 	
-	@ManyToMany
-	@JoinTable(name="Booking")
+	@ManyToMany(fetch=FetchType.EAGER, mappedBy="flightList")
 	Collection<Passanger> passangerList = new ArrayList<Passanger>();
 
 	

@@ -1,6 +1,5 @@
 package domain.dao;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -189,12 +188,8 @@ private static Session session;
 			
 			Map sessio = ActionContext.getContext().getSession();				
 			Passanger p = (Passanger) sessio.get("loggedPassanger");
-			
-			Collection<Flight> flightList = p.getFlightList();
-			if (flightList != null){ 
-				flightList.add(flight);
-			}
-			p.setFlightList(flightList);
+						
+			p.getFlightList().add(flight);
 			
 			session.saveOrUpdate(p);
 			
