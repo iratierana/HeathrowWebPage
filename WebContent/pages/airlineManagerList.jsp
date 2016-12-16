@@ -19,75 +19,24 @@
 <s:form action="airlineInformation">
 
 <div class="list-group" style="max-height:500px; overflow:auto;">
-	<s:iterator value="airplaneList" var="airplaneList">
-	<s:a href="#" class="list-group-item">
 	
-	    <span class="list-group-item-heading" style="font-size:30px; font-weight:bold;"<s:property value="name"/>></span><br>
-	    <span class="list-group-item-heading" style="font-size:25px;"<s:property value="serialNumb"/>></span>
-	    <span class="pull-right">
-		    <s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Edit</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
-	  	</span>
-	  	
-	 </s:a>
+	<s:iterator value="airplaneList" var="airplane">
+	
+		<s:a href="#" class="list-group-item">
+		
+		    <h2 class="list-group-item-heading" style="font-size:30px; font-weight:bold;"<s:property value="name"/>></h2><br>
+		    <span class="list-group-item-heading" style="font-size:25px;"<s:property value="serialNumb"/>></span>
+		    <span class="pull-right">
+			    <s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit>
+			    <s:submit type="button" class="btn btn-primary btn-lg">Edit</s:submit>
+			    <s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
+		  	</span>
+		  	
+		 </s:a>
+		 
 	 </s:iterator>
 
 	
-    <s:a href="#" class="list-group-item">
-	    <span class="list-group-item-heading" style="font-size:30px; font-weight:bold;">Airplane Name</span><br>
-	    <span class="list-group-item-heading" style="font-size:25px;">Airplane Serial</span>
-	    <span class="pull-right">
-		    <s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Edit</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
-	  	</span>
-	</s:a>
-   <s:a href="#" class="list-group-item">
-	    <span class="list-group-item-heading" style="font-size:30px; font-weight:bold;">Airplane Name</span><br>
-	    <span class="list-group-item-heading" style="font-size:25px;">Airplane Serial</span>
-	    <span class="pull-right">
-		    <s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Edit</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
-	  	</span>
-	</s:a>
-  	<s:a href="#" class="list-group-item">
-	    <span class="list-group-item-heading" style="font-size:30px; font-weight:bold;">Airplane Name</span><br>
-	    <span class="list-group-item-heading" style="font-size:25px;">Airplane Serial</span>
-	    <span class="pull-right">
-		    <s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Edit</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
-	  	</span>
-	</s:a>
- 	<s:a href="#" class="list-group-item">
-	    <span class="list-group-item-heading" style="font-size:30px; font-weight:bold;">Airplane Name</span><br>
-	    <span class="list-group-item-heading" style="font-size:25px;">Airplane Serial</span>
-	    <span class="pull-right">
-		    <s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Edit</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
-	  	</span>
-	</s:a>
-	<s:a href="#" class="list-group-item">
-	    <span class="list-group-item-heading" style="font-size:30px; font-weight:bold;">Airplane Name</span><br>
-	    <span class="list-group-item-heading" style="font-size:25px;">Airplane Serial</span>
-	    <span class="pull-right">
-		    <s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Edit</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
-	  	</span>
-	</s:a>
-	<s:a href="#" class="list-group-item">
-	    <span class="list-group-item-heading" style="font-size:30px; font-weight:bold;">Airplane Name</span><br>
-	    <span class="list-group-item-heading" style="font-size:25px;">Airplane Serial</span>
-	    <span class="pull-right">
-		    <s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Edit</s:submit>
-		    <s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
-	  	</span>
-	</s:a>
 </div>
 </s:form>
 </body>

@@ -99,13 +99,20 @@ private static Session session;
 		return airplaneList;
 	}
 	
+	
+	/**
+	 * Load all the plains that airline manager manage
+	 * @param id The id of the airline manager 
+	 * @return airplaneList if the load was OK
+	 * @return null if an error occurs
+	 */
 	public static List<Airplane> loadAirplanesOfAirline(int id) {
 		List<Airplane> airplaneList = null;
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			@SuppressWarnings("unchecked")
-			TypedQuery<Airplane> query = session.createQuery("select a.airplaneList from Airline as a where a.id="+id);
+			TypedQuery<Airplane> query = session.createQuery("from AirlineManager as am inner join am.airline.airplaneList where am.id="+id);
 			airplaneList = query.getResultList();
 		} catch (Exception e) {
 			e.printStackTrace();

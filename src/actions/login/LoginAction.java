@@ -75,11 +75,10 @@ public class LoginAction{
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", null);
 			session.put("loggedAirlineManager", this.loggedAirlineManager);
-			
-			AirlineManager am = (AirlineManager) session.get("loggedAirlineManager");
-			airplaneList = DAOAirplane.loadAirplanesOfAirline(am.getAirlineManagerId());
-			
-			return "airlineManager"; //TODO airlineManager.jsp faltada itxia
+						
+			airplaneList = DAOAirplane.loadAirplanesOfAirline(loggedAirlineManager.getAirlineManagerId());
+			System.out.println(airplaneList.size());
+			return "airlineManager"; 
 		}else{
 			return "error";
 		}
@@ -111,6 +110,16 @@ public class LoginAction{
 	
 	
 	
+	public List<Airplane> getAirplaneList() {
+		return airplaneList;
+	}
+
+
+	public void setAirplaneList(List<Airplane> airplaneList) {
+		this.airplaneList = airplaneList;
+	}
+
+
 	public String getUsername() {
 		return username;
 	}
