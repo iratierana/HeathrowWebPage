@@ -1,14 +1,17 @@
 package actions.login;
 
+import java.util.List; 
 import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
 
 import databaseListener.MyNotifyListener;
 import domain.dao.DAOAirlineManager;
+import domain.dao.DAOAirplane;
 import domain.dao.DAOAirportController;
 import domain.dao.DAOPassanger;
 import domain.model.AirlineManager;
+import domain.model.Airplane;
 import domain.model.AirportController;
 import domain.model.Passanger;
 
@@ -32,6 +35,8 @@ public class LoginAction{
 	private Passanger loggedPassanger=null;
 	private AirportController loggedAirportController=null;
 	private AirlineManager loggedAirlineManager=null;
+	
+	private List<Airplane> airplaneList = null;
 	
 	/**
 	 * 
@@ -70,6 +75,10 @@ public class LoginAction{
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", null);
 			session.put("loggedAirlineManager", this.loggedAirlineManager);
+			
+			AirlineManager am = (AirlineManager) session.get("loggedAirlineManager");
+			airplaneList = DAOAirplane.loadAirplanesOfAirline(am.getAirlineManagerId());
+			
 			return "airlineManager"; //TODO airlineManager.jsp faltada itxia
 		}else{
 			return "error";

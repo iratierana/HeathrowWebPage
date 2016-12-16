@@ -98,5 +98,22 @@ private static Session session;
 		
 		return airplaneList;
 	}
+	
+	public static List<Airplane> loadAirplanesOfAirline(int id) {
+		List<Airplane> airplaneList = null;
+		try {
+			ConnectHibernate.before();
+			session = ConnectHibernate.getSession();
+			@SuppressWarnings("unchecked")
+			TypedQuery<Airplane> query = session.createQuery("select a.airplaneList from Airline as a where a.id="+id);
+			airplaneList = query.getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		ConnectHibernate.after();
+
+		
+		return airplaneList;
+	}
 
 }
