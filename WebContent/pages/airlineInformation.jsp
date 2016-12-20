@@ -6,23 +6,58 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Airline Information</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<img src="img/plane.png"><br><br>
-	<s:textfield label="Serial Name" name="serial"></s:textfield><br>
-	<s:textfield label="Airline Name" name="airlineName"></s:textfield><br><br>
-	<table>
-		<tr>
-			<th>LON</th>
-			<th>BI</th>
-		</tr>
-		<tr>
-			<td>11:00</td>
-			<td>13:30</td>
-		</tr>
-	</table><br>
-	<s:textfield label="Number Of Flights" name="numberFlights"></s:textfield><br>
-	<s:textfield label="Number Of Ours" name="numberOurs"></s:textfield><br><br>
-	<s:text name="Description:"></s:text><br><s:textarea rows="6" cols="50"></s:textarea>
+
+	 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" style="margin-top:60px;">
+   
+   
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Airplane Information</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+                
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information table-hover">
+                    <tbody>
+                      <tr>
+                        <td>Airplane Name:</td>
+                        <td>My JUJU</td>
+                      </tr>
+                      <tr>
+                        <td>Serial Number:</td>
+                        <td>ACJ120</td>
+                      </tr>
+                      <tr>
+                        <td>Route</td>
+                        <td>LON - BI</td>
+                      </tr>
+                      <tr>
+                      	<td>Number Of Flights:</td>
+                      	<td>123</td>
+                      </tr>
+                      <tr>
+                        <td>Number Of Ours:</td>
+                        <td>1234</td>
+                      </tr>
+                      <tr>
+                        <td>Description:</td>
+                        <td><s:textarea rows="5" cols="30" name="numberOurs" class="form-control input-md"></s:textarea></td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
 </body>
 </html>

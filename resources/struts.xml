@@ -49,6 +49,9 @@
 			<result name="airlineInfo">pages/airlineInformation.jsp</result>
 		</action>
 		
+		<action name="airlineEdit" class="actions.airlineManager.AirlineInformationEditAction">
+			<result name="airlineEdit">/pages/airlineInformationEdit.jsp</result>
+		</action>
 		
 	</package>
 </struts>

@@ -109,7 +109,6 @@ public class LoginAction{
 	
 	
 	
-	
 	public List<Airplane> getAirplaneList() {
 		return airplaneList;
 	}
