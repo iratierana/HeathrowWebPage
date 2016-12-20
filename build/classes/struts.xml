@@ -53,5 +53,9 @@
 			<result name="airlineEdit">/pages/airlineInformationEdit.jsp</result>
 		</action>
 		
+		<action name="airplanesList" class="actions.airlineManager.AirlineInformationEditSaveAction">
+			<result name="airplanesList">/pages/airlineManagerList.jsp</result>
+		</action>
+		
 	</package>
 </struts>
