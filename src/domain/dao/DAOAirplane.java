@@ -2,7 +2,6 @@ package domain.dao;
 
 import java.util.List;
 
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.hibernate.SQLQuery;
@@ -10,7 +9,6 @@ import org.hibernate.Session;
 
 import configurations.ConnectHibernate;
 import domain.model.Airplane;
-import domain.model.Passanger;
 
 
 /**
@@ -155,25 +153,6 @@ private static Session session;
 		
 		ConnectHibernate.after();
 		return a;
-	}
-	
-	public static boolean updateAirplane(Airplane airplane){
-		Airplane auxAirplane = null;
-		try{
-			auxAirplane=DAOAirplane.loadAirplane(airplane.getAirplaneId());
-			ConnectHibernate.before();			
-			session = ConnectHibernate.getSession();
-			session.getTransaction().begin();
-			auxAirplane.setName(airplane.getName());
-			auxAirplane.setSerialNumb(airplane.getSerialNumb());
-			session.saveOrUpdate(auxAirplane);
-			session.getTransaction().commit();		
-		}catch(Exception e){			
-			e.printStackTrace();
-			return false;
-		}
-		ConnectHibernate.after();		
-		return true;
 	}
 
 }
