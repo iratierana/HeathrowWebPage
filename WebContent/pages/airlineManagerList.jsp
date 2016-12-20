@@ -20,16 +20,17 @@
 
 <div class="list-group" style="max-height:500px; overflow:auto;">
 	
-	<s:iterator value="airplaneList" var="Airplane">
-		izena:<s:property value="%{#Airplane.airplaneId}"/>
-		<s:a href="#" class="list-group-item">
-		    <span class="list-group-item-heading" style="font-size:30px; font-weight:bold;"><s:property value="#Airplane.name"/></span><br>
-		    <span class="list-group-item-heading" style="font-size:25px;"<s:property value="#Airplane.serialNumb"/>></span>
+	<s:iterator value="airplaneList" >
+		<s:a href="#" class="list-group-item">			
+		    <span class="list-group-item-heading" style="font-size:30px; font-weight:bold;"><s:property value="name"/></span><br>
+		    <span class="list-group-item-heading" style="font-size:25px;"><s:property value="serialNumb"/></span>
 		    <span class="button-group pull-right">
 		    	<s:form action="airlineInformation" style=" display:inline!important;">
+		    		<s:hidden  name="airplaneId"></s:hidden>
 			    	<s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit>
 			    </s:form>
 			    <s:form action="airlineEdit" style=" display:inline!important;">
+			    	<s:hidden  name="airplaneId"></s:hidden>
 			    	<s:submit type="button" class="btn btn-primary btn-lg" method="execute">Edit</s:submit>
 			    </s:form>
 			    <s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>

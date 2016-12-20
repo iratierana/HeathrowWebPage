@@ -28,29 +28,25 @@
                     <tbody>
                       <tr>
                         <td>Airplane Name:</td>
-                        <td>My JUJU</td>
+                        <td><s:textfield name="airplaneName" readonly="true"></s:textfield> </td>
                       </tr>
                       <tr>
                         <td>Serial Number:</td>
-                        <td>ACJ120</td>
+                        <td><s:textfield name="serialNumber" readonly="true"></s:textfield> </td>
                       </tr>
                       <tr>
                         <td>Route</td>
-                        <td>LON - BI</td>
+                        <td><s:textfield name="route" readonly="true"></s:textfield> </td>
                       </tr>
                       <tr>
                       	<td>Number Of Flights:</td>
-                      	<td>123</td>
+                      	<td><s:textfield name="numberOfFlights" readonly="true"></s:textfield> </td>
                       </tr>
                       <tr>
                         <td>Number Of Ours:</td>
-                        <td>1234</td>
+                       <td><s:textfield name="numberOfOurs" readonly="true"></s:textfield> </td>
                       </tr>
-                      <tr>
-                        <td>Description:</td>
-                        <td><s:textarea rows="5" cols="30" name="numberOurs" class="form-control input-md"></s:textarea></td>
-                      </tr>
-                     
+                                           
                     </tbody>
                   </table>
                 </div>

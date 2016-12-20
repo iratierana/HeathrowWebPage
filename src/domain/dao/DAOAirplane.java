@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 
 import configurations.ConnectHibernate;
@@ -106,14 +107,20 @@ private static Session session;
 	 * @return airplaneList if the load was OK
 	 * @return null if an error occurs
 	 */
+	@SuppressWarnings({ "rawtypes", "deprecation" })
 	public static List<Airplane> loadAirplanesOfAirline(int id) {
-		List<Airplane> airplaneList = null;
+//		List<Airplane> airplaneList = null;
+		List <Airplane> airplaneList = null;
+		String sql="SELECT airpl.*"
+				+ " FROM (airlinemanager man join airline air on man.airlinemanagerid=air.airlineid)join airplane airpl on airpl.airplaneid=air.airlineid"
+				+ " WHERE man.airlinemanagerid="+id;
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			@SuppressWarnings("unchecked")
-			TypedQuery<Airplane> query = session.createQuery("from AirlineManager as am inner join am.airline.airplaneList where am.id="+id);
-			airplaneList = query.getResultList();
+			
+			SQLQuery query = session.createSQLQuery(sql);
+			query.addEntity(Airplane.class);
+			airplaneList = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -121,6 +128,31 @@ private static Session session;
 
 		
 		return airplaneList;
+	}
+	
+	public static Airplane loadAirplane (int id){
+		List<Airplane> airplaneList = null;
+		Airplane a = new Airplane();
+		a = null;
+		try{
+			ConnectHibernate.before();
+			session = ConnectHibernate.getSession();
+			
+			TypedQuery<Airplane> query = session.createQuery("from Airplane where airplaneId="+id);
+			airplaneList = query.getResultList();
+			if(!airplaneList.isEmpty()){
+				a=airplaneList.get(0);
+			}
+			ConnectHibernate.after();
+			
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			ConnectHibernate.after();
+			return null;
+		}
+		
+		ConnectHibernate.after();
+		return a;
 	}
 
 }
