@@ -37,16 +37,13 @@ public class BookAFlightAction {
 	 * 
 	 * @return the page where we want to go
 	 */
-	public String execute() {
+	public String execute(){
 		fillDataWithSessionPassanger();
 		return "bookAFlight";
 	}
 
-	/**
-	 * Fills the global variables of this class.
-	 */
 	@SuppressWarnings("rawtypes")
-	public void fillDataWithSessionPassanger() {
+	public void fillDataWithSessionPassanger(){
 		Map session = ActionContext.getContext().getSession();	
 		Passanger p = (Passanger) session.get("loggedPassanger");
 		this.setName(p.getFirstName());
@@ -57,6 +54,7 @@ public class BookAFlightAction {
 		this.setHomeTlf(p.getHomeTlf());
 		this.setMovileTlf(p.getMovileTlf());
 		this.setEmail(p.getEmail());
+//		this.setCa(ca);
 	}
 	
 	

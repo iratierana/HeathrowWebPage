@@ -22,7 +22,7 @@ public class Runway {
 	 * 
 	 */
 	
-	@Id@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Id@GeneratedValue(strategy=GenerationType.SEQUENCE )
 	private Integer runwayId;
 	
 	@NotNull

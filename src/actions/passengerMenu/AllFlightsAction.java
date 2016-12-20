@@ -23,11 +23,11 @@ public class AllFlightsAction {
 	/**
 	 * 
 	 * This function loads all the flights in the database and after that 
-	 * redirect to another page to see all of them.
+	 * redirect to another page to see all of them
 	 * 
 	 * @return The page where we want to go
 	 */
-	public String execute() {
+	public String execute(){
 		flightList = DAOFlight.loadAllFlights();
 		return "allFlights";
 	}

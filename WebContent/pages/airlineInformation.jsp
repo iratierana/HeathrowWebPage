@@ -28,11 +28,11 @@
                     <tbody>
                       <tr>
                         <td>Airplane Name:</td>
-                        <td><s:textfield name="name" class="form-control input-md" disabled="true"></s:textfield></td>
+                        <td>My JUJU</td>
                       </tr>
                       <tr>
                         <td>Serial Number:</td>
-                        <td><s:textfield name="serialNumb" class="form-control input-md" disabled="true"></s:textfield></td>
+                        <td>ACJ120</td>
                       </tr>
                       <tr>
                         <td>Route</td>
@@ -40,11 +40,15 @@
                       </tr>
                       <tr>
                       	<td>Number Of Flights:</td>
-                      	<td><s:textfield name="numberOfFlights" class="form-control input-md" disabled="true"></s:textfield></td>
+                      	<td>123</td>
                       </tr>
                       <tr>
                         <td>Number Of Ours:</td>
-                        <td><s:textfield name="hoursOfFlight" class="form-control input-md" disabled="true"></s:textfield></td>
+                        <td>1234</td>
+                      </tr>
+                      <tr>
+                        <td>Description:</td>
+                        <td><s:textarea rows="5" cols="30" name="numberOurs" class="form-control input-md"></s:textarea></td>
                       </tr>
                      
                     </tbody>

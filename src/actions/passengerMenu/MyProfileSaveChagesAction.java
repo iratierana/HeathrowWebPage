@@ -16,8 +16,7 @@ import domain.model.Passanger;
  * @version 1.0
  * @since   2016-12-13
  * 
- * Class where are made all the processes and 
- * loads for finishing the update of the passenger.
+ * Class where are made all the processes and loads for finishing the update of the passenger.
  *  
  */
 public class MyProfileSaveChagesAction {
@@ -36,12 +35,11 @@ public class MyProfileSaveChagesAction {
 	
 	/**
 	 * 
-	 * This function update the passenger in the 
-	 * database and redirect to the menu page.
+	 * This function update the passenger in the database and redirect to the menu page
 	 * 
 	 * @return the page where we want to go
 	 */
-	public String execute() {
+	public String execute(){
 		DAOPassanger.updatePassanger(createPassangerObject());
 		return "passanger";
 	}
@@ -49,13 +47,13 @@ public class MyProfileSaveChagesAction {
 	
 	/**
 	 * 
-	 * This function get the data from the jsp and creates the passenger object.
+	 * This function get the data from the jsp and creates the passenger object
 	 * 
 	 * @return passenger the passenger with the changes made in the jsp file
 	 */
 	@SuppressWarnings("rawtypes")
-	private Passanger createPassangerObject() {
-		Passanger passanger = new Passanger();
+	private Passanger createPassangerObject(){
+		Passanger passanger=new Passanger();
 		
 		Map session = ActionContext.getContext().getSession();	
 		Passanger auxPass = (Passanger) session.get("loggedPassanger");

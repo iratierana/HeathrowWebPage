@@ -12,26 +12,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
-/**
- * 
- * @author Xabier Jauregi
- * @author Irati Eraña
- * @author Mikel Arizmendiarrieta 
- * @version 1.0
- * @since   2016-12-13
- * 
- * General Entity of Airline class.
- * Is connected with hibernate to generate the table Airline 
- * and the needed relationshihps.
- * Is used to save and work with the information of a Airline.
- * 
- */
+
 @Entity
 public class Airline {
 	
-
+	/**
+	 * 
+	 * @author Xabier Jauregi
+	 * @author Irati Eraña
+	 * @author Mikel Arizmendiarrieta 
+	 * @version 1.0
+	 * @since   2016-12-13
+	 * 
+	 * General Entity of Airline class.
+	 * Is connected with hibernate to generate the table Airline and the needed relationshihps.
+	 * Is used to save and work with the information of a Airline.
+	 * 
+	 */
 	
-	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE  )
 	private Integer airlineId;
 	
 	@NotNull
@@ -40,8 +39,8 @@ public class Airline {
 	private String description;
 
 	@OneToMany
-	@JoinColumn(name = "AIRLINE_ID", nullable = false)
-	private Collection<Airplane> airplaneList = new ArrayList<Airplane>();
+	@JoinColumn(name="AIRLINE_ID", nullable=false)
+	Collection<Airplane> airplaneList = new ArrayList<Airplane>();
 	
 	
 	

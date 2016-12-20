@@ -8,7 +8,6 @@ import org.hibernate.Session;
 
 import configurations.ConnectHibernate;
 import domain.model.Airplane;
-import domain.model.Passanger;
 
 
 /**
@@ -122,38 +121,6 @@ private static Session session;
 
 		
 		return airplaneList;
-	}
-	
-	/**
-	 * Load all a specific airplane that airline manager manage
-	 * @param id The id of the airplane 
-	 * @return airplane if the load was OK
-	 * @return null if an error occurs
-	 */
-	@SuppressWarnings("unchecked")
-	public static Airplane loadAirplane(int id) {
-		List<Airplane> airplaneList = null;
-		Airplane a = new Airplane();
-		a = null;
-		try{
-			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();
-			
-			TypedQuery<Airplane> query = session.createQuery("from Airplane where airplaneId =" + id);
-			airplaneList = query.getResultList();
-			if(!airplaneList.isEmpty()){
-				a=airplaneList.get(0);
-			}
-			ConnectHibernate.after();
-			
-		}catch (Exception e) {
-			session.getTransaction().rollback();
-			ConnectHibernate.after();
-			return null;
-		}
-		
-		ConnectHibernate.after();
-		return a;
 	}
 
 }
