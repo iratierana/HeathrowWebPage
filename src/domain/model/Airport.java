@@ -11,24 +11,26 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * General Entity of Airport class.
+ * Is connected with hibernate to
+ * generate the table Airport and the needed relationshihps.
+ * Is used to save and work with the information of a airport.
+ * 
+ */
 @Entity
 public class Airport {
 	
-	/**
-	 * 
-	 * @author Xabier Jauregi
-	 * @author Irati Eraña
-	 * @author Mikel Arizmendiarrieta 
-	 * @version 1.0
-	 * @since   2016-12-13
-	 * 
-	 * General Entity of Airport class.
-	 * Is connected with hibernate to generate the table Airport and the needed relationshihps.
-	 * Is used to save and work with the information of a airport.
-	 * 
-	 */
 
-	@Id@GeneratedValue(strategy=GenerationType.SEQUENCE )
+
+	@Id@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer airportId;
 	
 	@NotNull
@@ -36,8 +38,8 @@ public class Airport {
 	
 	
 	@OneToMany
-	@JoinColumn(name="AIRPORT_ID", nullable=false)
-	Collection<Runway> runwayList =  new ArrayList<Runway>();
+	@JoinColumn(name = "AIRPORT_ID", nullable = false)
+	private Collection<Runway> runwayList =  new ArrayList<Runway>();
 
 
 	public Integer getAirportId() {

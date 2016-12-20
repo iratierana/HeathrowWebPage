@@ -41,23 +41,23 @@ public class RegisterAction {
 	
 	/**
 	 * 
-	 * This function insert a new passenger and direction and link both of them 
+	 * This function insert a new passenger and direction and link both of them.
 	 * 
 	 * @return the page where we want to go
 	 */
-	public String execute(){	
+	public String execute() {	
 		DAOPassanger.insertPassanger(createPassangerObject());		
 		return "login";
 	}
 
 	/**
 	 * 
-	 * This function creates the passenger object with the data of the jsp
+	 * This function creates the passenger object with the data of the jsp.
 	 * 
 	 * @return passenger The passenger created in the jsp
 	 */
-	private Passanger createPassangerObject(){
-		Passanger passanger=new Passanger();
+	private Passanger createPassangerObject() {
+		Passanger passanger = new Passanger();
 		
 		passanger.setFirstName(this.name);
 		passanger.setLastName1(this.firstName);
@@ -76,11 +76,11 @@ public class RegisterAction {
 	
 	/**
 	 * 
-	 * This function creates the direction with the data in the register.jsp
+	 * This function creates the direction with the data in the register.jsp.
 	 * 
 	 * @return direction The direction with the data of the register.jsp
 	 */
-	private Direction createDirectionObject(){
+	private Direction createDirectionObject() {
 		Direction direction = new Direction();
 		
 		direction.setAddress(this.address);

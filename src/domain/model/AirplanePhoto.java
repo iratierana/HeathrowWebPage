@@ -8,24 +8,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * General Entity of photo class.
+ * Is connected with hibernate to generate the
+ * table airplanephoto and the needed relationshihps.
+ * Is used to save the photos of the airplanes.
+ * 
+ */
 @Entity
 public class AirplanePhoto {
 	
-	/**
-	 * 
-	 * @author Xabier Jauregi
-	 * @author Irati Eraña
-	 * @author Mikel Arizmendiarrieta 
-	 * @version 1.0
-	 * @since   2016-12-13
-	 * 
-	 * General Entity of photo class.
-	 * Is connected with hibernate to generate the table airplanephoto and the needed relationshihps.
-	 * Is used to save the photos of the airplanes.
-	 * 
-	 */
+
 	
-	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer photoId;
 	
 	@NotNull

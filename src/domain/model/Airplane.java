@@ -14,25 +14,26 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
-
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * General Entity of Airplane class.
+ * Is connected with hibernate to generate
+ *  the table Airplane and the needed relationshihps.
+ * Is used to save and work with the information of a airplane.
+ * 
+ */
 @Entity
 public class Airplane {
 	
-	/**
-	 * 
-	 * @author Xabier Jauregi
-	 * @author Irati Eraña
-	 * @author Mikel Arizmendiarrieta 
-	 * @version 1.0
-	 * @since   2016-12-13
-	 * 
-	 * General Entity of Airplane class.
-	 * Is connected with hibernate to generate the table Airplane and the needed relationshihps.
-	 * Is used to save and work with the information of a airplane.
-	 * 
-	 */
+
 	
-	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer airplaneId;
 	
 	@NotNull

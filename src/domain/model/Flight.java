@@ -14,25 +14,26 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
-
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * General Entity of Flight class.
+ * Is connected with hibernate to generate the 
+ * table Flight and the needed relationshihps.
+ * Is used to save and work with the information of a flight.
+ * 
+ */
 @Entity
 public class Flight {
 	
-	/**
-	 * 
-	 * @author Xabier Jauregi
-	 * @author Irati Eraña
-	 * @author Mikel Arizmendiarrieta 
-	 * @version 1.0
-	 * @since   2016-12-13
-	 * 
-	 * General Entity of Flight class.
-	 * Is connected with hibernate to generate the table Flight and the needed relationshihps.
-	 * Is used to save and work with the information of a flight.
-	 * 
-	 */
+
 	
-	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer flightId;
 	
 	@NotNull

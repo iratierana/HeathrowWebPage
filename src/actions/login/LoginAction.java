@@ -36,6 +36,7 @@ public class LoginAction{
 	private AirportController loggedAirportController=null;
 	private AirlineManager loggedAirlineManager=null;
 	
+
 	private List<Airplane> airplaneList = null;
 	
 	/**
@@ -62,7 +63,7 @@ public class LoginAction{
 			 session.put("loggedAirlineManager", null);
 			 return "passenger";
 			
-		} else if(loggedAirportController != null){
+		} else if (loggedAirportController != null) {
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", this.loggedAirportController);
 			session.put("loggedAirlineManager", null);
@@ -71,22 +72,21 @@ public class LoginAction{
 			listener.start();
 			return "airportController";
 			
-		}else if(loggedAirlineManager != null){
+		} else if (loggedAirlineManager != null) {
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", null);
 			session.put("loggedAirlineManager", this.loggedAirlineManager);
 						
 			airplaneList = DAOAirplane.loadAirplanesOfAirline(loggedAirlineManager.getAirlineManagerId());
-			System.out.println(airplaneList.size());
 			return "airlineManager"; 
-		}else{
+		} else {
 			return "error";
 		}
 	}
 	
 	
 	/**
-	 * This function clears the user that was previously loaded in the session
+	 * This function clears the user that was previously loaded in the session.
 	 */
 	@SuppressWarnings("rawtypes")
 	private void clearAllLoggedUsers() {
@@ -99,14 +99,14 @@ public class LoginAction{
 
 	/**
 	 * 
-	 * This function redirects the flow to the register page, when the register button in clicked.
+	 * This function redirects the flow to the register page, 
+	 * when the register button in clicked.
 	 * 
 	 * @return the name of the page we want to go
 	 */
-	public String register(){
+	public String register() {
 		return "register";
 	}	
-	
 	
 	
 	public List<Airplane> getAirplaneList() {

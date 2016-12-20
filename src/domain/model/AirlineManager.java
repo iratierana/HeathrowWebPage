@@ -8,24 +8,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
-
+/**
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * General Entity of Airline Manager class.
+ * Is connected with hibernate to generate the table 
+ * Airline Manager and the needed relationshihps.
+ * Is used to save and work with the information of the user Airline Manager.
+ * 
+ */
 @Entity
 public class AirlineManager {
 	
-	/**
-	 * @author Xabier Jauregi
-	 * @author Irati Eraña
-	 * @author Mikel Arizmendiarrieta 
-	 * @version 1.0
-	 * @since   2016-12-13
-	 * 
-	 * General Entity of Airline Manager class.
-	 * Is connected with hibernate to generate the table Airline Manager and the needed relationshihps.
-	 * Is used to save and work with the information of the user Airline Manager.
-	 * 
-	 */
+
 	
-	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer airlineManagerId;
 	
 	@NotNull
