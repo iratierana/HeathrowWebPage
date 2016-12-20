@@ -18,25 +18,26 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * General Entity of Passanger class.
+ * Is connected with hibernate to generate the 
+ * table Passanger and the needed relationshihps.
+ * Is needed in order to save and work with the data of a passanger
+ * 
+ */
 @Entity
 public class Passanger {
 	
-	/**
-	 * 
-	 * @author Xabier Jauregi
-	 * @author Irati Eraña
-	 * @author Mikel Arizmendiarrieta 
-	 * @version 1.0
-	 * @since   2016-12-13
-	 * 
-	 * General Entity of Passanger class.
-	 * Is connected with hibernate to generate the table Passanger and the needed relationshihps.
-	 * Is needed in order to save and work with the data of a passanger
-	 * 
-	 */
 
-	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
+
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer passangerId;	
 	 	
 	@NotNull
@@ -70,14 +71,14 @@ public class Passanger {
 	private String password;
 
 	
-	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinTable(name="booking", joinColumns={
-			@JoinColumn(name="passengerId", nullable=false, updatable=false)},
-			inverseJoinColumns={@JoinColumn(name="flightId", nullable=false, updatable=false)}) 
-	Collection<Flight> flightList = new ArrayList<Flight>();
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "booking", joinColumns = {
+			@JoinColumn(name = "passengerId", nullable = false, updatable = false)},
+			inverseJoinColumns = {@JoinColumn(name = "flightId", nullable = false, updatable = false)}) 
+	private Collection<Flight> flightList = new ArrayList<Flight>();
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	Direction direction;
+	private Direction direction;
 
 	
 	

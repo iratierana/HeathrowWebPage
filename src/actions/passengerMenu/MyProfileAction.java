@@ -36,7 +36,8 @@ public class MyProfileAction {
 
 	/**
 	 * 
-	 * This function load all the data of the user logger in session and save it in
+	 * This function load all the data of the 
+	 * user logger in session and save it in.
 	 * the private parameters to auto complete the jsp file
 	 * 
 	 * @return the page where we want to go

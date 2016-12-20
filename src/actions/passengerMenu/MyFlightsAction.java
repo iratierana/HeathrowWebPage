@@ -17,18 +17,20 @@ import domain.model.Passanger;
  * @version 1.0
  * @since   2016-12-13
  * 
- * Class where are made all the processes and loads for loading the user flights.
+ * Class where are made all the processes
+ *  and loads for loading the user flights.
  *  
  */
 public class MyFlightsAction {
 	
 	private List<Flight> myFlightList = null;
 	@SuppressWarnings("rawtypes")
-	Map session = ActionContext.getContext().getSession();	
+	private Map session = ActionContext.getContext().getSession();	
 	
 	/**
 	 * 
-	 * This function loads all the fights of the user in session and save it in the myFlightList
+	 * This function loads all the fights of the 
+	 * user in session and save it in the myFlightList.
 	 * to access from the jsp file
 	 * 
 	 * @return the page wehere we want to go

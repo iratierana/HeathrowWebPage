@@ -44,15 +44,28 @@ public class BookAFlightFinishAction {
 	Passanger passenger;
 	Airport controller;
 	
-	public String execute(){
+	/**
+	 * 
+	 * Redirects the flow to the page where we want to go.
+	 * Checks if the selected fight exists.
+	 * Adds the selected flight to the logged passenger
+	 * 
+	 * @return The page where we want to go.
+	 */
+	public String execute() {
 		Flight f = DAOFlight.checkIfFlightIsBookable(from, to, arrivalDay, departureDay);
 		DAOPassanger.addFlightToLoggedPassenger(f);
 		return "passenger";
 	}
 		
 	
-	
-	public int randInt(int min, int max) {
+	/**
+	 * Gerarates a random number.
+	 * @param min The maximun value of the random number.
+	 * @param max The minimun value of the random number.
+	 * @return The generated rndom number
+	 */
+	public int randInt(final int min, final int max) {
 
 	    
 	    Random rand = new Random();

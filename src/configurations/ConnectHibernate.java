@@ -13,7 +13,8 @@ import org.hibernate.cfg.Configuration;
  * @version 1.0
  * @since   2016-12-13
  * 
- * Class where are all the needed functions related with the connection with the database.
+ * Class where are all the needed functions 
+ * related with the connection with the database.
  *  
  */
 public class ConnectHibernate {
@@ -23,20 +24,21 @@ public class ConnectHibernate {
 	private final static String CONFIG_FILE = "configurations/hibernate.cfg.xml";
 	
 	/**
-	 * This function create or opens the remote connection(session) with the database, loading the configuration file
+	 * This function create or opens the remote 
+	 * connection(session) with the database, loading the configuration file.
 	 */
-	public static void before(){
+	public static void before() {
 		
 		sessionFactory  = new Configuration().
 				configure(CONFIG_FILE).buildSessionFactory();
-		session= sessionFactory.openSession();
+		session = sessionFactory.openSession();
 		
 	}
 	
 	/**
-	 * This function close or kills the connection(session) with the database
+	 * This function close or kills the connection(session) with the database.
 	 */
-	public static void after(){
+	public static void after() {
 		
 		session.close();
 		sessionFactory.close();

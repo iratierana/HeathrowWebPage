@@ -1,5 +1,4 @@
 package actions.airlineManager;
-
 /**
  * 
  * @author Xabier Jauregi
@@ -15,11 +14,11 @@ public class AirlineInformationAction {
 
 	/**
 	 * 
-	 * This function redirect the content flow to another page
+	 * This function redirect the content flow to another page.
 	 * 
 	 * @return airlineInfo the page(jsp) where we want to redirect
 	 */
-	public String execute(){
+	public String execute() { 
 		return "airlineInfo";
 	}
 }

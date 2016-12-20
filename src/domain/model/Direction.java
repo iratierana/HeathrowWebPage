@@ -7,25 +7,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-
+/**
+ * 
+ * @author Xabier Jauregi
+ * @author Irati Eraña
+ * @author Mikel Arizmendiarrieta 
+ * @version 1.0
+ * @since   2016-12-13
+ * 
+ * General Entity of Direction class.
+ * Is connected with hibernate to generate the table 
+ * Direction and the needed relationshihps.
+ * Is used to save and work with the direction 
+ * os all the users in the database.
+ * 
+ */
 @Entity
 public class Direction {
 	
-	/**
-	 * 
-	 * @author Xabier Jauregi
-	 * @author Irati Eraña
-	 * @author Mikel Arizmendiarrieta 
-	 * @version 1.0
-	 * @since   2016-12-13
-	 * 
-	 * General Entity of Direction class.
-	 * Is connected with hibernate to generate the table Direction and the needed relationshihps.
-	 * Is used to save and work with the direction os all the users in the database.
-	 * 
-	 */
+
 	
-	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer directionId;
 	
 	@NotNull
