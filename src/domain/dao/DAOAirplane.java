@@ -2,7 +2,6 @@ package domain.dao;
 
 import java.util.List;
 
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.hibernate.SQLQuery;
@@ -10,7 +9,6 @@ import org.hibernate.Session;
 
 import configurations.ConnectHibernate;
 import domain.model.Airplane;
-import domain.model.Passanger;
 
 
 /**
@@ -24,6 +22,7 @@ import domain.model.Passanger;
  * Class where are all the needed functions related with Airplane, in order to work with the database
  *  
  */
+@SuppressWarnings("deprecation")
 public class DAOAirplane {
 	
 private static Session session;
@@ -109,7 +108,7 @@ private static Session session;
 	 * @return airplaneList if the load was OK
 	 * @return null if an error occurs
 	 */
-	@SuppressWarnings({ "rawtypes", "deprecation" })
+	@SuppressWarnings({ "rawtypes",  "unchecked" })
 	public static List<Airplane> loadAirplanesOfAirline(int id) {
 //		List<Airplane> airplaneList = null;
 		List <Airplane> airplaneList = null;
@@ -140,6 +139,7 @@ private static Session session;
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			
+			@SuppressWarnings("unchecked")
 			TypedQuery<Airplane> query = session.createQuery("from Airplane where airplaneId="+id);
 			airplaneList = query.getResultList();
 			if(!airplaneList.isEmpty()){

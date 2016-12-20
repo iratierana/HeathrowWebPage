@@ -1,6 +1,12 @@
 package actions.airlineManager;
 
+import java.util.List;
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
+
 import domain.dao.DAOAirplane;
+import domain.model.AirlineManager;
 import domain.model.Airplane;
 
 public class AirlineInformationEditSaveAction {
@@ -9,11 +15,16 @@ public class AirlineInformationEditSaveAction {
 	private String airplaneName;
 	private String serialNumber;
 	
+	private List<Airplane> airplaneList = null;
+	
 	private Airplane airplane = new Airplane();
 	
+	@SuppressWarnings("rawtypes")
 	public String execute(){
+		Map session = ActionContext.getContext().getSession();
+		AirlineManager aM = (AirlineManager) session.get("loggedAirlineManager");
 		DAOAirplane.updateAirplane(createAirplane());
-		//lista kargau
+		airplaneList = DAOAirplane.loadAirplanesOfAirline(aM.getAirlineManagerId());
 		return "airplanesList";
 	}
 
@@ -56,6 +67,14 @@ public class AirlineInformationEditSaveAction {
 
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
+	}
+
+	public List<Airplane> getAirplaneList() {
+		return airplaneList;
+	}
+
+	public void setAirplaneList(List<Airplane> airplaneList) {
+		this.airplaneList = airplaneList;
 	}
 	
 	

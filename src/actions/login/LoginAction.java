@@ -77,7 +77,6 @@ public class LoginAction{
 			session.put("loggedAirlineManager", this.loggedAirlineManager);
 						
 			airplaneList = DAOAirplane.loadAirplanesOfAirline(loggedAirlineManager.getAirlineManagerId());
-			System.out.println(airplaneList.size());
 			return "airlineManager"; 
 		}else{
 			return "error";
