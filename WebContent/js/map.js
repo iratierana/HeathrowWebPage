@@ -2,6 +2,8 @@ function initMap() {
 	
   var marker1 = {lat: 51.470791, lng: -0.481360};
   var marker2 = {lat: 51.471218, lng: -0.476253};
+  var marker3 = {lat: 51.471111, lng: -0.462992};
+  var marker4 = {lat: 51.471245, lng: -0.443079};
   
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
@@ -9,22 +11,40 @@ function initMap() {
     mapTypeId: google.maps.MapTypeId.SATELLITE
   });
   
-  var markerTerminal1 = new google.maps.Marker({
+ var markerTerminal4 = new google.maps.Marker({
 	  position: marker1,
 	  map: map,
 	  draggable: true,
 	  animation: google.maps.Animation.DROP,
-	  icon: "img/red-dot.png",
-	  title: 'Terminal nº1'
+	  icon: "../img/terminal.png",
+	  title: 'Terminal nº4'
   });
   
-  var markerTerminal2 = new google.maps.Marker({
+  var markerTerminal3 = new google.maps.Marker({
 	  position: marker2,
 	  map: map,
 	  draggable: true,
 	  animation: google.maps.Animation.DROP,
-	  icon: "img/red-dot.png",
-	  title: 'Terminal nº2'
+	  icon: "../img/terminal.png",
+	  title: 'Terminal nº3'
+  });
+  
+  var markerTerminal2 = new google.maps.Marker({
+	  position: marker3,
+	  map: map,
+	  draggable: true,
+	  animation: google.maps.Animation.DROP,
+	  icon: "../img/terminal.png",
+	  title: 'Terminal nº3'
+  });
+  
+  var markerTerminal1 = new google.maps.Marker({
+	  position: marker4,
+	  map: map,
+	  draggable: true,
+	  animation: google.maps.Animation.DROP,
+	  icon: "../img/terminal.png",
+	  title: 'Terminal nº3'
   });
 
   var flightPlanCoordinates = [
@@ -98,19 +118,56 @@ function initMap() {
 	    strokeWeight: 2
   });
   
-  var rectangle = new google.maps.Rectangle({
-	    strokeColor: '#FF0000',
-	    strokeOpacity: 0.8,
-	    strokeWeight: 2,
-	    fillColor: '#FF0000',
-	    fillOpacity: 0.35,
-	    map: map,
-	    bounds: {
-	      north: 51.470791,
-	      south: 51.470911,
-	      east: -0.481340,
-	      west: -0.481360
-	    }
+  var bounds_terminal4 = {
+		north: 51.474159,
+		south: 51.468090,
+		east: -0.479257,
+	    west: -0.483034
+  };
+  
+  var bounds_terminal3 = {
+		north: 51.474292,
+		south: 51.468090,
+		east: -0.474279,
+		west: -0.477970
+  };
+  
+  var bounds_terminal2 = {
+		north: 51.474693,
+		south: 51.468224,
+		east: -0.458915,
+		west: -0.466726
+  };
+  
+  var bounds_terminal1 = {
+		north: 51.474479,
+		south: 51.468037,
+		east: -0.441020,
+		west: -0.445311
+  };
+  
+  var rectangle_terminal4 = new google.maps.Rectangle({
+	   bounds: bounds_terminal4,
+	   editable:false,
+	   draggable:false
+	  });
+  
+  var rectangle_terminal3 = new google.maps.Rectangle({
+	   bounds: bounds_terminal3,
+	   editable:false,
+	   draggable:false
+	  });
+  
+  var rectangle_terminal2 = new google.maps.Rectangle({
+	   bounds: bounds_terminal2,
+	   editable:false,
+	   draggable:false
+	  });
+ 
+  var rectangle_terminal1 = new google.maps.Rectangle({
+	   bounds: bounds_terminal1,
+	   editable:false,
+	   draggable:false
 	  });
   
   /*var poligon = new google.maps.Polygon({
@@ -126,4 +183,8 @@ function initMap() {
  flightPath.setMap(map);
  flightPath2.setMap(map);
  //poligon.setMap(map);
+ rectangle_terminal4.setMap(map);
+ rectangle_terminal3.setMap(map);
+ rectangle_terminal2.setMap(map);
+ rectangle_terminal1.setMap(map);
 }
