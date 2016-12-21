@@ -115,7 +115,7 @@ private static Session session;
 //		List<Airplane> airplaneList = null;
 		List <Airplane> airplaneList = null;
 		String sql="SELECT airpl.*"
-				+ " FROM (airlinemanager man join airline air on man.airlinemanagerid=air.airlineid)join airplane airpl on airpl.airplaneid=air.airlineid"
+				+ " FROM (airlinemanager man join airline air on man.airline_airlineid=air.airlineid)join airplane airpl on airpl.airline_id=air.airlineid"
 				+ " WHERE man.airlinemanagerid="+id;
 		try {
 			ConnectHibernate.before();
