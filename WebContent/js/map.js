@@ -16,7 +16,7 @@ function initMap() {
 	  map: map,
 	  draggable: true,
 	  animation: google.maps.Animation.DROP,
-	  icon: "../img/terminal.png",
+	  icon: "../img/cuatro.png",
 	  title: 'Terminal nº4'
   });
   
@@ -25,7 +25,7 @@ function initMap() {
 	  map: map,
 	  draggable: true,
 	  animation: google.maps.Animation.DROP,
-	  icon: "../img/terminal.png",
+	  icon: "../img/tres.png",
 	  title: 'Terminal nº3'
   });
   
@@ -34,7 +34,7 @@ function initMap() {
 	  map: map,
 	  draggable: true,
 	  animation: google.maps.Animation.DROP,
-	  icon: "../img/terminal.png",
+	  icon: "../img/dos.png",
 	  title: 'Terminal nº3'
   });
   
@@ -43,7 +43,7 @@ function initMap() {
 	  map: map,
 	  draggable: true,
 	  animation: google.maps.Animation.DROP,
-	  icon: "../img/terminal.png",
+	  icon: "../img/uno.png",
 	  title: 'Terminal nº3'
   });
 
