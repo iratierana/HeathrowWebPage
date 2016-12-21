@@ -22,7 +22,7 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAMiAAAAJGVlYTU5Y2YyLWQwMzYtNDlmZS04MDdlLWI0ZjJjZWRhYjk4ZQ.jpg" class="img-circle img-responsive"> </div>
                 
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information table-hover">
@@ -50,7 +50,7 @@
                                            
                     </tbody>
                   </table>
-                  	<s:submit class="pull-right" label="Save Changes" method="execute"></s:submit>
+                  	<s:submit type="button" class="btn icon-btn btn-success btn-md glyphicon btn-glyphicon glyphicon-floppy-disk img-circle text-success pull-right" method="execute">Save Changes</s:submit>
                 </div>
               </div>
             </div>

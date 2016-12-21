@@ -90,7 +90,7 @@
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="singlebutton"></label>
 					<div class="col-md-4">
-						<s:submit  method="execute" value="Save Changes" class="btn btn-primary"></s:submit>						
+						<s:submit type="button" class="btn icon-btn btn-success btn-md glyphicon btn-glyphicon glyphicon-floppy-disk img-circle text-success pull-right" method="execute">Save Changes</s:submit>
 					</div>
 				</div>
 
