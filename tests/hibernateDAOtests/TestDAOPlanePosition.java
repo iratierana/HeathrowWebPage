@@ -22,9 +22,9 @@ public class TestDAOPlanePosition {
 		Date d;
 		try {
 			d = sdf.parse("28/08/1996");
-			pP.setHour(d);
+//			pP.setHour(d);
 			pP.setPlanePositionId(1);
-			pP.setPosition(2);
+//			pP.setPosition(2);
 			
 			result = DAOPlanePosition.insertPlanePosition(pP);
 					
@@ -40,9 +40,9 @@ public class TestDAOPlanePosition {
 		boolean result;
 		PlanePosition pP = new  PlanePosition();
 		
-		pP.setHour(null);
+//		pP.setHour(null);
 		pP.setPlanePositionId(1);
-		pP.setPosition(2);
+//		pP.setPosition(2);
 			
 		result = DAOPlanePosition.insertPlanePosition(pP);
 					
