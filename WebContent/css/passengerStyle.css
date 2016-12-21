@@ -43,7 +43,7 @@ nav li div {
 	        transition: background 0.5s ease;
 }
 
-img, h1{
+p, h1{
 	display: none;
 }
 
@@ -71,20 +71,13 @@ nav li:last-child div {
 		font: 400 12px/1.4 'Cutive', Helvetica, Verdana, Arial, sans-serif;
 		padding: 12px;
 		margin-top: 2px;
-	}
-	
-	h1{
 		display: block;
-		text-align: center;
-		
 	}
 	
-	img{
-		height:calc(60%);
-		width: auto;
-		display: inline;
-		margin-top: 10%;
-	}
+	.fa-user {
+      font-size: 4em;
+    }
+
 	
 	nav li:nth-child(even) div {
 		border-right: none;
