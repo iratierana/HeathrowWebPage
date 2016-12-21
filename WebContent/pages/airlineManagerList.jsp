@@ -27,15 +27,15 @@
 		    <span class="button-group pull-right">
 		    	<s:form action="airlineInformation" style=" display:inline!important;">
 		    		<s:hidden  name="airplaneId"></s:hidden>
-			    	<s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit>
+			    	<s:submit type="button" class="btn icon-btn btn-info btn-md glyphicon btn-glyphicon glyphicon-info-sign img-circle text-info">Info</s:submit>
 			    </s:form>
 			    <s:form action="airlineEdit" style=" display:inline!important;">
 			    	<s:hidden  name="airplaneId"></s:hidden>
-			    	<s:submit type="button" class="btn btn-primary btn-lg" method="execute">Edit</s:submit>
+			    	<s:submit type="button" class="btn icon-btn btn-warning btn-md glyphicon btn-glyphicon glyphicon-edit img-circle text-warning" method="execute">Edit</s:submit>
 			    </s:form>
 			    <s:form action="deleteAirplane" style=" display:inline!important;">
 			   		<s:hidden  name="airplaneId"></s:hidden>
-			    	<s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
+			    	<s:submit type="button" class="btn icon-btn btn-danger btn-md glyphicon btn-glyphicon glyphicon-trash img-circle text-danger">Delete</s:submit>
 			    </s:form>
 			   
 		  	</span>
