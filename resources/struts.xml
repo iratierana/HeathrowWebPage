@@ -57,5 +57,9 @@
 			<result name="airplanesList">/pages/airlineManagerList.jsp</result>
 		</action>
 		
+		<action name="deleteAirplane" class="actions.airlineManager.AirlineInformationDeleteAction">
+			<result name="airlineManagerList">/pages/airlineManagerList.jsp</result>
+		</action>
+		
 	</package>
 </struts>

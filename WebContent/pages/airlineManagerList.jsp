@@ -33,7 +33,11 @@
 			    	<s:hidden  name="airplaneId"></s:hidden>
 			    	<s:submit type="button" class="btn btn-primary btn-lg" method="execute">Edit</s:submit>
 			    </s:form>
-			    <s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
+			    <s:form action="deleteAirplane" style=" display:inline!important;">
+			   		<s:hidden  name="airplaneId"></s:hidden>
+			    	<s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit>
+			    </s:form>
+			   
 		  	</span>
 		 </s:a>
 	</s:iterator> 	

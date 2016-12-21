@@ -66,7 +66,9 @@ private static Session session;
 			
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
+			session.getTransaction().begin();
 			session.delete(airplane);
+			session.getTransaction().commit();
 			ConnectHibernate.after();
 			return true;
 			
