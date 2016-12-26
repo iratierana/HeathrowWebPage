@@ -14,7 +14,7 @@ function initMap() {
  var markerTerminal4 = new google.maps.Marker({
 	  position: marker1,
 	  map: map,
-	  draggable: true,
+	  draggable: false,
 	  animation: google.maps.Animation.DROP,
 	  icon: "../img/cuatro.png",
 	  title: 'Terminal nº4'
@@ -23,7 +23,7 @@ function initMap() {
   var markerTerminal3 = new google.maps.Marker({
 	  position: marker2,
 	  map: map,
-	  draggable: true,
+	  draggable: false,
 	  animation: google.maps.Animation.DROP,
 	  icon: "../img/tres.png",
 	  title: 'Terminal nº3'
@@ -32,7 +32,7 @@ function initMap() {
   var markerTerminal2 = new google.maps.Marker({
 	  position: marker3,
 	  map: map,
-	  draggable: true,
+	  draggable: false,
 	  animation: google.maps.Animation.DROP,
 	  icon: "../img/dos.png",
 	  title: 'Terminal nº3'
@@ -41,7 +41,7 @@ function initMap() {
   var markerTerminal1 = new google.maps.Marker({
 	  position: marker4,
 	  map: map,
-	  draggable: true,
+	  draggable: false,
 	  animation: google.maps.Animation.DROP,
 	  icon: "../img/uno.png",
 	  title: 'Terminal nº3'
