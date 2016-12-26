@@ -1,0 +1,32 @@
+body{
+	overflow:hidden;
+}
+
+aside{
+	position:absolute;
+	border:1px solid black;
+	float:left;
+	width:25%;
+	height:100%;
+	overflow:hidden;
+	text-align:center;
+}
+
+section{
+	top:0;
+	position:absolute;
+	width:75%;
+	height:550px;
+	left:25%;
+	float:right;
+	padding:20px;
+	margin:20px;
+	box-sizing: border-box;
+}
+
+section #map{
+	position: relative;
+	background-repeat: no-repeat;
+	width: 96%;
+	height: 100%;
+}
