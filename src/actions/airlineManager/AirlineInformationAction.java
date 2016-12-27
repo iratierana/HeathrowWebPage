@@ -1,7 +1,12 @@
 package actions.airlineManager;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
+
 import domain.dao.DAOAirplane;
+import domain.dao.DAOAirplanePhoto;
 import domain.model.Airplane;
+import domain.model.AirplanePhoto;
 
 /**
  * 
@@ -18,7 +23,9 @@ public class AirlineInformationAction {
 	
 	private Integer airplaneId ;
 	private Airplane airplane = new Airplane();
-	
+	private AirplanePhoto photo;
+	private byte[] p;
+	private String pString;
 	private String airplaneName;
 	private String serialNumber;
 	private String route;
@@ -30,9 +37,11 @@ public class AirlineInformationAction {
 	 * This function redirect the content flow to another page
 	 * 
 	 * @return airlineInfo the page(jsp) where we want to redirect
+	 * @throws UnsupportedEncodingException 
 	 */
-	public String execute() {
+	public String execute() throws UnsupportedEncodingException {
 		airplane = DAOAirplane.loadAirplane(airplaneId);
+		loadPhotoFromDatabase(airplaneId);
 		fillAtributes();
 		return "airlineInfo";
 	}
@@ -43,6 +52,14 @@ public class AirlineInformationAction {
 		setRoute("***UNDEFINED***");
 		setNumberOfFlights(String.valueOf(this.airplane.getNumberOfFlights()));
 		setNumberOfOurs(String.valueOf(this.airplane.getHoursOfFlight()));
+	}
+	
+	private void loadPhotoFromDatabase(int airplaneId) throws UnsupportedEncodingException{
+		photo = DAOAirplanePhoto.loadAirplanePhoto(21);
+		p = Base64.getEncoder().encode(photo.getPhoto());
+		pString = new String(p, "UTF-8");
+		pString="data:image/jpg;base64,"+pString;
+		System.out.println(pString);
 	}
 
 
@@ -57,6 +74,14 @@ public class AirlineInformationAction {
 	}
 
 
+
+	public String getpString() {
+		return pString;
+	}
+
+	public void setpString(String pString) {
+		this.pString = pString;
+	}
 
 	public Airplane getAirplane() {
 		return airplane;
