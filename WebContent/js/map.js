@@ -1,17 +1,21 @@
+var map;
+var marker = [];
+
+
 function initMap() {
+	  
+	var marker1 = {lat: 51.470791, lng: -0.481360};
+	var marker2 = {lat: 51.471218, lng: -0.476253};
+	var marker3 = {lat: 51.471111, lng: -0.462992};
+	var marker4 = {lat: 51.471245, lng: -0.443079};
 	
-  var marker1 = {lat: 51.470791, lng: -0.481360};
-  var marker2 = {lat: 51.471218, lng: -0.476253};
-  var marker3 = {lat: 51.471111, lng: -0.462992};
-  var marker4 = {lat: 51.471245, lng: -0.443079};
-  
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: {lat: 51.471959, lng: -0.450397},
     mapTypeId: google.maps.MapTypeId.SATELLITE
   });
   
- var markerTerminal4 = new google.maps.Marker({
+  var markerTerminal4 = new google.maps.Marker({
 	  position: marker1,
 	  map: map,
 	  draggable: false,
@@ -170,21 +174,40 @@ function initMap() {
 	   draggable:false
 	  });
   
-  /*var poligon = new google.maps.Polygon({
-	  paths: flightPlanCoordinates,
-	  strokeColor: '#FF0000',
-	  strokeOpacity: 0.8,
-	  strokeWeight: 2,
-	  fillColor: '#FF0000',
-	  fillOpacity: 0.35
-  });*/
+
   
 
  flightPath.setMap(map);
  flightPath2.setMap(map);
- //poligon.setMap(map);
  rectangle_terminal4.setMap(map);
  rectangle_terminal3.setMap(map);
  rectangle_terminal2.setMap(map);
  rectangle_terminal1.setMap(map);
+ reloadMap();
 }
+
+function reloadMap() {
+	
+			  
+	    d3.csv("../data/planeMarkerData.csv", function(data){
+	    	console.log(marker);
+	    	for(var kont=0; kont<marker.length;kont++){
+	    		marker[kont].setMap(null);
+	    	}
+	        data.forEach(function(d, i){        	
+	            d['lat'] = +d['lat']
+	            d['long'] = +d['lon'];
+	            marker[i] = new google.maps.Marker({
+	                position:{lat: d['lat'], lng: d['long']},
+	                map:map,
+	                draggable:false,
+	                title: d['id']
+	            });
+	            marker[i].setMap(map);	            
+	        }) 	      
+	    });
+	    
+	  
+	  
+	  setTimeout("reloadMap()", 1000);
+	}

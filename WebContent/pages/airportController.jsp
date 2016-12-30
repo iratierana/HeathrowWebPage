@@ -3,7 +3,9 @@
 <html>
 <head>
 <title>Welcome</title>
+<script src="https://d3js.org/d3.v4.js"></script>
 <script type="text/javascript" src="<s:url value="/js/map.js"></s:url>"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwuZ3ePs3WL7qUBn1zVerSGTenwPCtQWs&callback=initMap"
         async defer></script>
 <link rel="stylesheet" type="text/css" href="<s:url value="/css/airportControllerStyle.css"/>">
