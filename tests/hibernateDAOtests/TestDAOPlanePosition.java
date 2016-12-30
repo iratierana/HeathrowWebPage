@@ -1,6 +1,8 @@
 package hibernateDAOtests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,6 +15,7 @@ import domain.model.PlanePosition;
 
 public class TestDAOPlanePosition {
 	
+	@SuppressWarnings("unused")
 	@Test
 	public void testToInsertNewPlanePosition(){
 		boolean result;
