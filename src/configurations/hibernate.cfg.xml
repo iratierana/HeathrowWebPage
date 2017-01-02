@@ -29,7 +29,7 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
 		
-		<mapping class="domain.dao.DAOAirline"/>	
+			
 		<mapping class="domain.model.Airline"/>
 		
 		<mapping class="domain.dao.DAOAirlineManager"/>		
@@ -43,8 +43,7 @@
 		
 		<mapping class="domain.dao.DAOAirportController"/>
 		<mapping class="domain.model.AirportController"/>
-		
-		<mapping class="domain.dao.DAODirection"/>	
+			
 		<mapping class="domain.model.Direction"/>
 		
 		<mapping class="domain.dao.DAOFlight"/>		
@@ -53,13 +52,10 @@
 		<mapping class="domain.dao.DAOPassanger"/>	
 		<mapping class="domain.model.Passanger"/>
 		
-		<mapping class="domain.dao.DAOPlanePosition"/>	
 		<mapping class="domain.model.PlanePosition"/>
 		
-		<mapping class="domain.dao.DAORunway"/>	
 		<mapping class="domain.model.Runway"/>
 		
-		<mapping class="domain.dao.DAOAirport"/>	
 		<mapping class="domain.model.Airport"/>
 		
 	</session-factory>

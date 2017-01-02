@@ -66,28 +66,6 @@ public class TestDAOPassanger {
 		
 		assertFalse("Error inserting a new passanger", result);
 	}
-	
-	@Test
-	public void testToDeleteAPassanger(){
-		Passanger p = new Passanger();
-		boolean result;
-		
-		p.setPassangerId(1);
-		
-		result = DAOPassanger.deletePassanger(p);
-		
-		assertTrue("Error deleting a passanger", result);
-	}
-	
-	@Test
-	public void testToDeleteAPassangerWhitNullPassanger(){
-		boolean result;
-		
-		result = DAOPassanger.deletePassanger(null);
-		
-		assertFalse("Error deleting a passanger", result);
-	}
-	
-	
+
 	
 }

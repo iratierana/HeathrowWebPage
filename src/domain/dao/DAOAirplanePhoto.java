@@ -25,6 +25,11 @@ public class DAOAirplanePhoto {
 
 	private static Session session;
 
+	/**
+	 * This function loads an airplane photo
+	 * @param airplaneId The id of the photo to load
+	 * @return The object of the airplane photo
+	 */
 	@SuppressWarnings("unchecked")
 	public static AirplanePhoto loadAirplanePhoto(int airplaneId) {
 		List<AirplanePhoto> photoList = null;

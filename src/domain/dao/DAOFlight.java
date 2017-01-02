@@ -24,57 +24,7 @@ import domain.model.Flight;
 public class DAOFlight {
 	
 private static Session session;
-	
-	/**
-	 * 
-	 * This function insert aflight in the database
-	 * 
-	 * @param flight the flight to insert in the database
-	 * @return true if the insert is correct
-	 * @return false if and error occurs during the insert
-	 */
-	public static boolean insertFlight(Flight flight){
-		try {
-			
-			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();
-			session.getTransaction().begin();
-			session.save(flight);
-			session.getTransaction().commit();
-			ConnectHibernate.after();
-			return true;
-			
-		} catch (Exception e) {
-			session.getTransaction().rollback();
-			ConnectHibernate.after();
-			return false;		
-		}
-	}
-
-	/**
-	 * 
-	 * This function delete a flight from the database
-	 * 
-	 * @param flight the flight to delete from the database
-	 * @return true if the delete is correct
-	 * @return false if and error occurs during the delete
-	 */
-	public static boolean deleteFlight(Flight flight){
-		try{
-			
-			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();
-			session.delete(flight);
-			ConnectHibernate.after();
-			return true;
-			
-		}catch(Exception e){
-			session.getTransaction().rollback();
-			ConnectHibernate.after();
-			return false;
-		}
-	}
-	
+		
 	/**
 	 * 
 	 * This function load all the flights of the database

@@ -27,32 +27,6 @@ public class DAOAirplane {
 	
 private static Session session;
 	
-/**
- * 
- * This function insert aan airplane in the database
- * 
- * @param airplane the airplane to insert in the database
- * @return true if the insert is correct
- * @return false if and error occurs during the insert
- */
-	public static boolean insertAirplane(Airplane airplane){
-		try {
-			
-			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();
-			session.getTransaction().begin();
-			session.save(airplane); //erlazinuak itxen dianian save kendu eta persist ipinibiada eta eralazinuan cascade cascade type.persist
-			session.getTransaction().commit();
-			ConnectHibernate.after();
-			return true;
-			
-		} catch (Exception e) {
-			session.getTransaction().rollback();
-			ConnectHibernate.after();
-			return false;		
-		}
-	}
-
 	/**
 	 * 
 	 * This function delete an airplane from the database
@@ -79,31 +53,7 @@ private static Session session;
 		}
 	}
 	
-	/**
-	 * 
-	 * This function load all the Airplanes of the database
-	 * 
-	 * @return the list if the load is correct
-	 * @return null if and error occurs during the load
-	 */
-	public static List<Airplane> loadAllAirplanes() {
-		List<Airplane> airplaneList = null;
-		try {
-			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();
-			@SuppressWarnings("unchecked")
-			TypedQuery<Airplane> query = session.createQuery("from Airplane");
-			airplaneList = query.getResultList();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		ConnectHibernate.after();
-
 		
-		return airplaneList;
-	}
-	
-	
 	/**
 	 * Load all the plains that airline manager manage
 	 * @param id The id of the airline manager 
@@ -112,7 +62,6 @@ private static Session session;
 	 */
 	@SuppressWarnings({ "rawtypes",  "unchecked" })
 	public static List<Airplane> loadAirplanesOfAirline(int id) {
-//		List<Airplane> airplaneList = null;
 		List <Airplane> airplaneList = null;
 		String sql="SELECT airpl.*"
 				+ " FROM (airlinemanager man join airline air on man.airline_airlineid=air.airlineid)join airplane airpl on airpl.airline_airlineid=air.airlineid"
@@ -133,6 +82,11 @@ private static Session session;
 		return airplaneList;
 	}
 	
+	/**
+	 * This function loads and airplane
+	 * @param id The id of the airplane to load frm the databse
+	 * @return The object airplane
+	 */
 	public static Airplane loadAirplane (int id){
 		List<Airplane> airplaneList = null;
 		Airplane a = new Airplane();
@@ -159,6 +113,11 @@ private static Session session;
 		return a;
 	}
 	
+	/**
+	 * This function updates an airplane in the database
+	 * @param airplane The airplane object to update
+	 * @return true if all is OK, else false
+	 */
 	public static boolean updateAirplane(Airplane airplane){
 		Airplane auxAirplane = null;
 		try{

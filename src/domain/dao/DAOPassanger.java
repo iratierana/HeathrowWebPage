@@ -55,30 +55,6 @@ private static Session session;
 			return false;		
 		}
 	}
-
-	/**
-	 * 
-	 * This function delete a passenger from the database
-	 * 
-	 * @param passanger the passenger to delete from the database
-	 * @return true if the delete is correct
-	 * @return false if and error occurs during the delete
-	 */
-	public static boolean deletePassanger(Passanger passanger){
-		try{
-			
-			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();
-			session.delete(passanger);
-			ConnectHibernate.after();
-			return true;
-			
-		}catch(Exception e){
-			session.getTransaction().rollback();
-			ConnectHibernate.after();
-			return false;
-		}
-	}
 	
 	/**
 	 * 
