@@ -51,8 +51,10 @@ private static Session session;
 			
 		}catch (Exception e) {
 			session.getTransaction().rollback();
-			ConnectHibernate.after();
 			return null;
+		}finally {
+			ConnectHibernate.after();
+
 		}
 		
 		ConnectHibernate.after();

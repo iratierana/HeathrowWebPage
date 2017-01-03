@@ -45,8 +45,10 @@ public class DAOAirplanePhoto {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			ConnectHibernate.after();
 		}
-		ConnectHibernate.after();
+		
 		return photo;
 	}
 

@@ -47,9 +47,10 @@ private static Session session;
 			return true;
 			
 		}catch(Exception e){
-			session.getTransaction().rollback();
-			ConnectHibernate.after();
+			session.getTransaction().rollback();			
 			return false;
+		}finally {
+			ConnectHibernate.after();
 		}
 	}
 	
@@ -75,8 +76,10 @@ private static Session session;
 			airplaneList = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			ConnectHibernate.after();
+
 		}
-		ConnectHibernate.after();
 
 		
 		return airplaneList;
@@ -107,9 +110,11 @@ private static Session session;
 			session.getTransaction().rollback();
 			ConnectHibernate.after();
 			return null;
+		}finally {
+			ConnectHibernate.after();
+
 		}
 		
-		ConnectHibernate.after();
 		return a;
 	}
 	

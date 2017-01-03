@@ -42,8 +42,9 @@ private static Session session;
 			flightList = query.getResultList();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			ConnectHibernate.after();
 		}
-		ConnectHibernate.after();
 
 		
 		return flightList;
@@ -90,9 +91,10 @@ private static Session session;
 			session.getTransaction().rollback();
 			ConnectHibernate.after();
 			return null;
-		}
-		
-		ConnectHibernate.after();
+		}finally {
+			ConnectHibernate.after();
+
+		}		
 		return f;
 	}
 }

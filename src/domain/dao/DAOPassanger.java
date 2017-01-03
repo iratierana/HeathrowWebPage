@@ -51,8 +51,10 @@ private static Session session;
 			
 		} catch (Exception e) {
 			session.getTransaction().rollback();
-			ConnectHibernate.after();
 			return false;		
+		}finally {
+			ConnectHibernate.after();
+
 		}
 	}
 	
@@ -84,9 +86,11 @@ private static Session session;
 			session.getTransaction().rollback();
 			ConnectHibernate.after();
 			return null;
+		}finally {
+			ConnectHibernate.after();
+
 		}
 		
-		ConnectHibernate.after();
 		return p;
 	}
 
@@ -107,8 +111,9 @@ private static Session session;
 			flightList = query.getResultList();
 		}catch(Exception e){
 			e.printStackTrace();
+		}finally {
+			ConnectHibernate.after();		
 		}
-		ConnectHibernate.after();		
 		return flightList;
 	}
 	
@@ -143,8 +148,9 @@ private static Session session;
 		}catch(Exception e){			
 			e.printStackTrace();
 			return false;
+		}finally {
+			ConnectHibernate.after();		
 		}
-		ConnectHibernate.after();		
 		return true;
 	}
 	
@@ -173,8 +179,9 @@ private static Session session;
 		}catch (Exception e) {
 			e.printStackTrace();
 			return false;
+		}finally {
+			ConnectHibernate.after();		
 		}
-		ConnectHibernate.after();		
 		return true;
 	}
 }

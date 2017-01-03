@@ -49,9 +49,10 @@ public class DAOAirlineManager {
 			ConnectHibernate.after();
 			
 		}catch (Exception e) {
-			session.getTransaction().rollback();
-			ConnectHibernate.after();
+			session.getTransaction().rollback();			
 			return null;
+		}finally {
+			ConnectHibernate.after();
 		}
 		
 		ConnectHibernate.after();
