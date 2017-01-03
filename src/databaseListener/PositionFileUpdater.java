@@ -7,37 +7,39 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class PositionFileUpdater {
+	
+	public static String fileRoute="D:/Uni3/1Semester/POPBL5/Code Workspace/HeathrowWebPage/WebContent/data/planeMarkerData.csv";
 
 	public static void updatePlanePositionFromFile(int planeId, int newPositionId) {
 		ArrayList<PositioningModel> posList = null;
 
 		if (newPositionId == 1) {
 			
-			posList = readCsvFile("WebContent/data/planeMarkerData.csv");
+			posList = readCsvFile(fileRoute);
 			PositioningModel newPos = PositionMapper.decodePosition(planeId, newPositionId);
 			posList.add(newPos);
-			writeCsvFile("WebContent/data/planeMarkerData.csv", posList);
+			writeCsvFile(fileRoute, posList);
 			
 		} else if ((newPositionId > 1) && (newPositionId < 41)) {
 			
-			posList = readCsvFile("WebContent/data/planeMarkerData.csv");
+			posList = readCsvFile(fileRoute);
 			for(int kont=0; kont<posList.size(); kont++){
 				if(posList.get(kont).getPlaneId() == planeId){
 					posList.remove(kont);
 					posList.add(PositionMapper.decodePosition(planeId, newPositionId));
 				}
 			}
-			writeCsvFile("WebContent/data/planeMarkerData.csv", posList);	
+			writeCsvFile(fileRoute, posList);	
 			
 		} else if (newPositionId == 41) {
 
-			posList = readCsvFile("WebContent/data/planeMarkerData.csv");
+			posList = readCsvFile(fileRoute);
 			for(int kont=0; kont<posList.size(); kont++){
 				if(posList.get(kont).getPlaneId() == planeId){
 					posList.remove(kont);
 				}
 			}
-			writeCsvFile("WebContent/data/planeMarkerData.csv", posList);
+			writeCsvFile(fileRoute, posList);
 			
 		}
 
@@ -55,8 +57,9 @@ public class PositionFileUpdater {
 			fileReader.readLine();
 			 while ((line = fileReader.readLine()) != null){
 				 String[] tokens = line.split(",");
-				 if (tokens.length > 0){
-					 PositioningModel posMod = new PositioningModel(Integer.valueOf(tokens[0]), Double.valueOf(tokens[1]), Double.valueOf(tokens[2]));
+				 String aux = tokens[0].substring(1, tokens[0].length()-1);
+				 if (tokens.length > 0){					 
+					 PositioningModel posMod = new PositioningModel(Integer.valueOf(aux), Double.valueOf(tokens[1]), Double.valueOf(tokens[2]));
 					 posList.add(posMod);
 				 }
 			 }
@@ -78,19 +81,26 @@ public class PositionFileUpdater {
 
 	public static void writeCsvFile(String fileName, ArrayList<PositioningModel> posList){
 		FileWriter fileWriter = null;
-		String FILE_HEADER = "id,lat,lon";
+		String FILE_HEADER = "\"id\",\"lat\",\"lon\"";
 
 		
 		try{
 			fileWriter = new FileWriter(fileName);
 			fileWriter.append(FILE_HEADER.toString());
 			fileWriter.append("\n");
+			int kont=0;
 			for(PositioningModel pM : posList){
+				kont++;
+				fileWriter.append("\"");
 				fileWriter.append(String.valueOf(pM.getPlaneId()));
+				fileWriter.append("\"");
 				fileWriter.append(",");
 				fileWriter.append(String.valueOf(pM.getLatitude()));
 				fileWriter.append(",");
 				fileWriter.append(String.valueOf(pM.getLongitude()));
+				if(posList.size() != kont){
+					fileWriter.append("\n");
+				}				
 			}
 		}catch (Exception e) {
 			e.printStackTrace();

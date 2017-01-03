@@ -190,7 +190,7 @@ function reloadMap() {
 	
 			  
 	    d3.csv("../data/planeMarkerData.csv", function(data){
-	    	console.log(marker);
+	    	
 	    	for(var kont=0; kont<marker.length;kont++){
 	    		marker[kont].setMap(null);
 	    	}
@@ -202,12 +202,13 @@ function reloadMap() {
 	                map:map,
 	                draggable:false,
 	                title: d['id']
+	                
 	            });
-	            marker[i].setMap(map);	            
+	            marker[i].setMap(map);	
 	        }) 	      
 	    });
 	    
 	  
 	  
-	  setTimeout("reloadMap()", 1000);
+	  setTimeout("reloadMap()", 2000);
 	}

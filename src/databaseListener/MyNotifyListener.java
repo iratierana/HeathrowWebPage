@@ -19,7 +19,8 @@ public class MyNotifyListener extends Thread {
 			@Override
 			public void notification(int processId, String channelName, String payload) {
 				String info[] = payload.split(",");
-				System.out.println("The plane with id="+info[0]+" is now in position=" + info[1]);				
+				System.out.println("The plane with id="+info[0]+" is now in position=" + info[1]);	
+				PositionFileUpdater.updatePlanePositionFromFile(Integer.valueOf(info[0]), Integer.valueOf(info[1]));
 			}
 		};
 	    
