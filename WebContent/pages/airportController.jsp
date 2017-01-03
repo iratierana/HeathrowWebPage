@@ -36,44 +36,13 @@
 			</tr>
 		</table><hr>
 		
-		Terminal: <s:textfield name="terminal" readonly="true" style=""></s:textfield>
-		Gate: <s:textfield name="gate" readonly="true"></s:textfield><hr>
+		Terminal: <s:textfield name="terminal" readonly="true" style="width:80px"></s:textfield>
+		Gate: <s:textfield name="gate" readonly="true" style="width:80px"></s:textfield><hr>
 		
 		<button type="button" class="btn btn-default btn-md">
 			<span class="glyphicon glyphicon-calendar"></span>Flight from a specific day				
 		</button>
-		
-		<!-- div class=" col-md-9 col-lg-9 "> 
-                  <table class="table table-user-information table-hover">
-                    <tbody>
-                      <tr>
-                        <td>Serial Number:</td>
-                        <td><s:textfield name="serialNumb" readonly="true"></s:textfield> </td>
-                        <td>Airline Name:</td>
-                        <td><s:textfield name="airlineName" readonly="true"></s:textfield> </td>
-                      </tr>
-                      <tr>
-                      </tr>
-                      <tr>
-                        <td>Route</td>
-                        <td><s:textfield name="route" readonly="true"></s:textfield> </td>
-                      </tr>
-                      <tr>
-                      	<td>Terminal:</td>
-                      	<td><s:textfield name="terminal" readonly="true"></s:textfield> </td>
-                      	<td>Gate:</td>
-                      	<td><s:textfield name="gate" readonly="true"></s:textfield> </td>
-                      </tr>
-                      <tr>
-                        <td><s:submit type="button" class="btn btn-default btn-md">
-							<span class="glyphicon glyphicon-calendar"></span>Flight from a specific day				
-						</s:submit></td>
-                      </tr>
-                                           
-                    </tbody>
-                  </table>
-                </div>-->
-		
+	
 	</aside>
 	
 	<section>

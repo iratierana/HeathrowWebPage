@@ -3,10 +3,10 @@ package databaseListener;
 public class PositioningModel {
 	
 	int planeId;
-	float latitude;
-	float longitude;
+	double latitude;
+	double longitude;
 	
-	public PositioningModel(int planeId, float latitude, float longitude) {
+	public PositioningModel(int planeId, double latitude, double longitude) {
 		this.planeId = planeId;
 		this.latitude = latitude;
 		this.longitude = longitude;
@@ -19,13 +19,13 @@ public class PositioningModel {
 	public void setPlaneId(int planeId) {
 		this.planeId = planeId;
 	}
-	public float getLatitude() {
+	public double getLatitude() {
 		return latitude;
 	}
 	public void setLatitude(int latitude) {
 		this.latitude = latitude;
 	}
-	public float getLongitude() {
+	public double getLongitude() {
 		return longitude;
 	}
 	public void setLongitude(int longitude) {

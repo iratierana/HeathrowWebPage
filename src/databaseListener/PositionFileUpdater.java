@@ -56,7 +56,7 @@ public class PositionFileUpdater {
 			 while ((line = fileReader.readLine()) != null){
 				 String[] tokens = line.split(",");
 				 if (tokens.length > 0){
-					 PositioningModel posMod = new PositioningModel(Integer.valueOf(tokens[0]), Float.valueOf(tokens[1]), Float.valueOf(tokens[2]));
+					 PositioningModel posMod = new PositioningModel(Integer.valueOf(tokens[0]), Double.valueOf(tokens[1]), Double.valueOf(tokens[2]));
 					 posList.add(posMod);
 				 }
 			 }
