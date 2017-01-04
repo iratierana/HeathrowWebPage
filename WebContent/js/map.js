@@ -200,6 +200,7 @@ function reloadMap() {
 	            marker[i] = new google.maps.Marker({
 	                position:{lat: d['lat'], lng: d['long']},
 	                map:map,
+	                icon:'../img/mapIcons/airplane_s.png',
 	                draggable:false,
 	                title: d['id']
 	                
