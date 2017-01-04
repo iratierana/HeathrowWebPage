@@ -26,8 +26,8 @@
 		<table class="table">
 			<thead class="thead-inverse">
 				<tr>
-					<th>Departure</th>
-					<th>Arrival</th>
+					<th style="text-align:center;">Departure</th>
+					<th style="text-align:center;">Arrival</th>
 				</tr>
 			</thead>
 			<tr>

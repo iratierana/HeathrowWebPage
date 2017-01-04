@@ -1,8 +1,10 @@
 var map;
 var marker = [];
+var infoWindow;
 
 var rectangle_takeOffLane;
 var rectangle_landingLane;
+
 
 function initMap() {
 	  
@@ -16,6 +18,13 @@ function initMap() {
     center: {lat: 51.471959, lng: -0.450397},
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
+  
+  /*marker4 = new google.maps.Marker({
+	    map: map,
+	    draggable: false,
+	    animation: google.maps.Animation.DROP,
+	    position: {lat: 51.471116, lng: -0.481493}
+	  });*/
   
 
   /*var flightPlanCoordinates = [
@@ -203,6 +212,75 @@ function initMap() {
  rectangle_terminal2.setMap(map);
  rectangle_terminal1.setMap(map);
  reloadMap();
+ 
+ rectangle_terminal4.addListener('click', showInformationTerminal4);
+ rectangle_terminal3.addListener('click', showInformationTerminal3);
+ rectangle_terminal2.addListener('click', showInformationTerminal2);
+ rectangle_terminal1.addListener('click', showInformationTerminal1);
+ 
+ infoWindow = new google.maps.InfoWindow;
+ 
+
+}
+
+function showInformationTerminal4(event) {
+	 
+	  //var vertices = this.getPath();
+
+	  var contentString = '<b>Terminal 4</b><br>' +
+	      'Clicked location: <br>' + event.latLng.lat() + ',' + event.latLng.lng() +
+	      '<br>' + '<li> It has 6 aircraft parkings';
+
+	  // Replace the info window's content and position.
+	  infoWindow.setContent(contentString);
+	  infoWindow.setPosition(event.latLng);
+
+	  infoWindow.open(map);
+}
+
+function showInformationTerminal3(event) {
+	 
+	  //var vertices = this.getPath();
+
+	  var contentString = '<b>Terminal 3</b><br>' +
+	      'Clicked location: <br>' + event.latLng.lat() + ',' + event.latLng.lng() +
+	      '<br>' + '<li> It has 6 aircraft parkings';
+
+	  // Replace the info window's content and position.
+	  infoWindow.setContent(contentString);
+	  infoWindow.setPosition(event.latLng);
+
+	  infoWindow.open(map);
+}
+
+function showInformationTerminal2(event) {
+	 
+	  //var vertices = this.getPath();
+
+	  var contentString = '<b>Terminal 2</b><br>' +
+	      'Clicked location: <br>' + event.latLng.lat() + ',' + event.latLng.lng() +
+	      '<br>' + '<li> It has 6 aircraft parkings';
+
+	  // Replace the info window's content and position.
+	  infoWindow.setContent(contentString);
+	  infoWindow.setPosition(event.latLng);
+
+	  infoWindow.open(map);
+}
+
+function showInformationTerminal1(event) {
+	 
+	  //var vertices = this.getPath();
+
+	  var contentString = '<b>Terminal 1</b><br>' +
+	      'Clicked location: <br>' + event.latLng.lat() + ',' + event.latLng.lng() +
+	      '<br>' + '<li> It has 6 aircraft parkings';
+
+	  // Replace the info window's content and position.
+	  infoWindow.setContent(contentString);
+	  infoWindow.setPosition(event.latLng);
+
+	  infoWindow.open(map);
 }
 
 function reloadMap() {
