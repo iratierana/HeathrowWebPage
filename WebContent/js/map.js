@@ -1,6 +1,8 @@
 var map;
 var marker = [];
 
+var rectangle_takeOffLane;
+var rectangle_landingLane;
 
 function initMap() {
 	  
@@ -51,7 +53,7 @@ function initMap() {
 	  title: 'Terminal nº3'
   });
 
-  var flightPlanCoordinates = [
+  /*var flightPlanCoordinates = [
 	  {lat: 51.477527, lng: -0.482090},
 	  {lat: 51.477580, lng: -0.477798},
 	  {lat: 51.477580, lng: -0.473936},
@@ -106,7 +108,7 @@ function initMap() {
 	  {lat: 51.464882, lng: -0.435183}
   ];
   
-  var flightPath = new google.maps.Polyline({
+  /*var flightPath = new google.maps.Polyline({
     path: flightPlanCoordinates,
     geodesic: true,
     strokeColor: '#FF0000',
@@ -120,7 +122,21 @@ function initMap() {
 	    strokeColor: '#FF0000',
 	    strokeOpacity: 1.0,
 	    strokeWeight: 2
-  });
+  });*/
+  
+  var bounds_landingLane = {
+		north: 51.478039,
+		south: 51.477237,
+		east: -0.433170,
+		west: -0.485012
+  };
+  
+  var bounds_takeOffLane = {
+	   north: 51.465208,
+	   south: 51.464513,
+	   east: -0.434072,
+	   west: -0.487072
+  };
   
   var bounds_terminal4 = {
 		north: 51.474159,
@@ -150,6 +166,22 @@ function initMap() {
 		west: -0.445311
   };
   
+   rectangle_takeOffLane = new google.maps.Rectangle({
+	  fillColor: '#00FF00',
+	  strokeWeight: 0,
+	  bounds: bounds_takeOffLane,
+	  editable: false,
+	  draggable: false,
+  })
+  
+   rectangle_landingLane = new google.maps.Rectangle({
+	  strokeWeight: 0,
+	  fillColor: '#00FF00',
+	  bounds: bounds_landingLane,
+	  editable: false,
+	  draggable: false,
+  })
+  
   var rectangle_terminal4 = new google.maps.Rectangle({
 	   bounds: bounds_terminal4,
 	   editable:false,
@@ -177,8 +209,10 @@ function initMap() {
 
   
 
- flightPath.setMap(map);
- flightPath2.setMap(map);
+ /*flightPath.setMap(map);
+ flightPath2.setMap(map);*/
+ rectangle_landingLane.setMap(map);
+ rectangle_takeOffLane.setMap(map);
  rectangle_terminal4.setMap(map);
  rectangle_terminal3.setMap(map);
  rectangle_terminal2.setMap(map);
@@ -205,9 +239,9 @@ function reloadMap() {
 	                title: d['id']
 	                
 	            });
-	            marker[i].setMap(map);	
+	            marker[i].setMap(map);
 	        }) 	      
-	    });
+ 	    });
 	    
 	  
 	  
