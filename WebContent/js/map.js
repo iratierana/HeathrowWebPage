@@ -14,44 +14,9 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: {lat: 51.471959, lng: -0.450397},
-    mapTypeId: google.maps.MapTypeId.SATELLITE
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   
-  var markerTerminal4 = new google.maps.Marker({
-	  position: marker1,
-	  map: map,
-	  draggable: false,
-	  animation: google.maps.Animation.DROP,
-	  icon: "../img/cuatro.png",
-	  title: 'Terminal nº4'
-  });
-  
-  var markerTerminal3 = new google.maps.Marker({
-	  position: marker2,
-	  map: map,
-	  draggable: false,
-	  animation: google.maps.Animation.DROP,
-	  icon: "../img/tres.png",
-	  title: 'Terminal nº3'
-  });
-  
-  var markerTerminal2 = new google.maps.Marker({
-	  position: marker3,
-	  map: map,
-	  draggable: false,
-	  animation: google.maps.Animation.DROP,
-	  icon: "../img/dos.png",
-	  title: 'Terminal nº3'
-  });
-  
-  var markerTerminal1 = new google.maps.Marker({
-	  position: marker4,
-	  map: map,
-	  draggable: false,
-	  animation: google.maps.Animation.DROP,
-	  icon: "../img/uno.png",
-	  title: 'Terminal nº3'
-  });
 
   /*var flightPlanCoordinates = [
 	  {lat: 51.477527, lng: -0.482090},
@@ -108,7 +73,7 @@ function initMap() {
 	  {lat: 51.464882, lng: -0.435183}
   ];
   
-  /*var flightPath = new google.maps.Polyline({
+  var flightPath = new google.maps.Polyline({
     path: flightPlanCoordinates,
     geodesic: true,
     strokeColor: '#FF0000',
@@ -166,42 +131,62 @@ function initMap() {
 		west: -0.445311
   };
   
-   rectangle_takeOffLane = new google.maps.Rectangle({
+   rectangle_takeOffLane_green = new google.maps.Rectangle({
 	  fillColor: '#00FF00',
 	  strokeWeight: 0,
 	  bounds: bounds_takeOffLane,
 	  editable: false,
 	  draggable: false,
   })
+   
+   rectangle_takeOffLane_red = new google.maps.Rectangle({
+		  fillColor: '#FF0000',
+		  strokeWeight: 0,
+		  bounds: bounds_takeOffLane,
+		  editable: false,
+		  draggable: false,
+	  })
   
-   rectangle_landingLane = new google.maps.Rectangle({
+   rectangle_landingLane_green = new google.maps.Rectangle({
 	  strokeWeight: 0,
 	  fillColor: '#00FF00',
 	  bounds: bounds_landingLane,
 	  editable: false,
 	  draggable: false,
   })
+   
+   rectangle_landingLane_red = new google.maps.Rectangle({
+		  strokeWeight: 0,
+		  fillColor: '#FF0000',
+		  bounds: bounds_landingLane,
+		  editable: false,
+		  draggable: false,
+	  })
   
   var rectangle_terminal4 = new google.maps.Rectangle({
 	   bounds: bounds_terminal4,
+	   strokeWeight: 0,
 	   editable:false,
 	   draggable:false
 	  });
   
   var rectangle_terminal3 = new google.maps.Rectangle({
 	   bounds: bounds_terminal3,
+	   strokeWeight: 0,
 	   editable:false,
 	   draggable:false
 	  });
   
   var rectangle_terminal2 = new google.maps.Rectangle({
 	   bounds: bounds_terminal2,
+	   strokeWeight: 0,
 	   editable:false,
 	   draggable:false
 	  });
  
   var rectangle_terminal1 = new google.maps.Rectangle({
 	   bounds: bounds_terminal1,
+	   strokeWeight: 0,
 	   editable:false,
 	   draggable:false
 	  });
@@ -211,8 +196,8 @@ function initMap() {
 
  /*flightPath.setMap(map);
  flightPath2.setMap(map);*/
- rectangle_landingLane.setMap(map);
- rectangle_takeOffLane.setMap(map);
+ rectangle_landingLane_green.setMap(map);
+ rectangle_takeOffLane_green.setMap(map);
  rectangle_terminal4.setMap(map);
  rectangle_terminal3.setMap(map);
  rectangle_terminal2.setMap(map);
@@ -229,17 +214,18 @@ function reloadMap() {
 	    		marker[kont].setMap(null);
 	    	}
 	        data.forEach(function(d, i){        	
-	            d['lat'] = +d['lat']
+	            d['lat'] = +d['lat'];
 	            d['long'] = +d['lon'];
 	            marker[i] = new google.maps.Marker({
 	                position:{lat: d['lat'], lng: d['long']},
 	                map:map,
-	                icon:'../img/mapIcons/airplane_s.png',
+	                icon:'../img/mapIcons/airplane_m.png',
 	                draggable:false,
-	                title: d['id']
-	                
+	                title: d['id']	                
 	            });
 	            marker[i].setMap(map);
+	            changeColourLandingLane(d['lat'], d['long']);
+	            changeColourTakeOffLane(d['lat'], d['long']);
 	        }) 	      
  	    });
 	    
@@ -247,3 +233,32 @@ function reloadMap() {
 	  
 	  setTimeout("reloadMap()", 2000);
 	}
+
+
+function changeColourLandingLane(lat,lon){
+	var latt=lat+'';
+	var lonn=lon+'';
+	 if((latt.localeCompare('51.477626') == 0) && (lonn.localeCompare('-0.457006') == 0)){
+    	 rectangle_landingLane_green.setMap(null);
+    	 rectangle_landingLane_red.setMap(map);
+    }else{
+    	rectangle_landingLane_green.setMap(map);
+    	 rectangle_landingLane_red.setMap(null);
+    }
+}
+
+function changeColourTakeOffLane(lat,lon){
+	var latt=lat+'';
+	var lonn=lon+'';
+	console.log("lat: " +lat);
+	console.log("lon:" + lon);
+	 if((latt.localeCompare('51.464848') == 0) && (lonn.localeCompare('-0.459924') == 0)){
+		 rectangle_takeOffLane_green.setMap(null);
+    	 rectangle_takeOffLane_red.setMap(map);
+    	 console.log("mapa gorri");
+    }else{
+    	 rectangle_takeOffLane_green.setMap(map);
+    	 rectangle_takeOffLane_red.setMap(null);
+    	 console.log("mapa berde");
+    }
+}

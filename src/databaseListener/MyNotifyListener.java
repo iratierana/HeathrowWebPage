@@ -24,7 +24,7 @@ public class MyNotifyListener extends Thread {
 			}
 		};
 	    
-	    dataSource.setHost("localhost");
+	    dataSource.setHost("172.17.100.128");
 	    dataSource.setPort(5432);
 	    dataSource.setDatabase("HeathrowAirport");
 	    dataSource.setUser("postgres");
