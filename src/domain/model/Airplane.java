@@ -77,14 +77,6 @@ public class Airplane {
 	@OneToOne(cascade=CascadeType.ALL)
 	Airline airline;
 	
-	public Airline getAirline() {
-		return airline;
-	}
-
-	public void setAirline(Airline airline) {
-		this.airline = airline;
-	}
-
 	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(name="ControlAirplane")
 	Collection<AirportController> cotrollerList= new ArrayList<AirportController>();
@@ -97,8 +89,13 @@ public class Airplane {
 	@JoinColumn(name="AIRPLANE_ID", nullable=false)
 	Collection<AirplanePhoto> photoList=new ArrayList<AirplanePhoto>();
 	
-	
-	
+	public Airline getAirline() {
+		return airline;
+	}
+
+	public void setAirline(Airline airline) {
+		this.airline = airline;
+	}	
 	
 	public Collection<AirplanePhoto> getPhotoList() {
 		return photoList;

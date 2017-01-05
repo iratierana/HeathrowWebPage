@@ -1,6 +1,7 @@
 package hibernateDAOtests;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
@@ -67,5 +68,47 @@ public class TestDAOPassanger {
 		assertFalse("Error inserting a new passanger", result);
 	}
 
+	@Test
+	public void testToLoadAPassengerWithCorrectData(){
+		String pass="ane95";
+		String username="123";
+		
+		assertNotNull(DAOPassanger.loadPassanger(username, pass));
+	}
 	
+	@Test
+	public void testToLoadPassengerFlights(){
+		assertNotNull(DAOPassanger.loadPassangerFlights(1));
+	}
+	
+	@Test
+	public void testToUpdateAPassenger(){
+		Passanger p = new Passanger();
+		
+		p.setFirstName("a");
+		p.setLastName1("a");
+		p.setLastName2("a");
+		p.setDni_passport("a");
+		p.setHomeTlf("a");
+		p.setMovileTlf("a");
+		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+		try {
+			p.setBirthDate(formatter.parse("1/1/2010"));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		p.setUsername("a");
+		p.setPassword("a");
+		p.setPassangerId(376);
+		
+		assertTrue(DAOPassanger.updatePassanger(p));
+		
+		
+		
+	}
+	
+	@Test
+	public void testToAddFlightToLoggedPassenger(){
+		//TODO Testa itxeko denboria badao 
+	}
 }
