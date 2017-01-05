@@ -1,5 +1,1 @@
-/domain/
-/actions/
-/hibernateDAOtests/
-/databaseListener/
-/configurations/
+/controllerTests/
