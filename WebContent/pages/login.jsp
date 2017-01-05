@@ -6,6 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Heathrow Airport</title>
+  <link rel="shortcut icon" href="<s:url value="/img/pageIcon.png"/>">
   <link rel="stylesheet" type="text/css" href="<s:url value="/css/loginStyle.css"/>">
 
 </head>

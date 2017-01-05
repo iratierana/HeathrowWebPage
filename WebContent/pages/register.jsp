@@ -4,6 +4,7 @@
 <head>
 	<title>Register</title>
 	<link rel="stylesheet" type="text/css" href="<s:url value="/css/bookingAndRegisterStyle.css"/>">
+	<link rel="shortcut icon" href="<s:url value="/img/pageIcon.png"/>">
 	<script type="text/javascript" src="<s:url value="/js/registerSteps.js"/>"></script>
 </head>
 <body>

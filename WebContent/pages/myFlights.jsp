@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>My Flights</title>
+<link rel="shortcut icon" href="<s:url value="/img/pageIcon.png"/>">
 </head>
 <body>
 	<table>
