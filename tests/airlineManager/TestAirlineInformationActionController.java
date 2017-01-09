@@ -11,24 +11,39 @@ import org.mockito.Mockito;
 import actions.airlineManager.AirlineInformationAction;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestAirlineInformationActionController.
+ */
 public class TestAirlineInformationActionController {
 	
-	AirlineInformationAction airInfoAct;
+	/** The air info act. */
+	private AirlineInformationAction airInfoAct;
 	
+	/**
+	 * Pepare for correct test.
+	 */
 	@Before
-	public void pepareForCorrectTest(){
+	public void pepareForCorrectTest() {
 		
 		airInfoAct = Mockito.mock(AirlineInformationAction.class);
 		airInfoAct = Mockito.spy(new AirlineInformationAction());
 	}
 	
+	/**
+	 * Finish the testing.
+	 */
 	@After
-	public void finishTheTesting(){
+	public void finishTheTesting() {
 		this.setAirInfoAct(null);
 	}
 	
+	/**
+	 * Test if the function execute correct ina correct way 
+	 * redirecting the page.
+	 */
 	@Test
-	public void testIfTheFunctionExecuteCorrectInaCorrectWayRedirectingThePage(){
+	public void testIfTheFunctionExecuteCorrectInaCorrectWayRedirectingThePage() {
 		
 		int airplaneId = 1;
 		String ret;
@@ -45,7 +60,12 @@ public class TestAirlineInformationActionController {
 	}
 
 
-	public void setAirInfoAct(AirlineInformationAction airInfoAct) {
+	/**
+	 * Sets the air info act.
+	 *
+	 * @param airInfoAct the new air info act
+	 */
+	public void setAirInfoAct(final AirlineInformationAction airInfoAct) {
 		this.airInfoAct = airInfoAct;
 	}
 
