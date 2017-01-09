@@ -124,8 +124,8 @@ private static Session session;
 	 * @return true if the update goes OK
 	 * false if an error occurs
 	 */
-	public static boolean updatePassanger(Passanger passanger){
-		try{
+	public static boolean updatePassanger(Passanger passanger) {
+		try {
 			ConnectHibernate.before();			
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
@@ -161,7 +161,7 @@ private static Session session;
 	 * false if an error occurs during the insert
 	 */
 	@SuppressWarnings("rawtypes")
-	public static boolean addFlightToLoggedPassenger(Flight flight){
+	public static boolean addFlightToLoggedPassenger(Flight flight) {
 		try {
 			ConnectHibernate.before();			
 			session = ConnectHibernate.getSession();
