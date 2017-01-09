@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +16,7 @@ import org.mockito.Mockito;
 
 import com.opensymphony.xwork2.ActionContext;
 
+import actions.passengerMenu.BookAFlightFinishAction;
 import actions.passengerMenu.MyProfileSaveChagesAction;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
@@ -79,7 +82,37 @@ public class TestMyProfileSaveChangesAction {
 		assertEquals("The redirection was NOT OK", ret, "passanger");		
 	}
 	
-	
+	@Test
+	public void testGettersAndSetters(){
+		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+		myProfileSaveChangeAct = new MyProfileSaveChagesAction();
+		Date d = null;
+		
+		
+		try {
+			d = formatter.parse("09/01/2017");
+			myProfileSaveChangeAct.setName("a");
+			myProfileSaveChangeAct.setFirstName("a");
+			myProfileSaveChangeAct.setSecondName("a");
+			myProfileSaveChangeAct.setDniPassport("a");
+			myProfileSaveChangeAct.setBirthDate(formatter.parse("09/01/2017"));
+			myProfileSaveChangeAct.setHomeTlf("a");
+			myProfileSaveChangeAct.setMovileTlf("a");
+			myProfileSaveChangeAct.setEmail("a");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		assertEquals("Name not equal", "a", myProfileSaveChangeAct.getName());
+		assertEquals("First name not equal", "a", myProfileSaveChangeAct.getFirstName());
+		assertEquals("Second name not equal", "a", myProfileSaveChangeAct.getSecondName());
+		assertEquals("Dni not equal", "a", myProfileSaveChangeAct.getDniPassport());
+		assertEquals("Birth date not equal", d, myProfileSaveChangeAct.getBirthDate());
+		assertEquals("Home tlf not equal", "a", myProfileSaveChangeAct.getHomeTlf());
+		assertEquals("Movile tlf not equal", "a", myProfileSaveChangeAct.getMovileTlf());
+		assertEquals("Email not equal", "a", myProfileSaveChangeAct.getEmail());
+
+	}
 
 	public void setActionContext(ActionContext actionContext) {
 		this.actionContext = actionContext;
