@@ -9,29 +9,32 @@ import org.hibernate.Session;
 import configurations.ConnectHibernate;
 import domain.model.AirplanePhoto;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class DAOAirplanePhoto.
+ *
  * @author Xabier Jauregi
- * @author Irati Eraña
+ * @author Irati Erana
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since 2016-12-13
  * 
  *        Class where are all the needed functions related with AirplanePhoto,
  *        in order to work with the database
- * 
  */
 public class DAOAirplanePhoto {
 
+	/** The session. */
 	private static Session session;
 
 	/**
-	 * This function loads an airplane photo
+	 * This function loads an airplane photo.
+	 *
 	 * @param airplaneId The id of the photo to load
 	 * @return The object of the airplane photo
 	 */
 	@SuppressWarnings("unchecked")
-	public static AirplanePhoto loadAirplanePhoto(int airplaneId) {
+	public static AirplanePhoto loadAirplanePhoto(final int airplaneId) {
 		List<AirplanePhoto> photoList = null;
 		AirplanePhoto photo = new AirplanePhoto();
 		try {
@@ -45,7 +48,7 @@ public class DAOAirplanePhoto {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			ConnectHibernate.after();
 		}
 		
