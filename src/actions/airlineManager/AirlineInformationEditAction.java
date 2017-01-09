@@ -174,7 +174,7 @@ public class AirlineInformationEditAction {
 	 *
 	 * @param numberOfOurs the new number of ours
 	 */
-	public void setNumberOfOurs(final String numberOfOurs) {
+	public void setNumberOfOurs(final  String numberOfOurs) {
 		this.numberOfOurs = numberOfOurs;
 	}
 	
