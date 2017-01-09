@@ -1,22 +1,20 @@
 package databaseListener;
 
-import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import domain.dao.DAOAirplane;
-import domain.model.Airplane;
-import domain.model.PlanePosition;
-
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestPositionFileUpdater.
+ */
 public class TestPositionFileUpdater {
-	
-	PositionFileUpdater positionFileUpdater;
-	
+
+	/**
+	 * Test to check if the position is changed
+	 *  in the database after reading from file.
+	 */
 	@Test
-	public void testToCheckIfThePositionIsChengedInTheDatabaseAfterReadingFromFile(){
-		Airplane a;
-		PlanePosition pp;
-		positionFileUpdater = new PositionFileUpdater();
+	public void testToCheckIfThePositionIsChengedInTheDatabaseAfterReadingFromFile() {
 		
 		PositionFileUpdater.updatePlanePositionFromFile(335, 1);
 		PositionFileUpdater.updatePlanePositionFromFile(335, 20);
