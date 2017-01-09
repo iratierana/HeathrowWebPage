@@ -80,20 +80,20 @@ public class AirportController {
 	
 	
 	/** The airplane list. */
-	@ManyToMany(mappedBy="cotrollerList")
-	Collection<Airplane> airplaneList = new ArrayList<Airplane>();
+	@ManyToMany(mappedBy = "cotrollerList")
+	private Collection<Airplane> airplaneList = new ArrayList<Airplane>();
 	
 	/** The airport. */
 	@OneToOne
-	Airport airport;
+	private Airport airport;
 	
 	/** The flight list. */
-	@ManyToMany(mappedBy="cortrollerList")
-	Collection<Flight> flightList  = new ArrayList<Flight>();
+	@ManyToMany(mappedBy = "cortrollerList")
+	private Collection<Flight> flightList  = new ArrayList<Flight>();
 	
 	/** The direction. */
 	@OneToOne
-	Direction direction;
+	private Direction direction;
 
 	/**
 	 * Gets the airport controller id.
@@ -163,7 +163,7 @@ public class AirportController {
 	 *
 	 * @param lastName2 the new last name 2
 	 */
-	public void setLastName2(String lastName2) {
+	public void setLastName2(final String lastName2) {
 		this.lastName2 = lastName2;
 	}
 
@@ -181,7 +181,7 @@ public class AirportController {
 	 *
 	 * @param dni_passport the new dni passport
 	 */
-	public void setDni_passport(String dni_passport) {
+	public void setDni_passport(final String dni_passport) {
 		this.dni_passport = dni_passport;
 	}
 
@@ -199,7 +199,7 @@ public class AirportController {
 	 *
 	 * @param homeTlf the new home tlf
 	 */
-	public void setHomeTlf(String homeTlf) {
+	public void setHomeTlf(final String homeTlf) {
 		this.homeTlf = homeTlf;
 	}
 
@@ -217,7 +217,7 @@ public class AirportController {
 	 *
 	 * @param movileTlf the new movile tlf
 	 */
-	public void setMovileTlf(String movileTlf) {
+	public void setMovileTlf(final String movileTlf) {
 		this.movileTlf = movileTlf;
 	}
 
@@ -325,7 +325,7 @@ public class AirportController {
 	 *
 	 * @param airport the new airport
 	 */
-	public void setAirport(Airport airport) {
+	public void setAirport(final Airport airport) {
 		this.airport = airport;
 	}
 
