@@ -129,25 +129,25 @@ private static Session session;
 			ConnectHibernate.before();			
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
-			String hql="UPDATE Passanger"
-					+ " SET firstName = '"+passanger.getFirstName()+"',"
-					+ " lastName1 = '"+passanger.getLastName1()+"',"
-					+ " lastName2 = '"+ passanger.getLastName2()+"',"
-					+ " dni_passport = '"+passanger.getDni_passport()+"',"
-					+ " homeTlf = '"+passanger.getHomeTlf()+"',"
-					+ " movileTlf = '"+passanger.getMovileTlf()+"',"
-					+ " email = '"+ passanger.getEmail()+"',"
-					+ " birthDate = '"+passanger.getBirthDate()+"',"
-					+ " username = '"+passanger.getUsername()+"',"
-					+ " password = '"+passanger.getPassword()+"'"
-					+ " WHERE passangerId = "+passanger.getPassangerId();
+			String hql = "UPDATE Passanger"
+					+ " SET firstName = '" + passanger.getFirstName() + "',"
+					+ " lastName1 = '" + passanger.getLastName1() + "',"
+					+ " lastName2 = '" + passanger.getLastName2() + "',"
+					+ " dni_passport = '" + passanger.getDni_passport() + "',"
+					+ " homeTlf = '" + passanger.getHomeTlf() + "',"
+					+ " movileTlf = '" + passanger.getMovileTlf() + "',"
+					+ " email = '" + passanger.getEmail() + "',"
+					+ " birthDate = '" + passanger.getBirthDate() + "',"
+					+ " username = '" + passanger.getUsername() + "',"
+					+ " password = '" + passanger.getPassword() + "'"
+					+ " WHERE passangerId = " + passanger.getPassangerId();
 			Query query = session.createQuery(hql);
 			query.executeUpdate();
 			session.getTransaction().commit();		
-		}catch(Exception e){			
+		} catch (Exception e) {			
 			e.printStackTrace();
 			return false;
-		}finally {
+		} finally {
 			ConnectHibernate.after();		
 		}
 		return true;
@@ -162,7 +162,7 @@ private static Session session;
 	 */
 	@SuppressWarnings("rawtypes")
 	public static boolean addFlightToLoggedPassenger(Flight flight){
-		try{
+		try {
 			ConnectHibernate.before();			
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
@@ -175,10 +175,10 @@ private static Session session;
 			session.saveOrUpdate(p);
 			
 			session.getTransaction().commit();	
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
-		}finally {
+		} finally {
 			ConnectHibernate.after();		
 		}
 		return true;
