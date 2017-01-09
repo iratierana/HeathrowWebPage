@@ -67,7 +67,7 @@ public class PositionFileUpdater {
 		
 		BufferedReader fileReader = null;
 
-		try{
+		try {
 			ArrayList<PositioningModel> posList = new ArrayList<PositioningModel>();
 			String line = "";
 			fileReader = new BufferedReader(new FileReader(fileName));
