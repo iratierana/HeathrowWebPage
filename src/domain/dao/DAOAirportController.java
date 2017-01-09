@@ -15,7 +15,7 @@ import domain.model.AirportController;
  * The Class DAOAirportController.
  *
  * @author Xabier Jauregi
- * @author Irati Eraña
+ * @author Irati Erana
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13

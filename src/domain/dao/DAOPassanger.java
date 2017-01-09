@@ -15,30 +15,32 @@ import domain.model.Flight;
 import domain.model.Passanger;
 
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class DAOPassanger.
+ *
  * @author Xabier Jauregi
- * @author Irati Eraña
- * @author Mikel Arizmendiarrieta 
+ * @author Irati Erana
+ * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
  * 
- * Class where are all the needed functions related with passanger, in order to work with the database
- *  
+ * Class where are all the needed functions related with 
+ * passanger, in order to work with the database
  */
 public class DAOPassanger {
 
+/** The session. */
 private static Session session;
 	
 	/**
-	 * 
-	 * This function insert a passenger in the database
-	 * 
+	 * This function insert a passenger in the database.
+	 *
 	 * @param passanger the passenger to insert in the database
 	 * @return true if the insert is correct
-	 * @return false if and error occurs during the insert
+	 * false if and error occurs during the insert
 	 */
-	public static boolean insertPassanger(Passanger passanger){
+	public static boolean insertPassanger(final Passanger passanger) {
 		try {
 			
 			ConnectHibernate.before();
@@ -52,41 +54,40 @@ private static Session session;
 		} catch (Exception e) {
 			session.getTransaction().rollback();
 			return false;		
-		}finally {
+		} finally {
 			ConnectHibernate.after();
 
 		}
 	}
 	
 	/**
-	 * 
-	 * This function load a specific passenger
-	 * 
+	 * This function load a specific passenger.
+	 *
 	 * @param username the username of the passenger
 	 * @param pass the password of the passenger
 	 * @return the passenger object if the passenger exists, else null
 	 */
 	@SuppressWarnings("unchecked")
-	public static Passanger loadPassanger(String username, String pass){
+	public static Passanger loadPassanger(final String username, final String pass) {
 		List<Passanger> passangerList = null;
 		Passanger p = new Passanger();
 		p = null;
-		try{
+		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			
-			TypedQuery<Passanger> query = session.createQuery("from Passanger where password='"+pass+"' and username='"+username+"'");
+			TypedQuery<Passanger> query = session.createQuery("from Passanger where password='" + pass + "' and username='" + username + "'");
 			passangerList = query.getResultList();
-			if(!passangerList.isEmpty()){
-				p=passangerList.get(0);
+			if (!passangerList.isEmpty()) {
+				p = passangerList.get(0);
 			}
 			ConnectHibernate.after();
 			
-		}catch (Exception e) {
+		} catch (Exception e) {
 			session.getTransaction().rollback();
 			ConnectHibernate.after();
 			return null;
-		}finally {
+		} finally {
 			ConnectHibernate.after();
 
 		}
@@ -95,35 +96,33 @@ private static Session session;
 	}
 
 	/**
-	 * 
-	 * This function loads al the fights of a specific passenger
-	 * 
+	 * This function loads al the fights of a specific passenger.
+	 *
 	 * @param id the id of the passenger
 	 * @return the list of flights if the passanger exists, else null
 	 */
 	@SuppressWarnings({ "unchecked" })
-	public static List<Flight> loadPassangerFlights(int id){
+	public static List<Flight> loadPassangerFlights(final int id) {
 		List<Flight> flightList = null;
-		try{
+		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();			
-			Query query = session.createQuery("select p.flightList from Passanger as p where p.id ="+id);
+			Query query = session.createQuery("select p.flightList from Passanger as p where p.id =" + id);
 			flightList = query.getResultList();
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			ConnectHibernate.after();		
 		}
 		return flightList;
 	}
 	
 	/**
-	 * 
-	 * This function save the changes that have been done in a passenger
-	 * 
+	 * This function save the changes that have been done in a passenger.
+	 *
 	 * @param passanger Passenger to update
 	 * @return true if the update goes OK
-	 * @return false if an error occurs
+	 * false if an error occurs
 	 */
 	public static boolean updatePassanger(Passanger passanger){
 		try{
@@ -155,11 +154,11 @@ private static Session session;
 	}
 	
 	/**
-	 * This function adds book a flight for a passenger and adds it to the flightList of passenger
-	 * @param passengerId The ID of the passenger
+	 * This function adds book a flight for a passenger and adds it to the flightList of passenger.
+	 *
 	 * @param flight The flight to add
 	 * @return true if the insert is OK
-	 * @return false if an error occurs during the insert
+	 * false if an error occurs during the insert
 	 */
 	@SuppressWarnings("rawtypes")
 	public static boolean addFlightToLoggedPassenger(Flight flight){
