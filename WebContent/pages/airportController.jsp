@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+
+<!DOCTYPE html>
 <html>
 <head>
 <title>Welcome</title>
@@ -18,7 +20,7 @@
 <body>
 	<!-- <h2>Welcome, <s:property value="username" />...!</h2> -->
 	<aside>
-		<img src=""><hr>
+		<img alt="Airplane photo" src="https://thumbs.dreamstime.com/t/handelspassagierflugzeug-whrend-des-fluges-67048953.jpg"><hr>
 		Serial: <s:textfield name="serialNumb" readonly="true"></s:textfield><br>
 		Airline: <s:textfield name="airlineName" readonly="true"></s:textfield><hr>
 		
