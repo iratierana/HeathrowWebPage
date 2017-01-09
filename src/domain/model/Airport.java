@@ -43,8 +43,8 @@ public class Airport {
 	
 	/** The runway list. */
 	@OneToMany
-	@JoinColumn(name="AIRPORT_ID", nullable=false)
-	Collection<Runway> runwayList =  new ArrayList<Runway>();
+	@JoinColumn(name = "AIRPORT_ID", nullable = false)
+	private Collection<Runway> runwayList =  new ArrayList<Runway>();
 
 
 	/**
