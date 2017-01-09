@@ -10,27 +10,29 @@ import org.hibernate.Session;
 import configurations.ConnectHibernate;
 import domain.model.Flight;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class DAOFlight.
+ *
  * @author Xabier Jauregi
  * @author Irati Eraña
- * @author Mikel Arizmendiarrieta 
+ * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
  * 
- * Class where are all the needed functions related with flight, in order to work with the database
- *  
+ * Class where are all the needed functions related 
+ * with flight, in order to work with the database
  */
 public class DAOFlight {
 	
+/** The session. */
 private static Session session;
 		
 	/**
-	 * 
-	 * This function load all the flights of the database
-	 * 
+	 * This function load all the flights of the database.
+	 *
 	 * @return the list of flights if the load is correct
-	 * @return null if an error occurs during the load
+	 * null if an error occurs during the load
 	 */
 	public static List<Flight> loadAllFlights() {
 		List<Flight> flightList = null;
@@ -42,7 +44,7 @@ private static Session session;
 			flightList = query.getResultList();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			ConnectHibernate.after();
 		}
 
@@ -51,15 +53,16 @@ private static Session session;
 	}
 
 	/**
-	 * This function checks if the flight exist in order to book it
+	 * This function checks if the flight exist in order to book it.
+	 *
 	 * @param from the airport name where the plane will departure
 	 * @param to the airport name where the plane will arrive
 	 * @param arrivalDate the date when the plane will arrive
 	 * @param departureDate the date when the plane will departure
 	 * @return f the flight if exist one
-	 * @return null if no flight exist
+	 * null if no flight exist
 	 */
-	public static Flight checkIfFlightIsBookable(String from, String to, Date arrivalDate, Date departureDate){
+	public static Flight checkIfFlightIsBookable(final String from, final String to, final Date arrivalDate, final Date departureDate) {
 		List<Flight> flightList = null;
 		Flight f = new Flight();
 		f = null;
@@ -67,31 +70,31 @@ private static Session session;
 		Date end1 = new Date(departureDate.getTime() + (1000 * 60 * 60 * 24));
 		Date end2 = new Date(arrivalDate.getTime() + (1000 * 60 * 60 * 24));
 		
-		try{
+		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			
 			@SuppressWarnings("unchecked")
 			TypedQuery<Flight> query = session.createQuery("FROM Flight "
-														 + "WHERE departAirport.name='"+from+"' "
-															+ " AND arriveAirport.name='"+to+"'"
-															+ " AND departureDate between :start1 and :end1"
-															+ " AND arrivalDate between :start2 and :end2");
+			 + "WHERE departAirport.name='" + from + "' "
+			+ " AND arriveAirport.name='" + to + "'"
+			+ " AND departureDate between :start1 and :end1"
+			+ " AND arrivalDate between :start2 and :end2");
 			query.setParameter("start1", departureDate);
 			query.setParameter("start2", arrivalDate);
 			query.setParameter("end1", end1);
 			query.setParameter("end2", end2);
 			flightList = query.getResultList();
-			if(!flightList.isEmpty()){
-				f=flightList.get(0);
+			if (!flightList.isEmpty()) {
+				f = flightList.get(0);
 			}
 			ConnectHibernate.after();
 			
-		}catch (Exception e) {
+		} catch (Exception e) {
 			session.getTransaction().rollback();
 			ConnectHibernate.after();
 			return null;
-		}finally {
+		} finally {
 			ConnectHibernate.after();
 
 		}		
