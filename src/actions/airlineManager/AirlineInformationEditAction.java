@@ -10,7 +10,7 @@ import domain.model.Airplane;
 public class AirlineInformationEditAction {
 	
 	/** The airplane id. */
-	private Integer airplaneId ;
+	private Integer airplaneId;
 	
 	/** The airplane. */
 	private Airplane airplane = new Airplane();

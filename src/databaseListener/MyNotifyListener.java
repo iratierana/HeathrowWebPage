@@ -21,7 +21,7 @@ import com.impossibl.postgres.jdbc.PGDataSource;
 public class MyNotifyListener extends Thread {
 
 	
-	/* (non-Javadoc)
+	/** (non-Javadoc).
 	 * @see java.lang.Thread#run()
 	 */
 	public void run() {

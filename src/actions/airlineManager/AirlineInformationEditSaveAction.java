@@ -36,7 +36,7 @@ public class AirlineInformationEditSaveAction {
 	 * @return the string
 	 */
 	@SuppressWarnings("rawtypes")
-	public String execute(){
+	public String execute() {
 		Map session = ActionContext.getContext().getSession();
 		AirlineManager aM = (AirlineManager) session.get("loggedAirlineManager");
 		DAOAirplane.updateAirplane(createAirplane());
