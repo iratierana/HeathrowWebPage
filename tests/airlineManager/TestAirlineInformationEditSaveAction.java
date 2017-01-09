@@ -15,14 +15,26 @@ import actions.airlineManager.AirlineInformationEditSaveAction;
 import domain.dao.DAOAirlineManager;
 import domain.model.AirlineManager;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestAirlineInformationEditSaveAction.
+ */
 public class TestAirlineInformationEditSaveAction {
 	
-	ActionContext actionContext;
-	AirlineInformationEditSaveAction airInfoEditSaveAct;
-	Map<String, Object> contextMap;
+	/** The action context. */
+	private ActionContext actionContext;
+	
+	/** The air info edit save act. */
+	private AirlineInformationEditSaveAction airInfoEditSaveAct;
+	
+	/** The context map. */
+	private Map<String, Object> contextMap;
 
+	/**
+	 * Prepare test.
+	 */
 	@Before
-	public void prepareTest(){
+	public void prepareTest() {
 		
 		AirlineManager aM = DAOAirlineManager.loadAirLineManager("arizz", "arizz");
 		contextMap = new HashMap<String, Object>();
@@ -37,16 +49,22 @@ public class TestAirlineInformationEditSaveAction {
 		airInfoEditSaveAct = Mockito.spy(new AirlineInformationEditSaveAction());		
 	}
 	
+	/**
+	 * Destroy test.
+	 */
 	@After
-	public void destroyTest(){
+	public void destroyTest() {
 		this.setActionContext(null);
 		this.setAirInfoEditSaveAct(null);
 		this.setContextMap(null);
 		
 	}
 	
+	/**
+	 * Check if the redirection of the page and the creation of the airplane.
+	 */
 	@Test
-	public void checkIfTheRedirectionOfThePageAndTheCreationOfTheAirplane(){
+	public void checkIfTheRedirectionOfThePageAndTheCreationOfTheAirplane() {
 		String ret;
 		
 		ret = airInfoEditSaveAct.execute();
@@ -54,15 +72,30 @@ public class TestAirlineInformationEditSaveAction {
 		assertEquals("Error redirecting the page with filled atributes", ret, "airplanesList");
 	}
 
-	public void setActionContext(ActionContext actionContext) {
+	/**
+	 * Sets the action context.
+	 *
+	 * @param actionContext the new action context
+	 */
+	public void setActionContext(final ActionContext actionContext) {
 		this.actionContext = actionContext;
 	}
 
-	public void setAirInfoEditSaveAct(AirlineInformationEditSaveAction airInfoEditSaveAct) {
+	/**
+	 * Sets the air info edit save act.
+	 *
+	 * @param airInfoEditSaveAct the new air info edit save act
+	 */
+	public void setAirInfoEditSaveAct(final AirlineInformationEditSaveAction airInfoEditSaveAct) {
 		this.airInfoEditSaveAct = airInfoEditSaveAct;
 	}
 
-	public void setContextMap(Map<String, Object> contextMap) {
+	/**
+	 * Sets the context map.
+	 *
+	 * @param contextMap the context map
+	 */
+	public void setContextMap(final Map<String, Object> contextMap) {
 		this.contextMap = contextMap;
 	}
 	

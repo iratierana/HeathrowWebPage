@@ -8,23 +8,37 @@ import org.mockito.Mockito;
 
 import actions.airlineManager.AirlineInformationEditAction;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestAirlineInformationEditAction.
+ */
 public class TestAirlineInformationEditAction {
 	
-	AirlineInformationEditAction airInfoEditActi;
+	/** The air info edit acti. */
+	private AirlineInformationEditAction airInfoEditActi;
 	
+	/**
+	 * Prepare test.
+	 */
 	@Before
-	public void prepareTest(){
+	public void prepareTest() {
 		airInfoEditActi = Mockito.mock(AirlineInformationEditAction.class);
 		airInfoEditActi = Mockito.spy(new AirlineInformationEditAction());
 	}
 	
+	/**
+	 * Destroy test.
+	 */
 	@After
-	public void destroyTest(){
+	public void destroyTest() {
 		this.setAirInfoEditActi(null);
 	}
 
+	/**
+	 * Check if the function execute and subfunctions are ok.
+	 */
 	@Test
-	public void checkIfTheFunctionExecuteAndSubfunctionsAreOk(){
+	public void checkIfTheFunctionExecuteAndSubfunctionsAreOk() {
 		
 		int airplaneId = 1;
 		String ret;
@@ -35,9 +49,13 @@ public class TestAirlineInformationEditAction {
 		assertEquals("The atribute was not filled in a correct way, test failled", "airlineEdit", ret);
 	}
 
-	public void setAirInfoEditActi(AirlineInformationEditAction airInfoEditActi) {
+	/**
+	 * Sets the air info edit acti.
+	 *
+	 * @param airInfoEditActi the new air info edit acti
+	 */
+	public void setAirInfoEditActi(final AirlineInformationEditAction airInfoEditActi) {
 		this.airInfoEditActi = airInfoEditActi;
 	}
-	
 	
 }
