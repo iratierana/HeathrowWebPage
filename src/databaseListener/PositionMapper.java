@@ -1,9 +1,20 @@
 package databaseListener;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PositionMapper.
+ */
 public class PositionMapper {
 	
 	
-	public static PositioningModel decodePosition(int planeId, int positionId){
+	/**
+	 * Decode position.
+	 *
+	 * @param planeId the plane id
+	 * @param positionId the position id
+	 * @return the positioning model
+	 */
+	public static PositioningModel decodePosition(final int planeId, final int positionId) {
 		
 		PositioningModel posModel = null;
 		
@@ -130,6 +141,8 @@ public class PositionMapper {
 			break;
 		case 41:
 			posModel = new PositioningModel(planeId, 51.464936, -0.433209);
+			break;
+		default:
 			break;
 		}
 		
