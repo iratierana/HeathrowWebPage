@@ -86,15 +86,15 @@ public class Passanger {
 
 	
 	/** The flight list. */
-	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinTable(name="booking", joinColumns={
-			@JoinColumn(name="passengerId", nullable=false, updatable=false)},
-			inverseJoinColumns={@JoinColumn(name="flightId", nullable=false, updatable=false)}) 
-	Collection<Flight> flightList = new ArrayList<Flight>();
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "booking", joinColumns = {
+			@JoinColumn(name = "passengerId", nullable = false, updatable = false)},
+			inverseJoinColumns = {@JoinColumn(name = "flightId", nullable = false, updatable = false)}) 
+	private Collection<Flight> flightList = new ArrayList<Flight>();
 	
 	/** The direction. */
 	@OneToOne(cascade = CascadeType.ALL)
-	Direction direction;
+	private Direction direction;
 
 	
 	
@@ -184,7 +184,7 @@ public class Passanger {
 	 *
 	 * @param dni_passport the new dni passport
 	 */
-	public void setDni_passport(String dni_passport) {
+	public void setDni_passport(final String dni_passport) {
 		this.dni_passport = dni_passport;
 	}
 
@@ -238,7 +238,7 @@ public class Passanger {
 	 *
 	 * @param email the new email
 	 */
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 
@@ -256,7 +256,7 @@ public class Passanger {
 	 *
 	 * @param birthDate the new birth date
 	 */
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(final Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -274,7 +274,7 @@ public class Passanger {
 	 *
 	 * @param username the new username
 	 */
-	public void setUsername(String username) {
+	public void setUsername(final String username) {
 		this.username = username;
 	}
 
@@ -292,7 +292,7 @@ public class Passanger {
 	 *
 	 * @param password the new password
 	 */
-	public void setPassword(String password) {
+	public void setPassword(final String password) {
 		this.password = password;
 	}
 
@@ -328,7 +328,7 @@ public class Passanger {
 	 *
 	 * @param direction the new direction
 	 */
-	public void setDirection(Direction direction) {
+	public void setDirection(final Direction direction) {
 		this.direction = direction;
 	}
 	
