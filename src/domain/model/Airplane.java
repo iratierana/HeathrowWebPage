@@ -87,27 +87,27 @@ public class Airplane {
 //	Collection<Flight> flightList = new ArrayList<Flight>();
 	
 	/** The airport. */
-@OneToOne(cascade=CascadeType.ALL)
-	Airport airport;
+@OneToOne(cascade = CascadeType.ALL)
+	private Airport airport;
 	
 	/** The airline. */
-	@OneToOne(cascade=CascadeType.ALL)
-	Airline airline;
+	@OneToOne(cascade = CascadeType.ALL)
+	private Airline airline;
 	
 	/** The cotroller list. */
-	@ManyToMany(cascade=CascadeType.ALL)
-	@JoinTable(name="ControlAirplane")
-	Collection<AirportController> cotrollerList= new ArrayList<AirportController>();
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "ControlAirplane")
+	private Collection<AirportController> cotrollerList = new ArrayList<AirportController>();
 	
 	/** The plane position. */
-	@OneToOne(cascade=CascadeType.ALL)
-	PlanePosition planePosition;
+	@OneToOne(cascade = CascadeType.ALL)
+	private PlanePosition planePosition;
 
 	
 	/** The photo list. */
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="AIRPLANE_ID", nullable=false)
-	Collection<AirplanePhoto> photoList=new ArrayList<AirplanePhoto>();
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "AIRPLANE_ID", nullable = false)
+	private Collection<AirplanePhoto> photoList = new ArrayList<AirplanePhoto>();
 	
 	/**
 	 * Gets the airline.
@@ -123,7 +123,7 @@ public class Airplane {
 	 *
 	 * @param airline the new airline
 	 */
-	public void setAirline(Airline airline) {
+	public void setAirline(final Airline airline) {
 		this.airline = airline;
 	}	
 	
@@ -141,7 +141,7 @@ public class Airplane {
 	 *
 	 * @param photoList the new photo list
 	 */
-	public void setPhotoList(Collection<AirplanePhoto> photoList) {
+	public void setPhotoList(final Collection<AirplanePhoto> photoList) {
 		this.photoList = photoList;
 	}
 
@@ -159,7 +159,7 @@ public class Airplane {
 	 *
 	 * @param airplaneId the new airplane id
 	 */
-	public void setAirplaneId(Integer airplaneId) {
+	public void setAirplaneId(final Integer airplaneId) {
 		this.airplaneId = airplaneId;
 	}
 
@@ -177,7 +177,7 @@ public class Airplane {
 	 *
 	 * @param name the new name
 	 */
-	public void setName(String name) {
+	public void setName(final String name) {
 		this.name = name;
 	}
 

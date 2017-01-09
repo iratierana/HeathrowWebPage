@@ -72,7 +72,7 @@ public class LoginAction {
 			 session.put("loggedAirlineManager", null);
 			 return "passenger";
 			
-		} else if(loggedAirportController != null){
+		} else if(loggedAirportController != null) {
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", this.loggedAirportController);
 			session.put("loggedAirlineManager", null);
