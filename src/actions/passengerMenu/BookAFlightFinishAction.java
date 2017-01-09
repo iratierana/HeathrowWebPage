@@ -84,29 +84,6 @@ public class BookAFlightFinishAction {
 		DAOPassanger.addFlightToLoggedPassenger(f);
 		return "passenger";
 	}
-		
-	
-	
-	/**
-	 * Rand int.
-	 *
-	 * @param min the min
-	 * @param max the max
-	 * @return the int
-	 */
-	public int randInt(final int min, final int max) {
-
-	    
-	    Random rand = new Random();
-
-	    int randomNum = rand.nextInt((max - min) + 1) + min;
-
-	    return randomNum;
-	}
-	
-		
-	
-	
 	
 	/**
 	 * Gets the from.
