@@ -15,23 +15,37 @@ import actions.register.RegisterAction;
 import domain.model.Direction;
 import domain.model.Passanger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestRegisterAction.
+ */
 public class TestRegisterAction {
 	
-	RegisterAction registerAction;
+	/** The register action. */
+	private RegisterAction registerAction;
 	
+	/**
+	 * Prepare test.
+	 */
 	@Before
-	public void prepareTest(){
+	public void prepareTest() {
 		registerAction = Mockito.mock(RegisterAction.class);
 		registerAction = Mockito.spy(new RegisterAction());
 	}
 	
+	/**
+	 * Destroy test.
+	 */
 	@After
-	public void destroyTest(){
+	public void destroyTest() {
 		
 	}
 	
+	/**
+	 * Check if the redirection is ok.
+	 */
 	@Test
-	public void checkIfTheRedirectionIsOk(){
+	public void checkIfTheRedirectionIsOk() {
 		String ret;
 		registerAction = new RegisterAction();
 		ret = registerAction.execute();
@@ -39,8 +53,11 @@ public class TestRegisterAction {
 		assertEquals("The redirection was NOT OK", ret, "login");
 	}
 	
+	/**
+	 * Test function create passanger object.
+	 */
 	@Test
-	public void testFunctionCreatePassangerObject(){
+	public void testFunctionCreatePassangerObject() {
 		Passanger p = null;
 		Method createPassangerObjectFunction;
 		try {
@@ -54,8 +71,11 @@ public class TestRegisterAction {
 
 	}
 	
+	/**
+	 * Test function create direction object.
+	 */
 	@Test
-	public void testFunctionCreateDirectionObject(){
+	public void testFunctionCreateDirectionObject() {
 		Direction d = null;
 		Method createPassangerObjectFunction;
 		try {
