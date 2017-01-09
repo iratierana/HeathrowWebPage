@@ -15,14 +15,26 @@ import actions.airlineManager.AirlineInformationDeleteAction;
 import domain.dao.DAOAirlineManager;
 import domain.model.AirlineManager;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestAirlineInformationDeleteAction.
+ */
 public class TestAirlineInformationDeleteAction {
 	
-	ActionContext actionContext;
-	AirlineInformationDeleteAction airInfoDelAct;
-	Map<String, Object> contextMap;
+	/** The action context. */
+	private ActionContext actionContext;
 	
+	/** The air info del act. */
+	private AirlineInformationDeleteAction airInfoDelAct;
+	
+	/** The context map. */
+	private Map<String, Object> contextMap;
+	
+	/**
+	 * Pepare for correct test.
+	 */
 	@Before
-	public void pepareForCorrectTest(){
+	public void pepareForCorrectTest() {
 		
 		AirlineManager aM = DAOAirlineManager.loadAirLineManager("arizz", "arizz");
 		contextMap = new HashMap<String, Object>();
@@ -40,14 +52,20 @@ public class TestAirlineInformationDeleteAction {
 	}
 	
 
+	/**
+	 * Finish the testing.
+	 */
 	@After
-	public void finishTheTesting(){
+	public void finishTheTesting() {
 		this.setActionContext(null);
 		this.setAirInfoDelAct(null);
 	}
 	
+	/**
+	 * Test if the function execute correct in a correct way redirecting the page.
+	 */
 	@Test
-	public void testIfTheFunctionExecuteCorrectInaCorrectWayRedirectingThePage(){
+	public void testIfTheFunctionExecuteCorrectInaCorrectWayRedirectingThePage() {
 		
 		int airplaneId = 1;
 		String ret;
@@ -60,12 +78,22 @@ public class TestAirlineInformationDeleteAction {
 	}
 	
 
-	public void setAirInfoDelAct(AirlineInformationDeleteAction airInfoDelAct) {
+	/**
+	 * Sets the air info del act.
+	 *
+	 * @param airInfoDelAct the new air info del act
+	 */
+	public void setAirInfoDelAct(final AirlineInformationDeleteAction airInfoDelAct) {
 		this.airInfoDelAct = airInfoDelAct;
 	}
 
 
-	public void setActionContext(ActionContext actionContext) {
+	/**
+	 * Sets the action context.
+	 *
+	 * @param actionContext the new action context
+	 */
+	public void setActionContext(final ActionContext actionContext) {
 		this.actionContext = actionContext;
 	}
 	
