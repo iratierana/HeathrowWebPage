@@ -13,10 +13,17 @@ import org.junit.Test;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestDAOPassanger.
+ */
 public class TestDAOPassanger {
 
+	/**
+	 * Test to insert new passanger with all atributes.
+	 */
 	@Test
-	public void testToInsertNewPassangerWithAllAtributes(){
+	public void testToInsertNewPassangerWithAllAtributes() {
 		Passanger p = new Passanger();
 		boolean result;
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -46,8 +53,11 @@ public class TestDAOPassanger {
 		
 	}
 	
+	/**
+	 * Test to insert new passanger with A null atribute.
+	 */
 	@Test
-	public void testToInsertNewPassangerWithANullAtribute(){
+	public void testToInsertNewPassangerWithANullAtribute() {
 		
 		Passanger p = new Passanger();
 		boolean result;
@@ -68,21 +78,30 @@ public class TestDAOPassanger {
 		assertFalse("Error inserting a new passanger", result);
 	}
 
+	/**
+	 * Test to load A passenger with correct data.
+	 */
 	@Test
-	public void testToLoadAPassengerWithCorrectData(){
-		String pass="ane95";
-		String username="123";
+	public void testToLoadAPassengerWithCorrectData() {
+		String pass = "ane95";
+		String username = "123";
 		
 		assertNotNull(DAOPassanger.loadPassanger(username, pass));
 	}
 	
+	/**
+	 * Test to load passenger flights.
+	 */
 	@Test
-	public void testToLoadPassengerFlights(){
+	public void testToLoadPassengerFlights() {
 		assertNotNull(DAOPassanger.loadPassangerFlights(1));
 	}
 	
+	/**
+	 * Test to update A passenger.
+	 */
 	@Test
-	public void testToUpdateAPassenger(){
+	public void testToUpdateAPassenger() {
 		Passanger p = new Passanger();
 		
 		p.setFirstName("a");
@@ -107,8 +126,11 @@ public class TestDAOPassanger {
 		
 	}
 	
+	/**
+	 * Test to add flight to logged passenger.
+	 */
 	@Test
-	public void testToAddFlightToLoggedPassenger(){
+	public void testToAddFlightToLoggedPassenger() {
 		//TODO Testa itxeko denboria badao 
 	}
 }
