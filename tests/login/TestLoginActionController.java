@@ -11,13 +11,24 @@ import org.mockito.Mockito;
 import com.opensymphony.xwork2.ActionContext;
 
 import actions.login.LoginAction;
+// TODO: Auto-generated Javadoc
+ 
+/**
+ * The Class TestLoginActionController.
+ */
 public class TestLoginActionController {
 	
-	ActionContext actionContext;
-	LoginAction logAct;
+	/** The action context. */
+	private ActionContext actionContext;
 	
+	/** The log act. */
+	private LoginAction logAct;
+	
+	/**
+	 * Pepare for correct test.
+	 */
 	@Before
-	public void pepareForCorrectTest(){
+	public void pepareForCorrectTest() {
 		
 		actionContext = Mockito.mock(ActionContext.class);
 		Mockito.when(actionContext.getSession()).thenReturn(new HashMap<>());
@@ -29,14 +40,21 @@ public class TestLoginActionController {
 	}
 	
 	
+	/**
+	 * Finish the testing.
+	 */
 	@After
-	public void finishTheTesting(){
+	public void finishTheTesting() {
 		this.setActionContext(null);
 	}
 
 	
+	/**
+	 * Test if the login user distribution function 
+	 * is ok if A passenger is logged.
+	 */
 	@Test
-	public void testIfTheLoginUserDistributionFunctionIsOkIfAPassengerIsLogged(){
+	public void testIfTheLoginUserDistributionFunctionIsOkIfAPassengerIsLogged() {
 		
 		String username = "joanes";
 		String password = "123";
@@ -50,8 +68,12 @@ public class TestLoginActionController {
 		assertEquals("The passenger was not logged", ret, "passenger");
 	}
 	
+	/**
+	 * Test if the login user distribution function is
+	 *  ok if A controller is logged.
+	 */
 	@Test
-	public void testIfTheLoginUserDistributionFunctionIsOkIfAControllerIsLogged(){
+	public void testIfTheLoginUserDistributionFunctionIsOkIfAControllerIsLogged() {
 		String username = "irati";
 		String password = "123";
 		String ret;
@@ -64,8 +86,12 @@ public class TestLoginActionController {
 		assertEquals("The controller was not logged", ret, "airportController");
 	}
 
+	/**
+	 * Test if the login user distribution 
+	 * function is ok if A manager is logged.
+	 */
 	@Test
-	public void testIfTheLoginUserDistributionFunctionIsOkIfAManagerIsLogged(){
+	public void testIfTheLoginUserDistributionFunctionIsOkIfAManagerIsLogged() {
 		String username = "arizz";
 		String password = "arizz";
 		String ret;
@@ -78,9 +104,13 @@ public class TestLoginActionController {
 		assertEquals("The controller was not logged", ret, "airlineManager");
 	}
 
-	public void setActionContext(ActionContext actionContext) {
+	/**
+	 * Sets the action context.
+	 *
+	 * @param actionContext the new action context
+	 */
+	public void setActionContext(final ActionContext actionContext) {
 		this.actionContext = actionContext;
 	}
-	
 	
 }
