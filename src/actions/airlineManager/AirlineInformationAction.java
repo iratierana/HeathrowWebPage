@@ -11,7 +11,7 @@ import domain.model.AirplanePhoto;
 /**
  * 
  * @author Xabier Jauregi
- * @author Irati Eraña
+ * @author Irati Erana
  * @author Mikel Arizmendiarrieta 
  * @version 1.0
  * @since   2016-12-13
@@ -21,7 +21,7 @@ import domain.model.AirplanePhoto;
  */
 public class AirlineInformationAction {
 	
-	private Integer airplaneId ;
+	private Integer airplaneId;
 	private Airplane airplane = new Airplane();
 	private AirplanePhoto photo;
 	private byte[] p;
@@ -34,7 +34,7 @@ public class AirlineInformationAction {
 
 	/**
 	 * 
-	 * This function redirect the content flow to another page
+	 * This function redirect the content flow to another page.
 	 * 
 	 * @return airlineInfo the page(jsp) where we want to redirect
 	 * @throws UnsupportedEncodingException 
@@ -46,7 +46,7 @@ public class AirlineInformationAction {
 		return "airlineInfo";
 	}
 
-	private void fillAtributes(){
+	private void fillAtributes() {
 		setAirplaneName(this.airplane.getName());
 		setSerialNumber(this.airplane.getSerialNumb());
 		setRoute("***UNDEFINED***");
@@ -54,11 +54,11 @@ public class AirlineInformationAction {
 		setNumberOfOurs(String.valueOf(this.airplane.getHoursOfFlight()));
 	}
 	
-	private void loadPhotoFromDatabase(int airplaneId) throws UnsupportedEncodingException{
-		photo = DAOAirplanePhoto.loadAirplanePhoto(21);
+	private void loadPhotoFromDatabase(int airplaneId) throws UnsupportedEncodingException {
+		photo = DAOAirplanePhoto.loadAirplanePhoto(airplaneId); //TODO: Replaced 21 with airplaneId
 		p = Base64.getEncoder().encode(photo.getPhoto());
 		pString = new String(p, "UTF-8");
-		pString="data:image/jpg;base64,"+pString;
+		pString = "data:image/jpg;base64," + pString;
 		System.out.println(pString);
 	}
 
@@ -69,17 +69,16 @@ public class AirlineInformationAction {
 
 
 
-	public void setAirplaneId(Integer airplaneId) {
+	public void setAirplaneId(final Integer airplaneId) {
 		this.airplaneId = airplaneId;
 	}
-
 
 
 	public String getpString() {
 		return pString;
 	}
 
-	public void setpString(String pString) {
+	public void setpString(final String pString) {
 		this.pString = pString;
 	}
 
@@ -87,7 +86,7 @@ public class AirlineInformationAction {
 		return airplane;
 	}
 
-	public void setAirplane(Airplane airplane) {
+	public void setAirplane(final Airplane airplane) {
 		this.airplane = airplane;
 	}
 
@@ -99,7 +98,7 @@ public class AirlineInformationAction {
 
 
 
-	public void setAirplaneName(String airplaneName) {
+	public void setAirplaneName(final String airplaneName) {
 		this.airplaneName = airplaneName;
 	}
 
@@ -111,7 +110,7 @@ public class AirlineInformationAction {
 
 
 
-	public void setSerialNumber(String serialNumber) {
+	public void setSerialNumber(final String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
 
@@ -123,7 +122,7 @@ public class AirlineInformationAction {
 
 
 
-	public void setRoute(String route) {
+	public void setRoute(final String route) {
 		this.route = route;
 	}
 
@@ -135,7 +134,7 @@ public class AirlineInformationAction {
 
 
 
-	public void setNumberOfFlights(String numberOfFlights) {
+	public void setNumberOfFlights(final String numberOfFlights) {
 		this.numberOfFlights = numberOfFlights;
 	}
 
@@ -147,10 +146,8 @@ public class AirlineInformationAction {
 
 
 
-	public void setNumberOfOurs(String numberOfOurs) {
+	public void setNumberOfOurs(final String numberOfOurs) {
 		this.numberOfOurs = numberOfOurs;
 	}
 
-	
-	
 }
