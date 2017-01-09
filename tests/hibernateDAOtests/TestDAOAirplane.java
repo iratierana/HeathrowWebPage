@@ -26,23 +26,7 @@ public class TestDAOAirplane {
 		boolean result;
 		
 		try {
-			a.setName("Boeing 747");
-			a.setSerialNumb("27090");
-			a.setAirplaneId(1);
-			a.setLineNumber(959);
-			a.setCurrentRegistration("G-BNLY");
-			a.setOperatorOwner("Xabier Jauregi");
-			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-			a.setDeliberyDate(formatter.parse("1/1/2010"));
-			a.setEngineModel("RB211-524H2");
-			a.setStatus(true);
-			a.setHoursOfFlight(500);
-			a.setNumberOfFlights(20);
-			a.setPlanePosition(new PlanePosition());
-			a.setPhotoList(new ArrayList<AirplanePhoto>());
-			a.setCotrollerList(new ArrayList<AirportController>());
-			a.setAirport(new Airport());
-			a.setAirline(new Airline());
+			 a = DAOAirplane.loadAirplane(1);
 			result=DAOAirplane.deleteAirplane(a);
 			
 			assertTrue("Error inserting a airplane", result);
