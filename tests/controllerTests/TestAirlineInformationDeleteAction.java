@@ -1,17 +1,15 @@
 package controllerTests;
+import static org.junit.Assert.assertEquals;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
 import com.opensymphony.xwork2.ActionContext;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.servlet.http.HttpSession;
 
 import actions.airlineManager.AirlineInformationDeleteAction;
 import domain.dao.DAOAirlineManager;
@@ -21,19 +19,19 @@ public class TestAirlineInformationDeleteAction {
 	
 	ActionContext actionContext;
 	AirlineInformationDeleteAction airInfoDelAct;
+	Map<String, Object> contextMap;
 	
 	@Before
 	public void pepareForCorrectTest(){
 		
 		AirlineManager aM = DAOAirlineManager.loadAirLineManager("arizz", "arizz");
+		contextMap = new HashMap<String, Object>();
 		
 		actionContext = Mockito.mock(ActionContext.class);
-		Mockito.when(actionContext.getSession()).thenReturn(new HashMap<>());
-		actionContext.put("loggedAirlineManager", aM);
+		Mockito.when(actionContext.getSession()).thenReturn(contextMap);
 		
-//		Map<String, Object> contextMap = new HashMap<String, Object>();
-//		contextMap.put("loggedAirlineManager", aM);
-//		ActionContext.setContext(new ActionContext(contextMap));
+		contextMap.put("loggedAirlineManager", aM);
+		
 		
 		ActionContext.setContext(actionContext);
 		
