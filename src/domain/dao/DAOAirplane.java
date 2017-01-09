@@ -11,32 +11,34 @@ import configurations.ConnectHibernate;
 import domain.model.Airplane;
 
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * The Class DAOAirplane.
+ *
  * @author Xabier Jauregi
  * @author Irati Eraña
- * @author Mikel Arizmendiarrieta 
+ * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
  * 
- * Class where are all the needed functions related with Airplane, in order to work with the database
- *  
+ * Class where are all the needed functions related with Airplane,
+ *  in order to work with the database
  */
 @SuppressWarnings("deprecation")
 public class DAOAirplane {
 	
+/** The session. */
 private static Session session;
 	
 	/**
-	 * 
-	 * This function delete an airplane from the database
-	 * 
+	 * This function delete an airplane from the database.
+	 *
 	 * @param airplane the airplane to delete from the database
 	 * @return true if the delete is correct
-	 * @return false if and error occurs during the delete
+	 * false if and error occurs during the delete
 	 */
-	public static boolean deleteAirplane(Airplane airplane){
-		try{
+	public static boolean deleteAirplane(final Airplane airplane) {
+		try {
 			
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
@@ -46,27 +48,28 @@ private static Session session;
 			ConnectHibernate.after();
 			return true;
 			
-		}catch(Exception e){
+		} catch (Exception e) {
 			session.getTransaction().rollback();			
 			return false;
-		}finally {
+		} finally {
 			ConnectHibernate.after();
 		}
 	}
 	
 		
 	/**
-	 * Load all the plains that airline manager manage
-	 * @param id The id of the airline manager 
+	 * Load all the plains that airline manager manage.
+	 *
+	 * @param id The id of the airline manager
 	 * @return airplaneList if the load was OK
-	 * @return null if an error occurs
+	 * null if an error occurs
 	 */
 	@SuppressWarnings({ "rawtypes",  "unchecked" })
-	public static List<Airplane> loadAirplanesOfAirline(int id) {
-		List <Airplane> airplaneList = null;
-		String sql="SELECT airpl.*"
+	public static List<Airplane> loadAirplanesOfAirline(final int id) {
+		List<Airplane> airplaneList = null;
+		String sql = "SELECT airpl.*"
 				+ " FROM (airlinemanager man join airline air on man.airline_airlineid=air.airlineid)join airplane airpl on airpl.airline_airlineid=air.airlineid"
-				+ " WHERE man.airlinemanagerid="+id;
+				+ " WHERE man.airlinemanagerid=" + id;
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
@@ -76,7 +79,7 @@ private static Session session;
 			airplaneList = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			ConnectHibernate.after();
 
 		}
@@ -86,23 +89,23 @@ private static Session session;
 	}
 	
 	/**
-	 * This function loads and airplane
+	 * This function loads and airplane.
 	 * @param id The id of the airplane to load frm the databse
 	 * @return The object airplane
 	 */
-	public static Airplane loadAirplane (int id){
+	public static Airplane loadAirplane(final int id) {
 		List<Airplane> airplaneList = null;
 		Airplane a = new Airplane();
 		a = null;
-		try{
+		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			
 			@SuppressWarnings("unchecked")
-			TypedQuery<Airplane> query = session.createQuery("from Airplane where airplaneId="+id);
+			TypedQuery<Airplane> query = session.createQuery("from Airplane where airplaneId=" + id);
 			airplaneList = query.getResultList();
-			if(!airplaneList.isEmpty()){
-				a=airplaneList.get(0);
+			if (!airplaneList.isEmpty()) {
+				a = airplaneList.get(0);
 			}
 			ConnectHibernate.after();
 			
@@ -110,7 +113,7 @@ private static Session session;
 			session.getTransaction().rollback();
 			ConnectHibernate.after();
 			return null;
-		}finally {
+		} finally {
 			ConnectHibernate.after();
 
 		}
@@ -119,14 +122,14 @@ private static Session session;
 	}
 	
 	/**
-	 * This function updates an airplane in the database
+	 * This function updates an airplane in the database.
 	 * @param airplane The airplane object to update
 	 * @return true if all is OK, else false
 	 */
-	public static boolean updateAirplane(Airplane airplane){
+	public static boolean updateAirplane(final Airplane airplane) {
 		Airplane auxAirplane = null;
-		try{
-			auxAirplane=DAOAirplane.loadAirplane(airplane.getAirplaneId());
+		try {
+			auxAirplane = DAOAirplane.loadAirplane(airplane.getAirplaneId());
 			ConnectHibernate.before();			
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
@@ -134,7 +137,7 @@ private static Session session;
 			auxAirplane.setSerialNumb(airplane.getSerialNumb());
 			session.saveOrUpdate(auxAirplane);
 			session.getTransaction().commit();		
-		}catch(Exception e){			
+		} catch (Exception e) {			
 			e.printStackTrace();
 			return false;
 		}
