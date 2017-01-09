@@ -284,7 +284,7 @@ public class Flight {
 	 *
 	 * @param passangerList the new passanger list
 	 */
-	public void setPassangerList(private Collection<Passanger> passangerList) {
+	public void setPassangerList(final Collection<Passanger> passangerList) {
 		this.passangerList = passangerList;
 	}
 	
