@@ -68,24 +68,24 @@ public class Flight {
 	
 	/** The cortroller list. */
 	@ManyToMany (cascade = CascadeType.ALL)
-	@JoinTable(name="ControlFlight")
-	Collection<AirportController> cortrollerList=new ArrayList<AirportController>();
+	@JoinTable(name = "ControlFlight")
+	private Collection<AirportController> cortrollerList = new ArrayList<AirportController>();
 	
 	/** The depart airport. */
 	@OneToOne (cascade = CascadeType.ALL)
-	Airport departAirport;
+	private Airport departAirport;
 	
 	/** The arrive airport. */
 	@OneToOne (cascade = CascadeType.ALL)
-	Airport arriveAirport;
+	private Airport arriveAirport;
 	
 	/** The airplane. */
 	@OneToOne (cascade = CascadeType.ALL)
-	Airplane airplane;
+	private Airplane airplane;
 	
 	/** The passanger list. */
-	@ManyToMany(fetch=FetchType.EAGER, mappedBy="flightList")
-	Collection<Passanger> passangerList = new ArrayList<Passanger>();
+	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "flightList")
+	private Collection<Passanger> passangerList = new ArrayList<Passanger>();
 
 	
 	
@@ -140,7 +140,7 @@ public class Flight {
 	 *
 	 * @param arrivalDate the new arrival date
 	 */
-	public void setArrivalDate(Date arrivalDate) {
+	public void setArrivalDate(final Date arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
 
@@ -158,7 +158,7 @@ public class Flight {
 	 *
 	 * @param departureGate the new departure gate
 	 */
-	public void setDepartureGate(Integer departureGate) {
+	public void setDepartureGate(final Integer departureGate) {
 		this.departureGate = departureGate;
 	}
 
@@ -176,7 +176,7 @@ public class Flight {
 	 *
 	 * @param arrivalGate the new arrival gate
 	 */
-	public void setArrivalGate(Integer arrivalGate) {
+	public void setArrivalGate(final Integer arrivalGate) {
 		this.arrivalGate = arrivalGate;
 	}
 
@@ -194,7 +194,7 @@ public class Flight {
 	 *
 	 * @param arrivalTerminal the new arrival terminal
 	 */
-	public void setArrivalTerminal(Integer arrivalTerminal) {
+	public void setArrivalTerminal(final Integer arrivalTerminal) {
 		this.arrivalTerminal = arrivalTerminal;
 	}
 
@@ -212,7 +212,7 @@ public class Flight {
 	 *
 	 * @param departureTerminal the new departure terminal
 	 */
-	public void setDepartureTerminal(Integer departureTerminal) {
+	public void setDepartureTerminal(final Integer departureTerminal) {
 		this.departureTerminal = departureTerminal;
 	}
 
@@ -248,7 +248,7 @@ public class Flight {
 	 *
 	 * @param departAirport the new depart airport
 	 */
-	public void setDepartAirport(Airport departAirport) {
+	public void setDepartAirport(final Airport departAirport) {
 		this.departAirport = departAirport;
 	}
 
@@ -266,7 +266,7 @@ public class Flight {
 	 *
 	 * @param arriveAirport the new arrive airport
 	 */
-	public void setArriveAirport(Airport arriveAirport) {
+	public void setArriveAirport(final Airport arriveAirport) {
 		this.arriveAirport = arriveAirport;
 	}
 
@@ -284,7 +284,7 @@ public class Flight {
 	 *
 	 * @param passangerList the new passanger list
 	 */
-	public void setPassangerList(Collection<Passanger> passangerList) {
+	public void setPassangerList(private Collection<Passanger> passangerList) {
 		this.passangerList = passangerList;
 	}
 	
