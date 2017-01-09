@@ -10,13 +10,21 @@ import org.junit.Test;
 
 import actions.passengerMenu.BookAFlightFinishAction;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestBookAFlightFinishAction.
+ */
 public class TestBookAFlightFinishAction {
 	
-	BookAFlightFinishAction finishBooking;
+	/** The finish booking. */
+	private BookAFlightFinishAction finishBooking;
 	
 	
+	/**
+	 * Check if the redirection of the page is OK with existing flight.
+	 */
 	@Test
-	public void checkIfTheRedirectionOfThePageIsOKWithExistingFlight(){
+	public void checkIfTheRedirectionOfThePageIsOKWithExistingFlight() {
 		String ret;
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		
@@ -35,8 +43,11 @@ public class TestBookAFlightFinishAction {
 		assertEquals("The redirection was NOT OK", ret, "passenger");
 	}
 	
+	/**
+	 * Test getters and setters.
+	 */
 	@Test
-	public void testGettersAndSetters(){
+	public void testGettersAndSetters() {
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		finishBooking = new BookAFlightFinishAction();
 		Date d = null;
@@ -66,7 +77,7 @@ public class TestBookAFlightFinishAction {
 		assertEquals("To not equal", "b", finishBooking.getTo());
 		assertEquals("Departure date not equal", d, finishBooking.getDepartureDay());
 		assertEquals("Arrival date not equal", d, finishBooking.getArrivalDay());
-		assertEquals("Number of passengers not equal", (Integer)1, finishBooking.getNumberOfPassangers());
+		assertEquals("Number of passengers not equal", (Integer) 1, finishBooking.getNumberOfPassangers());
 		assertEquals("Name not equal", "a", finishBooking.getName());
 		assertEquals("First name not equal", "a", finishBooking.getFirstName());
 		assertEquals("Second name not equal", "a", finishBooking.getSecondName());
@@ -76,7 +87,5 @@ public class TestBookAFlightFinishAction {
 		assertEquals("Movile tlf not equal", "a", finishBooking.getMovileTlf());
 		assertEquals("Email not equal", "a", finishBooking.getEmail());
 		assertEquals("Ca not equal", "a", finishBooking.getCa());
-
 	}
-
 }

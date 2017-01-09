@@ -17,14 +17,26 @@ import actions.passengerMenu.MyProfileAction;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestMyProfileAction.
+ */
 public class TestMyProfileAction {
 
-	ActionContext actionContext;
-	Map<String, Object> contextMap;
-	MyProfileAction myProfileAct;
+	/** The action context. */
+	private ActionContext actionContext;
 	
+	/** The context map. */
+	private Map<String, Object> contextMap;
+	
+	/** The my profile act. */
+	private MyProfileAction myProfileAct;
+	
+	/**
+	 * Prepare test.
+	 */
 	@Before
-	public void prepareTest(){
+	public void prepareTest() {
 		Passanger p = DAOPassanger.loadPassanger("123", "ane95");
 		contextMap = new HashMap<String, Object>();
 		
@@ -40,15 +52,21 @@ public class TestMyProfileAction {
 		myProfileAct = Mockito.spy(new MyProfileAction());
 	}
 	
+	/**
+	 * Destroy test.
+	 */
 	@After
-	public void destroyTest(){
+	public void destroyTest() {
 		this.setActionContext(null);
 		this.setContextMap(null);
 		this.setMyProfileAct(null);
 	}
 	
+	/**
+	 * Test if the atribute is filled.
+	 */
 	@Test
-	public void testIfTheAtributeIsFilled(){
+	public void testIfTheAtributeIsFilled() {
 		myProfileAct.execute();
 		assertNotNull("Atribute not filled", myProfileAct.getId());
 		assertNotNull("Atribute not filled", myProfileAct.getName());
@@ -63,8 +81,11 @@ public class TestMyProfileAction {
 		assertNotNull("Atribute not filled", myProfileAct.getPassword());
 	}
 	
+	/**
+	 * Redirection is ok.
+	 */
 	@Test
-	public void redirectionIsOk(){
+	public void redirectionIsOk() {
 		String ret;
 		ret = myProfileAct.execute();
 		assertEquals("The redirection was NOT OK", ret, "myProfileAction");		
@@ -72,18 +93,30 @@ public class TestMyProfileAction {
 	
 	
 
-	public void setActionContext(ActionContext actionContext) {
+	/**
+	 * Sets the action context.
+	 *
+	 * @param actionContext the new action context
+	 */
+	public void setActionContext(final ActionContext actionContext) {
 		this.actionContext = actionContext;
 	}
 
-	public void setContextMap(Map<String, Object> contextMap) {
+	/**
+	 * Sets the context map.
+	 *
+	 * @param contextMap the context map
+	 */
+	public void setContextMap(final Map<String, Object> contextMap) {
 		this.contextMap = contextMap;
 	}
 
-	public void setMyProfileAct(MyProfileAction myProfileAct) {
+	/**
+	 * Sets the my profile act.
+	 *
+	 * @param myProfileAct the new my profile act
+	 */
+	public void setMyProfileAct(final MyProfileAction myProfileAct) {
 		this.myProfileAct = myProfileAct;
 	}
-	
-	
-	
 }

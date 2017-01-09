@@ -21,14 +21,26 @@ import actions.passengerMenu.MyProfileSaveChagesAction;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TestMyProfileSaveChangesAction.
+ */
 public class TestMyProfileSaveChangesAction {
 
-	ActionContext actionContext;
-	Map<String, Object> contextMap;
-	MyProfileSaveChagesAction myProfileSaveChangeAct;
+	/** The action context. */
+	private ActionContext actionContext;
 	
+	/** The context map. */
+	private Map<String, Object> contextMap;
+	
+	/** The my profile save change act. */
+	private MyProfileSaveChagesAction myProfileSaveChangeAct;
+	
+	/**
+	 * Prepare test.
+	 */
 	@Before
-	public void prepareTest(){
+	public void prepareTest() {
 		Passanger p = DAOPassanger.loadPassanger("123", "ane95");
 		contextMap = new HashMap<String, Object>();
 		
@@ -44,15 +56,21 @@ public class TestMyProfileSaveChangesAction {
 		myProfileSaveChangeAct = Mockito.spy(new MyProfileSaveChagesAction());
 	}
 	
+	/**
+	 * Destroy test.
+	 */
 	@After
-	public void destroyTest(){
+	public void destroyTest() {
 		this.setActionContext(null);
 		this.setContextMap(null);
 		this.setMyProfileAct(null);
 	}
 	
+	/**
+	 * Test if the atribute is filled.
+	 */
 	@Test
-	public void testIfTheAtributeIsFilled(){
+	public void testIfTheAtributeIsFilled() {
 		Passanger p;
 		try {
 			Method createPassangerObjectFunction = MyProfileSaveChagesAction.class.getDeclaredMethod("createPassangerObject", null);
@@ -75,15 +93,21 @@ public class TestMyProfileSaveChangesAction {
 		}
 	}
 	
+	/**
+	 * Redirection is ok.
+	 */
 	@Test
-	public void redirectionIsOk(){
+	public void redirectionIsOk() {
 		String ret;
 		ret = myProfileSaveChangeAct.execute();
 		assertEquals("The redirection was NOT OK", ret, "passanger");		
 	}
 	
+	/**
+	 * Test getters and setters.
+	 */
 	@Test
-	public void testGettersAndSetters(){
+	public void testGettersAndSetters() {
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		myProfileSaveChangeAct = new MyProfileSaveChagesAction();
 		Date d = null;
@@ -114,15 +138,30 @@ public class TestMyProfileSaveChangesAction {
 
 	}
 
+	/**
+	 * Sets the action context.
+	 *
+	 * @param actionContext the new action context
+	 */
 	public void setActionContext(ActionContext actionContext) {
 		this.actionContext = actionContext;
 	}
 
-	public void setContextMap(Map<String, Object> contextMap) {
+	/**
+	 * Sets the context map.
+	 *
+	 * @param contextMap the context map
+	 */
+	public void setContextMap(final Map<String, Object> contextMap) {
 		this.contextMap = contextMap;
 	}
 
-	public void setMyProfileAct(MyProfileSaveChagesAction myProfileSaveChangeAct) {
+	/**
+	 * Sets the my profile act.
+	 *
+	 * @param myProfileSaveChangeAct the new my profile act
+	 */
+	public void setMyProfileAct(final MyProfileSaveChagesAction myProfileSaveChangeAct) {
 		this.myProfileSaveChangeAct = myProfileSaveChangeAct;
 	}
 }
