@@ -75,8 +75,13 @@ public class RegisterAction {
 	 * @return the page where we want to go
 	 */
 	public String execute() {	
-		DAOPassanger.insertPassanger(createPassangerObject());		
-		return "login";
+		if (DAOPassanger.checkEmail(email)) {
+			DAOPassanger.insertPassanger(createPassangerObject());		
+			return "login";
+		} else {
+			return "emailError"; //TODO bad email error kudeatu
+		}
+		
 	}
 
 	/**

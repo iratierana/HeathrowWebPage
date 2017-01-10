@@ -3,7 +3,9 @@ package domain.dao;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.ParameterMode;
 import javax.persistence.Query;
+import javax.persistence.StoredProcedureQuery;
 import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
@@ -177,6 +179,29 @@ private static Session session;
 			
 			session.getTransaction().commit();	
 		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			ConnectHibernate.after();		
+		}
+		return true;
+	}
+	
+	public static boolean checkEmail(String email){
+		boolean ret = false;
+		try {
+			ConnectHibernate.before();			
+			session = ConnectHibernate.getSession();
+			session.getTransaction().begin();
+			
+			StoredProcedureQuery query = session.createStoredProcedureQuery("checkTheEmail")
+					.registerStoredProcedureParameter("email", String.class, ParameterMode.IN)
+					.registerStoredProcedureParameter("ok", boolean.class, ParameterMode.OUT)
+					.setParameter("email", email);
+			query.execute();
+			ret = (boolean) query.getOutputParameterValue("ok");
+			session.getTransaction().commit();		
+		} catch (Exception e) {			
 			e.printStackTrace();
 			return false;
 		} finally {
