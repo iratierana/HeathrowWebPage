@@ -15,7 +15,7 @@ public class PositionFileUpdater {
 	private static final int _1 = 1;
 	private static final int _41 = 41;
 	/** The file route. */
-	public static String fileRoute = "D:/Uni3/1Semester/POPBL5/Code Workspace/HeathrowWebPage/WebContent/data/planeMarkerData.csv";
+	public static String fileRoute = "http://localhost/HeathrowAirport/data/planeMarkerData.csv";
 
 	/**
 	 * Update plane position from file.
