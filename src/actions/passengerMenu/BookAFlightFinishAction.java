@@ -1,7 +1,6 @@
 package actions.passengerMenu;
 
 import java.util.Date;
-import java.util.Random;
 
 import domain.dao.DAOFlight;
 import domain.dao.DAOPassanger;
@@ -69,10 +68,10 @@ public class BookAFlightFinishAction {
 		
 	
 	/** The passenger. */
-	Passanger passenger;
+	private Passanger passenger;
 	
 	/** The controller. */
-	Airport controller;
+	private Airport controller;
 	
 	/**
 	 * Execute.

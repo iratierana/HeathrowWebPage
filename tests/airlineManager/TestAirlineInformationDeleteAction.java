@@ -62,7 +62,8 @@ public class TestAirlineInformationDeleteAction {
 	}
 	
 	/**
-	 * Test if the function execute correct in a correct way redirecting the page.
+	 * Test if the function execute correct in a correct
+	 *  way redirecting the page.
 	 */
 	@Test
 	public void testIfTheFunctionExecuteCorrectInaCorrectWayRedirectingThePage() {

@@ -77,11 +77,11 @@ public class AirlineManager {
 
 	/** The airline. */
 	@OneToOne
-	Airline airline;
+	private Airline airline;
 	
 	/** The direction. */
 	@OneToOne
-	Direction direction;
+	private Direction direction;
 
 	/**
 	 * Gets the airline manager id.

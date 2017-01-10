@@ -154,7 +154,8 @@ private static Session session;
 	}
 	
 	/**
-	 * This function adds book a flight for a passenger and adds it to the flightList of passenger.
+	 * This function adds book a flight for a passenger 
+	 * and adds it to the flightList of passenger.
 	 *
 	 * @param flight The flight to add
 	 * @return true if the insert is OK

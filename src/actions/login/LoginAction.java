@@ -108,7 +108,8 @@ public class LoginAction {
 
 	/**
 	 * 
-	 * This function redirects the flow to the register page, when the register button in clicked.
+	 * This function redirects the flow to the 
+	 * register page, when the register button in clicked.
 	 * 
 	 * @return the name of the page we want to go
 	 */

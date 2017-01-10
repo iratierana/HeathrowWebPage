@@ -1,6 +1,7 @@
 package passengerMenu;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -16,7 +17,6 @@ import org.mockito.Mockito;
 
 import com.opensymphony.xwork2.ActionContext;
 
-import actions.passengerMenu.BookAFlightFinishAction;
 import actions.passengerMenu.MyProfileSaveChagesAction;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;

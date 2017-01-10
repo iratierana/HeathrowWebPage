@@ -12,7 +12,6 @@ import org.mockito.Mockito;
 
 import com.opensymphony.xwork2.ActionContext;
 
-import actions.passengerMenu.BookAFlightAction;
 import actions.passengerMenu.MyFlightsAction;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;

@@ -37,8 +37,8 @@ public class MyNotifyListener extends Thread {
 	    PGNotificationListener listener = new PGNotificationListener() {
 			
 			@Override
-			public void notification(int processId, String channelName, String payload) {
-				String info[] = payload.split(",");
+			public void notification(final int processId, final String channelName, final String payload) {
+				String []info = payload.split(",");
 				System.out.println("The plane with id=" + info[0] + " is now in position=" + info[1]);	
 				PositionFileUpdater.updatePlanePositionFromFile(Integer.valueOf(info[0]), Integer.valueOf(info[1]));
 			}
