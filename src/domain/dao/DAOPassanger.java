@@ -193,7 +193,7 @@ private static Session session;
 	 * @param email the email
 	 * @return true, if successful
 	 */
-	public static boolean checkEmail(String email) {
+	public static boolean checkEmail(final String email) {
 		boolean ret = false;
 		try {
 			ConnectHibernate.before();			
@@ -206,13 +206,13 @@ private static Session session;
 					.setParameter("email", email);
 			query.execute();
 			ret = (boolean) query.getOutputParameterValue("ok");
-			session.getTransaction().commit();		
+			session.getTransaction().commit();	
+			return ret;
 		} catch (Exception e) {			
 			e.printStackTrace();
-			return false;
+			return ret;
 		} finally {
 			ConnectHibernate.after();		
 		}
-		return true;
 	}
 }
