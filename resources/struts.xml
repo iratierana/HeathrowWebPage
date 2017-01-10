@@ -61,5 +61,9 @@
 			<result name="airlineManagerList">/pages/airlineManagerList.jsp</result>
 		</action>
 		
+		<action name="*">
+			<result>/pages/404error.jsp</result>
+		</action>
+		
 	</package>
 </struts>
