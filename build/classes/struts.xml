@@ -61,11 +61,11 @@
 			<result name="airlineManagerList">/pages/airlineManagerList.jsp</result>
 		</action>
 		
-		<action name="404">
+		<action name="*">
 			<result>/pages/404error.jsp</result>
 		</action>
 		
-		<action name="500">
+		<action name="505">
 			<result>/pages/500error.jsp</result>
 		</action>
 		
