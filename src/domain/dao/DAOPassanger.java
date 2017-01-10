@@ -187,7 +187,13 @@ private static Session session;
 		return true;
 	}
 	
-	public static boolean checkEmail(String email){
+	/**
+	 * Check email.
+	 *
+	 * @param email the email
+	 * @return true, if successful
+	 */
+	public static boolean checkEmail(String email) {
 		boolean ret = false;
 		try {
 			ConnectHibernate.before();			
