@@ -7,9 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>My Flights</title>
 <link rel="shortcut icon" href="<s:url value="/img/pageIcon.png"/>">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<table>
+	<table class="table table-hover">
+	<thead>
 		<tr>
 			<th>Flight Id</th>
 			<th>Departure Date</th>
@@ -19,6 +23,7 @@
 			<th>Departure Terminal</th>
 			<th>Arrival Terminal</th>
 		</tr>
+	<thead>
 		<s:iterator value="myFlightList" var="flight">
 			<tr>
 				<td><s:property value="flightId" /></td>
