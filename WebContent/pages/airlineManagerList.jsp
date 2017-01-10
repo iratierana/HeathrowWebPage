@@ -18,8 +18,6 @@
 </head>
 <body>
 
-<!--<s:form action="airlineInformation">-->
-
 <div class="list-group" style="max-height:500px; overflow:auto;">
 	
 	<s:iterator value="airplaneList" >
@@ -44,44 +42,5 @@
 		 </s:a>
 	</s:iterator> 	
 </div>
-
-
-<!-- <div class="list-group" style="max-height:500px; overflow:auto;">
-
-	<s:iterator value="airplaneList" var="airplane">
-		<span class="list-group-item-heading" style="font-size:30px; font-weight:bold;"<s:property value="airplane.name" default="a default value"/>></span><br>
-		<span class="list-group-item-heading" style="font-size:25px;"<s:property value="serialNumb"/>></span>
-		
-		<span class="pull-right">
-  			<button type="button" class="btn btn-primary">Info</button>
-  			<button type="button" class="btn btn-primary">Edit</button>
-  			<button type="button" class="btn btn-primary">Delete</button>
-		</span>
-
-	</s:iterator>
-	
-</div> -->
-
-<!--  <table class="table table-hover">
-		<tr>
-			<th>Name</th>
-			<th>Serial Number</th>
-			<th>Info</th>
-			<th>Edit</th>
-			<th>Delete</th>
-		</tr>
-<s:iterator value="airplaneList" var="airplane">
-    <tr>
-      <td>
-   		<s:property value="name"/>
-      </td>
-      <td><s:property value="serialNumb"/></td>
-      <td><s:submit type="button" class="btn btn-primary btn-lg">Info</s:submit></td>
-      <td><s:submit type="button" class="btn btn-primary btn-lg">Edit</s:submit></td>
-      <td><s:submit type="button" class="btn btn-primary btn-lg">Delete</s:submit></td>
-    </tr>
-</s:iterator>
-</table>-->
-<!--</s:form>-->
 </body>
 </html>

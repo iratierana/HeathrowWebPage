@@ -8,6 +8,13 @@
 	<link rel="stylesheet" type="text/css" href="<s:url value="/css/bookingAndRegisterStyle.css"/>">
 	<link rel="shortcut icon" href="<s:url value="/img/pageIcon.png"/>">
 	<script type="text/javascript" src="<s:url value="/js/registerSteps.js"/>"></script>
+	
+	<style type="text/css">
+		label{
+			font-size:13px;
+			font-family: montserrat, arial, verdana;
+		}
+	</style>
 </head>
 <body>
 
@@ -26,7 +33,7 @@
 			<s:textfield name="firstName" placeholder="First Name"></s:textfield>
 			<s:textfield name="secondName" placeholder="Second Name"></s:textfield>
 			<s:textfield name="dniPassport" placeholder="Dni/Passport"></s:textfield>
-			<s:textfield type="date" name="birthDate" placeholder="Birth Date"></s:textfield>
+			<label>Birth Date : </label><s:textfield type="date" name="birthDate" style="width:190px"></s:textfield>
 			<input type="button" name="next" class="next action-button" value="Next" onclick="goToStep2()" />
 		</fieldset>
 		<fieldset id="step2" class="hideme">
