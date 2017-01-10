@@ -25,6 +25,9 @@ import domain.model.Flight;
  */
 public class DAOFlight {
 	
+private static final int _24 = 24;
+private static final int _60 = 60;
+private static final int _1000 = 1000;
 /** The session. */
 private static Session session;
 		
@@ -67,8 +70,8 @@ private static Session session;
 		Flight f = new Flight();
 		f = null;
 		
-		Date end1 = new Date(departureDate.getTime() + (1000 * 60 * 60 * 24));
-		Date end2 = new Date(arrivalDate.getTime() + (1000 * 60 * 60 * 24));
+		Date end1 = new Date(departureDate.getTime() + (_1000 * _60 * _60 * _24));
+		Date end2 = new Date(arrivalDate.getTime() + (_1000 * _60 * _60 * _24));
 		
 		try {
 			ConnectHibernate.before();

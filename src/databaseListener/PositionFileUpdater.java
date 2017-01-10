@@ -12,6 +12,8 @@ import java.util.ArrayList;
  */
 public class PositionFileUpdater {
 	
+	private static final int _1 = 1;
+	private static final int _41 = 41;
 	/** The file route. */
 	public static String fileRoute = "D:/Uni3/1Semester/POPBL5/Code Workspace/HeathrowWebPage/WebContent/data/planeMarkerData.csv";
 
@@ -24,14 +26,14 @@ public class PositionFileUpdater {
 	public static void updatePlanePositionFromFile(int planeId, int newPositionId) {
 		ArrayList<PositioningModel> posList = null;
 
-		if (newPositionId == 1) {
+		if (newPositionId == _1) {
 			
 			posList = readCsvFile(fileRoute);
 			PositioningModel newPos = PositionMapper.decodePosition(planeId, newPositionId);
 			posList.add(newPos);
 			writeCsvFile(fileRoute, posList);
 			
-		} else if ((newPositionId > 1) && (newPositionId < 41)) {
+		} else if ((newPositionId > _1) && (newPositionId < _41)) {
 			
 			posList = readCsvFile(fileRoute);
 			for (int kont = 0; kont < posList.size(); kont++) {
@@ -42,7 +44,7 @@ public class PositionFileUpdater {
 			}
 			writeCsvFile(fileRoute, posList);	
 			
-		} else if (newPositionId == 41) {
+		} else if (newPositionId == _41) {
 
 			posList = readCsvFile(fileRoute);
 			for (int kont = 0; kont < posList.size(); kont++) {
@@ -74,9 +76,9 @@ public class PositionFileUpdater {
 			fileReader.readLine();
 			 while ((line = fileReader.readLine()) != null) {
 				 String[] tokens = line.split(",");
-				 String aux = tokens[0].substring(1, tokens[0].length() - 1);
+				 String aux = tokens[0].substring(_1, tokens[0].length() - _1);
 				 if (tokens.length > 0) {					 
-					 PositioningModel posMod = new PositioningModel(Integer.valueOf(aux), Double.valueOf(tokens[1]), Double.valueOf(tokens[2]));
+					 PositioningModel posMod = new PositioningModel(Integer.valueOf(aux), Double.valueOf(tokens[_1]), Double.valueOf(tokens[2]));
 					 posList.add(posMod);
 				 }
 			 }

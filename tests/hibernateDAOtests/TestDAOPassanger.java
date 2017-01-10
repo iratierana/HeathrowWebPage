@@ -19,6 +19,8 @@ import domain.model.Passanger;
  */
 public class TestDAOPassanger {
 
+	private static final int _376 = 376;
+
 	/**
 	 * Test to insert new passanger with all atributes.
 	 */
@@ -118,7 +120,7 @@ public class TestDAOPassanger {
 		}
 		p.setUsername("a");
 		p.setPassword("a");
-		p.setPassangerId(376);
+		p.setPassangerId(_376);
 		
 		assertTrue(DAOPassanger.updatePassanger(p));
 		

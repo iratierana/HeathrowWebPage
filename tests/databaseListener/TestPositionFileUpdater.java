@@ -9,6 +9,11 @@ import org.junit.Test;
  */
 public class TestPositionFileUpdater {
 
+	private static final int _41 = 41;
+	private static final int _20 = 20;
+	private static final int _1 = 1;
+	private static final int _335 = 335;
+
 	/**
 	 * Test to check if the position is changed
 	 *  in the database after reading from file.
@@ -16,9 +21,9 @@ public class TestPositionFileUpdater {
 	@Test
 	public void testToCheckIfThePositionIsChengedInTheDatabaseAfterReadingFromFile() {
 		
-		PositionFileUpdater.updatePlanePositionFromFile(335, 1);
-		PositionFileUpdater.updatePlanePositionFromFile(335, 20);
-		PositionFileUpdater.updatePlanePositionFromFile(335, 41);
+		PositionFileUpdater.updatePlanePositionFromFile(_335, _1);
+		PositionFileUpdater.updatePlanePositionFromFile(_335, _20);
+		PositionFileUpdater.updatePlanePositionFromFile(_335, _41);
 
 	}
 
