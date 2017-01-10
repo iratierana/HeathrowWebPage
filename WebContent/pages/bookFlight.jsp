@@ -24,8 +24,8 @@
 			<h2 class="fs-title">Select flight</h2>	
 			<s:textfield name="from" placeholder="From(Origin)"></s:textfield>		
 			<s:textfield name="to" placeholder="To(Destination)"></s:textfield>	
-			<s:textfield type="date" name="departureDay"></s:textfield>	
-			<s:textfield type="date" name="arrivalDay"></s:textfield>	
+			<label style="font-size:16px;">Departure:</label><s:textfield type="date" name="departureDay" style="width:185px"></s:textfield>	
+			<label style="font-size:16px;">Arrival:</label><s:textfield type="date" name="arrivalDay" style="width:210px"></s:textfield>	
 			<s:textfield type="number" name="numberOfPassangers" placeholder="Number Of Passangers"></s:textfield>	
 			<input type="button" name="next" class="next action-button" value="Next" onclick="goToStep2()" />
 		</fieldset>
@@ -35,7 +35,7 @@
 			<s:textfield name="firstName" placeholder="First Name"></s:textfield>
 			<s:textfield name="secondName" placeholder="Second Name"></s:textfield>
 			<s:textfield name="dniPassport" placeholder="Dni/Passport"></s:textfield>
-			<s:textfield type="date" name="birthDate"></s:textfield>
+			<label style="font-size:16px;">Birth Date:</label><s:textfield type="date" name="birthDate" style="width:180px"></s:textfield>
 			<input type="button" name="previous" class="previous action-button"	value="Previous" onclick="goToStep1()" />
 			<input type="button" name="next" class="next action-button" value="Next" onclick="goToStep3()"/>
 		</fieldset>
