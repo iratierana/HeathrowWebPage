@@ -10,6 +10,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+	.col-md-3 col-lg-3{
+		align:center;
+	}
+</style>
+
 </head>
 <body>
 	<s:form action="airplanesList">
@@ -23,7 +30,7 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAMiAAAAJGVlYTU5Y2YyLWQwMzYtNDlmZS04MDdlLWI0ZjJjZWRhYjk4ZQ.jpg" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 "> <img alt="User Pic" src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAMiAAAAJGVlYTU5Y2YyLWQwMzYtNDlmZS04MDdlLWI0ZjJjZWRhYjk4ZQ.jpg" class="img-circle img-responsive"> </div>
                 
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information table-hover">

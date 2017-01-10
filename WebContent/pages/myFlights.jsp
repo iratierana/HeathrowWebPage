@@ -23,8 +23,9 @@
 			<th>Departure Terminal</th>
 			<th>Arrival Terminal</th>
 		</tr>
-	<thead>
+	</thead>
 		<s:iterator value="myFlightList" var="flight">
+			<tbody>
 			<tr>
 				<td><s:property value="flightId" /></td>
 				<td><s:property value="departureDate" /></td>
@@ -34,6 +35,7 @@
 				<td><s:property value="departureTerminal" /></td>
 				<td><s:property value="arrivalTerminal" /></td>
 			</tr>
+			</tbody>
 		</s:iterator>
 
 	</table>

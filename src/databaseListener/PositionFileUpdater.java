@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 // TODO: Auto-generated Javadoc
@@ -13,7 +14,8 @@ import java.util.ArrayList;
 public class PositionFileUpdater {
 	
 	/** The file route. */
-	public static String fileRoute = "D:/Uni3/1Semester/POPBL5/Code Workspace/HeathrowWebPage/WebContent/data/planeMarkerData.csv";
+	//public static String fileRoute = "D:/Uni3/1Semester/POPBL5/Code Workspace/HeathrowWebPage/WebContent/data/planeMarkerData.csv";
+	public static String fileRoute = "http://localhost/HeathrowAirport/data/planeMarkerData.csv";
 
 	/**
 	 * Update plane position from file.
@@ -25,7 +27,6 @@ public class PositionFileUpdater {
 		ArrayList<PositioningModel> posList = null;
 
 		if (newPositionId == 1) {
-			
 			posList = readCsvFile(fileRoute);
 			PositioningModel newPos = PositionMapper.decodePosition(planeId, newPositionId);
 			posList.add(newPos);
