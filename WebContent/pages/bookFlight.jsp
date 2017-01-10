@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register</title>
+	<title>Book a Flight</title>
 	<link rel="stylesheet" type="text/css" href="<s:url value="/css/bookingAndRegisterStyle.css"/>">
 	<link rel="shortcut icon" href="<s:url value="/img/pageIcon.png"/>">
 	<script type="text/javascript" src="<s:url value="/js/bookingSteps.js"/>"></script>

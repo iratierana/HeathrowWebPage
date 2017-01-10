@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Welcome</title>
+<title>Airport Controller</title>
 <script src="https://d3js.org/d3.v4.js"></script>
 <script type="text/javascript" src="<s:url value="/js/map.js"></s:url>"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
