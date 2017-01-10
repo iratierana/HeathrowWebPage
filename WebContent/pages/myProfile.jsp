@@ -19,7 +19,7 @@
 				<legend>My Profile</legend>
 
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textinput">Name</label>
+					<label class="col-md-4 control-label">Name</label>
 					<div class="col-md-4">
 						<s:textfield name="name" class="form-control input-md"></s:textfield>
 
@@ -27,7 +27,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textinput">Last
+					<label class="col-md-4 control-label">Last
 						Name 1</label>
 					<div class="col-md-4">
 						<s:textfield name="firstName" class="form-control input-md"></s:textfield>
@@ -35,55 +35,55 @@
 				</div>
 				
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textinput">Last
+					<label class="col-md-4 control-label">Last
 						Name 2</label>
 					<div class="col-md-4">
 						<s:textfield name="secondName" class="form-control input-md"></s:textfield>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textinput">Dni/Passport</label>
+					<label class="col-md-4 control-label">Dni/Passport</label>
 					<div class="col-md-4">
 						<s:textfield name="dniPassport" class="form-control input-md"></s:textfield>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textinput">Birthday</label>
+					<label class="col-md-4 control-label">Birthday</label>
 					<div class="col-md-4">
 						<s:textfield type="date" name="birthDate" class="form-control input-md"></s:textfield>
 					</div>
 				</div>
 				
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textinput">Home Telephone</label>
+					<label class="col-md-4 control-label">Home Telephone</label>
 					<div class="col-md-4">
 						<s:textfield name="homeTlf" class="form-control input-md"></s:textfield>
 					</div>
 				</div>
 				
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textinput">Movile Telephone</label>
+					<label class="col-md-4 control-label">Movile Telephone</label>
 					<div class="col-md-4">
 						<s:textfield name="movileTlf" class="form-control input-md"></s:textfield>
 					</div>
 				</div>
 				
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textinput">E-Mail</label>
+					<label class="col-md-4 control-label">E-Mail</label>
 					<div class="col-md-4">
 						<s:textfield name="email" class="form-control input-md"></s:textfield>
 					</div>
 				</div>
 				
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textinput">Username</label>
+					<label class="col-md-4 control-label">Username</label>
 					<div class="col-md-4">
 						<s:textfield name="username" class="form-control input-md"></s:textfield>
 					</div>
 				</div>
 				
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textinput">Password</label>
+					<label class="col-md-4 control-label">Password</label>
 					<div class="col-md-4">
 						<s:textfield type="password" name="password" class="form-control input-md"></s:textfield>
 					</div>
@@ -91,7 +91,7 @@
 
 				<!-- Button -->
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="singlebutton"></label>
+					<label class="col-md-4 control-label"></label>
 					<div class="col-md-4">
 						<s:submit type="button" class="btn icon-btn btn-success btn-md glyphicon btn-glyphicon glyphicon-floppy-disk img-circle text-success pull-right" method="execute">Save Changes</s:submit>
 					</div>
