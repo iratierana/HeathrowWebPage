@@ -93,15 +93,3 @@ form[role=login] {
 		display:none;
 	}
 }
-
-@media(max-height:640px){
-	.col-md-8{
-		display:none;
-	}
-}
-
-@media(max-height:1024){
-	.col-md-8{
-		display:none;
-	}
-}
