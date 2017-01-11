@@ -1,0 +1,18 @@
+body{
+	margin:50px;
+	background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg);
+	background-size: cover;	
+}
+	
+tr{
+	text-align:center;	
+}
+	
+th{
+	font-weight: bold;
+	font-size:20px;
+}
+	
+td{
+	font-size:16px;
+}
