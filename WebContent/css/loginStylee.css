@@ -81,3 +81,27 @@ form[role=login] {
 	height: 80%;
 	width: 50%;
 }
+
+@media(max-width:360px){
+	.col-md-8{
+		display:none;
+	}
+}
+
+@media(max-width:768px){
+	.col-md-8{
+		display:none;
+	}
+}
+
+@media(max-height:640px){
+	.col-md-8{
+		display:none;
+	}
+}
+
+@media(max-height:1024){
+	.col-md-8{
+		display:none;
+	}
+}
