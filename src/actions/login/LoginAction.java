@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
 
+import configurations.ConnectHibernate;
 import databaseListener.MyNotifyListener;
 import domain.dao.DAOAirlineManager;
 import domain.dao.DAOAirplane;
@@ -71,7 +72,7 @@ public class LoginAction {
 			 session.put("loggedAirportController", null);
 			 session.put("loggedAirlineManager", null);
 			 
-//			 ConnectHibernate.changeUser("", "");
+			 ConnectHibernate.changeUser("1234", "passenger");
 			 
 			 return "passenger";
 			
@@ -83,7 +84,7 @@ public class LoginAction {
 			MyNotifyListener listener = new MyNotifyListener();
 			listener.start();
 			
-//			ConnectHibernate.changeUser("", "");
+			ConnectHibernate.changeUser("1234", "controller");
 			
 			return "airportController";
 			
@@ -93,7 +94,7 @@ public class LoginAction {
 			session.put("loggedAirlineManager", this.loggedAirlineManager);						
 			airplaneList = DAOAirplane.loadAirplanesOfAirline(loggedAirlineManager.getAirlineManagerId());
 			
-//			ConnectHibernate.changeUser("", "");
+			ConnectHibernate.changeUser("1234", "manager");
 			
 			return "airlineManager"; 
 		} else {
@@ -111,6 +112,7 @@ public class LoginAction {
 		session.remove("loggedPassanger");
 		session.remove("loggedAirportController");
 		session.remove("loggedAirlineManager");
+		ConnectHibernate.changeUser("1234", "admin");
 	}
 
 
