@@ -40,7 +40,7 @@ public class TestAirlineInformationEditAction {
 	@Test
 	public void checkIfTheFunctionExecuteAndSubfunctionsAreOk() {
 		
-		int airplaneId = 1;
+		int airplaneId = 9;
 		String ret;
 		
 		airInfoEditActi.setAirplaneId(airplaneId);

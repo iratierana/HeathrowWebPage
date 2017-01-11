@@ -19,7 +19,7 @@ public class TestPositionFileUpdater {
 	 *  in the database after reading from file.
 	 */
 	@Test
-	public void testToCheckIfThePositionIsChengedInTheDatabaseAfterReadingFromFile() {
+	public void testToCheckIfThePositionIsChangedInTheDatabaseAfterReadingFromFile() {
 		
 		PositionFileUpdater.updatePlanePositionFromFile(_335, _1);
 		PositionFileUpdater.updatePlanePositionFromFile(_335, _20);

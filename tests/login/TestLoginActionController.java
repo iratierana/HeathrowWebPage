@@ -56,7 +56,7 @@ public class TestLoginActionController {
 	@Test
 	public void testIfTheLoginUserDistributionFunctionIsOkIfAPassengerIsLogged() {
 		
-		String username = "joanes";
+		String username = "jaure";
 		String password = "123";
 		String ret;
 		

@@ -45,7 +45,7 @@ public class TestAirlineInformationActionController {
 	@Test
 	public void testIfTheFunctionExecuteCorrectInaCorrectWayRedirectingThePage() {
 		
-		int airplaneId = 1;
+		int airplaneId = 9;
 		String ret;
 		
 		airInfoAct.setAirplaneId(airplaneId);

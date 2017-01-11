@@ -61,8 +61,8 @@ public class TestDAOAirplane {
 	 * Test to load an specific airline.
 	 */
 	@Test
-	public void testToLoadAnSpecificAirline() {
-		int id = 1;
+	public void testToLoadAnSpecificAirplane() {
+		int id = 9;
 		assertNotNull(DAOAirplane.loadAirplane(id));
 	}
 
