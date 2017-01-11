@@ -48,6 +48,7 @@ public class TestRegisterAction {
 	public void checkIfTheRedirectionIsOk() {
 		String ret;
 		registerAction = new RegisterAction();
+		registerAction.setEmail("xabi96@hotmail.es");
 		ret = registerAction.execute();
 		
 		assertEquals("The redirection was NOT OK", ret, "login");
