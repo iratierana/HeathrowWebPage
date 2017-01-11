@@ -1,11 +1,10 @@
 package actions.login;
 
-import java.util.List; 
+import java.util.List;
 import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
 
-import configurations.ConnectHibernate;
 import databaseListener.MyNotifyListener;
 import domain.dao.DAOAirlineManager;
 import domain.dao.DAOAirplane;
@@ -76,7 +75,7 @@ public class LoginAction {
 			 
 			 return "passenger";
 			
-		} else if(loggedAirportController != null) {
+		} else if (loggedAirportController != null) {
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", this.loggedAirportController);
 			session.put("loggedAirlineManager", null);

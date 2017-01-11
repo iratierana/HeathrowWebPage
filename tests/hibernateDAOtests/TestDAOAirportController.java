@@ -1,10 +1,10 @@
 package hibernateDAOtests;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 
 import domain.dao.DAOAirportController;
-
-import static org.junit.Assert.*;
 
 // TODO: Auto-generated Javadoc
 /**
