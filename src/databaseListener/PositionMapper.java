@@ -15,7 +15,7 @@ public class PositionMapper {
 	 * @return the positioning model
 	 */
 	public static PositioningModel decodePosition(final int planeId, final int positionId) {
-		//TODO tabal baten sartu
+		//TODO tabal baten sartu refactor!!
 		PositioningModel posModel = null;
 		
 		switch (positionId) {

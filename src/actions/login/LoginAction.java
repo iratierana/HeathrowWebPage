@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
 
+import configurations.ConnectHibernate;
 import databaseListener.MyNotifyListener;
 import domain.dao.DAOAirlineManager;
 import domain.dao.DAOAirplane;
@@ -70,23 +71,31 @@ public class LoginAction {
 			 session.put("loggedPassanger", this.loggedPassanger);
 			 session.put("loggedAirportController", null);
 			 session.put("loggedAirlineManager", null);
+			 
+//			 ConnectHibernate.changeUser("", "");
+			 
 			 return "passenger";
 			
 		} else if(loggedAirportController != null) {
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", this.loggedAirportController);
 			session.put("loggedAirlineManager", null);
-			//Thear bat sortu eta listenerra aktibau airplane tablan
+			
 			MyNotifyListener listener = new MyNotifyListener();
 			listener.start();
+			
+//			ConnectHibernate.changeUser("", "");
+			
 			return "airportController";
 			
 		} else if (loggedAirlineManager != null) {
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", null);
-			session.put("loggedAirlineManager", this.loggedAirlineManager);
-						
+			session.put("loggedAirlineManager", this.loggedAirlineManager);						
 			airplaneList = DAOAirplane.loadAirplanesOfAirline(loggedAirlineManager.getAirlineManagerId());
+			
+//			ConnectHibernate.changeUser("", "");
+			
 			return "airlineManager"; 
 		} else {
 			return "error";

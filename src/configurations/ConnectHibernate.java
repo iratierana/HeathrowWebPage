@@ -50,6 +50,26 @@ public class ConnectHibernate {
 		sessionFactory.close();
 		
 	}
+	
+	/**
+	 * Function to change the user and pass of the database
+	 * @param pass The password
+	 * @param user The username
+	 */
+	public static void changeUser (final String pass, final String user) {
+		Configuration cfg = new Configuration();
+		cfg.configure(CONFIG_FILE);
+		System.setProperty("hibernate.connection.password", pass);
+		System.setProperty("hibernate.connection.username", user);
+		cfg.setProperties(System.getProperties());	
+
+		sessionFactory = cfg.buildSessionFactory();
+		
+		System.out.println("Username: "+cfg.getProperties().getProperty("hibernate.connection.username"));
+		System.out.println("Password: "+cfg.getProperties().getProperty("hibernate.connection.password"));
+		
+		System.out.println(sessionFactory.getProperties());
+	}
 
 	/**
 	 * Gets the session factory.
