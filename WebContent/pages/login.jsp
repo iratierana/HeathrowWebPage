@@ -38,7 +38,7 @@
     <div class="col-md-4">
       <section class="login-form">
         <form method="post" action="login" role="login">
-          <img src="../img/GestAir.png" class="img-responsive" alt="" />
+          <img src="<s:url value="/img/GestAir.png"/>" class="img-responsive" alt="" />    
           <s:textfield label="Username" name="username" placeholder="Username" class="form-control input-lg"/>
           <s:password label="Password" name="password" class="form-control input-lg" id="password" placeholder="Password"/>
           
