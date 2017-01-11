@@ -13,6 +13,8 @@
 <style>
 	body{
 		margin:50px;
+		background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg);
+		background-size: cover;	
 	}
 </style>
 </head>

@@ -19,10 +19,10 @@
 
 <body>
 	<!-- <h2>Welcome, <s:property value="username" />...!</h2> -->
-	<aside>
+	<aside class="well well-md">
 		<img alt="Airplane photo" src="https://thumbs.dreamstime.com/t/handelspassagierflugzeug-whrend-des-fluges-67048953.jpg"><hr>
-		Serial: <s:textfield name="serialNumb" readonly="true"></s:textfield><br>
-		Airline: <s:textfield name="airlineName" readonly="true"></s:textfield><hr>
+		<label>Serial : </label><s:textfield class="form-control" name="serialNumb" readonly="true"></s:textfield><br>
+		<label>Airline : </label><s:textfield class="form-control" name="airlineName" readonly="true"></s:textfield><hr>
 		
 		<!-- Hemen ruta joango da -->
 		
@@ -39,8 +39,8 @@
 			</tr>
 		</table><hr>
 		
-		Terminal: <s:textfield name="terminal" readonly="true" style="width:80px"></s:textfield>
-		Gate: <s:textfield name="gate" readonly="true" style="width:80px"></s:textfield><hr>
+		<label>Terminal : </label><s:textfield name="terminal" class="form-control" readonly="true"></s:textfield>
+		<label>Gate : </label><s:textfield name="gate" class="form-control" readonly="true"></s:textfield><hr>
 		
 		<button type="button" class="btn btn-default btn-md">
 			<span class="glyphicon glyphicon-calendar"></span>Flight from a specific day				

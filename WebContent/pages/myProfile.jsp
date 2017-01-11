@@ -9,24 +9,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 <link rel="shortcut icon" href="<s:url value="/img/pageIcon.png"/>">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<s:url value="/css/profileStyle.css"/>">
 
-<style type="text/css">
-	body{
-		background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg);
-		background-size: cover;	
-	}
-	
-	label{
-		color:white;
-		font-weight:bold;
-		font-size:16px;
-	}
-	
-	#divPrincipal{
-		border-box: 0px 0px 0px 10px;
-		background-image: url(../img/grisTransparente.png) no-repeat 0px 0px;
-	}
-</style>
 </head>
 <body>
 

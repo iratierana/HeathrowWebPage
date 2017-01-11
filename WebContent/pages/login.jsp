@@ -10,7 +10,8 @@
   <link rel="stylesheet" type="text/css" href="<s:url value="/css/loginStylee.css"/>">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-
+  <script type="text/javascript" src="<s:url value="/js/Chart.js"/>"></script>
+  <script type="text/javascript" src="<s:url value="/js/histogram.js"/>"></script>
 </head>
 
 <body>
@@ -52,12 +53,86 @@
       </section>  
       </div>
       
-      <div class="col-md-8"></div>
+      <div class="col-md-8">
+      
+      <div id="graphs">
+			<div class="histogram">
+				<canvas id="myChart"></canvas>
+				<script type="text/javascript">
+      				paintHistogram();
+    			</script>
+			</div>
+	  </div>
+      
+      	<s:div id="table">
+			<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Flight Id</th>
+					<th>Departure Date</th>
+					<th>Arrival Date</th>
+					<th>Departure Gate</th>
+					<th>Arrival Gate</th>
+					<th>Departure Terminal</th>
+					<th>Arrival Terminal</th>
+				</tr>
+			</thead>
+			<s:iterator value="flightList" var="flight">
+			<tbody>
+				
+				<tr>
+					<td><s:property value="flightId" /></td>
+					<td><s:property value="departureDate" /></td>
+					<td><s:property value="arrivalDate" /></td>
+					<td><s:property value="departureGate" /></td>
+					<td><s:property value="arrivalGate" /></td>
+					<td><s:property value="departureTerminal" /></td>
+					<td><s:property value="arrivalTerminal" /></td>
+				</tr>
+			</tbody>
+			</s:iterator>
+
+			</table>
+		</s:div>
+      
+      </div>
       
 
   </div>
  
 </div>
+
+<!--<section>
+	<s:div id="table">
+		<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Flight Id</th>
+			<th>Departure Date</th>
+			<th>Arrival Date</th>
+			<th>Departure Gate</th>
+			<th>Arrival Gate</th>
+			<th>Departure Terminal</th>
+			<th>Arrival Terminal</th>
+		</tr>
+	</thead>
+		<s:iterator value="flightList" var="flight">
+			<tbody>
+			<tr>
+				<td><s:property value="flightId" /></td>
+				<td><s:property value="departureDate" /></td>
+				<td><s:property value="arrivalDate" /></td>
+				<td><s:property value="departureGate" /></td>
+				<td><s:property value="arrivalGate" /></td>
+				<td><s:property value="departureTerminal" /></td>
+				<td><s:property value="arrivalTerminal" /></td>
+			</tr>
+			</tbody>
+		</s:iterator>
+
+	</table>
+	</s:div>
+</section>-->
 
 </body>
 </html>

@@ -15,6 +15,11 @@
 	.col-md-3 col-lg-3{
 		align:center;
 	}
+	
+	body{
+		background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg);
+		background-size: cover;	
+	}
 </style>
 
 </head>

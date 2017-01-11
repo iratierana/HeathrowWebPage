@@ -1,4 +1,4 @@
-body{
+html{
 	overflow:hidden;
 }
 
@@ -9,7 +9,8 @@ aside{
 	float:left;
 	width:25%;
 	height:100%;
-	overflow:hidden;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	text-align:center;
 }
 
