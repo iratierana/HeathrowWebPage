@@ -1,4 +1,4 @@
-package databaseListener2;
+package databaseListener;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
