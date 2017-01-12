@@ -19,11 +19,9 @@
 		<tr>
 			<th>Flight Id</th>
 			<th>Departure Date</th>
-			<th>Arrival Date</th>
 			<th>Departure Gate</th>
-			<th>Arrival Gate</th>
-			<th>Departure Terminal</th>
-			<th>Arrival Terminal</th>
+			<th>Departure Airport</th>
+			<th>Arrive Airport</th>
 		</tr>
 	</thead>
 		<s:iterator value="myFlightList" var="flight">
@@ -31,11 +29,9 @@
 			<tr>
 				<td><s:property value="flightId" /></td>
 				<td><s:property value="departureDate" /></td>
-				<td><s:property value="arrivalDate" /></td>
 				<td><s:property value="departureGate" /></td>
-				<td><s:property value="arrivalGate" /></td>
-				<td><s:property value="departureTerminal" /></td>
-				<td><s:property value="arrivalTerminal" /></td>
+				<td><s:property value="departAirport.name" /></td>
+				<td><s:property value="arriveAirport.name" /></td>
 			</tr>
 			</tbody>
 		</s:iterator>

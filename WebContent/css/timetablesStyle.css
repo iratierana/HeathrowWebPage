@@ -1,7 +1,8 @@
 body{
-	margin:50px;
+	margin-top:50px;
+	margin-left:10px;
 	background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg);
-	background-size: cover;	
+	background: cover;
 }
 	
 tr{
@@ -15,4 +16,19 @@ th{
 	
 td{
 	font-size:16px;
+}
+
+@media(max-width:360px){
+	th{
+		font-size:12px;
+	}
+	td{
+		font-size:10px;
+	}
+	thead{
+		margin:5px;
+	}
+	tbody{
+		margin:5px;
+	}
 }
