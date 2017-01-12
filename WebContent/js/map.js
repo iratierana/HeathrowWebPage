@@ -216,8 +216,6 @@ function initMap() {
  rectangle_terminal2.addListener('click', showInformationTerminal2);
  rectangle_terminal1.addListener('click', showInformationTerminal1);
 
- infoWindow = new google.maps.InfoWindow;
- 
 
 }
 
@@ -309,10 +307,12 @@ function reloadMap() {
 	            marker[i].setMap(map);
 	            changeColourLandingLane(d['lat'], d['long']);
 	            changeColourTakeOffLane(d['lat'], d['long']);
+	            /*google.maps.event.addListener(marker[i], 'click', function() {
 	            	console.log('Marker ' + marker[i].title + ' has been clicked');
 	            	var airplaneIdInput = document.getElementById("airplaneId");
 	            	airplaneIdInput.value = marker[i].title;
 	            	console.log(airplaneIdInput);
+	            });*/
 	        }) 	      
  	    });
 	    
