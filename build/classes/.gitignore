@@ -1,10 +1,4 @@
-/actions/
-/airlineManager/
 /configurations/
-/databaseListener/
+/firstLoad/
+/actions/
 /domain/
-/hibernateDAOtests/
-/login/
-/passengerMenu/
-/register/
-/switTest/
