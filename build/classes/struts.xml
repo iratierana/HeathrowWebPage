@@ -62,16 +62,14 @@
 			<result name="airlineManagerList">/pages/airlineManagerList.jsp</result>
 		</action>
 		
-<<<<<<< HEAD
 		<action name="idSearcher" class="actions.airportController.AirportControllerAction">
 			<result name="airportController">/pages/airportController.jsp</result>
 		</action>
-=======
+		
 		<action name="firstAction" class="actions.firstLoad.FirstLoadAction">
 			<result name="goToLogin">/pages/login.jsp</result>
->>>>>>> origin/Development
 		</action>
-		
+				
 		<action name="*">
 			<result>/pages/404error.jsp</result>
 		</action>

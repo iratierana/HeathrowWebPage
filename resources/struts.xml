@@ -66,6 +66,10 @@
 			<result name="airportController">/pages/airportController.jsp</result>
 		</action>
 		
+		<action name="firstAction" class="actions.firstLoad.FirstLoadAction">
+			<result name="goToLogin">/pages/login.jsp</result>
+		</action>
+				
 		<action name="*">
 			<result>/pages/404error.jsp</result>
 		</action>
