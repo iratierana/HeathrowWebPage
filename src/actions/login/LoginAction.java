@@ -81,8 +81,8 @@ public class LoginAction {
 			session.put("loggedAirportController", this.loggedAirportController);
 			session.put("loggedAirlineManager", null);
 			
-			MyNotifyListener listener = new MyNotifyListener();
-			listener.start();
+//			MyNotifyListener listener = new MyNotifyListener();
+//			listener.start();
 			
 			ConnectHibernate.changeUser("1234", "controller");
 			

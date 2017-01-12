@@ -27,5 +27,11 @@
  	<error-code>500</error-code>
  	<location>/pages/500error.jsp</location>
  </error-page>
+ 
+ <listener>  
+    <listener-class>
+       databaseListener2.SocketIOInit
+    </listener-class>
+ </listener>
 
 </web-app>
