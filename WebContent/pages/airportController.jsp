@@ -7,6 +7,7 @@
 <title>Airport Controller</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script type="text/javascript" src="<s:url value="/js/positionMapper.js"></s:url>"></script>
 <script type="text/javascript" src="<s:url value="/js/map.js"></s:url>"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwuZ3ePs3WL7qUBn1zVerSGTenwPCtQWs&callback=initMap" async defer></script>
 <link rel="shortcut icon" href="<s:url value="/img/pageIcon.png"/>">

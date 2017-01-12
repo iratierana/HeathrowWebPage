@@ -1,5 +1,5 @@
 var map;
-var marker = [];
+var marker;
 var infoWindow;
 
 var rectangle_takeOffLane;
@@ -200,43 +200,29 @@ function showInformationTerminal1(event) {
 	  infoWindow.open(map);
 }
 
-
-//d3.csv("../data/planeMarkerData.csv", function(data){
-//
-//for(var kont=0; kont<marker.length;kont++){
-//	marker[kont].setMap(null);
-//}
-//data.forEach(function(d, i){        	
-//    d['lat'] = +d['lat'];
-//    d['long'] = +d['lon'];
-//    marker[i] = new google.maps.Marker({
-//        position:{lat: d['lat'], lng: d['long']},
-//        map:map,
-//        icon:'../img/mapIcons/airplane_m.png',
-//        draggable:false,
-//        labelClass: "label",
-//        title: d['id'],
-//        label: {
-//        	color:'white',
-//        	fontWeight:'bold',
-//        	text: d['id'],
-//        },
-//    });
-//    
-//    marker[i].setMap(map);
-//    changeColourLandingLane(d['lat'], d['long']);
-//    changeColourTakeOffLane(d['lat'], d['long']);
-//}) 	      
-//}); 
 $(document).ready(
 	    function() {
 
 	        socket.on("database_change", function(jsonData) {
 
 	            var data = JSON.parse(jsonData);
-
-	            console.log("Data from js: ",data);
-
+	            var position = mapPosition(data.airplaneid ,data.planeposition_planepositionid);
+	            console.log(position);
+	            
+		          marker = new google.maps.Marker({
+		              position:{lat: position[0], lng: position[1]},
+		              map:map,
+		              icon:"/HeathrowWebPage/img/airplane.png",
+		              draggable:false,
+		              label: data.airplaneid.toString(),
+		          });
+		          
+		          
+		          marker.setMap(map);
+		          changeColourLandingLane(position[0], position[1]);
+		          changeColourTakeOffLane(position[0], position[1]);
+	            
+	            
 	        });
 
 	    }
