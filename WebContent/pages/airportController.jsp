@@ -18,12 +18,23 @@
 </head>
 
 <body>
-	<!-- <h2>Welcome, <s:property value="username" />...!</h2> -->
 	<aside class="well well-md">
-		<img alt="Airplane photo" src="https://thumbs.dreamstime.com/t/handelspassagierflugzeug-whrend-des-fluges-67048953.jpg"><hr>
-		<label>Serial : </label><s:textfield class="form-control" name="serialNumb" readonly="true"></s:textfield><br>
-		<label>Airline : </label><s:textfield class="form-control" name="airlineName" readonly="true"></s:textfield><hr>
+		<s:form action="idSearcher" method="post">
+			<label>Airplane ID : </label><s:textfield type="number" class="form-control" name="airplaneId" readonly="false"></s:textfield><br>
+			<s:submit type="button" class="btn btn-default btn-md glyphicon glyphicon-search">Search</s:submit><hr>
+			<input type="hidden" value="idFlight">
+			<!-- <button type="button" class="btn btn-default btn-md">
+			<span class="glyphicon glyphicon-search"></span>Search			
+		</button><hr> -->
+		</s:form>
 		
+		<s:iterator value="airplane">
+			<img alt="Airplane photo" src="https://thumbs.dreamstime.com/t/handelspassagierflugzeug-whrend-des-fluges-67048953.jpg"><hr>
+			<label>Serial : </label>
+				<s:property value="serialNumb"/><br>
+			<label>Airline : </label>
+				<s:property value="name"/><hr>
+		</s:iterator>
 		<!-- Hemen ruta joango da -->
 		
 		<table class="table">
@@ -51,5 +62,8 @@
 	<section>
 	<s:div id="map"></s:div>
 	</section>
+	
+	<!-- <input id="airplaneId" type="hidden" value="idAirplane"> -->
+	
 </body>
 </html>

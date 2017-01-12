@@ -8,6 +8,7 @@ import javax.persistence.TypedQuery;
 import org.hibernate.Session;
 
 import configurations.ConnectHibernate;
+import domain.model.Airplane;
 import domain.model.Flight;
 
 // TODO: Auto-generated Javadoc
@@ -53,6 +54,39 @@ private static Session session;
 
 		
 		return flightList;
+	}
+	
+	/**
+	 * This function loads and airplane.
+	 * @param id The id of the airplane to load frm the databse
+	 * @return The object airplane
+	 */
+	public static Flight loadFlight(final int id, final int idFlight) {
+		List<Flight> flightList = null;
+		Flight f = new Flight();
+		f = null;
+		try {
+			ConnectHibernate.before();
+			session = ConnectHibernate.getSession();
+			
+			@SuppressWarnings("unchecked")
+			TypedQuery<Flight> query = session.createQuery("from Flight as f join f.airplane as a where a.airplaneId=" + id + " and f.flightId=" + idFlight);
+			flightList = query.getResultList();
+			if (!flightList.isEmpty()) {
+				f = flightList.get(0);
+			}
+			ConnectHibernate.after();
+			
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			ConnectHibernate.after();
+			return null;
+		} finally {
+			ConnectHibernate.after();
+
+		}
+		
+		return f;
 	}
 
 	/**

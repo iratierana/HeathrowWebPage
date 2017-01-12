@@ -199,9 +199,7 @@ function initMap() {
 	   editable:false,
 	   draggable:false
 	  });
-  
-
-  
+	 
 
  /*flightPath.setMap(map);
  flightPath2.setMap(map);*/
@@ -217,7 +215,7 @@ function initMap() {
  rectangle_terminal3.addListener('click', showInformationTerminal3);
  rectangle_terminal2.addListener('click', showInformationTerminal2);
  rectangle_terminal1.addListener('click', showInformationTerminal1);
- 
+
  infoWindow = new google.maps.InfoWindow;
  
 
@@ -299,11 +297,22 @@ function reloadMap() {
 	                map:map,
 	                icon:'../img/mapIcons/airplane_m.png',
 	                draggable:false,
-	                title: d['id']	                
+	                labelClass: "label",
+	                title: d['id'],
+	                label: {
+	                	color:'white',
+	                	fontWeight:'bold',
+	                	text: d['id'],
+	                },
 	            });
+	            
 	            marker[i].setMap(map);
 	            changeColourLandingLane(d['lat'], d['long']);
 	            changeColourTakeOffLane(d['lat'], d['long']);
+	            	console.log('Marker ' + marker[i].title + ' has been clicked');
+	            	var airplaneIdInput = document.getElementById("airplaneId");
+	            	airplaneIdInput.value = marker[i].title;
+	            	console.log(airplaneIdInput);
 	        }) 	      
  	    });
 	    
@@ -328,15 +337,13 @@ function changeColourLandingLane(lat,lon){
 function changeColourTakeOffLane(lat,lon){
 	var latt=lat+'';
 	var lonn=lon+'';
-	console.log("lat: " +lat);
-	console.log("lon:" + lon);
+	/*console.log("lat: " +lat);
+	console.log("lon:" + lon);*/
 	 if((latt.localeCompare('51.464848') == 0) && (lonn.localeCompare('-0.459924') == 0)){
 		 rectangle_takeOffLane_green.setMap(null);
     	 rectangle_takeOffLane_red.setMap(map);
-    	 console.log("mapa gorri");
     }else{
     	 rectangle_takeOffLane_green.setMap(map);
     	 rectangle_takeOffLane_red.setMap(null);
-    	 console.log("mapa berde");
     }
 }
