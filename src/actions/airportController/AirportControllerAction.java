@@ -1,13 +1,19 @@
 package actions.airportController;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.constraints.NotNull;
 
 import org.apache.struts2.ServletActionContext;
 
 import domain.dao.DAOAirplane;
+import domain.dao.DAOAirplanePhoto;
 import domain.dao.DAOFlight;
 import domain.model.Airplane;
+import domain.model.AirplanePhoto;
 import domain.model.Flight;
 
 public class AirportControllerAction {
@@ -31,21 +37,30 @@ public class AirportControllerAction {
 	private String route;
 	
 	/** The arrival gate. */
-	@NotNull
 	private Integer arrivalGate;
 	
 	/** The arrival terminal. */
-	@NotNull
 	private Integer arrivalTerminal;
 	
-	public String execute(){
+	/** The photo. */
+	private AirplanePhoto photo;
+	
+	/** The p. */
+	private byte[] p;
+	
+	/** The p string. */
+	private String pString;
+	
+	public String execute() throws UnsupportedEncodingException {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String id =  request.getParameter("airplaneId");
-		String idFlight = request.getParameter("flightId");
-		System.out.println(id);
+		String idFlight = request.getParameter("flightId"); 
 		
 		airplane = DAOAirplane.loadAirplane(Integer.parseInt(id));
 		
+		flight = DAOFlight.loadFlight(Integer.parseInt(id), Integer.parseInt(idFlight));
+		
+		//loadPhotoFromDatabase(Integer.parseInt(id));
 		fillAtributesAirplane();
 		
 		flight = DAOFlight.loadFlight(Integer.parseInt(id), Integer.parseInt(idFlight));
@@ -53,6 +68,20 @@ public class AirportControllerAction {
 		fillAtributesFlight();
 		
 		return "airportController";
+	}
+
+	/**
+	 * Load photo from database.
+	 *
+	 * @param airplaneId the airplane id
+	 * @throws UnsupportedEncodingException the unsupported encoding exception
+	 */
+	private void loadPhotoFromDatabase(int airplaneId) throws UnsupportedEncodingException {
+		photo = DAOAirplanePhoto.loadAirplanePhoto(airplaneId); //TODO: Replaced 21 with airplaneId
+		p = Base64.getEncoder().encode(photo.getPhoto());
+		pString = new String(p, "UTF-8");
+		pString = "data:image/jpg;base64," + pString;
+		System.out.println(pString);
 	}
 
 	private void fillAtributesAirplane() {
@@ -129,6 +158,5 @@ public class AirportControllerAction {
 	public void setArrivalTerminal(Integer arrivalTerminal) {
 		this.arrivalTerminal = arrivalTerminal;
 	}
-
 
 }

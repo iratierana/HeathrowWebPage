@@ -63,7 +63,7 @@ private static Session session;
 	 * @param id The id of the airplane to load frm the databse
 	 * @return The object airplane
 	 */
-	public static Flight loadFlight(final int id, final int idFlight) {
+	/*public static Flight loadFlight(final int id, final int idFlight) {
 		List<Flight> flightList = null;
 		Flight f = new Flight();
 		f = null;
@@ -89,17 +89,17 @@ private static Session session;
 		}
 		
 		return f;
-	}
+	}*/
+
 	
-	/*
 	@SuppressWarnings({ "rawtypes",  "unchecked"})
 	public static Flight loadFlight(final int id, final int idFlight) {
 		List<Flight> flightList = null;
 		Flight f = new Flight();
 		f = null;
 		String sql = "SELECT *"
-				+ " FROM Flight f join Airplane air on f.flightId=air.airplaneId"
-				+ " WHERE air.airplaneId=" + id + " and f.flightId=" + idFlight ;
+				+ " FROM Flight JOIN Airplane on Flight.airplane_airplaneid=Airplane.airplaneid"
+				+ " WHERE airplane_airplaneid=" + id + " and flightId=" + idFlight ;
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
@@ -107,6 +107,11 @@ private static Session session;
 			SQLQuery query = session.createSQLQuery(sql);
 			query.addEntity(Flight.class);
 			flightList = query.list();
+			flightList = query.getResultList();
+			if (!flightList.isEmpty()) {
+				f = flightList.get(0);
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -115,7 +120,7 @@ private static Session session;
 		}
 		return f;
 	}
-	*/
+	
 	
 	/**
 	 * This function checks if the flight exist in order to book it.

@@ -49,7 +49,7 @@
 			</div>
 	  </div>
       
-      	<s:div id="table">
+      	<s:div id="table" style="height: 215px; overflow-y: scroll;">
 			<table class="table table-hover">
 			<thead>
 				<tr>

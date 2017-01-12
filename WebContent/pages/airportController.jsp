@@ -13,6 +13,9 @@
 <link rel="stylesheet" type="text/css" href="<s:url value="/css/airportControllerStyle.css"/>">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -26,15 +29,28 @@
 		</s:form>
 		
 		<s:iterator value="airplane">
-			<img alt="Airplane photo" src="https://thumbs.dreamstime.com/t/handelspassagierflugzeug-whrend-des-fluges-67048953.jpg"><hr>
+			<img alt="Airplane photo" class="img-rounded" src="https://thumbs.dreamstime.com/t/handelspassagierflugzeug-whrend-des-fluges-67048953.jpg"><hr>
 			<label>Serial : </label>
 				<s:property value="serialNumb"/><br>
 			<label>Airline : </label>
 				<s:property value="name"/><hr>
 		</s:iterator>
-		<!-- Hemen ruta joango da -->
 		
-		<table class="table">
+		<s:iterator value="flight">
+			<table class="table table-hover">
+				<tr>
+					<th>Departure Airport</th>
+					<th>Arrival Airport</th>
+				</tr>
+				<tr>
+					<td><s:property value="departAirport.name"/></td>
+					<td><s:property value="arriveAirport.name"/></td>
+				</tr>
+			</table>																																	
+		</s:iterator>
+		
+		<table class="table table-hover">
+		<s:iterator value="flight">
 			<thead class="thead-inverse">
 				<tr>
 					<th style="text-align:center;">Departure</th>
@@ -45,10 +61,19 @@
 				<td><s:property value="departureDate"/></td>
 				<td><s:property value="arrivalDate"/></td>
 			</tr>
+			</s:iterator>
 		</table><hr>
 		
-		<label>Terminal : </label><s:textfield name="terminal" class="form-control" readonly="true"></s:textfield>
-		<label>Gate : </label><s:textfield name="gate" class="form-control" readonly="true"></s:textfield><hr>
+		<s:iterator value="flight">
+			<label>Departure Terminal : </label>
+				<s:property value="departureTerminal"/><br>
+			<label>Departure Gate : </label>
+				<s:property value="departureGate"/><br>
+			<label>Arrival Terminal : </label>
+				<s:property value="arrivalTerminal"/><br>
+			<label>Arrival Gate : </label>
+				<s:property value="arrivalTerminal"/><br><hr>
+		</s:iterator>
 		
 		<button type="button" class="btn btn-default btn-md">
 			<span class="glyphicon glyphicon-calendar"></span>Flight from a specific day				
@@ -59,8 +84,6 @@
 	<section>
 	<s:div id="map"></s:div>
 	</section>
-	
-	<!-- <input id="airplaneId" type="hidden" value="idAirplane"> -->
 	
 </body>
 </html>
