@@ -1,4 +1,4 @@
-package databaseListener2;
+package databaseListener;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -68,7 +68,6 @@ public class PGSocketIONotify implements Runnable {
 	 */
 	public PGSocketIONotify(Connection conn, String[] listenToArray) throws SQLException, InterruptedException {
 
-		// 9092 portuan egongo da socket.io-ko komunikazinua
 		this.pgConn = (PGConnection) conn;
 		Statement listenStatement = conn.createStatement();
 		// Ze mezu entzun bihar daben esan, nahi beste mezu entzun leike.
@@ -92,16 +91,13 @@ public class PGSocketIONotify implements Runnable {
 
 				if (notifications != null) {
 					for (PGNotification pgNotification : notifications) {
-
-						// PGk JSON bat bidaltzen dau, hori gero javascripten
-						// tratauko da
+						
 						String[] tableInfo = pgNotification.getParameter().split(SPLITTER);
 						System.out.println(tableInfo[1]);
 						server.getBroadcastOperations().sendEvent("database_change", tableInfo[1]);
 
 					}
 				}
-				// wait a while before checking again
 				Thread.sleep(LOOP_TIME);
 			} catch (SQLException sqlException) {
 				sqlException.printStackTrace();

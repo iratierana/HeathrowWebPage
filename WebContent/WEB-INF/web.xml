@@ -30,7 +30,7 @@
  
  <listener>  
     <listener-class>
-       databaseListener2.SocketIOInit
+       databaseListener.SocketIOInit
     </listener-class>
  </listener>
 

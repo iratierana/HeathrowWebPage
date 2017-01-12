@@ -1,9 +1,9 @@
-package databaseListener2;
+package databaseListener;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import databaseListener2.Notification;
+import databaseListener.Notification;
 
 // TODO: Auto-generated Javadoc
 /**

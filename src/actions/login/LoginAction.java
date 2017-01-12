@@ -6,7 +6,6 @@ import java.util.Map;
 import com.opensymphony.xwork2.ActionContext;
 
 import configurations.ConnectHibernate;
-import databaseListener.MyNotifyListener;
 import domain.dao.DAOAirlineManager;
 import domain.dao.DAOAirplane;
 import domain.dao.DAOAirportController;
@@ -80,9 +79,6 @@ public class LoginAction {
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", this.loggedAirportController);
 			session.put("loggedAirlineManager", null);
-			
-//			MyNotifyListener listener = new MyNotifyListener();
-//			listener.start();
 			
 			ConnectHibernate.changeUser("1234", "controller");
 			

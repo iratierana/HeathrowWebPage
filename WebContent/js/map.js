@@ -126,8 +126,6 @@ function initMap() {
 	  });
 	 
 
- /*flightPath.setMap(map);
- flightPath2.setMap(map);*/
  rectangle_landingLane_green.setMap(map);
  rectangle_takeOffLane_green.setMap(map);
  rectangle_terminal4.setMap(map);
@@ -202,35 +200,34 @@ function showInformationTerminal1(event) {
 	  infoWindow.open(map);
 }
 
-			  
-//	    d3.csv("../data/planeMarkerData.csv", function(data){
-//	    	
-//	    	for(var kont=0; kont<marker.length;kont++){
-//	    		marker[kont].setMap(null);
-//	    	}
-//	        data.forEach(function(d, i){        	
-//	            d['lat'] = +d['lat'];
-//	            d['long'] = +d['lon'];
-//	            marker[i] = new google.maps.Marker({
-//	                position:{lat: d['lat'], lng: d['long']},
-//	                map:map,
-//	                icon:'../img/mapIcons/airplane_m.png',
-//	                draggable:false,
-//	                labelClass: "label",
-//	                title: d['id'],
-//	                label: {
-//	                	color:'white',
-//	                	fontWeight:'bold',
-//	                	text: d['id'],
-//	                },
-//	            });
-//	            
-//	            marker[i].setMap(map);
-//	            changeColourLandingLane(d['lat'], d['long']);
-//	            changeColourTakeOffLane(d['lat'], d['long']);
-//	        }) 	      
-// 	    });
-	    
+
+//d3.csv("../data/planeMarkerData.csv", function(data){
+//
+//for(var kont=0; kont<marker.length;kont++){
+//	marker[kont].setMap(null);
+//}
+//data.forEach(function(d, i){        	
+//    d['lat'] = +d['lat'];
+//    d['long'] = +d['lon'];
+//    marker[i] = new google.maps.Marker({
+//        position:{lat: d['lat'], lng: d['long']},
+//        map:map,
+//        icon:'../img/mapIcons/airplane_m.png',
+//        draggable:false,
+//        labelClass: "label",
+//        title: d['id'],
+//        label: {
+//        	color:'white',
+//        	fontWeight:'bold',
+//        	text: d['id'],
+//        },
+//    });
+//    
+//    marker[i].setMap(map);
+//    changeColourLandingLane(d['lat'], d['long']);
+//    changeColourTakeOffLane(d['lat'], d['long']);
+//}) 	      
+//}); 
 $(document).ready(
 	    function() {
 
@@ -263,8 +260,6 @@ function changeColourLandingLane(lat,lon){
 function changeColourTakeOffLane(lat,lon){
 	var latt=lat+'';
 	var lonn=lon+'';
-	/*console.log("lat: " +lat);
-	console.log("lon:" + lon);*/
 	 if((latt.localeCompare('51.464848') == 0) && (lonn.localeCompare('-0.459924') == 0)){
 		 rectangle_takeOffLane_green.setMap(null);
     	 rectangle_takeOffLane_red.setMap(map);
