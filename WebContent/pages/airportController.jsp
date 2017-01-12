@@ -40,10 +40,12 @@
 			<table class="table table-hover">
 				<tr>
 					<th>Departure Airport</th>
+					<th></th>
 					<th>Arrival Airport</th>
 				</tr>
 				<tr>
 					<td><s:property value="departAirport.name"/></td>
+					<td><img src="<s:url value="/img/airplane.png"/>"/></td>
 					<td><s:property value="arriveAirport.name"/></td>
 				</tr>
 			</table>																																	
