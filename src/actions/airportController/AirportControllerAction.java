@@ -113,35 +113,20 @@ public class AirportControllerAction {
 	public void setFlight(Flight flight) {
 		this.flight = flight;
 	}
-	
+
 	public Integer getArrivalGate() {
 		return arrivalGate;
 	}
 
-	/**
-	 * Sets the arrival gate.
-	 *
-	 * @param arrivalGate the new arrival gate
-	 */
-	public void setArrivalGate(final Integer arrivalGate) {
+	public void setArrivalGate(Integer arrivalGate) {
 		this.arrivalGate = arrivalGate;
 	}
 
-	/**
-	 * Gets the arrival terminal.
-	 *
-	 * @return the arrival terminal
-	 */
 	public Integer getArrivalTerminal() {
 		return arrivalTerminal;
 	}
 
-	/**
-	 * Sets the arrival terminal.
-	 *
-	 * @param arrivalTerminal the new arrival terminal
-	 */
-	public void setArrivalTerminal(final Integer arrivalTerminal) {
+	public void setArrivalTerminal(Integer arrivalTerminal) {
 		this.arrivalTerminal = arrivalTerminal;
 	}
 

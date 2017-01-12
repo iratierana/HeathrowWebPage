@@ -21,11 +21,9 @@
 	<aside class="well well-md">
 		<s:form action="idSearcher" method="post">
 			<label>Airplane ID : </label><s:textfield type="number" class="form-control" name="airplaneId" readonly="false"></s:textfield><br>
+			<label>Flight ID : </label><s:textfield type="number" class="form-control" name="flightId" readonly="false"></s:textfield><br>
 			<s:submit type="button" class="btn btn-default btn-md glyphicon glyphicon-search">Search</s:submit><hr>
 			<input type="hidden" value="idFlight">
-			<!-- <button type="button" class="btn btn-default btn-md">
-			<span class="glyphicon glyphicon-search"></span>Search			
-		</button><hr> -->
 		</s:form>
 		
 		<s:iterator value="airplane">

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 
 import configurations.ConnectHibernate;
@@ -24,6 +25,7 @@ import domain.model.Flight;
  * Class where are all the needed functions related 
  * with flight, in order to work with the database
  */
+@SuppressWarnings("deprecation")
 public class DAOFlight {
 	
 private static final int _24 = 24;
@@ -88,7 +90,33 @@ private static Session session;
 		
 		return f;
 	}
+	
+	/*
+	@SuppressWarnings({ "rawtypes",  "unchecked"})
+	public static Flight loadFlight(final int id, final int idFlight) {
+		List<Flight> flightList = null;
+		Flight f = new Flight();
+		f = null;
+		String sql = "SELECT *"
+				+ " FROM Flight f join Airplane air on f.flightId=air.airplaneId"
+				+ " WHERE air.airplaneId=" + id + " and f.flightId=" + idFlight ;
+		try {
+			ConnectHibernate.before();
+			session = ConnectHibernate.getSession();
+			
+			SQLQuery query = session.createSQLQuery(sql);
+			query.addEntity(Flight.class);
+			flightList = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ConnectHibernate.after();
 
+		}
+		return f;
+	}
+	*/
+	
 	/**
 	 * This function checks if the flight exist in order to book it.
 	 *
