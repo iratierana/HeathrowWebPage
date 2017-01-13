@@ -219,9 +219,9 @@ $(document).ready(
 		            	  text: data.airplaneid.toString(),
 		              }
 		          });
-		          removeMarkerFromArray(marker);		          
-		          insertMarkerInArray(marker);
 		          removeMarkers();
+		          removeMarkerFromArray(marker);		          
+		          insertMarkerInArray(marker);		          
 		          paintArrayMarkersInMap();
 		          
 		          changeColourLandingLane(position[0], position[1]);
@@ -237,9 +237,16 @@ $(document).ready(
 
 
 function paintArrayMarkersInMap(){
-	for(i=0; i<Object.keys(markerInMapArray).length; i++){
+	for(var i=0; i < Object.keys(markerInMapArray).length; i++){
     	markerInMapArray[i].setMap(map);
     	console.log('Paint= '+markerInMapArray[i]);
+    }
+}
+
+function removeMarkers(){
+    for(i=0; i < Object.keys(markerInMapArray).length; i++){
+    	markerInMapArray[i].setMap(null);
+    	console.log('Remove= '+markerInMapArray[i]);
     }
 }
 
@@ -259,12 +266,7 @@ function removeMarkerFromArray(marker){
 	}
 }
 
-function removeMarkers(){
-    for(i=0; i<Object.keys(markerInMapArray).length; i++){
-    	markerInMapArray[i].setMap(null);
-    	console.log('Remove= '+markerInMapArray[i]);
-    }
-}
+
 
 
 
