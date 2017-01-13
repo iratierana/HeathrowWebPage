@@ -69,6 +69,10 @@
 		<action name="firstAction" class="actions.firstLoad.FirstLoadAction">
 			<result name="goToLogin">/pages/login.jsp</result>
 		</action>
+		
+		<action name="graphsMoreInfo" class="actions.login.MoreInfoAction">
+			<result name="moreInformation">/pages/moreInfo.jsp</result>
+		</action>
 				
 		<action name="*">
 			<result>/pages/404error.jsp</result>

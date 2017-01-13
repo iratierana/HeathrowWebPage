@@ -47,7 +47,10 @@
 			<div class="histogram">
 				<div id="dataDiagram" style="min-width: 700px; height: 250px; margin: 0 auto"></div>				
 			</div>
-	  </div>
+	  </div><br>
+      <s:form action="graphsMoreInfo" method="post">
+      	<s:submit type="button" class="btn btn-info btn-xs">Click here for more information</s:submit>
+      </s:form>
       
       	<s:div id="table" style="height: 215px; overflow-y: scroll;">
 			<table class="table table-hover">
