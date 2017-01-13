@@ -3,101 +3,52 @@ function loadInteractivePieChart(){
 var pie = new d3pie("pieChart", {
 	"header": {
 		"title": {
-			"text": "Top 15 Fears",
-			"fontSize": 34,
-			"font": "courier"
+			"text": "Passengers in 2015",
+			"fontSize": 24.8,
+			"font": "courier",
+			"font-weight": "bold"
 		},
 		"subtitle": {
-			"text": "What strikes the most terror in people?",
-			"color": "#999999",
-			"fontSize": 10,
+			"text": "Percentages of different passengers in 2015.",
+			"color": "#000000",
+			"fontSize": 9.52,
 			"font": "courier"
 		},
 		"location": "pie-center",
 		"titleSubtitlePadding": 10
 	},
 	"size": {
-		"canvasWidth": 590,
-		"pieInnerRadius": "95%",
+		"canvasWidth": 630,
+		"pieInnerRadius": "88%",
 		"pieOuterRadius": "70%"
 	},
 	"data": {
 		"sortOrder": "label-desc",
 		"content": [
 			{
-				"label": "Spiders",
-				"value": 2,
-				"color": "#333333"
+				"label": "International passengers",
+				"value": 69800000,
+				"color": "#FC0303"
 			},
 			{
-				"label": "Mother-in-laws",
-				"value": 10,
-				"color": "#444444"
+				"label": "Domestic passengers",
+				"value": 5100000,
+				"color": "#0328FC"
 			},
 			{
-				"label": "Sharks",
-				"value": 8,
-				"color": "#555555"
+				"label": "Business passengers",
+				"value": 27000000,
+				"color": "#03FC2C"
 			},
 			{
-				"label": "Alien invasion",
-				"value": 8,
-				"color": "#666666"
+				"label": "Leisure passengers",
+				"value": 48000000,
+				"color": "#FCF403"
 			},
 			{
-				"label": "Learning Objective-C",
-				"value": 5,
-				"color": "#777777"
-			},
-			{
-				"label": "Public speaking",
-				"value": 3,
-				"color": "#888888"
-			},
-			{
-				"label": "Donald Rumsfeld",
-				"value": 4,
-				"color": "#999999"
-			},
-			{
-				"label": "The Zombie Apocalypse",
-				"value": 4,
-				"color": "#cb2121"
-			},
-			{
-				"label": "The City of Winnipeg *",
-				"value": 3,
-				"color": "#830909"
-			},
-			{
-				"label": "IE 6",
-				"value": 2,
-				"color": "#923e99"
-			},
-			{
-				"label": "Planes with/out snakes",
-				"value": 5,
-				"color": "#ae83d5"
-			},
-			{
-				"label": "Off-by-one errors",
-				"value": 3,
-				"color": "#111111"
-			},
-			{
-				"label": "Chickadees",
-				"value": 4,
-				"color": "#050505"
-			},
-			{
-				"label": "A never-ending Harper Government",
-				"value": 1,
-				"color": "#646464"
-			},
-			{
-				"label": "Canada",
-				"value": 4,
-				"color": "#747474"
+				"label": "Transfer passengers",
+				"value": 24000000,
+				"color": "#FC6703"
 			}
 		]
 	},
@@ -110,16 +61,17 @@ var pie = new d3pie("pieChart", {
 			"format": "none"
 		},
 		"mainLabel": {
-			"fontSize": 11
+			"fontSize": 13
 		},
 		"percentage": {
-			"color": "#999999",
-			"fontSize": 11,
+			"color": "#000000",
+			"fontSize": 13,
 			"decimalPlaces": 0
 		},
 		"value": {
 			"color": "#cccc43",
-			"fontSize": 11
+			"fontWeight": "bold",
+			"fontSize": 13
 		},
 		"lines": {
 			"enabled": true,
@@ -133,7 +85,7 @@ var pie = new d3pie("pieChart", {
 		"pullOutSegmentOnClick": {
 			"effect": "linear",
 			"speed": 400,
-			"size": 8
+			"size": 10
 		}
 	},
 	"misc": {

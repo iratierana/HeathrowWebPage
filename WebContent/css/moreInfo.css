@@ -7,19 +7,42 @@
 article{
 	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
 	background-color:rgba(192,192,192,0.8);
-	padding:32px;
-	margin:32px;
+	padding:25px;
+	margin:25px;
 }
 
 section{
 	margin-bottom:5em;
 }
 
-#myChart{
-	width: 50%;
+section div{
+	width:65%;
+	height:100%;
+	display:inline-block;
+	margin-left:8px;
 }
-.barChart{
-	width: 70%;
+
+p{
+	float:right;
+	width:30%;
+	left:65%;
+	margin-top: -450px;
+	position:absolute;
+	border:1px solid white;
+	border-radius:3px;
+	background-color:white;
+	opacity:0.9;
+	padding:15px;
+	font-family:"Verdana";
+}
+
+#myChart{
+	width: 40%;
+	margin-top:50px;
+}
+
+#bar-chart p{
+	margin-top: -310px;
 }
 
 .hideme{
@@ -27,5 +50,10 @@ section{
 }
 
 #pieChart{
-	width:40%;
+	width:50%;
+	margin-top:0px;
+}
+
+svg{
+	width: 650px;
 }
