@@ -1,5 +1,6 @@
 var map;
 var marker;
+var markerInMapArray = [];
 var infoWindow;
 
 var rectangle_takeOffLane;
@@ -17,7 +18,7 @@ function initMap() {
 	
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
-    center: {lat: 51.471959, lng: -0.450397},
+    center: {lat: 51.470982, lng: -0.464773},
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   
@@ -207,18 +208,22 @@ $(document).ready(
 
 	            var data = JSON.parse(jsonData);
 	            var position = mapPosition(data.airplaneid ,data.planeposition_planepositionid);
-	            console.log(position);
 	            
 		          marker = new google.maps.Marker({
 		              position:{lat: position[0], lng: position[1]},
 		              map:map,
 		              icon:"/HeathrowWebPage/img/airplane.png",
 		              draggable:false,
-		              label: data.airplaneid.toString(),
+		              label:  {
+		            	  color: '#FFFFFF',	              
+		            	  text: data.airplaneid.toString(),
+		              }
 		          });
+		          removeMarkerFromArray(marker);		          
+		          insertMarkerInArray(marker);
+		          removeMarkers();
+		          paintArrayMarkersInMap();
 		          
-		          
-		          marker.setMap(map);
 		          changeColourLandingLane(position[0], position[1]);
 		          changeColourTakeOffLane(position[0], position[1]);
 	            
@@ -229,6 +234,39 @@ $(document).ready(
 
 
 	);
+
+
+function paintArrayMarkersInMap(){
+	for(i=0; i<Object.keys(markerInMapArray).length; i++){
+    	markerInMapArray[i].setMap(map);
+    	console.log('Paint= '+markerInMapArray[i]);
+    }
+}
+
+function insertMarkerInArray(marker){
+	markerInMapArray.push(marker);
+}
+
+function removeMarkerFromArray(marker){
+	var i = 0;
+	for(var m in markerInMapArray){		
+		var a = markerInMapArray[m].label.text;
+		var b = marker.label.text;
+		if(a == b){			
+			markerInMapArray.splice(i,1);
+		}
+		i++;
+	}
+}
+
+function removeMarkers(){
+    for(i=0; i<Object.keys(markerInMapArray).length; i++){
+    	markerInMapArray[i].setMap(null);
+    	console.log('Remove= '+markerInMapArray[i]);
+    }
+}
+
+
 
 
 function changeColourLandingLane(lat,lon){
