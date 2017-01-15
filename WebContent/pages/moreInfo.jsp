@@ -80,7 +80,6 @@
 	
 	<article id="histogram" class="hideme">
 		<h2>Histogram Graph</h2>
-		<p>In Heathrow airport ,....... </p>
 	</article>
 
 </section>
