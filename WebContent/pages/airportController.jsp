@@ -78,9 +78,9 @@
 				<s:property value="arrivalTerminal"/><br><hr>
 		</s:iterator>
 		
-		<button type="button" class="btn btn-default btn-md">
+		<!-- <button type="button" class="btn btn-default btn-md">
 			<span class="glyphicon glyphicon-calendar"></span>Flight from a specific day				
-		</button>
+		</button> -->
 	
 	</aside>
 	

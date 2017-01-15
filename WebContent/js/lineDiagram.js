@@ -23,7 +23,7 @@ $(function () {
                 }
             },
             title: {
-                text: 'Flujo de pasajeros'
+                text: 'Passenger Flow'
             },
             xAxis: {
                 type: 'datetime',

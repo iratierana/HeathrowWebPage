@@ -2,7 +2,6 @@ const articleIds = ["pie-chart","bar-chart","histogram"];
 const navIds = ["pieChart-nav","barChart-nav","histogram-nav","all-nav"];
 
 function setArticle(articleId){
-	console.log("setArticle("+articleId+")");
 	var currentNavSet = false;
 	var i;
 	
@@ -12,11 +11,9 @@ function setArticle(articleId){
 		article = document.getElementById(articleIds[i]);
 		if(articleId == "all-graphs" || articleId == articleIds[i]){
 			//remove hideme class to the element
-			console.log("remove hideme class to "+articleIds[i]);
 			article.className = "";
 		}else{
 			//add hideme class to the element
-			console.log("Add hideme to "+articleIds[i]);
 			article.className = "hideme";
 		}
 		
@@ -29,16 +26,13 @@ function setArticle(articleId){
 			navElement.className = "";
 		}
 	}
-	console.log(navIds[i]);
 	//This is the 4th nav item
 	navElement = document.getElementById(navIds[i]);
 	if(!currentNavSet){
 		// 4th element is the current one
-		console.log("4th element is the current one");
 		navElement.className = "current-nav";
 	}else{
 		// 4th element is not the current one
-		console.log("4th element is not the current one");
 		navElement.className = "";
 	}
 }

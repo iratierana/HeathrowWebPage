@@ -52,7 +52,7 @@
       	<s:submit type="button" class="btn btn-info btn-xs">Click here for more information</s:submit>
       </s:form>
       
-      	<s:div id="table" style="height: 215px; overflow-y: scroll;">
+      	<!--<s:div id="table" style="height: 215px; overflow-y: scroll;">
 			<table class="table table-hover">
 			<thead>
 				<tr>
@@ -75,6 +75,70 @@
 					<td><s:property value="departureGate" /></td>
 					<td><s:property value="arrivalGate" /></td>
 					<td><s:property value="departureTerminal" /></td>
+					<td><s:property value="arrivalTerminal" /></td>
+				</tr>
+			</tbody>
+			</s:iterator>
+
+			</table>
+		</s:div>-->
+		
+		<s:div id="table" style="padding:5px; height: 195px; width: 390px; overflow-y: scroll; float:left; width:calc(50% - 5px); margin-right:5px;">
+			<table class="table table-hover">
+			<caption>
+				<img style="display:inline;" src="<s:url value="/img/departures_icon.png"/>" class="img-responsive">
+					<span style="margin-left:100px; font-size: 16px; color: black; font-weight:bold;">Departures</span>
+			</caption>
+			<thead>
+				<tr style="text-align:center;">
+					<th>Flight Id</th>
+					<th>Destination</th>
+					<th>Date</th>
+					<th>Terminal</th>
+					<th>Gate</th>
+				</tr>
+			</thead>
+			
+			<s:iterator value="flightList" var="flight">
+			<tbody>
+				
+				<tr style="text-align:center;">
+					<td><s:property value="flightId" /></td>
+					<td><s:property value="arriveAirport.name"/></td>
+					<td><s:property value="departureDate" /></td>
+					<td><s:property value="departureTerminal" /></td>
+					<td><s:property value="departureGate" /></td>
+				</tr>
+			</tbody>
+			</s:iterator>
+
+			</table>
+		</s:div>
+		
+		<s:div id="table" style="padding:5px; height: 195px; width:390px; overflow-y: scroll; float:right; width:50%;">
+			<table class="table table-hover">
+			<caption>
+				<img style="display:inline;" src="<s:url value="/img/arrivals_icon.png"/>" class="img-responsive">
+					<span style="margin-left:120px; font-size: 16px; color: black; font-weight:bold;">Arrivals</span>
+			</caption>
+			<thead>
+				<tr style="text-align:center;">
+					<th>Flight Id</th>
+					<th>Destination</th>
+					<th>Date</th>
+					<th>Terminal</th>
+					<th>Gate</th>
+				</tr>
+			</thead>
+			
+			<s:iterator value="flightList" var="flight">
+			<tbody>
+				
+				<tr style="text-align:center;">
+					<td><s:property value="flightId" /></td>
+					<td><s:property value="departAirport.name"/></td>
+					<td><s:property value="arrivalDate" /></td>
+					<td><s:property value="arrivalGate" /></td>
 					<td><s:property value="arrivalTerminal" /></td>
 				</tr>
 			</tbody>

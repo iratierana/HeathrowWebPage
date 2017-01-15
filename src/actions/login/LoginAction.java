@@ -9,10 +9,12 @@ import configurations.ConnectHibernate;
 import domain.dao.DAOAirlineManager;
 import domain.dao.DAOAirplane;
 import domain.dao.DAOAirportController;
+import domain.dao.DAOFlight;
 import domain.dao.DAOPassanger;
 import domain.model.AirlineManager;
 import domain.model.Airplane;
 import domain.model.AirportController;
+import domain.model.Flight;
 import domain.model.Passanger;
 
 // TODO: Auto-generated Javadoc
@@ -48,6 +50,9 @@ public class LoginAction {
 	/** The airplane list. */
 	private List<Airplane> airplaneList = null;
 	
+	/** The flight list. */
+	private List<Flight> flightList = null;
+	
 	/**
 	 * 
 	 * This function verifies the type of the user that has been logged and 
@@ -59,6 +64,8 @@ public class LoginAction {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String execute() { 
 		Map session = ActionContext.getContext().getSession();	
+		
+		flightList = DAOFlight.loadAllFlights();
 		
 		loggedPassanger = DAOPassanger.loadPassanger(this.username, this.password);
 		loggedAirportController = DAOAirportController.loadAirportController(this.username, this.password);
@@ -179,5 +186,15 @@ public class LoginAction {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+
+	public List<Flight> getFlightList() {
+		return flightList;
+	}
+
+
+	public void setFlightList(List<Flight> flightList) {
+		this.flightList = flightList;
 	}
 }
