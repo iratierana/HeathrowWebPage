@@ -83,7 +83,7 @@
 			</table>
 		</s:div>-->
 		
-		<s:div id="table" style="padding:5px; height: 195px; width: 390px; overflow-y: scroll; float:left; width:calc(50% - 5px); margin-right:5px;">
+		<s:div id="table" style="padding:5px; height: 220px; width: 390px; overflow-y: scroll; float:left; width:calc(52% - 5px); margin-right:5px;">
 			<table class="table table-hover">
 			<caption>
 				<img style="display:inline;" src="<s:url value="/img/departures_icon.png"/>" class="img-responsive">
@@ -115,7 +115,7 @@
 			</table>
 		</s:div>
 		
-		<s:div id="table" style="padding:5px; height: 195px; width:390px; overflow-y: scroll; float:right; width:50%;">
+		<s:div id="table" style="padding:5px; height: 220px; width:390px; overflow-y: scroll; float:right; width:48%;">
 			<table class="table table-hover">
 			<caption>
 				<img style="display:inline;" src="<s:url value="/img/arrivals_icon.png"/>" class="img-responsive">
@@ -124,7 +124,7 @@
 			<thead>
 				<tr style="text-align:center;">
 					<th>Flight Id</th>
-					<th>Destination</th>
+					<th>Origin</th>
 					<th>Date</th>
 					<th>Terminal</th>
 					<th>Gate</th>
