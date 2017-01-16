@@ -83,7 +83,7 @@ public class AirlineInformationAction {
 	 * @throws UnsupportedEncodingException the unsupported encoding exception
 	 */
 	private void loadPhotoFromDatabase(int airplaneId) throws UnsupportedEncodingException {
-		photo = DAOAirplanePhoto.loadAirplanePhoto(airplaneId); //TODO: Replaced 21 with airplaneId
+		photo = DAOAirplanePhoto.loadAirplanePhoto(airplaneId); 
 		p = Base64.getEncoder().encode(photo.getPhoto());
 		pString = new String(p, "UTF-8");
 		pString = "data:image/jpg;base64," + pString;

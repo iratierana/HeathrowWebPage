@@ -1,6 +1,8 @@
 package airlineManager;
 import static org.junit.Assert.assertEquals;
 
+import java.io.UnsupportedEncodingException;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,9 +38,10 @@ public class TestAirlineInformationEditAction {
 
 	/**
 	 * Check if the function execute and subfunctions are ok.
+	 * @throws UnsupportedEncodingException 
 	 */
 	@Test
-	public void checkIfTheFunctionExecuteAndSubfunctionsAreOk() {
+	public void checkIfTheFunctionExecuteAndSubfunctionsAreOk() throws UnsupportedEncodingException {
 		
 		int airplaneId = 9;
 		String ret;

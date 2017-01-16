@@ -35,7 +35,9 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 "> <img alt="User Pic" src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAMiAAAAJGVlYTU5Y2YyLWQwMzYtNDlmZS04MDdlLWI0ZjJjZWRhYjk4ZQ.jpg" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 "> 
+                	<img alt="Plane Pic" src="<s:property value= "pString" name= "pString"/>" class="img-circle img-responsive"> 
+                </div>
                 
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information table-hover">

@@ -1,7 +1,12 @@
 package actions.airlineManager;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
+
 import domain.dao.DAOAirplane;
+import domain.dao.DAOAirplanePhoto;
 import domain.model.Airplane;
+import domain.model.AirplanePhoto;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -30,12 +35,23 @@ public class AirlineInformationEditAction {
 	/** The number of ours. */
 	private String numberOfOurs;
 	
+	/** The photo. */
+	private AirplanePhoto photo;
+	
+	/** The p. */
+	private byte[] p;
+	
+	/** The p string. */
+	private String pString;
+	
 	/**
 	 * Execute.
 	 *
 	 * @return the string
+	 * @throws UnsupportedEncodingException 
 	 */
-	public String execute() {
+	public String execute() throws UnsupportedEncodingException {
+		loadPhotoFromDatabase(airplaneId);
 		airplane = DAOAirplane.loadAirplane(airplaneId);
 		fillAtributes();
 		return "airlineEdit";
@@ -50,6 +66,20 @@ public class AirlineInformationEditAction {
 		setRoute("***UNDEFINED***");
 		setNumberOfFlights(String.valueOf(this.airplane.getNumberOfFlights()));
 		setNumberOfOurs(String.valueOf(this.airplane.getHoursOfFlight()));
+	}
+	
+	/**
+	 * Load photo from database.
+	 *
+	 * @param airplaneId the airplane id
+	 * @throws UnsupportedEncodingException the unsupported encoding exception
+	 */
+	private void loadPhotoFromDatabase(int airplaneId) throws UnsupportedEncodingException {
+		photo = DAOAirplanePhoto.loadAirplanePhoto(airplaneId); //TODO: Replaced 21 with airplaneId
+		p = Base64.getEncoder().encode(photo.getPhoto());
+		pString = new String(p, "UTF-8");
+		pString = "data:image/jpg;base64," + pString;
+		System.out.println(pString);
 	}
 
 	/**
