@@ -47,8 +47,8 @@
 		<fieldset id="step3" class="hideme">
 			<h2 class="fs-title">Account Details</h2>
 			<s:textfield name="username" placeholder="Username"></s:textfield>
-			<s:textfield name="password" placeholder="Password"></s:textfield>
-			<s:textfield name="repPassword" placeholder="Repeat Password"></s:textfield>
+			<s:textfield type="password" name="password" placeholder="Password"></s:textfield>
+			<s:textfield type="password" name="repPassword" placeholder="Repeat Password"></s:textfield>
 			<input type="button" name="previous" class="previous action-button"	value="Previous" onclick="goToStep2()"/>
 			<input type="button" name="next" class="next action-button" value="Next" onclick="goToStep4()"/>
 			

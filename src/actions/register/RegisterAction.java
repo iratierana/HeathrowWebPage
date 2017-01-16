@@ -86,7 +86,7 @@ public class RegisterAction {
 			flightList = DAOFlight.loadAllFlights();
 			return "login";
 		} else {
-			return "emailError"; //TODO bad email error kudeatu
+			return "emailError"; 
 		}
 		
 	}
