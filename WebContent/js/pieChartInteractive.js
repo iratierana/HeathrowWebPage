@@ -18,7 +18,7 @@ var pie = new d3pie("pieChartInteractive", {
 		"titleSubtitlePadding": 10
 	},
 	"size": {
-		"canvasWidth": 630,
+		"canvasWidth": 600,
 		"pieInnerRadius": "88%",
 		"pieOuterRadius": "70%"
 	},

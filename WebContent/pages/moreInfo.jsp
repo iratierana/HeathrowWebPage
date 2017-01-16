@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="<s:url value="/img/pageIcon.png"/>">
   <!-- D3 -->
   <!--<script type="text/javascript" src="<s:url value="/d3/d3.js"/>"></script>-->
-  <!--<script type="text/javascript" src="<s:url value="/d3/d3pie.min.js"/>"></script>-->
+  <script type="text/javascript" src="<s:url value="/d3/d3pie.min.js"/>"></script>
   
   <!-- CHART js -->
   <script type="text/javascript" src="<s:url value="/chart/Chart.js"/>"></script>
@@ -25,7 +25,7 @@
   <link rel="stylesheet" type="text/css" href="<s:url value="/c3/c3.css"/>">
   
   <!-- JS -->
-  <!--<script type="text/javascript" src="<s:url value="/js/pieChartInteractive.js"/>"></script>-->
+  <script type="text/javascript" src="<s:url value="/js/pieChartInteractive.js"/>"></script>
   <script type="text/javascript" src="<s:url value="/js/barChart.js"/>"></script>
   <script type="text/javascript" src="<s:url value="/js/moreInfo.js"/>"></script>
   <script type="text/javascript" src="<s:url value="/js/pieChart.js"/>"></script>
@@ -34,7 +34,7 @@
   <script type="text/javascript" src="<s:url value="https://d3js.org/d3.v3.min.js"/>"></script>
   <script type="text/javascript" src="<s:url value="/c3/c3.min.js"/>"></script>
   
-  <!--<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
   
 </head>
 
@@ -47,30 +47,32 @@
     </div>
     <ul class="nav navbar-nav">
       <li>
-      	<a href="#" onclick="setArticle('pie-chart')" id="pieChart-nav">Pie Chart</a>
+      	<a href="#" onclick="setArticle('pie-chart')" id="pieChart-nav">Passengers</a>
       </li>
       <li>
-      	<a href="#" onclick="setArticle('bar-chart')" id="barChart-nav">Bar Chart</a>
+      	<a href="#" onclick="setArticle('bar-chart')" id="barChart-nav">Departures</a>
       </li>
       <li>
       	<a href="#" onclick="setArticle('histogram')" id="histogram-nav">Histogram</a>
       </li>
       <li>
-      	<a href="#" onclick="setArticle('all-graphs')" id="all-nav">All</a>
+      	<a href="#" onclick="setArticle('all-graphs')" id="all-nav">All info</a>
       </li>
     </ul>
     	<ul class="nav navbar-nav navbar-right">
-      		<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    	<s:form action="firstAction" method="post">
+      		<s:submit type="button" class="btn btn-default glyphicon glyphicon-log-in" style="margin-top:5px; margin-right:5px;">Login</s:submit>
+      	</s:form>
     	</ul>
   </div>
 </nav>
 
 <section>
 	<article id="pie-chart">
-		<h2>Different passengers in Heathrow airport during 2015</h2>
-		<div id="pieChart" class="chartClass">
+		<h2>Different passengers in Heathrow airport during 2015</h2>		
+		<div id="pieChartInteractive" class="chartClass">
     		<script type="text/javascript">
-    			loadPieChart();
+    			loadInteractivePieChart();
     		</script>
   		</div>
 		<p>The following graph shows us the different passengers who have passed from Heathrow airport during 2015.
@@ -99,19 +101,12 @@
 	
 	<article id=histogram class="hideme">
 		<h2>Histogram Graph</h2>
-		<!-- <div id="pieChartInteractive" class="chartClass">
+		<!-- <div id="pieChart" class="chartClass" style="max-height:350px;">
     		<script type="text/javascript">
-    			loadInteractivePieChart();
+    			loadPieChart();
     		</script>
   		</div>
-		<p>The following graph shows us the different passengers who have passed from Heathrow airport during 2015.
-		The different data is displayed in percentages. Entering deeply those are the ones who passed from the airport:<br>
-		- International passengers = 69.8 million<br>
-		- Domestic passengers = 5.1 million<br>
-		- Businness passengers = 27 million<br>
-		- Leisure passengers = 48 million<br>
-		- Transfer passengers = 24 million
-		</p>-->
+  		<p>asfasdfasdfasdfsdfasfaxfsdfsaasdfdsf</p>-->
 		
 	</article>
 
