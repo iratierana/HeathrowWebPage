@@ -8,13 +8,7 @@
 	<title>Loading...</title>
 	<link rel="stylesheet" type="text/css" href="<s:url value="/css/loadingPage.css"/>">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	<style type="text/css">		
-		body{
-			background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg);
-			background-size: cover;	
-		}
-	</style>
+
 </head>
 <body>
 

@@ -188,3 +188,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373a3d', end
   font-weight:bolder;
   text-shadow:-1px -1px 0px #444;
 }
+	
+body{
+	background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg);
+	background-size: cover;	
+}
