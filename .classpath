@@ -10,11 +10,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JUnit"/>
 	<classpathentry kind="lib" path="lib/junit/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="lib" path="lib/junit/junit-4.12.jar"/>
@@ -38,9 +33,10 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/mockito-all-1.10.19.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Socket">
-	<attributes>
+		<attributes>
 			<attribute name="javax.servlet.ServletContextListener" value="/WEB-INF/lib"/>
-	</attributes>
+		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
