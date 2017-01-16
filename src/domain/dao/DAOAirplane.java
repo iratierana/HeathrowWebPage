@@ -37,13 +37,21 @@ private static Session session;
 	 * @return true if the delete is correct
 	 * false if and error occurs during the delete
 	 */
+	@SuppressWarnings("rawtypes")
 	public static boolean deleteAirplane(final Airplane airplane) {
+		String sql1 = "DELETE FROM controlairplane WHERE airplanelist_airplaneid = "+ airplane.getAirplaneId();
+		String sql2 = "DELETE FROM airplanephoto WHERE airplane_id = "+ airplane.getAirplaneId();
+		String sql3 = "DELETE FROM airplane WHERE airplaneid = "+airplane.getAirplaneId();
 		try {
 			
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
-			session.delete(airplane);
+//			session.delete(airplane);
+			SQLQuery query1 = session.createSQLQuery(sql1); query1.executeUpdate();
+			SQLQuery query2 = session.createSQLQuery(sql2); query2.executeUpdate();
+			SQLQuery query3 = session.createSQLQuery(sql3); query3.executeUpdate();
+			
 			session.getTransaction().commit();
 			ConnectHibernate.after();
 			return true;
