@@ -29,12 +29,19 @@
   <script type="text/javascript" src="<s:url value="/js/barChart.js"/>"></script>
   <script type="text/javascript" src="<s:url value="/js/moreInfo.js"/>"></script>
   <script type="text/javascript" src="<s:url value="/js/pieChart.js"/>"></script>
+  <script type="text/javascript" src="<s:url value="/js/bubbleChart.js"/>"></script>
   
   <!-- C3 library -->
   <script type="text/javascript" src="<s:url value="https://d3js.org/d3.v3.min.js"/>"></script>
   <script type="text/javascript" src="<s:url value="/c3/c3.min.js"/>"></script>
   
+  <!-- D3 pie -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+  
+  <!-- HIGHCHARTS libraries -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
   
 </head>
 
@@ -107,6 +114,12 @@
     		</script>
   		</div>
   		<p>asfasdfasdfasdfsdfasfaxfsdfsaasdfdsf</p>-->
+  		
+  		<div id="bubbleChart" style="height: 400px; min-width: 650px; max-width: 600px; margin: 0 auto">
+  			<script type="text/javascript">
+  				loadBubbleChart();
+  			</script>
+  		</div>
 		
 	</article>
 
