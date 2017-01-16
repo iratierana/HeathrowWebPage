@@ -1,6 +1,6 @@
 function loadInteractivePieChart(){
 	
-var pie = new d3pie("pieChart", {
+var pie = new d3pie("pieChartInteractive", {
 	"header": {
 		"title": {
 			"text": "Passengers in 2015",
