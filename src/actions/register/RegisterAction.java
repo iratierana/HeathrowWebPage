@@ -1,9 +1,12 @@
 package actions.register;
 
 import java.util.Date;
+import java.util.List;
 
+import domain.dao.DAOFlight;
 import domain.dao.DAOPassanger;
 import domain.model.Direction;
+import domain.model.Flight;
 import domain.model.Passanger;
 
 // TODO: Auto-generated Javadoc
@@ -67,6 +70,9 @@ public class RegisterAction {
 	/** The state. */
 	private String state;
 	
+	/** The flight list */
+	private List<Flight> flightList;
+	
 	
 	/**
 	 * This function insert a new passenger 
@@ -76,12 +82,21 @@ public class RegisterAction {
 	 */
 	public String execute() {	
 		if (DAOPassanger.checkEmail(email)) {
-			DAOPassanger.insertPassanger(createPassangerObject());		
+			DAOPassanger.insertPassanger(createPassangerObject());
+			flightList = DAOFlight.loadAllFlights();
 			return "login";
 		} else {
 			return "emailError"; //TODO bad email error kudeatu
 		}
 		
+	}
+
+	public List<Flight> getFlightList() {
+		return flightList;
+	}
+
+	public void setFlightList(List<Flight> flightList) {
+		this.flightList = flightList;
 	}
 
 	/**
