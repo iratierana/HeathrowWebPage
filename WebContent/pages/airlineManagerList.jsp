@@ -16,6 +16,12 @@
 		background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg);
 		background-size: cover;	
 	}
+	
+	@media(max-width:768px){
+		body{
+			background-size: 768px 1024px;
+		}
+	}
 </style>
 </head>
 <body>
