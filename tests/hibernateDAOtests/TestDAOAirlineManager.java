@@ -19,7 +19,7 @@ public class TestDAOAirlineManager {
 	@Test
 	public void testIfTheAirlineManagerIsLoadedSendingCorrectValues() {
 		String username = "arizz";
-		String password = "arizz";
+		String password = "123";
 		assertNotNull(DAOAirlineManager.loadAirLineManager(username, password));
 	}
 	

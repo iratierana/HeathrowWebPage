@@ -36,7 +36,7 @@ public class TestAirlineInformationDeleteAction {
 	@Before
 	public void pepareForCorrectTest() {
 		
-		AirlineManager aM = DAOAirlineManager.loadAirLineManager("arizz", "arizz");
+		AirlineManager aM = DAOAirlineManager.loadAirLineManager("arizz", "123");
 		contextMap = new HashMap<String, Object>();
 		
 		actionContext = Mockito.mock(ActionContext.class);
@@ -66,9 +66,9 @@ public class TestAirlineInformationDeleteAction {
 	 *  way redirecting the page.
 	 */
 	@Test
-	public void testIfTheFunctionExecuteCorrectInaCorrectWayRedirectingThePage() {
+	public void testIfTheFunctionExecuteWorksInaCorrectWayRedirectingThePage() {
 		
-		int airplaneId = 1;
+		int airplaneId = 9;
 		String ret;
 		
 		airInfoDelAct.setAirplaneId(airplaneId);

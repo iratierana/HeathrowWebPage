@@ -93,7 +93,7 @@ public class TestLoginActionController {
 	@Test
 	public void testIfTheLoginUserDistributionFunctionIsOkIfAManagerIsLogged() {
 		String username = "arizz";
-		String password = "arizz";
+		String password = "123";
 		String ret;
 		
 		logAct.setPassword(password);

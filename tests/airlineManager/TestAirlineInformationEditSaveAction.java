@@ -36,7 +36,7 @@ public class TestAirlineInformationEditSaveAction {
 	@Before
 	public void prepareTest() {
 		
-		AirlineManager aM = DAOAirlineManager.loadAirLineManager("arizz", "arizz");
+		AirlineManager aM = DAOAirlineManager.loadAirLineManager("arizz", "123");
 		contextMap = new HashMap<String, Object>();
 		
 		actionContext = Mockito.mock(ActionContext.class);
