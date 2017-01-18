@@ -24,9 +24,9 @@
 	
 	<aside>
 		<s:form action="idSearcher" method="post" class="form-group">
-			<label>Airplane ID : </label><s:textfield type="number" class="form-control" name="airplaneId" readonly="false"></s:textfield><br>
-			<label>Flight ID : </label><s:textfield type="number" class="form-control" name="flightId" readonly="false"></s:textfield><br>
-			<input id="button" type="button" class="btn btn-default btn-md glyphicon glyphicon-search" value="Submit"/><hr>
+			<label>Airplane ID : </label><s:textfield id="airplaneId" required="true" type="number" class="form-control" name="airplaneId" readonly="false"></s:textfield><br>
+			<label>Flight ID : </label><s:textfield id="flightId" required="true" type="number" class="form-control" name="flightId" readonly="false"></s:textfield><br>
+			<input id="button" type="button" class="btn btn-default btn-md glyphicon glyphicon-search" value="Submit"></input><hr>
 			<input type="hidden" value="idFlight">
 		</s:form>
 			
@@ -34,8 +34,8 @@
 	</aside>
 
 	
-	<section >
-	<s:div id="map"></s:div>
+	<section id="mapSect">
+		<s:div id="map"></s:div>
 	</section>
 	
 </body>
