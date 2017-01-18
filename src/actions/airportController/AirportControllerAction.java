@@ -2,10 +2,8 @@ package actions.airportController;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.constraints.NotNull;
 
 import org.apache.struts2.ServletActionContext;
 
@@ -26,6 +24,9 @@ public class AirportControllerAction {
 	
 	/** The airplane id. */
 	private Integer airplaneId;
+	
+	/** The flight id */
+	private Integer flightId;
 	
 	/** The airplane name. */
 	private String airplaneName;
@@ -60,7 +61,8 @@ public class AirportControllerAction {
 		
 		flight = DAOFlight.loadFlight(Integer.parseInt(id), Integer.parseInt(idFlight));
 		
-		//loadPhotoFromDatabase(Integer.parseInt(id));
+		loadPhotoFromDatabase(Integer.parseInt(id));
+		
 		fillAtributesAirplane();
 		
 		flight = DAOFlight.loadFlight(Integer.parseInt(id), Integer.parseInt(idFlight));
@@ -158,5 +160,38 @@ public class AirportControllerAction {
 	public void setArrivalTerminal(Integer arrivalTerminal) {
 		this.arrivalTerminal = arrivalTerminal;
 	}
+
+	public Integer getFlightId() {
+		return flightId;
+	}
+
+	public void setFlightId(Integer flightId) {
+		this.flightId = flightId;
+	}
+
+	public AirplanePhoto getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(AirplanePhoto photo) {
+		this.photo = photo;
+	}
+
+	public byte[] getP() {
+		return p;
+	}
+
+	public void setP(byte[] p) {
+		this.p = p;
+	}
+
+	public String getpString() {
+		return pString;
+	}
+
+	public void setpString(String pString) {
+		this.pString = pString;
+	}
+	
 
 }
