@@ -12,13 +12,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AirportController.
  */
 @Entity
 public class AirportController {
-	
+
 	/**
 	 * The airport controller id.
 	 *
@@ -27,70 +26,69 @@ public class AirportController {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of Airport Controller class.
-	 * Is connected with hibernate to generate the table 
+	 * Is connected with hibernate to generate the table
 	 * Airport Controller and the needed relationshihps.
-	 * Is used to save and work with the information of 
+	 * Is used to save and work with the information of
 	 * a the airport controller user.
 	 */
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer airportControllerId;
-	
+
 	/** The first name. */
 	@NotNull
 	private String firstName;
-	
+
 	/** The last name 1. */
 	@NotNull
 	private String lastName1;
-	
+
 	/** The last name 2. */
 	@NotNull
 	private String lastName2;
-	
+
 	/** The dni passport. */
 	@NotNull
 	private String dni_passport;
-	
+
 	/** The home tlf. */
 	@NotNull
 	private String homeTlf;
-	
+
 	/** The movile tlf. */
 	@NotNull
 	private String movileTlf;
-	
+
 	/** The email. */
 	@NotNull
 	private String email;
-	
+
 	/** The birth date. */
 	@NotNull
 	private Date birthDate;
-	
+
 	/** The username. */
 	@NotNull
 	private String username;
-	
+
 	/** The password. */
 	@NotNull
 	private String password;
-	
-	
+
 	/** The airplane list. */
 	@ManyToMany(mappedBy = "cotrollerList")
 	private Collection<Airplane> airplaneList = new ArrayList<Airplane>();
-	
+
 	/** The airport. */
 	@OneToOne
 	private Airport airport;
-	
+
 	/** The flight list. */
 	@ManyToMany(mappedBy = "cortrollerList")
 	private Collection<Flight> flightList  = new ArrayList<Flight>();
-	
+
 	/** The direction. */
 	@OneToOne
 	private Direction direction;
@@ -235,7 +233,7 @@ public class AirportController {
 	 *
 	 * @param email the new email
 	 */
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 
@@ -253,7 +251,7 @@ public class AirportController {
 	 *
 	 * @param birthDate the new birth date
 	 */
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(final Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -271,7 +269,7 @@ public class AirportController {
 	 *
 	 * @param username the new username
 	 */
-	public void setUsername(String username) {
+	public void setUsername(final String username) {
 		this.username = username;
 	}
 
@@ -289,7 +287,7 @@ public class AirportController {
 	 *
 	 * @param password the new password
 	 */
-	public void setPassword(String password) {
+	public void setPassword(final String password) {
 		this.password = password;
 	}
 
@@ -343,7 +341,7 @@ public class AirportController {
 	 *
 	 * @param flightList the new flight list
 	 */
-	public void setFlightList(Collection<Flight> flightList) {
+	public void setFlightList(final Collection<Flight> flightList) {
 		this.flightList = flightList;
 	}
 
@@ -361,8 +359,8 @@ public class AirportController {
 	 *
 	 * @param direction the new direction
 	 */
-	public void setDirection(Direction direction) {
+	public void setDirection(final Direction direction) {
 		this.direction = direction;
 	}
-	
+
 }

@@ -9,7 +9,7 @@ import org.hibernate.Session;
 import configurations.ConnectHibernate;
 import domain.model.AirlineManager;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class DAOAirlineManager.
  *
@@ -18,15 +18,15 @@ import domain.model.AirlineManager;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
- * Class where are all the needed functions related 
+ *
+ * Class where are all the needed functions related
  * with AirlineManager, in order to work with the database
  */
 public class DAOAirlineManager {
 
 	/** The session. */
 	private static Session session;
-		
+
 	/**
 	 * This function load an airline manager from the database.
 	 *
@@ -42,21 +42,21 @@ public class DAOAirlineManager {
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			
+
 			TypedQuery<AirlineManager> query = session.createQuery("from AirlineManager where password='" + pass + "' and username='" + username + "'");
 			managerList = query.getResultList();
 			if (!managerList.isEmpty()) {
 				aM = managerList.get(0);
 			}
 			ConnectHibernate.after();
-			
+
 		} catch (Exception e) {
-			session.getTransaction().rollback();			
+			session.getTransaction().rollback();
 			return null;
 		} finally {
 			ConnectHibernate.after();
 		}
-		
+
 		ConnectHibernate.after();
 		return aM;
 	}

@@ -8,34 +8,34 @@ import org.postgresql.PGConnection;
 import org.postgresql.PGNotification;
 
 import com.corundumstudio.socketio.Configuration;
-import com.corundumstudio.socketio.SocketIOServer; 
+import com.corundumstudio.socketio.SocketIOServer;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class PGSocketIONotify.
  * Class that encapsulates a socketIO server
  */
 public class PGSocketIONotify implements Runnable {
-	
+
 	/** The Constant LOCALHOST. */
 	private static final String LOCALHOST = "localhost";
-	
+
 	/** The Constant SPLITTER. */
 	private static final String SPLITTER = ">";
 
 
 	/** The Constant LOOP_TIME. */
 	private static final int LOOP_TIME = 500;
-	
+
 	/** The Constant PORT_NMBER. */
 	private static final int PORT_NMBER = 9092;
-	
+
 	/** The pg conn. */
 	private PGConnection pgConn;
-	
+
 	/** The conf. */
 	private static Configuration conf;
-	
+
 	/** The server. */
 	private static SocketIOServer server;
 
@@ -66,7 +66,7 @@ public class PGSocketIONotify implements Runnable {
 	 * @throws SQLException the SQL exception
 	 * @throws InterruptedException the interrupted exception
 	 */
-	public PGSocketIONotify(Connection conn, String[] listenToArray) throws SQLException, InterruptedException {
+	public PGSocketIONotify(final Connection conn, final String[] listenToArray) throws SQLException, InterruptedException {
 
 		this.pgConn = (PGConnection) conn;
 		Statement listenStatement = conn.createStatement();
@@ -91,7 +91,7 @@ public class PGSocketIONotify implements Runnable {
 
 				if (notifications != null) {
 					for (PGNotification pgNotification : notifications) {
-						
+
 						String[] tableInfo = pgNotification.getParameter().split(SPLITTER);
 						System.out.println(tableInfo[1]);
 						server.getBroadcastOperations().sendEvent("database_change", tableInfo[1]);
@@ -106,14 +106,14 @@ public class PGSocketIONotify implements Runnable {
 			}
 		}
 	}
-	
+
 	/**
 	 * Send notification.
 	 *
 	 * @param receivingGroup the receiving group
 	 * @param message the message
 	 */
-	public static void sendNotification(String receivingGroup, String message) {
+	public static void sendNotification(final String receivingGroup, final String message) {
 		server.getBroadcastOperations().sendEvent(receivingGroup, message);
 	}
 

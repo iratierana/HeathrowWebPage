@@ -6,13 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class PlanePosition.
  */
 @Entity
 public class PlanePosition {
-	
+
 	/**
 	 * The plane position id.
 	 *
@@ -21,21 +20,20 @@ public class PlanePosition {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of Plane Position class.
-	 * Is connected with hibernate to generate the 
+	 * Is connected with hibernate to generate the
 	 * table Plane Position and the needed relationshihps.
 	 * Used to know the position of the plane in the airport.
 	 */
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer planePositionId;
-	
+
 	/** The description. */
 	@NotNull
 	private String description;
-	
-	
+
 	/**
 	 * Gets the plane position id.
 	 *
@@ -50,7 +48,7 @@ public class PlanePosition {
 	 *
 	 * @param planePositionId the new plane position id
 	 */
-	public void setPlanePositionId(Integer planePositionId) {
+	public void setPlanePositionId(final Integer planePositionId) {
 		this.planePositionId = planePositionId;
 	}
 
@@ -68,8 +66,8 @@ public class PlanePosition {
 	 *
 	 * @param description the new description
 	 */
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
-	
+
 }

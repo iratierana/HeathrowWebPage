@@ -17,7 +17,6 @@ import domain.model.Flight;
 import domain.model.Passanger;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class DAOPassanger.
  *
@@ -26,15 +25,15 @@ import domain.model.Passanger;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
- * Class where are all the needed functions related with 
+ *
+ * Class where are all the needed functions related with
  * passanger, in order to work with the database
  */
 public class DAOPassanger {
 
 /** The session. */
 private static Session session;
-	
+
 	/**
 	 * This function insert a passenger in the database.
 	 *
@@ -44,7 +43,7 @@ private static Session session;
 	 */
 	public static boolean insertPassanger(final Passanger passanger) {
 		try {
-			
+
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
@@ -52,16 +51,16 @@ private static Session session;
 			session.getTransaction().commit();
 			ConnectHibernate.after();
 			return true;
-			
+
 		} catch (Exception e) {
 			session.getTransaction().rollback();
-			return false;		
+			return false;
 		} finally {
 			ConnectHibernate.after();
 
 		}
 	}
-	
+
 	/**
 	 * This function load a specific passenger.
 	 *
@@ -77,14 +76,14 @@ private static Session session;
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			
+
 			TypedQuery<Passanger> query = session.createQuery("from Passanger where password='" + pass + "' and username='" + username + "'");
 			passangerList = query.getResultList();
 			if (!passangerList.isEmpty()) {
 				p = passangerList.get(0);
 			}
 			ConnectHibernate.after();
-			
+
 		} catch (Exception e) {
 			session.getTransaction().rollback();
 			ConnectHibernate.after();
@@ -93,7 +92,7 @@ private static Session session;
 			ConnectHibernate.after();
 
 		}
-		
+
 		return p;
 	}
 
@@ -108,17 +107,17 @@ private static Session session;
 		List<Flight> flightList = null;
 		try {
 			ConnectHibernate.before();
-			session = ConnectHibernate.getSession();			
+			session = ConnectHibernate.getSession();
 			Query query = session.createQuery("select p.flightList from Passanger as p where p.id =" + id);
 			flightList = query.getResultList();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			ConnectHibernate.after();		
+			ConnectHibernate.after();
 		}
 		return flightList;
 	}
-	
+
 	/**
 	 * This function save the changes that have been done in a passenger.
 	 *
@@ -126,9 +125,9 @@ private static Session session;
 	 * @return true if the update goes OK
 	 * false if an error occurs
 	 */
-	public static boolean updatePassanger(Passanger passanger) {
+	public static boolean updatePassanger(final Passanger passanger) {
 		try {
-			ConnectHibernate.before();			
+			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
 			String hql = "UPDATE Passanger"
@@ -145,18 +144,18 @@ private static Session session;
 					+ " WHERE passangerId = " + passanger.getPassangerId();
 			Query query = session.createQuery(hql);
 			query.executeUpdate();
-			session.getTransaction().commit();		
-		} catch (Exception e) {			
+			session.getTransaction().commit();
+		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		} finally {
-			ConnectHibernate.after();		
+			ConnectHibernate.after();
 		}
 		return true;
 	}
-	
+
 	/**
-	 * This function adds book a flight for a passenger 
+	 * This function adds book a flight for a passenger
 	 * and adds it to the flightList of passenger.
 	 *
 	 * @param flight The flight to add
@@ -164,29 +163,29 @@ private static Session session;
 	 * false if an error occurs during the insert
 	 */
 	@SuppressWarnings("rawtypes")
-	public static boolean addFlightToLoggedPassenger(Flight flight) {
+	public static boolean addFlightToLoggedPassenger(final Flight flight) {
 		try {
-			ConnectHibernate.before();			
+			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
-			
-			Map sessio = ActionContext.getContext().getSession();				
+
+			Map sessio = ActionContext.getContext().getSession();
 			Passanger p = (Passanger) sessio.get("loggedPassanger");
-						
+
 			p.getFlightList().add(flight);
-			
+
 			session.saveOrUpdate(p);
-			
-			session.getTransaction().commit();	
+
+			session.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		} finally {
-			ConnectHibernate.after();		
+ConnectHibernate.after();
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Check email.
 	 *
@@ -196,23 +195,23 @@ private static Session session;
 	public static boolean checkEmail(final String email) {
 		boolean ret = false;
 		try {
-			ConnectHibernate.before();			
+			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
-			
+
 			StoredProcedureQuery query = session.createStoredProcedureQuery("checkTheEmail")
 					.registerStoredProcedureParameter("email", String.class, ParameterMode.IN)
 					.registerStoredProcedureParameter("ok", boolean.class, ParameterMode.OUT)
 					.setParameter("email", email);
 			query.execute();
 			ret = (boolean) query.getOutputParameterValue("ok");
-			session.getTransaction().commit();	
+			session.getTransaction().commit();
 			return ret;
-		} catch (Exception e) {			
+		} catch (Exception e) {
 			e.printStackTrace();
 			return ret;
 		} finally {
-			ConnectHibernate.after();		
+			ConnectHibernate.after();
 		}
 	}
 }

@@ -206,7 +206,6 @@ public class AirlineInformationEditAction {
 	public void setNumberOfOurs(final  String numberOfOurs) {
 		this.numberOfOurs = numberOfOurs;
 	}
-	
-	
+
 
 }

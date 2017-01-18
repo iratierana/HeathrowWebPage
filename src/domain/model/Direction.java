@@ -6,13 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Direction.
  */
 @Entity
 public class Direction {
-	
+
 	/**
 	 * The direction id.
 	 *
@@ -21,29 +20,29 @@ public class Direction {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of Direction class.
-	 * Is connected with hibernate to generate the 
+	 * Is connected with hibernate to generate the
 	 * table Direction and the needed relationshihps.
-	 * Is used to save and work with the direction 
+	 * Is used to save and work with the direction
 	 * os all the users in the database.
 	 */
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer directionId;
-	
+
 	/** The state. */
 	@NotNull
 	private String state;
-	
+
 	/** The city. */
 	@NotNull
 	private String city;
-	
+
 	/** The cod post. */
 	@NotNull
 	private String codPost;
-	
+
 	/** The address. */
 	@NotNull
 	private String address;
@@ -56,16 +55,14 @@ public class Direction {
 	public Integer getDirectionId() {
 		return directionId;
 	}
-	
-	
-	
+
 
 	/**
 	 * Sets the direction id.
 	 *
 	 * @param directionId the new direction id
 	 */
-	public void setDirectionId(Integer directionId) {
+	public void setDirectionId(final Integer directionId) {
 		this.directionId = directionId;
 	}
 
@@ -83,7 +80,7 @@ public class Direction {
 	 *
 	 * @param state the new state
 	 */
-	public void setState(String state) {
+	public void setState(final String state) {
 		this.state = state;
 	}
 
@@ -101,7 +98,7 @@ public class Direction {
 	 *
 	 * @param city the new city
 	 */
-	public void setCity(String city) {
+	public void setCity(final String city) {
 		this.city = city;
 	}
 
@@ -119,7 +116,7 @@ public class Direction {
 	 *
 	 * @param codPost the new cod post
 	 */
-	public void setCodPost(String codPost) {
+	public void setCodPost(final String codPost) {
 		this.codPost = codPost;
 	}
 
@@ -137,7 +134,7 @@ public class Direction {
 	 *
 	 * @param address the new address
 	 */
-	public void setAddress(String address) {
+	public void setAddress(final String address) {
 		this.address = address;
 	}
 

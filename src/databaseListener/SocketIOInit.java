@@ -3,9 +3,8 @@ package databaseListener;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import databaseListener.Notification;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class SocketIOInit.
  * Initializer and disposer of the notificatoion service
@@ -16,7 +15,7 @@ public class SocketIOInit implements ServletContextListener {
 	 * @see javax.servlet.ServletContextListener#contextDestroyed(javax.servlet.ServletContextEvent)
 	 */
 	@Override
-	public void contextDestroyed(ServletContextEvent arg0) {
+	public void contextDestroyed(final ServletContextEvent arg0) {
 		try {
 			Notification.stop();
 		} catch (Throwable e) {
@@ -28,7 +27,7 @@ public class SocketIOInit implements ServletContextListener {
 	 * @see javax.servlet.ServletContextListener#contextInitialized(javax.servlet.ServletContextEvent)
 	 */
 	@Override
-	public void contextInitialized(ServletContextEvent arg0) {
+	public void contextInitialized(final ServletContextEvent arg0) {
 		try {
 			Notification.start();
 		} catch (Throwable e) {

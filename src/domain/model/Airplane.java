@@ -16,13 +16,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Airplane.
  */
 @Entity
 public class Airplane {
-	
+
 	/**
 	 * The airplane id.
 	 *
@@ -31,84 +31,83 @@ public class Airplane {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of Airplane class.
-	 * Is connected with hibernate to generate the 
+	 * Is connected with hibernate to generate the
 	 * stable Airplane and the needed relationshihps.
 	 * Is used to save and work with the information of a airplane.
 	 */
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer airplaneId;
-	
+
 	/** The name. */
 	@NotNull
 	private String name;
-	
+
 	/** The serial numb. */
 	@NotNull
 	private String serialNumb;
-		
+
 	/** The line number. */
 	@NotNull
 	private Integer lineNumber;
-	
+
 	/** The current registration. */
 	@NotNull
 	private String currentRegistration;
-	
+
 	/** The operator owner. */
 	@NotNull
 	private String operatorOwner;
-	
+
 	/** The delibery date. */
 	@NotNull
 	private Date deliberyDate;
-	
+
 	/** The engine model. */
 	@NotNull
 	private String engineModel;
-	
+
 	/** The status. */
 	@NotNull
 	private Boolean status;
-	
+
 	/** The number of flights. */
 	@NotNull
 	private Integer numberOfFlights;
-	
+
 	/** The hours of flight. */
 	@NotNull
 	private Integer hoursOfFlight;
-	
-	
+
 //	@OneToMany
 //	@JoinColumn(name="AIRPLANE_ID", nullable=false)
 //	Collection<Flight> flightList = new ArrayList<Flight>();
-	
+
 	/** The airport. */
 @OneToOne(cascade = CascadeType.ALL)
 	private Airport airport;
-	
+
 	/** The airline. */
 	@OneToOne(cascade = CascadeType.ALL)
 	private Airline airline;
-	
+
 	/** The cotroller list. */
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "ControlAirplane")
 	private Collection<AirportController> cotrollerList = new ArrayList<AirportController>();
-	
+
 	/** The plane position. */
 	@OneToOne(cascade = CascadeType.ALL)
 	private PlanePosition planePosition;
 
-	
+
 	/** The photo list. */
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "AIRPLANE_ID", nullable = false)
 	private Collection<AirplanePhoto> photoList = new ArrayList<AirplanePhoto>();
-	
+
 	/**
 	 * Gets the airline.
 	 *
@@ -125,8 +124,8 @@ public class Airplane {
 	 */
 	public void setAirline(final Airline airline) {
 		this.airline = airline;
-	}	
-	
+	}
+
 	/**
 	 * Gets the photo list.
 	 *
@@ -195,11 +194,11 @@ public class Airplane {
 	 *
 	 * @param serialNumb the new serial numb
 	 */
-	public void setSerialNumb(String serialNumb) {
+	public void setSerialNumb(final String serialNumb) {
 		this.serialNumb = serialNumb;
 	}
 
-	
+
 	/**
 	 * Gets the line number.
 	 *
@@ -214,7 +213,7 @@ public class Airplane {
 	 *
 	 * @param lineNumber the new line number
 	 */
-	public void setLineNumber(Integer lineNumber) {
+	public void setLineNumber(final Integer lineNumber) {
 		this.lineNumber = lineNumber;
 	}
 
@@ -250,7 +249,7 @@ public class Airplane {
 	 *
 	 * @param operatorOwner the new operator owner
 	 */
-	public void setOperatorOwner(String operatorOwner) {
+	public void setOperatorOwner(final String operatorOwner) {
 		this.operatorOwner = operatorOwner;
 	}
 
@@ -268,7 +267,7 @@ public class Airplane {
 	 *
 	 * @param deliberyDate the new delibery date
 	 */
-	public void setDeliberyDate(Date deliberyDate) {
+	public void setDeliberyDate(final Date deliberyDate) {
 		this.deliberyDate = deliberyDate;
 	}
 
@@ -286,7 +285,7 @@ public class Airplane {
 	 *
 	 * @param engineModel the new engine model
 	 */
-	public void setEngineModel(String engineModel) {
+	public void setEngineModel(final String engineModel) {
 		this.engineModel = engineModel;
 	}
 
@@ -304,7 +303,7 @@ public class Airplane {
 	 *
 	 * @param status the new status
 	 */
-	public void setStatus(Boolean status) {
+	public void setStatus(final Boolean status) {
 		this.status = status;
 	}
 
@@ -322,7 +321,7 @@ public class Airplane {
 	 *
 	 * @param numberOfFlights the new number of flights
 	 */
-	public void setNumberOfFlights(Integer numberOfFlights) {
+	public void setNumberOfFlights(final Integer numberOfFlights) {
 		this.numberOfFlights = numberOfFlights;
 	}
 
@@ -340,7 +339,7 @@ public class Airplane {
 	 *
 	 * @param hoursOfFlight the new hours of flight
 	 */
-	public void setHoursOfFlight(Integer hoursOfFlight) {
+	public void setHoursOfFlight(final Integer hoursOfFlight) {
 		this.hoursOfFlight = hoursOfFlight;
 	}
 
@@ -366,7 +365,7 @@ public Airport getAirport() {
 	 *
 	 * @param airport the new airport
 	 */
-	public void setAirport(Airport airport) {
+	public void setAirport(final Airport airport) {
 		this.airport = airport;
 	}
 
@@ -405,5 +404,5 @@ public Airport getAirport() {
 	public void setPlanePosition(final PlanePosition planePosition) {
 		this.planePosition = planePosition;
 	}
-	
+
 }

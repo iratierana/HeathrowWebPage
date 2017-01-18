@@ -9,7 +9,6 @@ import org.hibernate.Session;
 import configurations.ConnectHibernate;
 import domain.model.AirplanePhoto;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class DAOAirplanePhoto.
  *
@@ -18,7 +17,7 @@ import domain.model.AirplanePhoto;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since 2016-12-13
- * 
+ *
  *        Class where are all the needed functions related with AirplanePhoto,
  *        in order to work with the database
  */
@@ -45,13 +44,13 @@ public class DAOAirplanePhoto {
 			for (AirplanePhoto p : photoList) {
 				photo = p;
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			ConnectHibernate.after();
 		}
-		
+
 		return photo;
 	}
 
