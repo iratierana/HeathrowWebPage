@@ -227,7 +227,10 @@ $(document).ready(
 		          changeColourLandingLane(position[0], position[1]);
 		          changeColourTakeOffLane(position[0], position[1]);
 	            
-	            
+		          console.log(data.planeposition_planepositionid +"==41");
+		          if(data.planeposition_planepositionid == 41){
+		        	  marker.setMap(null);
+		          }
 	        });
 
 	    }
