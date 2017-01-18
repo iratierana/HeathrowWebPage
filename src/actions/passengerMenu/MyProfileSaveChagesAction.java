@@ -8,7 +8,7 @@ import com.opensymphony.xwork2.ActionContext;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class MyProfileSaveChagesAction.
  *
@@ -17,47 +17,47 @@ import domain.model.Passanger;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
+ *
  * Class where are made all the processes and loads
  *  for finishing the update of the passenger.
  */
 public class MyProfileSaveChagesAction {
-	
+
 	/** The name. */
 	private String name;
-	
+
 	/** The first name. */
 	private String firstName;
-	
+
 	/** The second name. */
 	private String secondName;
-	
+
 	/** The dni passport. */
 	private String dniPassport;
-	
+
 	/** The birth date. */
 	private Date birthDate;
-	
+
 	/** The home tlf. */
 	private String homeTlf;
-	
+
 	/** The movile tlf. */
 	private String movileTlf;
-	
+
 	/** The email. */
 	private String email;
-	
+
 	/** The username. */
 	private String username;
-	
+
 	/** The password. */
 	private String password;
-	
+
 	/** The rep password. */
 	private String repPassword;
-	
+
 	/**
-	 * This function update the passenger in 
+	 * This function update the passenger in
 	 * the database and redirect to the menu page.
 	 *
 	 * @return the page where we want to go
@@ -66,8 +66,7 @@ public class MyProfileSaveChagesAction {
 		DAOPassanger.updatePassanger(createPassangerObject());
 		return "passanger";
 	}
-	
-	
+
 	/**
 	 * This function get the data from the jsp and creates the passenger object.
 	 *
@@ -76,10 +75,10 @@ public class MyProfileSaveChagesAction {
 	@SuppressWarnings("rawtypes")
 	private Passanger createPassangerObject() {
 		Passanger passanger = new Passanger();
-		
-		Map session = ActionContext.getContext().getSession();	
+
+		Map session = ActionContext.getContext().getSession();
 		Passanger auxPass = (Passanger) session.get("loggedPassanger");
-		
+
 		passanger.setPassangerId(auxPass.getPassangerId());
 		passanger.setFirstName(this.name);
 		passanger.setLastName1(this.firstName);
@@ -91,7 +90,7 @@ public class MyProfileSaveChagesAction {
 		passanger.setEmail(this.email);
 		passanger.setUsername(this.username);
 		passanger.setPassword(this.password);
-		
+
 		return passanger;
 	}
 
@@ -157,7 +156,7 @@ public class MyProfileSaveChagesAction {
 	 *
 	 * @param secondName the new second name
 	 */
-	public void setSecondName(String secondName) {
+	public void setSecondName(final String secondName) {
 		this.secondName = secondName;
 	}
 
@@ -179,7 +178,7 @@ public class MyProfileSaveChagesAction {
 	 *
 	 * @param dniPassport the new dni passport
 	 */
-	public void setDniPassport(String dniPassport) {
+	public void setDniPassport(final String dniPassport) {
 		this.dniPassport = dniPassport;
 	}
 
@@ -201,7 +200,7 @@ public class MyProfileSaveChagesAction {
 	 *
 	 * @param birthDate the new birth date
 	 */
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(final Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -223,7 +222,7 @@ public class MyProfileSaveChagesAction {
 	 *
 	 * @param homeTlf the new home tlf
 	 */
-	public void setHomeTlf(String homeTlf) {
+	public void setHomeTlf(final String homeTlf) {
 		this.homeTlf = homeTlf;
 	}
 
@@ -245,7 +244,7 @@ public class MyProfileSaveChagesAction {
 	 *
 	 * @param movileTlf the new movile tlf
 	 */
-	public void setMovileTlf(String movileTlf) {
+	public void setMovileTlf(final String movileTlf) {
 		this.movileTlf = movileTlf;
 	}
 
@@ -289,7 +288,7 @@ public class MyProfileSaveChagesAction {
 	 *
 	 * @param username the new username
 	 */
-	public void setUsername(String username) {
+	public void setUsername(final String username) {
 		this.username = username;
 	}
 
@@ -311,7 +310,7 @@ public class MyProfileSaveChagesAction {
 	 *
 	 * @param password the new password
 	 */
-	public void setPassword(String password) {
+	public void setPassword(final String password) {
 		this.password = password;
 	}
 
@@ -333,10 +332,9 @@ public class MyProfileSaveChagesAction {
 	 *
 	 * @param repPassword the new rep password
 	 */
-	public void setRepPassword(String repPassword) {
+	public void setRepPassword(final String repPassword) {
 		this.repPassword = repPassword;
 	}
-	
-	
+
 
 }

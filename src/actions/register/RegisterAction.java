@@ -9,7 +9,7 @@ import domain.model.Direction;
 import domain.model.Flight;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class RegisterAction.
  *
@@ -18,7 +18,7 @@ import domain.model.Passanger;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
+ *
  * Class where are made all the processes and loads for registering a passenger.
  */
 public class RegisterAction {
@@ -26,76 +26,85 @@ public class RegisterAction {
 	/** The name. */
 	//User data
 	private String name;
-	
+
 	/** The first name. */
 	private String firstName;
-	
+
 	/** The second name. */
 	private String secondName;
-	
+
 	/** The dni passport. */
 	private String dniPassport;
-	
+
 	/** The birth date. */
 	private Date birthDate;
-	
+
 	/** The home tlf. */
 	private String homeTlf;
-	
+
 	/** The movile tlf. */
 	private String movileTlf;
-	
+
 	/** The email. */
 	private String email;
-	
+
 	/** The username. */
 	private String username;
-	
+
 	/** The password. */
 	private String password;
-	
+
 	/** The rep password. */
 	private String repPassword;
-	
+
 	/** The address. */
 	//Direction data
 	private String address;
-	
+
 	/** The city. */
 	private String city;
-	
+
 	/** The cod post. */
 	private String codPost;
-	
+
 	/** The state. */
 	private String state;
-	
-	/** The flight list */
+
+	/** The flight list. */
 	private List<Flight> flightList;
-	
-	
+
 	/**
-	 * This function insert a new passenger 
+	 * This function insert a new passenger.
 	 * and direction and link both of them .
 	 *
 	 * @return the page where we want to go
 	 */
-	public String execute() {	
+	public String execute() {
 		if (DAOPassanger.checkEmail(email)) {
 			DAOPassanger.insertPassanger(createPassangerObject());
 			flightList = DAOFlight.loadAllFlights();
 			return "login";
 		} else {
-			return "emailError"; 
+			return "emailError";
 		}
-		
+
 	}
 
+	/**
+	 * Gets the flight list.
+	 *
+	 * @return the flight list
+	 */
 	public List<Flight> getFlightList() {
 		return flightList;
 	}
 
-	public void setFlightList(List<Flight> flightList) {
+	/**
+	 * Sets the flight list.
+	 *
+	 * @param flightList the new flight list
+	 */
+	public void setFlightList(final List<Flight> flightList) {
 		this.flightList = flightList;
 	}
 
@@ -106,7 +115,7 @@ public class RegisterAction {
 	 */
 	private Passanger createPassangerObject() {
 		Passanger passanger = new Passanger();
-		
+
 		passanger.setFirstName(this.name);
 		passanger.setLastName1(this.firstName);
 		passanger.setLastName2(this.secondName);
@@ -118,24 +127,24 @@ public class RegisterAction {
 		passanger.setUsername(this.username);
 		passanger.setPassword(this.password);
 		passanger.setDirection(createDirectionObject());
-		
+
 		return passanger;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * This function creates the direction with the data in the register.jsp.
-	 * 
+	 *
 	 * @return direction The direction with the data of the register.jsp
 	 */
 	private Direction createDirectionObject() {
 		Direction direction = new Direction();
-		
+
 		direction.setAddress(this.address);
 		direction.setCity(this.city);
 		direction.setCodPost(this.codPost);
 		direction.setState(this.state);
-		
+
 		return direction;
 	}
 
@@ -149,8 +158,6 @@ public class RegisterAction {
 		return name;
 	}
 
-
-
 	/**
 	 * Sets the name.
 	 *
@@ -160,8 +167,6 @@ public class RegisterAction {
 		this.name = name;
 	}
 
-
-
 	/**
 	 * Gets the first name.
 	 *
@@ -170,8 +175,6 @@ public class RegisterAction {
 	public String getFirstName() {
 		return firstName;
 	}
-
-
 
 	/**
 	 * Sets the first name.
@@ -200,7 +203,7 @@ public class RegisterAction {
 	 *
 	 * @param secondName the new second name
 	 */
-	public void setSecondName(String secondName) {
+	public void setSecondName(final String secondName) {
 		this.secondName = secondName;
 	}
 
@@ -222,7 +225,7 @@ public class RegisterAction {
 	 *
 	 * @param dniPassport the new dni passport
 	 */
-	public void setDniPassport(String dniPassport) {
+	public void setDniPassport(final String dniPassport) {
 		this.dniPassport = dniPassport;
 	}
 
@@ -243,7 +246,7 @@ public class RegisterAction {
 	 *
 	 * @param birthDate the new birth date
 	 */
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(final Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -264,7 +267,7 @@ public class RegisterAction {
 	 *
 	 * @param homeTlf the new home tlf
 	 */
-	public void setHomeTlf(String homeTlf) {
+	public void setHomeTlf(final String homeTlf) {
 		this.homeTlf = homeTlf;
 	}
 
@@ -286,7 +289,7 @@ public class RegisterAction {
 	 *
 	 * @param movileTlf the new movile tlf
 	 */
-	public void setMovileTlf(String movileTlf) {
+	public void setMovileTlf(final String movileTlf) {
 		this.movileTlf = movileTlf;
 	}
 
@@ -308,7 +311,7 @@ public class RegisterAction {
 	 *
 	 * @param email the new email
 	 */
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 
@@ -330,7 +333,7 @@ public class RegisterAction {
 	 *
 	 * @param username the new username
 	 */
-	public void setUsername(String username) {
+	public void setUsername(final String username) {
 		this.username = username;
 	}
 
@@ -352,7 +355,7 @@ public class RegisterAction {
 	 *
 	 * @param password the new password
 	 */
-	public void setPassword(String password) {
+	public void setPassword(final String password) {
 		this.password = password;
 	}
 
@@ -374,7 +377,7 @@ public class RegisterAction {
 	 *
 	 * @param repPassword the new rep password
 	 */
-	public void setRepPassword(String repPassword) {
+	public void setRepPassword(final String repPassword) {
 		this.repPassword = repPassword;
 	}
 
@@ -396,7 +399,7 @@ public class RegisterAction {
 	 *
 	 * @param address the new address
 	 */
-	public void setAddress(String address) {
+	public void setAddress(final String address) {
 		this.address = address;
 	}
 
@@ -418,7 +421,7 @@ public class RegisterAction {
 	 *
 	 * @param city the new city
 	 */
-	public void setCity(String city) {
+	public void setCity(final String city) {
 		this.city = city;
 	}
 
@@ -440,7 +443,7 @@ public class RegisterAction {
 	 *
 	 * @param codPost the new cod post
 	 */
-	public void setCodPost(String codPost) {
+	public void setCodPost(final String codPost) {
 		this.codPost = codPost;
 	}
 
@@ -462,10 +465,8 @@ public class RegisterAction {
 	 *
 	 * @param state the new state
 	 */
-	public void setState(String state) {
+	public void setState(final String state) {
 		this.state = state;
 	}
-	
-	
-	
+
 }

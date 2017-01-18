@@ -5,7 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class ConnectHibernate.
  *
@@ -14,60 +13,61 @@ import org.hibernate.cfg.Configuration;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
- * Class where are all the needed functions 
+ *
+ * Class where are all the needed functions
  * related with the connection with the database.
  */
 public class ConnectHibernate {
-	
+
 	/** The session factory. */
 	private static SessionFactory sessionFactory;
-	
+
 	/** The session. */
 	private static Session session;
-	
+
 	/** The Constant CONFIG_FILE. */
-	private final static String CONFIG_FILE = "configurations/hibernate.cfg.xml";
-	
+	private static final  String CONFIG_FILE = "configurations/hibernate.cfg.xml";
+
 	/**
-	 * This function create or opens the remote connection(session) 
+	 * This function create or opens the remote connection(session)
 	 * with the database, loading the configuration file.
 	 */
 	public static void before() {
-		
+
 		sessionFactory  = new Configuration().
 				configure(CONFIG_FILE).buildSessionFactory();
 		session = sessionFactory.openSession();
-		
+
 	}
-	
+
 	/**
 	 * This function close or kills the connection(session) with the database.
 	 */
 	public static void after() {
-		
+
 		session.close();
 		sessionFactory.close();
-		
+
 	}
-	
+
 	/**
-	 * Function to change the user and pass of the database
+	 * Function to change the user and pass of the database.
+	 *
 	 * @param pass The password
 	 * @param user The username
 	 */
-	public static void changeUser (final String pass, final String user) {
+	public static void changeUser(final String pass, final String user) {
 		Configuration cfg = new Configuration();
 		cfg.configure(CONFIG_FILE);
 		System.setProperty("hibernate.connection.password", pass);
 		System.setProperty("hibernate.connection.username", user);
-		cfg.setProperties(System.getProperties());	
+		cfg.setProperties(System.getProperties());
 
 		sessionFactory = cfg.buildSessionFactory();
-		
-		System.out.println("Username: "+cfg.getProperties().getProperty("hibernate.connection.username"));
-		System.out.println("Password: "+cfg.getProperties().getProperty("hibernate.connection.password"));
-		
+
+		System.out.println("Username: " + cfg.getProperties().getProperty("hibernate.connection.username"));
+		System.out.println("Password: " + cfg.getProperties().getProperty("hibernate.connection.password"));
+
 		System.out.println(sessionFactory.getProperties());
 	}
 
@@ -85,7 +85,7 @@ public class ConnectHibernate {
 	 *
 	 * @param sessionFactory the new session factory
 	 */
-	public static void setSessionFactory(SessionFactory sessionFactory) {
+	public static void setSessionFactory(final SessionFactory sessionFactory) {
 		ConnectHibernate.sessionFactory = sessionFactory;
 	}
 
@@ -103,7 +103,7 @@ public class ConnectHibernate {
 	 *
 	 * @param session the new session
 	 */
-	public static void setSession(Session session) {
+	public static void setSession(final Session session) {
 		ConnectHibernate.session = session;
 	}
 

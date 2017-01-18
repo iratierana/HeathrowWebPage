@@ -7,7 +7,7 @@ import com.opensymphony.xwork2.ActionContext;
 
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class MyProfileAction.
  *
@@ -16,50 +16,50 @@ import domain.model.Passanger;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
+ *
  * Class where are made all the processes and loads for charge the profile page.
  */
 public class MyProfileAction {
-	
+
 	/** The id. */
 	//User data
 	private Integer id;
-	
+
 	/** The name. */
 	private String name;
-	
+
 	/** The first name. */
 	private String firstName;
-	
+
 	/** The second name. */
 	private String secondName;
-	
+
 	/** The dni passport. */
 	private String dniPassport;
-	
+
 	/** The birth date. */
 	private Date birthDate;
-	
+
 	/** The home tlf. */
 	private String homeTlf;
-	
+
 	/** The movile tlf. */
 	private String movileTlf;
-	
+
 	/** The email. */
 	private String email;
-	
+
 	/** The username. */
 	private String username;
-	
+
 	/** The password. */
 	private String password;
-	
+
 	/** The rep password. */
 	private String repPassword;
 
 	/**
-	 * This function load all the data of the user 
+	 * This function load all the data of the user
 	 * logger in session and save it in
 	 * the private parameters to auto complete the jsp file.
 	 *
@@ -69,7 +69,7 @@ public class MyProfileAction {
 		loadLoggedPassangerAtributes();
 		return "myProfileAction";
 	}
-	
+
 	/**
 	 * Load logged passanger atributes.
 	 */
@@ -78,10 +78,10 @@ public class MyProfileAction {
 	 * This function charge the session passenger in local parameters
 	 */
 	private void loadLoggedPassangerAtributes() {
-		Map session = ActionContext.getContext().getSession();	
-		
+		Map session = ActionContext.getContext().getSession();
+
 		Passanger p = (Passanger) session.get("loggedPassanger");
-		
+
 		this.setId(p.getPassangerId());
 		this.setName(p.getFirstName());
 		this.setFirstName(p.getLastName1());
@@ -93,7 +93,7 @@ public class MyProfileAction {
 		this.setEmail(p.getEmail());
 		this.setUsername(p.getUsername());
 		this.setPassword(p.getPassword());
-		
+
 	}
 
 
@@ -285,7 +285,7 @@ public class MyProfileAction {
 	 *
 	 * @param email the new email
 	 */
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 
@@ -307,7 +307,7 @@ public class MyProfileAction {
 	 *
 	 * @param username the new username
 	 */
-	public void setUsername(String username) {
+	public void setUsername(final String username) {
 		this.username = username;
 	}
 
@@ -329,7 +329,7 @@ public class MyProfileAction {
 	 *
 	 * @param password the new password
 	 */
-	public void setPassword(String password) {
+	public void setPassword(final String password) {
 		this.password = password;
 	}
 
@@ -351,10 +351,8 @@ public class MyProfileAction {
 	 *
 	 * @param repPassword the new rep password
 	 */
-	public void setRepPassword(String repPassword) {
+	public void setRepPassword(final String repPassword) {
 		this.repPassword = repPassword;
 	}
-	
-	
-	
+
 }
