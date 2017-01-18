@@ -1,6 +1,8 @@
 <%@taglib  prefix="s" uri="/struts-tags" %>
 
-	<section class="well well-md">
+
+
+	<section id="infoSect" style="margin-top: 80%; left: 0;margin-left: auto; display: inline;">
 		<s:iterator value="airplane">
 			<img alt="Airplane photo" class="img-rounded" src="https://thumbs.dreamstime.com/t/handelspassagierflugzeug-whrend-des-fluges-67048953.jpg"><hr>
 			<label>Serial : </label>
