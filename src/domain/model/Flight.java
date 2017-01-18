@@ -15,7 +15,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Flight.
  */
@@ -32,12 +31,11 @@ public class Flight {
 	 * @since   2016-12-13
 	 * 
 	 * General Entity of Flight class.
-	 * Is connected with hibernate to generate the 
-	 * table Flight and the needed relationshihps.
+	 * Is connected with hibernate to generate the table Flight and the needed relationshihps.
 	 * Is used to save and work with the information of a flight.
 	 */
 	
-	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE )
 	private Integer flightId;
 	
 	/** The departure date. */
@@ -68,24 +66,24 @@ public class Flight {
 	
 	/** The cortroller list. */
 	@ManyToMany (cascade = CascadeType.ALL)
-	@JoinTable(name = "ControlFlight")
-	private Collection<AirportController> cortrollerList = new ArrayList<AirportController>();
+	@JoinTable(name="ControlFlight")
+	Collection<AirportController> cortrollerList=new ArrayList<AirportController>();
 	
 	/** The depart airport. */
 	@OneToOne (cascade = CascadeType.ALL)
-	private Airport departAirport;
+	Airport departAirport;
 	
 	/** The arrive airport. */
 	@OneToOne (cascade = CascadeType.ALL)
-	private Airport arriveAirport;
+	Airport arriveAirport;
 	
 	/** The airplane. */
 	@OneToOne (cascade = CascadeType.ALL)
-	private Airplane airplane;
+	Airplane airplane;
 	
 	/** The passanger list. */
-	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "flightList")
-	private Collection<Passanger> passangerList = new ArrayList<Passanger>();
+	@ManyToMany(fetch=FetchType.EAGER, mappedBy="flightList")
+	Collection<Passanger> passangerList = new ArrayList<Passanger>();
 
 	
 	
@@ -104,7 +102,7 @@ public class Flight {
 	 *
 	 * @param flightId the new flight id
 	 */
-	public void setFlightId(final Integer flightId) {
+	public void setFlightId(Integer flightId) {
 		this.flightId = flightId;
 	}
 
@@ -122,7 +120,7 @@ public class Flight {
 	 *
 	 * @param departureDate the new departure date
 	 */
-	public void setDepartureDate(final Date departureDate) {
+	public void setDepartureDate(Date departureDate) {
 		this.departureDate = departureDate;
 	}
 
@@ -140,7 +138,7 @@ public class Flight {
 	 *
 	 * @param arrivalDate the new arrival date
 	 */
-	public void setArrivalDate(final Date arrivalDate) {
+	public void setArrivalDate(Date arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
 
@@ -158,7 +156,7 @@ public class Flight {
 	 *
 	 * @param departureGate the new departure gate
 	 */
-	public void setDepartureGate(final Integer departureGate) {
+	public void setDepartureGate(Integer departureGate) {
 		this.departureGate = departureGate;
 	}
 
@@ -176,7 +174,7 @@ public class Flight {
 	 *
 	 * @param arrivalGate the new arrival gate
 	 */
-	public void setArrivalGate(final Integer arrivalGate) {
+	public void setArrivalGate(Integer arrivalGate) {
 		this.arrivalGate = arrivalGate;
 	}
 
@@ -194,7 +192,7 @@ public class Flight {
 	 *
 	 * @param arrivalTerminal the new arrival terminal
 	 */
-	public void setArrivalTerminal(final Integer arrivalTerminal) {
+	public void setArrivalTerminal(Integer arrivalTerminal) {
 		this.arrivalTerminal = arrivalTerminal;
 	}
 
@@ -212,7 +210,7 @@ public class Flight {
 	 *
 	 * @param departureTerminal the new departure terminal
 	 */
-	public void setDepartureTerminal(final Integer departureTerminal) {
+	public void setDepartureTerminal(Integer departureTerminal) {
 		this.departureTerminal = departureTerminal;
 	}
 
@@ -230,7 +228,7 @@ public class Flight {
 	 *
 	 * @param cortrollerList the new cortroller list
 	 */
-	public void setCortrollerList(final Collection<AirportController> cortrollerList) {
+	public void setCortrollerList(Collection<AirportController> cortrollerList) {
 		this.cortrollerList = cortrollerList;
 	}
 
@@ -248,7 +246,7 @@ public class Flight {
 	 *
 	 * @param departAirport the new depart airport
 	 */
-	public void setDepartAirport(final Airport departAirport) {
+	public void setDepartAirport(Airport departAirport) {
 		this.departAirport = departAirport;
 	}
 
@@ -266,7 +264,7 @@ public class Flight {
 	 *
 	 * @param arriveAirport the new arrive airport
 	 */
-	public void setArriveAirport(final Airport arriveAirport) {
+	public void setArriveAirport(Airport arriveAirport) {
 		this.arriveAirport = arriveAirport;
 	}
 
@@ -284,8 +282,18 @@ public class Flight {
 	 *
 	 * @param passangerList the new passanger list
 	 */
-	public void setPassangerList(final Collection<Passanger> passangerList) {
+	public void setPassangerList(Collection<Passanger> passangerList) {
 		this.passangerList = passangerList;
 	}
+
+	public Airplane getAirplane() {
+		return airplane;
+	}
+
+	public void setAirplane(Airplane airplane) {
+		this.airplane = airplane;
+	}
+	
+	
 	
 }
