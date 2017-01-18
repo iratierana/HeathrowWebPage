@@ -15,13 +15,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Flight.
  */
 @Entity
 public class Flight {
-	
+
 	/**
 	 * The flight id.
 	 *
@@ -30,66 +29,61 @@ public class Flight {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of Flight class.
-	 * Is connected with hibernate to generate the 
+	 * Is connected with hibernate to generate the
 	 * table Flight and the needed relationshihps.
 	 * Is used to save and work with the information of a flight.
 	 */
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer flightId;
-	
+
 	/** The departure date. */
 	@NotNull
 	private Date departureDate;
-	
+
 	/** The arrival date. */
 	@NotNull
 	private Date arrivalDate;
-	
+
 	/** The departure gate. */
 	@NotNull
 	private Integer departureGate;
-	
+
 	/** The arrival gate. */
 	@NotNull
 	private Integer arrivalGate;
-	
+
 	/** The arrival terminal. */
 	@NotNull
 	private Integer arrivalTerminal;
-	
+
 	/** The departure terminal. */
 	@NotNull
 	private Integer departureTerminal;
-	
-	
-	
+
 	/** The cortroller list. */
 	@ManyToMany (cascade = CascadeType.ALL)
 	@JoinTable(name = "ControlFlight")
 	private Collection<AirportController> cortrollerList = new ArrayList<AirportController>();
-	
+
 	/** The depart airport. */
 	@OneToOne (cascade = CascadeType.ALL)
 	private Airport departAirport;
-	
+
 	/** The arrive airport. */
 	@OneToOne (cascade = CascadeType.ALL)
 	private Airport arriveAirport;
-	
+
 	/** The airplane. */
 	@OneToOne (cascade = CascadeType.ALL)
 	private Airplane airplane;
-	
+
 	/** The passanger list. */
 	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "flightList")
 	private Collection<Passanger> passangerList = new ArrayList<Passanger>();
 
-	
-	
-	
 	/**
 	 * Gets the flight id.
 	 *
@@ -287,5 +281,5 @@ public class Flight {
 	public void setPassangerList(final Collection<Passanger> passangerList) {
 		this.passangerList = passangerList;
 	}
-	
+
 }

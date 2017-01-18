@@ -11,13 +11,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Airport.
  */
 @Entity
 public class Airport {
-	
+
 	/**
 	 * The airport id.
 	 *
@@ -26,7 +26,7 @@ public class Airport {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of Airport class.
 	 * Is connected with hibernate to generate the
 	 *  table Airport and the needed relationshihps.
@@ -35,12 +35,11 @@ public class Airport {
 
 	@Id@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer airportId;
-	
+
 	/** The name. */
 	@NotNull
 	private String name;
-	
-	
+
 	/** The runway list. */
 	@OneToMany
 	@JoinColumn(name = "AIRPORT_ID", nullable = false)
@@ -105,8 +104,5 @@ public class Airport {
 	public void setRunwayList(final Collection<Runway> runwayList) {
 		this.runwayList = runwayList;
 	}
-	
 
-	
-	
 }

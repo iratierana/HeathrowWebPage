@@ -11,7 +11,6 @@ import configurations.ConnectHibernate;
 import domain.model.Airplane;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class DAOAirplane.
  *
@@ -20,16 +19,16 @@ import domain.model.Airplane;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
+ *
  * Class where are all the needed functions related with Airplane,
  *  in order to work with the database
  */
-@SuppressWarnings("deprecation")
+
 public class DAOAirplane {
-	
+
 /** The session. */
 private static Session session;
-	
+
 	/**
 	 * This function delete an airplane from the database.
 	 *
@@ -39,11 +38,11 @@ private static Session session;
 	 */
 	@SuppressWarnings("rawtypes")
 	public static boolean deleteAirplane(final Airplane airplane) {
-		String sql1 = "DELETE FROM controlairplane WHERE airplanelist_airplaneid = "+ airplane.getAirplaneId();
-		String sql2 = "DELETE FROM airplanephoto WHERE airplane_id = "+ airplane.getAirplaneId();
-		String sql3 = "DELETE FROM airplane WHERE airplaneid = "+airplane.getAirplaneId();
+		String sql1 = "DELETE FROM controlairplane WHERE airplanelist_airplaneid = " + airplane.getAirplaneId();
+		String sql2 = "DELETE FROM airplanephoto WHERE airplane_id = " + airplane.getAirplaneId();
+		String sql3 = "DELETE FROM airplane WHERE airplaneid = " + airplane.getAirplaneId();
 		try {
-			
+
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
@@ -51,20 +50,20 @@ private static Session session;
 			SQLQuery query1 = session.createSQLQuery(sql1); query1.executeUpdate();
 			SQLQuery query2 = session.createSQLQuery(sql2); query2.executeUpdate();
 			SQLQuery query3 = session.createSQLQuery(sql3); query3.executeUpdate();
-			
+
 			session.getTransaction().commit();
 			ConnectHibernate.after();
 			return true;
-			
+
 		} catch (Exception e) {
-			session.getTransaction().rollback();			
+			session.getTransaction().rollback();
 			return false;
 		} finally {
 			ConnectHibernate.after();
 		}
 	}
-	
-		
+
+
 	/**
 	 * Load all the plains that airline manager manage.
 	 *
@@ -81,7 +80,7 @@ private static Session session;
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			
+
 			SQLQuery query = session.createSQLQuery(sql);
 			query.addEntity(Airplane.class);
 			airplaneList = query.list();
@@ -92,10 +91,9 @@ private static Session session;
 
 		}
 
-		
 		return airplaneList;
 	}
-	
+
 	/**
 	 * This function loads and airplane.
 	 * @param id The id of the airplane to load frm the databse
@@ -108,7 +106,7 @@ private static Session session;
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			
+
 			@SuppressWarnings("unchecked")
 			TypedQuery<Airplane> query = session.createQuery("from Airplane where airplaneId=" + id);
 			airplaneList = query.getResultList();
@@ -116,7 +114,7 @@ private static Session session;
 				a = airplaneList.get(0);
 			}
 			ConnectHibernate.after();
-			
+
 		} catch (Exception e) {
 			session.getTransaction().rollback();
 			ConnectHibernate.after();
@@ -125,10 +123,10 @@ private static Session session;
 			ConnectHibernate.after();
 
 		}
-		
+
 		return a;
 	}
-	
+
 	/**
 	 * This function updates an airplane in the database.
 	 * @param airplane The airplane object to update
@@ -138,18 +136,18 @@ private static Session session;
 		Airplane auxAirplane = null;
 		try {
 			auxAirplane = DAOAirplane.loadAirplane(airplane.getAirplaneId());
-			ConnectHibernate.before();			
+			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
 			session.getTransaction().begin();
 			auxAirplane.setName(airplane.getName());
 			auxAirplane.setSerialNumb(airplane.getSerialNumb());
 			session.saveOrUpdate(auxAirplane);
-			session.getTransaction().commit();		
-		} catch (Exception e) {			
+			session.getTransaction().commit();
+		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
-		ConnectHibernate.after();		
+		ConnectHibernate.after();
 		return true;
 	}
 

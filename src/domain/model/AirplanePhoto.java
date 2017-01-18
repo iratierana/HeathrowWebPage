@@ -8,13 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AirplanePhoto.
  */
 @Entity
 public class AirplanePhoto {
-	
+
 	/**
 	 * The photo id.
 	 *
@@ -23,24 +22,24 @@ public class AirplanePhoto {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of photo class.
 	 * Is connected with hibernate to generate the
 	 *  table airplanephoto and the needed relationshihps.
 	 * Is used to save the photos of the airplanes.
 	 */
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer photoId;
-	
+
 	/** The photo. */
 	@NotNull
 	private byte[] photo;
-	
+
 	/** The photo date. */
 	@NotNull
 	private Date photoDate;
-	
+
 	/** The photographer. */
 	@NotNull
 	private String photographer;
@@ -95,7 +94,7 @@ public class AirplanePhoto {
 	 *
 	 * @param photoDate the new photo date
 	 */
-	public void setPhotoDate(Date photoDate) {
+	public void setPhotoDate(final Date photoDate) {
 		this.photoDate = photoDate;
 	}
 
@@ -113,8 +112,8 @@ public class AirplanePhoto {
 	 *
 	 * @param photographer the new photographer
 	 */
-	public void setPhotographer(String photographer) {
+	public void setPhotographer(final String photographer) {
 		this.photographer = photographer;
-	}	
-	
+	}
+
 }

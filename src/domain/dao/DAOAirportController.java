@@ -10,7 +10,7 @@ import configurations.ConnectHibernate;
 import domain.model.AirportController;
 
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class DAOAirportController.
  *
@@ -19,15 +19,15 @@ import domain.model.AirportController;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
- * Class where are all the needed functions related with 
+ *
+ * Class where are all the needed functions related with
  * AirportController, in order to work with the database
  */
 public class DAOAirportController {
-	
+
 /** The session. */
 private static Session session;
-	
+
 	/**
 	 * This function loads a specific airport controller.
 	 *
@@ -43,14 +43,14 @@ private static Session session;
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			
+
 			TypedQuery<AirportController> query = session.createQuery("from AirportController where password='" + pass + "' and username='" + username + "'");
 			controllerList = query.getResultList();
 			if (!controllerList.isEmpty()) {
 				aC = controllerList.get(0);
 			}
 			ConnectHibernate.after();
-			
+
 		} catch (Exception e) {
 			session.getTransaction().rollback();
 			return null;
@@ -58,7 +58,7 @@ private static Session session;
 			ConnectHibernate.after();
 
 		}
-		
+
 		ConnectHibernate.after();
 		return aC;
 	}

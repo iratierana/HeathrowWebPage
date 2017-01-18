@@ -19,13 +19,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Passanger.
  */
 @Entity
 public class Passanger {
-	
+
 	/**
 	 * The passanger id.
 	 *
@@ -34,40 +33,40 @@ public class Passanger {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of Passanger class.
-	 * Is connected with hibernate to generate the 
+	 * Is connected with hibernate to generate the
 	 * table Passanger and the needed relationshihps.
 	 * Is needed in order to save and work with the data of a passanger
 	 */
 
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Integer passangerId;	
+	private Integer passangerId;
 	 	
 	/** The first name. */
 	@NotNull
  	private String firstName;
- 	
+
 	/** The last name 1. */
 	@NotNull
  	private String lastName1;
- 	
+
 	/** The last name 2. */
 	@NotNull
  	private String lastName2;
- 	
+
 	/** The dni passport. */
 	@NotNull
  	private String dni_passport;
- 	
+
 	/** The home tlf. */
 	@NotNull
  	private String homeTlf;
- 	
+
 	/** The movile tlf. */
 	@NotNull
  	private String movileTlf;
- 	
+
 	/** The email. */
 	@NotNull
 	private String email;
@@ -75,29 +74,27 @@ public class Passanger {
 	/** The birth date. */
 	@NotNull @Temporal(TemporalType.DATE)
 	private Date birthDate;
-	
+
 	/** The username. */
 	@NotNull
 	private String username;
-	
+
 	/** The password. */
 	@NotNull
 	private String password;
 
-	
+
 	/** The flight list. */
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "booking", joinColumns = {
 			@JoinColumn(name = "passengerId", nullable = false, updatable = false)},
-			inverseJoinColumns = {@JoinColumn(name = "flightId", nullable = false, updatable = false)}) 
+			inverseJoinColumns = {@JoinColumn(name = "flightId", nullable = false, updatable = false)})
 	private Collection<Flight> flightList = new ArrayList<Flight>();
-	
+
 	/** The direction. */
 	@OneToOne(cascade = CascadeType.ALL)
 	private Direction direction;
 
-	
-	
 	/**
 	 * Gets the passanger id.
 	 *
@@ -148,7 +145,7 @@ public class Passanger {
 	 *
 	 * @param lastName1 the new last name 1
 	 */
-	public void setLastName1(String lastName1) {
+	public void setLastName1(final String lastName1) {
 		this.lastName1 = lastName1;
 	}
 
@@ -166,7 +163,7 @@ public class Passanger {
 	 *
 	 * @param lastName2 the new last name 2
 	 */
-	public void setLastName2(String lastName2) {
+	public void setLastName2(final String lastName2) {
 		this.lastName2 = lastName2;
 	}
 
@@ -220,7 +217,7 @@ public class Passanger {
 	 *
 	 * @param movileTlf the new movile tlf
 	 */
-	public void setMovileTlf(String movileTlf) {
+	public void setMovileTlf(final String movileTlf) {
 		this.movileTlf = movileTlf;
 	}
 
@@ -331,5 +328,4 @@ public class Passanger {
 	public void setDirection(final Direction direction) {
 		this.direction = direction;
 	}
-	
 }

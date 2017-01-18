@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Airline.
  */
 @Entity
 public class Airline {
-	
+
 	/**
 	 * The airline id.
 	 *
@@ -23,32 +23,27 @@ public class Airline {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of Airline class.
 	 * Is connected with hibernate to generate the
 	 * table Airline and the needed relationshihps.
 	 * Is used to save and work with the information of a Airline.
 	 */
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer airlineId;
-	
+
 	/** The name. */
 	@NotNull
 	private String name;
-	
+
 	/** The description. */
 	private String description;
 
 //	@OneToMany
 //	@JoinColumn(name="AIRLINE_ID", nullable=false)
 //	Collection<Airplane> airplaneList = new ArrayList<Airplane>();
-	
-	
-	
-	
-	
-	
+
 	/**
  * Gets the airline id.
  *

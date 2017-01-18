@@ -12,7 +12,6 @@ import configurations.ConnectHibernate;
 import domain.model.Airplane;
 import domain.model.Flight;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class DAOFlight.
  *
@@ -21,19 +20,25 @@ import domain.model.Flight;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
- * Class where are all the needed functions related 
+ *
+ * Class where are all the needed functions related
  * with flight, in order to work with the database
  */
-@SuppressWarnings("deprecation")
+
 public class DAOFlight {
-	
-private static final int _24 = 24;
-private static final int _60 = 60;
-private static final int _1000 = 1000;
+
+/** The Constant _24. */
+private static final int N24 = 24;
+
+/** The Constant _60. */
+private static final int N60 = 60;
+
+/** The Constant _1000. */
+private static final int N1000 = 1000;
 /** The session. */
 private static Session session;
-		
+
+
 	/**
 	 * This function load all the flights of the database.
 	 *
@@ -54,13 +59,15 @@ private static Session session;
 			ConnectHibernate.after();
 		}
 
-		
+
 		return flightList;
 	}
-	
+
 	/**
 	 * This function loads and airplane.
+	 *
 	 * @param id The id of the airplane to load frm the databse
+	 * @param idFlight the id flight
 	 * @return The object airplane
 	 */
 	/*public static Flight loadFlight(final int id, final int idFlight) {
@@ -70,7 +77,7 @@ private static Session session;
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			
+
 			@SuppressWarnings("unchecked")
 			TypedQuery<Flight> query = session.createQuery("from Flight as f join f.airplane as a where a.airplaneId=" + id + " and f.flightId=" + idFlight);
 			flightList = query.getResultList();
@@ -78,7 +85,7 @@ private static Session session;
 				f = flightList.get(0);
 			}
 			ConnectHibernate.after();
-			
+
 		} catch (Exception e) {
 			session.getTransaction().rollback();
 			ConnectHibernate.after();
@@ -87,23 +94,29 @@ private static Session session;
 			ConnectHibernate.after();
 
 		}
-		
+
 		return f;
 	}*/
 
-	
-	@SuppressWarnings({ "rawtypes",  "unchecked"})
+	/**
+	 * This function loads and flights.
+	 *
+	 * @param id The id of the airplane to load frm the databse
+	 * @param idFlight the id flight
+	 * @return The flight list
+	 */
+
 	public static Flight loadFlight(final int id, final int idFlight) {
 		List<Flight> flightList = null;
 		Flight f = new Flight();
 		f = null;
 		String sql = "SELECT *"
 				+ " FROM Flight JOIN Airplane on Flight.airplane_airplaneid=Airplane.airplaneid"
-				+ " WHERE airplane_airplaneid=" + id + " and flightId=" + idFlight ;
+				+ " WHERE airplane_airplaneid=" + id + " and flightId=" + idFlight;
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			
+
 			SQLQuery query = session.createSQLQuery(sql);
 			query.addEntity(Flight.class);
 			flightList = query.list();
@@ -111,7 +124,7 @@ private static Session session;
 			if (!flightList.isEmpty()) {
 				f = flightList.get(0);
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -120,8 +133,7 @@ private static Session session;
 		}
 		return f;
 	}
-	
-	
+
 	/**
 	 * This function checks if the flight exist in order to book it.
 	 *
@@ -136,14 +148,14 @@ private static Session session;
 		List<Flight> flightList = null;
 		Flight f = new Flight();
 		f = null;
-		
-		Date end1 = new Date(departureDate.getTime() + (_1000 * _60 * _60 * _24));
-		Date end2 = new Date(arrivalDate.getTime() + (_1000 * _60 * _60 * _24));
-		
+
+		Date end1 = new Date(departureDate.getTime() + (N1000 * N60 * N60 * N24));
+		Date end2 = new Date(arrivalDate.getTime() + (N1000 * N60 * N60 * N24));
+
 		try {
 			ConnectHibernate.before();
 			session = ConnectHibernate.getSession();
-			
+
 			@SuppressWarnings("unchecked")
 			TypedQuery<Flight> query = session.createQuery("FROM Flight "
 			 + "WHERE departAirport.name='" + from + "' "
@@ -159,7 +171,7 @@ private static Session session;
 				f = flightList.get(0);
 			}
 			ConnectHibernate.after();
-			
+
 		} catch (Exception e) {
 			session.getTransaction().rollback();
 			ConnectHibernate.after();
@@ -167,7 +179,7 @@ private static Session session;
 		} finally {
 			ConnectHibernate.after();
 
-		}		
+		}
 		return f;
 	}
 }

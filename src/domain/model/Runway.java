@@ -6,13 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Runway.
  */
 @Entity
 public class Runway {
-	
+
 	/**
 	 * The runway id.
 	 *
@@ -21,24 +20,23 @@ public class Runway {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of Runway class.
-	 * Is connected with hibernate to generate the 
+	 * Is connected with hibernate to generate the
 	 * table Runway and the needed relationshihps.
 	 */
-	
+
 	@Id@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer runwayId;
-	
+
 	/** The tipo. */
 	@NotNull
 	private String tipo;
-	
+
 	/** The state. */
 	@NotNull
 	private boolean state;
-	
-	
+
 
 	/**
 	 * Gets the runway id.
@@ -54,7 +52,7 @@ public class Runway {
 	 *
 	 * @param runwayId the new runway id
 	 */
-	public void setRunwayId(Integer runwayId) {
+	public void setRunwayId(final Integer runwayId) {
 		this.runwayId = runwayId;
 	}
 
@@ -72,7 +70,7 @@ public class Runway {
 	 *
 	 * @param tipo the new tipo
 	 */
-	public void setTipo(String tipo) {
+	public void setTipo(final String tipo) {
 		this.tipo = tipo;
 	}
 
@@ -90,7 +88,7 @@ public class Runway {
 	 *
 	 * @param state the new state
 	 */
-	public void setState(boolean state) {
+	public void setState(final boolean state) {
 		this.state = state;
 	}
 

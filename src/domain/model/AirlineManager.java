@@ -9,13 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AirlineManager.
  */
 @Entity
 public class AirlineManager {
-	
+
 	/**
 	 * The airline manager id.
 	 *
@@ -24,53 +23,53 @@ public class AirlineManager {
 	 * @author Mikel Arizmendiarrieta
 	 * @version 1.0
 	 * @since   2016-12-13
-	 * 
+	 *
 	 * General Entity of Airline Manager class.
-	 * Is connected with hibernate to generate the 
+	 * Is connected with hibernate to generate the
 	 * table Airline Manager and the needed relationshihps.
-	 * Is used to save and work with the information 
+	 * Is used to save and work with the information
 	 * of the user Airline Manager.
 	 */
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer airlineManagerId;
-	
+
 	/** The first name. */
 	@NotNull
 	private String firstName;
-	
+
 	/** The last name 1. */
 	@NotNull
 	private String lastName1;
-	
+
 	/** The last name 2. */
 	@NotNull
 	private String lastName2;
-	
+
 	/** The dni passport. */
 	@NotNull
 	private String dni_passport;
-	
+
 	/** The home tlf. */
 	@NotNull
 	private String homeTlf;
-	
+
 	/** The movile tlf. */
 	@NotNull
 	private String movileTlf;
-	
+
 	/** The email. */
 	@NotNull
 	private String email;
-	
+
 	/** The birth date. */
 	@NotNull
 	private Date birthDate;
-	
+
 	/** The username. */
 	@NotNull
 	private String username;
-	
+
 	/** The password. */
 	@NotNull
 	private String password;
@@ -78,7 +77,7 @@ public class AirlineManager {
 	/** The airline. */
 	@OneToOne
 	private Airline airline;
-	
+
 	/** The direction. */
 	@OneToOne
 	private Direction direction;
@@ -187,7 +186,7 @@ public class AirlineManager {
 	 *
 	 * @param homeTlf the new home tlf
 	 */
-	public void setHomeTlf(String homeTlf) {
+	public void setHomeTlf(final String homeTlf) {
 		this.homeTlf = homeTlf;
 	}
 
@@ -205,7 +204,7 @@ public class AirlineManager {
 	 *
 	 * @param movileTlf the new movile tlf
 	 */
-	public void setMovileTlf(String movileTlf) {
+	public void setMovileTlf(final String movileTlf) {
 		this.movileTlf = movileTlf;
 	}
 
@@ -223,7 +222,7 @@ public class AirlineManager {
 	 *
 	 * @param email the new email
 	 */
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 
@@ -241,7 +240,7 @@ public class AirlineManager {
 	 *
 	 * @param birthDate the new birth date
 	 */
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(final Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -259,7 +258,7 @@ public class AirlineManager {
 	 *
 	 * @param username the new username
 	 */
-	public void setUsername(String username) {
+	public void setUsername(final String username) {
 		this.username = username;
 	}
 
@@ -277,7 +276,7 @@ public class AirlineManager {
 	 *
 	 * @param password the new password
 	 */
-	public void setPassword(String password) {
+	public void setPassword(final String password) {
 		this.password = password;
 	}
 
@@ -295,7 +294,7 @@ public class AirlineManager {
 	 *
 	 * @param airline the new airline
 	 */
-	public void setAirline(Airline airline) {
+	public void setAirline(final Airline airline) {
 		this.airline = airline;
 	}
 
@@ -313,7 +312,7 @@ public class AirlineManager {
 	 *
 	 * @param direction the new direction
 	 */
-	public void setDirection(Direction direction) {
+	public void setDirection(final Direction direction) {
 		this.direction = direction;
 	}
 }
