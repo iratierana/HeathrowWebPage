@@ -9,7 +9,6 @@ import domain.dao.DAOPassanger;
 import domain.model.Flight;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MyFlightsAction.
  *
@@ -18,21 +17,21 @@ import domain.model.Passanger;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
- * Class where are made all the processes 
+ *
+ * Class where are made all the processes
  * and loads for loading the user flights.
  */
 public class MyFlightsAction {
-	
+
 	/** The my flight list. */
 	private List<Flight> myFlightList = null;
-	
+
 	/** The session. */
 	@SuppressWarnings("rawtypes")
-	private Map session = ActionContext.getContext().getSession();	
-	
+	private Map session = ActionContext.getContext().getSession();
+
 	/**
-	 * This function loads all the fights of the user 
+	 * This function loads all the fights of the user
 	 * in session and save it in the myFlightList
 	 * to access from the jsp file.
 	 *
@@ -61,8 +60,5 @@ public class MyFlightsAction {
 	public void setMyFlightList(final List<Flight> myFlightList) {
 		this.myFlightList = myFlightList;
 	}
-	
 
-	
-	
 }

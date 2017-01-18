@@ -7,52 +7,51 @@ import com.opensymphony.xwork2.ActionContext;
 
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class BookAFlightAction.
- *    
+ *
  * @author Xabier Jauregi
  * @author Irati Erana
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
+ *
  * Class where are made all the processes and loads for the start of booking.
  */
 public class BookAFlightAction {
-	
+
 	/** The name. */
 	private String name;
-	
+
 	/** The first name. */
 	private String firstName;
-	
+
 	/** The second name. */
 	private String secondName;
-	
+
 	/** The dni passport. */
 	private String dniPassport;
-	
+
 	/** The birth date. */
 	private Date birthDate;
-	
+
 	/** The home tlf. */
 	private String homeTlf;
-	
+
 	/** The movile tlf. */
 	private String movileTlf;
-	
+
 	/** The email. */
 	private String email;
-	
+
 	/** The ca. */
 	private String ca;
-	
+
 	/**
-	 * 
+	 *
 	 * This function redirect the flow to a booking page and
 	 * before doing this auto fills some values.
-	 * 
+	 *
 	 * @return the page where we want to go
 	 */
 	public String execute() {
@@ -65,7 +64,7 @@ public class BookAFlightAction {
 	 */
 	@SuppressWarnings("rawtypes")
 	public void fillDataWithSessionPassanger() {
-		Map session = ActionContext.getContext().getSession();	
+		Map session = ActionContext.getContext().getSession();
 		Passanger p = (Passanger) session.get("loggedPassanger");
 		this.setName(p.getFirstName());
 		this.setFirstName(p.getLastName1());
@@ -77,8 +76,7 @@ public class BookAFlightAction {
 		this.setEmail(p.getEmail());
 //		this.setCa(ca);
 	}
-	
-	
+
 	/**
 	 * Gets the name.
 	 *
@@ -111,7 +109,7 @@ public class BookAFlightAction {
 	 *
 	 * @param firstName the new first name
 	 */
-	public void setFirstName(String firstName) {
+	public void setFirstName(final String firstName) {
 		this.firstName = firstName;
 	}
 
@@ -129,7 +127,7 @@ public class BookAFlightAction {
 	 *
 	 * @param secondName the new second name
 	 */
-	public void setSecondName(String secondName) {
+	public void setSecondName(final String secondName) {
 		this.secondName = secondName;
 	}
 
@@ -147,7 +145,7 @@ public class BookAFlightAction {
 	 *
 	 * @param dniPassport the new dni passport
 	 */
-	public void setDniPassport(String dniPassport) {
+	public void setDniPassport(final String dniPassport) {
 		this.dniPassport = dniPassport;
 	}
 
@@ -165,7 +163,7 @@ public class BookAFlightAction {
 	 *
 	 * @param birthDate the new birth date
 	 */
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(final Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -183,7 +181,7 @@ public class BookAFlightAction {
 	 *
 	 * @param homeTlf the new home tlf
 	 */
-	public void setHomeTlf(String homeTlf) {
+	public void setHomeTlf(final String homeTlf) {
 		this.homeTlf = homeTlf;
 	}
 
@@ -201,7 +199,7 @@ public class BookAFlightAction {
 	 *
 	 * @param movileTlf the new movile tlf
 	 */
-	public void setMovileTlf(String movileTlf) {
+	public void setMovileTlf(final String movileTlf) {
 		this.movileTlf = movileTlf;
 	}
 
@@ -219,7 +217,7 @@ public class BookAFlightAction {
 	 *
 	 * @param email the new email
 	 */
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 
@@ -237,9 +235,9 @@ public class BookAFlightAction {
 	 *
 	 * @param ca the new ca
 	 */
-	public void setCa(String ca) {
+	public void setCa(final String ca) {
 		this.ca = ca;
 	}
 
-	
+
 }

@@ -8,7 +8,6 @@ import domain.model.Airport;
 import domain.model.Flight;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class BookAFlightFinishAction.
  *
@@ -17,62 +16,62 @@ import domain.model.Passanger;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
+ *
  * Class where are made all the processes and loads for the finish of booking.
  */
 public class BookAFlightFinishAction {
-	
+
 	/** The from. */
 	//Flight data from Jsp
 	private String from;
-	
+
 	/** The to. */
 	private String to;
-	
+
 	/** The departure day. */
 	private Date departureDay;
-	
+
 	/** The arrival day. */
 	private Date arrivalDay;
-	
+
 	/** The number of passangers. */
 	private Integer numberOfPassangers;
-	
+
 	/** The name. */
 	//Passenger data from Jsp
 	private String name;
-	
+
 	/** The first name. */
 	private String firstName;
-	
+
 	/** The second name. */
 	private String secondName;
-	
+
 	/** The dni passport. */
 	private String dniPassport;
-	
+
 	/** The birth date. */
 	private Date birthDate;
-	
+
 	/** The home tlf. */
 	private String homeTlf;
-	
+
 	/** The movile tlf. */
 	private String movileTlf;
-	
+
 	/** The email. */
 	private String email;
-	
+
 	/** The ca. */
 	private String ca;
-		
-	
+
+
 	/** The passenger. */
 	private Passanger passenger;
-	
+
 	/** The controller. */
 	private Airport controller;
-	
+
 	/**
 	 * Execute.
 	 *
@@ -83,7 +82,7 @@ public class BookAFlightFinishAction {
 		DAOPassanger.addFlightToLoggedPassenger(f);
 		return "passenger";
 	}
-	
+
 	/**
 	 * Gets the from.
 	 *
@@ -242,7 +241,7 @@ public class BookAFlightFinishAction {
 	 *
 	 * @param dniPassport the new dni passport
 	 */
-	public void setDniPassport(String dniPassport) {
+	public void setDniPassport(final String dniPassport) {
 		this.dniPassport = dniPassport;
 	}
 
