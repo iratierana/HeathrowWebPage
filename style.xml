@@ -182,7 +182,7 @@
 
         <!-- Return count -->
         <module name="ReturnCount">
-              <property name="max" value="1"/>
+              <property name="max" value="4"/>
         </module>
 
         <!-- Number of logical operators -->

@@ -1,8 +1,16 @@
 package actions.login;
 
+/**
+ * The Class MoreInfoAction.
+ */
 public class MoreInfoAction {
-	
-	public String execute(){
+
+	/**
+	 * Execute.
+	 *
+	 * @return the string
+	 */
+	public String execute() {
 		return "moreInformation";
 	}
 

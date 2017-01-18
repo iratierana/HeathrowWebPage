@@ -17,7 +17,6 @@ import domain.model.AirportController;
 import domain.model.Flight;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class LoginAction.
  *
@@ -26,86 +25,82 @@ import domain.model.Passanger;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
  * Class where are made all the processes and loads of the login process.
  */
 public class LoginAction {
-	
+
 	/** The username. */
-	//Login paginatik jasotako username eta passaword 
+	//Login paginatik jasotako username eta passaword
 	private String username;
-	
+
 	/** The password. */
 	private String password;
-	
+
 	/** The logged passanger. */
 	private Passanger loggedPassanger = null;
-	
+
 	/** The logged airport controller. */
 	private AirportController loggedAirportController = null;
-	
+
 	/** The logged airline manager. */
 	private AirlineManager loggedAirlineManager = null;
-	
+
 	/** The airplane list. */
 	private List<Airplane> airplaneList = null;
-	
+
 	/** The flight list. */
 	private List<Flight> flightList = null;
-	
+
 	/**
-	 * 
-	 * This function verifies the type of the user that has been logged and 
+	 * This function verifies the type of the user that has been logged and
 	 * depending on that it redirect to a different pages.
 	 * The logged user is loaded to the session
-	 * 
 	 * @return The name of the page depending on the type of user logged in
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public String execute() { 
-		Map session = ActionContext.getContext().getSession();	
-		
+	public String execute() {
+		Map session = ActionContext.getContext().getSession();
+
 		flightList = DAOFlight.loadAllFlights();
-		
+
 		loggedPassanger = DAOPassanger.loadPassanger(this.username, this.password);
 		loggedAirportController = DAOAirportController.loadAirportController(this.username, this.password);
 		loggedAirlineManager = DAOAirlineManager.loadAirLineManager(this.username, this.password);
-		
+
 		clearAllLoggedUsers();
-		
-		if (loggedPassanger != null) {	
+
+		if (loggedPassanger != null) {
 			 session.put("loggedPassanger", this.loggedPassanger);
 			 session.put("loggedAirportController", null);
 			 session.put("loggedAirlineManager", null);
-			 
+
 			 ConnectHibernate.changeUser("1234", "passenger");
-			 
+
 			 return "passenger";
-			
+
 		} else if (loggedAirportController != null) {
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", this.loggedAirportController);
 			session.put("loggedAirlineManager", null);
-			
+
 			ConnectHibernate.changeUser("1234", "controller");
-			
+
 			return "airportController";
-			
+
 		} else if (loggedAirlineManager != null) {
 			session.put("loggedPassanger", null);
 			session.put("loggedAirportController", null);
-			session.put("loggedAirlineManager", this.loggedAirlineManager);						
+			session.put("loggedAirlineManager", this.loggedAirlineManager);
 			airplaneList = DAOAirplane.loadAirplanesOfAirline(loggedAirlineManager.getAirlineManagerId());
-			
+
 			ConnectHibernate.changeUser("1234", "manager");
-			
-			return "airlineManager"; 
+
+			return "airlineManager";
 		} else {
 			return "error";
 		}
 	}
-	
-	
+
 	/**
 	 * This function clears the user that was previously loaded in the session.
 	 */
@@ -120,18 +115,16 @@ public class LoginAction {
 
 
 	/**
-	 * 
-	 * This function redirects the flow to the 
+	 *
+	 * This function redirects the flow to the
 	 * register page, when the register button in clicked.
-	 * 
+	 *
 	 * @return the name of the page we want to go
 	 */
 	public String register() {
 		return "register";
-	}	
-	
-	
-	
+	}
+
 	/**
 	 * Gets the airplane list.
 	 *
@@ -166,7 +159,7 @@ public class LoginAction {
 	 *
 	 * @param username the new username
 	 */
-	public void setUsername(String username) {
+	public void setUsername(final String username) {
 		this.username = username;
 	}
 
@@ -184,17 +177,26 @@ public class LoginAction {
 	 *
 	 * @param password the new password
 	 */
-	public void setPassword(String password) {
+	public void setPassword(final String password) {
 		this.password = password;
 	}
-	
 
+	/**
+	 * Gets the flight list.
+	 *
+	 * @return the flight list
+	 */
 	public List<Flight> getFlightList() {
 		return flightList;
 	}
 
 
-	public void setFlightList(List<Flight> flightList) {
+	/**
+	 * Sets the flight list.
+	 *
+	 * @param flightList the new flight list
+	 */
+	public void setFlightList(final List<Flight> flightList) {
 		this.flightList = flightList;
 	}
 }
