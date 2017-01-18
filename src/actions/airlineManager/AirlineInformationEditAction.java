@@ -8,47 +8,46 @@ import domain.dao.DAOAirplanePhoto;
 import domain.model.Airplane;
 import domain.model.AirplanePhoto;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AirlineInformationEditAction.
  */
 public class AirlineInformationEditAction {
-	
+
 	/** The airplane id. */
 	private Integer airplaneId;
-	
+
 	/** The airplane. */
 	private Airplane airplane = new Airplane();
-	
+
 	/** The name. */
 	private String name;
-	
+
 	/** The serial number. */
 	private String serialNumber;
-	
+
 	/** The route. */
 	private String route;
-	
+
 	/** The number of flights. */
 	private String numberOfFlights;
-	
+
 	/** The number of ours. */
 	private String numberOfOurs;
-	
+
 	/** The photo. */
 	private AirplanePhoto photo;
-	
+
 	/** The p. */
 	private byte[] p;
-	
+
 	/** The p string. */
 	private String pString;
-	
+
 	/**
-	 * Execute.
+	 *	Execute.
 	 *
-	 * @return the string
-	 * @throws UnsupportedEncodingException 
+	 * @return Airline Edit
+	 * @throws UnsupportedEncodingException
 	 */
 	public String execute() throws UnsupportedEncodingException {
 		loadPhotoFromDatabase(airplaneId);
@@ -67,15 +66,15 @@ public class AirlineInformationEditAction {
 		setNumberOfFlights(String.valueOf(this.airplane.getNumberOfFlights()));
 		setNumberOfOurs(String.valueOf(this.airplane.getHoursOfFlight()));
 	}
-	
+
 	/**
 	 * Load photo from database.
 	 *
 	 * @param airplaneId the airplane id
 	 * @throws UnsupportedEncodingException the unsupported encoding exception
 	 */
-	private void loadPhotoFromDatabase(int airplaneId) throws UnsupportedEncodingException {
-		photo = DAOAirplanePhoto.loadAirplanePhoto(airplaneId); //TODO: Replaced 21 with airplaneId
+	private void loadPhotoFromDatabase(final int airplaneId) throws UnsupportedEncodingException {
+		photo = DAOAirplanePhoto.loadAirplanePhoto(airplaneId);
 		p = Base64.getEncoder().encode(photo.getPhoto());
 		pString = new String(p, "UTF-8");
 		pString = "data:image/jpg;base64," + pString;

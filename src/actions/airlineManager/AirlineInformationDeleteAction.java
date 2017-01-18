@@ -9,21 +9,20 @@ import domain.dao.DAOAirplane;
 import domain.model.AirlineManager;
 import domain.model.Airplane;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AirlineInformationDeleteAction.
  */
 public class AirlineInformationDeleteAction {
-	
+
 	/** The airplane id. */
 	private int airplaneId;
-	
+
 	/** The airplane to delete. */
 	private Airplane airplaneToDelete;
-	
+
 	/** The airplane list. */
 	private List<Airplane> airplaneList = null;
-	
+
 	/**
 	 * Execute.
 	 *
@@ -32,12 +31,12 @@ public class AirlineInformationDeleteAction {
 	@SuppressWarnings("rawtypes")
 	public String execute() {
 		airplaneToDelete = DAOAirplane.loadAirplane(airplaneId);
-		DAOAirplane.deleteAirplane(airplaneToDelete);	
-		
+		DAOAirplane.deleteAirplane(airplaneToDelete);
+
 		Map session = ActionContext.getContext().getSession();
 		AirlineManager aM = (AirlineManager) session.get("loggedAirlineManager");
 		airplaneList = DAOAirplane.loadAirplanesOfAirline(aM.getAirlineManagerId());
-		
+
 		return "airlineManagerList";
 	}
 
@@ -73,7 +72,7 @@ public class AirlineInformationDeleteAction {
 	 *
 	 * @param airplaneId the new airplane id
 	 */
-	public void setAirplaneId(int airplaneId) {
+	public void setAirplaneId(final int airplaneId) {
 		this.airplaneId = airplaneId;
 	}
 
@@ -91,7 +90,7 @@ public class AirlineInformationDeleteAction {
 	 *
 	 * @param airplaneToDelete the new airplane to delete
 	 */
-	public void setAirplaneToDelete(Airplane airplaneToDelete) {
+	public void setAirplaneToDelete(final Airplane airplaneToDelete) {
 		this.airplaneToDelete = airplaneToDelete;
 	}
 

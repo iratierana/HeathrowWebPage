@@ -9,27 +9,26 @@ import domain.dao.DAOAirplane;
 import domain.model.AirlineManager;
 import domain.model.Airplane;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AirlineInformationEditSaveAction.
  */
 public class AirlineInformationEditSaveAction {
-	
+
 	/** The airplane id. */
 	private Integer airplaneId;
-	
+
 	/** The airplane name. */
 	private String airplaneName;
-	
+
 	/** The serial number. */
 	private String serialNumber;
-	
+
 	/** The airplane list. */
 	private List<Airplane> airplaneList = null;
-	
+
 	/** The airplane. */
 	private Airplane airplane = new Airplane();
-	
+
 	/**
 	 * Execute.
 	 *
@@ -54,7 +53,6 @@ public class AirlineInformationEditSaveAction {
 		airplane.setAirplaneId(this.airplaneId);
 		airplane.setName(this.airplaneName);
 		airplane.setSerialNumb(this.serialNumber);
-		
 		return airplane;
 	}
 
@@ -72,7 +70,7 @@ public class AirlineInformationEditSaveAction {
 	 *
 	 * @param airplane the new airplane
 	 */
-	public void setAirplane(Airplane airplane) {
+	public void setAirplane(final Airplane airplane) {
 		this.airplane = airplane;
 	}
 
@@ -90,7 +88,7 @@ public class AirlineInformationEditSaveAction {
 	 *
 	 * @param airplaneId the new airplane id
 	 */
-	public void setAirplaneId(Integer airplaneId) {
+	public void setAirplaneId(final Integer airplaneId) {
 		this.airplaneId = airplaneId;
 	}
 
@@ -108,7 +106,7 @@ public class AirlineInformationEditSaveAction {
 	 *
 	 * @param airplaneName the new airplane name
 	 */
-	public void setAirplaneName(String airplaneName) {
+	public void setAirplaneName(final String airplaneName) {
 		this.airplaneName = airplaneName;
 	}
 
@@ -126,7 +124,7 @@ public class AirlineInformationEditSaveAction {
 	 *
 	 * @param serialNumber the new serial number
 	 */
-	public void setSerialNumber(String serialNumber) {
+	public void setSerialNumber(final String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
 
@@ -144,8 +142,8 @@ public class AirlineInformationEditSaveAction {
 	 *
 	 * @param airplaneList the new airplane list
 	 */
-	public void setAirplaneList(List<Airplane> airplaneList) {
+	public void setAirplaneList(final List<Airplane> airplaneList) {
 		this.airplaneList = airplaneList;
 	}
-	
+
 }

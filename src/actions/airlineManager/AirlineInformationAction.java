@@ -1,5 +1,5 @@
 package actions.airlineManager;
- 
+
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 
@@ -8,7 +8,6 @@ import domain.dao.DAOAirplanePhoto;
 import domain.model.Airplane;
 import domain.model.AirplanePhoto;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AirlineInformationAction.
  *
@@ -17,38 +16,37 @@ import domain.model.AirplanePhoto;
  * @author Mikel Arizmendiarrieta
  * @version 1.0
  * @since   2016-12-13
- * 
+ *
  * Class where are made all the process and loads of Airline Information.
  */
 public class AirlineInformationAction {
-	
-	/** The airplane id. */
+ 	/** The airplane id. */
 	private Integer airplaneId;
-	
+
 	/** The airplane. */
 	private Airplane airplane = new Airplane();
-	
+
 	/** The photo. */
 	private AirplanePhoto photo;
-	
+
 	/** The p. */
 	private byte[] p;
-	
+
 	/** The p string. */
 	private String pString;
-	
+
 	/** The airplane name. */
 	private String airplaneName;
-	
+
 	/** The serial number. */
 	private String serialNumber;
-	
+
 	/** The route. */
 	private String route;
-	
+
 	/** The number of flights. */
 	private String numberOfFlights;
-	
+
 	/** The number of ours. */
 	private String numberOfOurs;
 
@@ -56,7 +54,8 @@ public class AirlineInformationAction {
 	 * This function redirect the content flow to another page.
 	 *
 	 * @return airlineInfo the page(jsp) where we want to redirect
-	 * @throws UnsupportedEncodingException the unsupported encoding exception
+	 * @throws UnsupportedEncodingException the unsupported
+	 *  encoding exception
 	 */
 	public String execute() throws UnsupportedEncodingException {
 		airplane = DAOAirplane.loadAirplane(airplaneId);
@@ -75,15 +74,16 @@ public class AirlineInformationAction {
 		setNumberOfFlights(String.valueOf(this.airplane.getNumberOfFlights()));
 		setNumberOfOurs(String.valueOf(this.airplane.getHoursOfFlight()));
 	}
-	
+
 	/**
 	 * Load photo from database.
 	 *
 	 * @param airplaneId the airplane id
-	 * @throws UnsupportedEncodingException the unsupported encoding exception
+	 * @throws UnsupportedEncodingException the unsupported
+	 *  encoding exception
 	 */
-	private void loadPhotoFromDatabase(int airplaneId) throws UnsupportedEncodingException {
-		photo = DAOAirplanePhoto.loadAirplanePhoto(airplaneId); 
+	private void loadPhotoFromDatabase(final int airplaneId) throws UnsupportedEncodingException {
+		photo = DAOAirplanePhoto.loadAirplanePhoto(airplaneId);
 		p = Base64.getEncoder().encode(photo.getPhoto());
 		pString = new String(p, "UTF-8");
 		pString = "data:image/jpg;base64," + pString;

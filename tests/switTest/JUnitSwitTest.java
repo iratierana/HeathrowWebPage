@@ -45,6 +45,9 @@ import register.TestRegisterAction;
 	
 })
 public class JUnitSwitTest {
-	/*Hemen hasieraketa generalak in ahal dia, adibidez serbitzarixa martxan ipini test bakoitzian ez ipintzeko martxan.
-	Baina guk test bakoitzan hasieran biharrezkua bada bertan hasieratzen dou, orduan hau utzik jungozan*/
+	/*Hemen hasieraketa generalak in ahal dia, adibidez serbitzarixa
+	 *  martxan ipini test bakoitzian ez ipintzeko martxan.
+	 *	Baina guk test bakoitzan hasieran biharrezkua bada bertan 
+	 *	hasieratzen dou, orduan hau utzik jungozan
+	 */
 }
