@@ -35,5 +35,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/system-rules-1.16.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SocketIO"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/struts"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/pgjdbc-ng-0.6-complete.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
