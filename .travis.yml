@@ -1,6 +1,7 @@
 sudo: required
 
 language: java
+
 jdk:
   - oraclejdk8
 
@@ -8,6 +9,7 @@ jdk:
 branches:
   only:
   - Development
+  - ant-fiture
   
 
 install: 

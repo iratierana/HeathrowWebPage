@@ -1,11 +1,3 @@
 /configurations/
-/actions/
-/airlineManager/
-/databaseListener/
-/databaseListener2/
-/domain/
-/hibernateDAOtests/
-/login/
-/passengerMenu/
-/register/
-/struts.xml
+/switText/
+/switTest/
