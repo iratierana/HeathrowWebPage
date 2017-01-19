@@ -24,7 +24,7 @@ $(function () {
         xAxis: {
             gridLineWidth: 1,
             title: {
-                text: 'Terminals'
+                text: 'Flights'
             },
             /*labels: {
                 format: '{value} gr'

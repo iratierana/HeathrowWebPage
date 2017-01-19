@@ -65,3 +65,12 @@ svg{
 	width: 670px;
 	padding:15px;
 }
+
+#bubbleChart{
+	width:70%;
+}
+
+canvas{
+	width:680px;
+	display:block;
+}

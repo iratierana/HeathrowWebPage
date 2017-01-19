@@ -60,7 +60,7 @@
       	<a href="#" onclick="setArticle('bar-chart')" id="barChart-nav">Departures</a>
       </li>
       <li>
-      	<a href="#" onclick="setArticle('histogram')" id="histogram-nav">Histogram</a>
+      	<a href="#" onclick="setArticle('histogram')" id="histogram-nav">Passenger volume by terminal</a>
       </li>
       <li>
       	<a href="#" onclick="setArticle('all-graphs')" id="all-nav">All info</a>
@@ -83,7 +83,7 @@
     		</script>
   		</div>
 		<p>The following graph shows us the different passengers who have passed from Heathrow airport during 2015.
-		The different data is displayed in percentages. Entering deeply those are the ones who passed from the airport:<br>
+		The different data is displayed in percentages in a pie chart, being user-friendly. Entering deeply those are the ones who passed from the airport:<br>
 		- International passengers = 69.8 million<br>
 		- Domestic passengers = 5.1 million<br>
 		- Businness passengers = 27 million<br>
@@ -94,7 +94,7 @@
 	</article>
 	
 	<article id="bar-chart" class="hideme">
-			<h2>Departures</h2>
+		<h2>Departures</h2>
 		<h3>Within 15 minutes of schedule</h3>
 		<div class="barChart">
       		<canvas id="myChart"></canvas>
@@ -107,7 +107,7 @@
 	</article>
 	
 	<article id=histogram class="hideme">
-		<h2>Histogram Graph</h2>
+		<h2>Passenger volume by terminal (millions) in 2015</h2>
 		<!-- <div id="pieChart" class="chartClass" style="max-height:350px;">
     		<script type="text/javascript">
     			loadPieChart();
@@ -120,6 +120,9 @@
   				loadBubbleChart();
   			</script>
   		</div>
+  		
+  		<p>In this bubble chart is shown the passenger volume by terminals (in millions) during 2015.
+  		As we can see there, each terminal takes some values that fix with the passengers and the number of flights.</p>
 		
 	</article>
 
