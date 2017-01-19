@@ -12,25 +12,26 @@ import org.mockito.Mockito;
 import actions.airlineManager.AirlineInformationAction;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class TestAirlineInformationActionController.
  */
 public class TestAirlineInformationActionController {
-	
+
+	/** The Constant N9. */
+	private static final int AIRPLANEID = 9;
 	/** The air info act. */
 	private AirlineInformationAction airInfoAct;
-	
+
 	/**
 	 * Pepare for correct test.
 	 */
 	@Before
 	public void pepareForCorrectTest() {
-		
+
 		airInfoAct = Mockito.mock(AirlineInformationAction.class);
 		airInfoAct = Mockito.spy(new AirlineInformationAction());
 	}
-	
+
 	/**
 	 * Finish the testing.
 	 */
@@ -38,17 +39,17 @@ public class TestAirlineInformationActionController {
 	public void finishTheTesting() {
 		this.setAirInfoAct(null);
 	}
-	
+
 	/**
-	 * Test if the function execute correct ina correct way 
+	 * Test if the function execute correct ina correct way
 	 * redirecting the page.
 	 */
 	@Test
 	public void testIfTheFunctionExecuteCorrectInaCorrectWayRedirectingThePage() {
-		
-		int airplaneId = 9;
+
+		int airplaneId = AIRPLANEID;
 		String ret;
-		
+
 		airInfoAct.setAirplaneId(airplaneId);
 		try {
 			ret = airInfoAct.execute();
@@ -56,7 +57,7 @@ public class TestAirlineInformationActionController {
 			ret = null;
 			e.printStackTrace();
 		}
-		
+
 		assertEquals("The plane was not loaded, so that error in redirection", ret, "airlineInfo");
 	}
 

@@ -15,15 +15,15 @@ import actions.register.RegisterAction;
 import domain.model.Direction;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TestRegisterAction.
  */
 public class TestRegisterAction {
-	
+
 	/** The register action. */
 	private RegisterAction registerAction;
-	
+
 	/**
 	 * Prepare test.
 	 */
@@ -32,15 +32,15 @@ public class TestRegisterAction {
 		registerAction = Mockito.mock(RegisterAction.class);
 		registerAction = Mockito.spy(new RegisterAction());
 	}
-	
+
 	/**
 	 * Destroy test.
 	 */
 	@After
 	public void destroyTest() {
-		
+
 	}
-	
+
 	/**
 	 * Check if the redirection is ok.
 	 */
@@ -50,10 +50,10 @@ public class TestRegisterAction {
 		registerAction = new RegisterAction();
 		registerAction.setEmail("xabi96@hotmail.es");
 		ret = registerAction.execute();
-		
+
 		assertEquals("The redirection was NOT OK", ret, "login");
 	}
-	
+
 	/**
 	 * Test function create passanger object.
 	 */
@@ -63,7 +63,7 @@ public class TestRegisterAction {
 		Method createPassangerObjectFunction;
 		try {
 			createPassangerObjectFunction = RegisterAction.class.getDeclaredMethod("createPassangerObject", null);
-			createPassangerObjectFunction.setAccessible(true);		
+			createPassangerObjectFunction.setAccessible(true);
 			p = (Passanger) createPassangerObjectFunction.invoke(registerAction, null);
 		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			e.printStackTrace();
@@ -71,7 +71,7 @@ public class TestRegisterAction {
 		assertNotNull("Passenger is null", p);
 
 	}
-	
+
 	/**
 	 * Test function create direction object.
 	 */
@@ -81,7 +81,7 @@ public class TestRegisterAction {
 		Method createPassangerObjectFunction;
 		try {
 			createPassangerObjectFunction = RegisterAction.class.getDeclaredMethod("createDirectionObject", null);
-			createPassangerObjectFunction.setAccessible(true);		
+			createPassangerObjectFunction.setAccessible(true);
 			d = (Direction) createPassangerObjectFunction.invoke(registerAction, null);
 		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			e.printStackTrace();

@@ -16,21 +16,21 @@ import actions.passengerMenu.MyFlightsAction;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TestMyFightsAction.
  */
 public class TestMyFightsAction {
-	
+
 	/** The action context. */
 	private ActionContext actionContext;
-	
+
 	/** The context map. */
 	private Map<String, Object> contextMap;
-	
+
 	/** The my flights act. */
 	private MyFlightsAction myFlightsAct;
-	
+
 	/**
 	 * Prepare test.
 	 */
@@ -38,19 +38,18 @@ public class TestMyFightsAction {
 	public void prepareTest() {
 		Passanger p = DAOPassanger.loadPassanger("123", "ane95");
 		contextMap = new HashMap<String, Object>();
-		
+
 		actionContext = Mockito.mock(ActionContext.class);
 		Mockito.when(actionContext.getSession()).thenReturn(contextMap);
-		
+
 		contextMap.put("loggedPassanger", p);
-		
-		
+
 		ActionContext.setContext(actionContext);
-		
+
 		myFlightsAct = Mockito.mock(MyFlightsAction.class);
 		myFlightsAct = Mockito.spy(new MyFlightsAction());
 	}
-	
+
 	/**
 	 * Destroy test.
 	 */
@@ -60,7 +59,7 @@ public class TestMyFightsAction {
 		this.setContextMap(null);
 		this.setMyFlightsAct(null);
 	}
-	
+
 	/**
 	 * Check the flight loading and redirection.
 	 */

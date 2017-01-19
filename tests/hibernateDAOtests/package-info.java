@@ -3,4 +3,4 @@
  * @author irati
  *
  */
-package airlineManager;
+package hibernateDAOtests;

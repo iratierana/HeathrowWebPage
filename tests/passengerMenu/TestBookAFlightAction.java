@@ -17,42 +17,42 @@ import actions.passengerMenu.BookAFlightAction;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TestBookAFlightAction.
  */
 public class TestBookAFlightAction {
-	
+
 	/** The action context. */
 	private ActionContext actionContext;
-	
+
 	/** The context map. */
 	private Map<String, Object> contextMap;
-	
+
 	/** The book flight action. */
 	private BookAFlightAction bookFlightAction;
-	
+
 	/**
 	 * Prepare test.
 	 */
 	@Before
 	public void prepareTest() {
-		
+
 		Passanger p = DAOPassanger.loadPassanger("123", "ane95");
 		contextMap = new HashMap<String, Object>();
-		
+
 		actionContext = Mockito.mock(ActionContext.class);
 		Mockito.when(actionContext.getSession()).thenReturn(contextMap);
-		
+
 		contextMap.put("loggedPassanger", p);
-		
-		
+
+
 		ActionContext.setContext(actionContext);
-		
+
 		bookFlightAction = Mockito.mock(BookAFlightAction.class);
 		bookFlightAction = Mockito.spy(new BookAFlightAction());
 	}
-	
+
 	/**
 	 * Destroy test.
 	 */
@@ -62,18 +62,18 @@ public class TestBookAFlightAction {
 		this.setBookFlightAction(null);
 		this.setContextMap(null);
 	}
-	
+
 	/**
 	 * Check if the data is filled.
 	 */
 	@Test
 	public void checkIfTheDataIsFilled() {
-		bookFlightAction = new BookAFlightAction(); 
+		bookFlightAction = new BookAFlightAction();
 		bookFlightAction.execute();
 		assertNotNull("The planes are not loaded", bookFlightAction.getBirthDate());
 
 	}
-	
+
 	/**
 	 * Check if the redirection is ok.
 	 */
@@ -82,7 +82,7 @@ public class TestBookAFlightAction {
 		String ret;
 		bookFlightAction = new BookAFlightAction();
 		ret = bookFlightAction.execute();
-		
+
 		assertEquals("The redirection was NOT OK", ret, "bookAFlight");
 	}
 

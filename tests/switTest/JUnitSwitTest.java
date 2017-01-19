@@ -21,6 +21,9 @@ import passengerMenu.TestMyProfileAction;
 import passengerMenu.TestMyProfileSaveChangesAction;
 import register.TestRegisterAction;
 
+/**
+ * The Class JUnitSwitTest.
+ */
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({
@@ -41,13 +44,12 @@ import register.TestRegisterAction;
 	TestMyProfileAction.class,
 	TestMyProfileSaveChangesAction.class,
 	TestRegisterAction.class,
-	
-	
+
 })
 public class JUnitSwitTest {
 	/*Hemen hasieraketa generalak in ahal dia, adibidez serbitzarixa
 	 *  martxan ipini test bakoitzian ez ipintzeko martxan.
-	 *	Baina guk test bakoitzan hasieran biharrezkua bada bertan 
+	 *	Baina guk test bakoitzan hasieran biharrezkua bada bertan
 	 *	hasieratzen dou, orduan hau utzik jungozan
 	 */
 }

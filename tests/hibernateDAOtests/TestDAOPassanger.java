@@ -13,13 +13,14 @@ import org.junit.Test;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TestDAOPassanger.
  */
 public class TestDAOPassanger {
 
-	private static final int _376 = 376;
+	/** The Constant _376. */
+	private static final int PASSANGERID = 376;
 
 	/**
 	 * Test to insert new passanger with all atributes.
@@ -29,7 +30,7 @@ public class TestDAOPassanger {
 		Passanger p = new Passanger();
 		boolean result;
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		
+
 		Date d;
 		try {
 			d = sdf.parse("28/08/1996");
@@ -44,26 +45,26 @@ public class TestDAOPassanger {
 			p.setMovileTlf("688686945");
 			p.setPassword("ane95");
 			p.setUsername("123");
-			
+
 			result = DAOPassanger.insertPassanger(p);
-			
+
 			assertTrue("Error inserting a new passanger", result);
-			
+
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	/**
 	 * Test to insert new passanger with A null atribute.
 	 */
 	@Test
 	public void testToInsertNewPassangerWithANullAtribute() {
-		
+
 		Passanger p = new Passanger();
 		boolean result;
-		
+
 		p.setBirthDate(null);
 		p.setDni_passport("45126387X");
 		p.setEmail("xjauregi@sareteknika.com");
@@ -74,9 +75,9 @@ public class TestDAOPassanger {
 		p.setMovileTlf("688686945");
 		p.setPassword("ane95");
 		p.setUsername("123");
-		
+
 		result = DAOPassanger.insertPassanger(p);
-		
+
 		assertFalse("Error inserting a new passanger", result);
 	}
 
@@ -87,10 +88,10 @@ public class TestDAOPassanger {
 	public void testToLoadAPassengerWithCorrectData() {
 		String pass = "ane95";
 		String username = "123";
-		
+
 		assertNotNull(DAOPassanger.loadPassanger(username, pass));
 	}
-	
+
 	/**
 	 * Test to load passenger flights.
 	 */
@@ -98,14 +99,14 @@ public class TestDAOPassanger {
 	public void testToLoadPassengerFlights() {
 		assertNotNull(DAOPassanger.loadPassangerFlights(1));
 	}
-	
+
 	/**
 	 * Test to update A passenger.
 	 */
 	@Test
 	public void testToUpdateAPassenger() {
 		Passanger p = new Passanger();
-		
+
 		p.setFirstName("a");
 		p.setLastName1("a");
 		p.setLastName2("a");
@@ -120,19 +121,15 @@ public class TestDAOPassanger {
 		}
 		p.setUsername("a");
 		p.setPassword("a");
-		p.setPassangerId(_376);
-		
+		p.setPassangerId(PASSANGERID);
 		assertTrue(DAOPassanger.updatePassanger(p));
-		
-		
-		
 	}
-	
+
 	/**
 	 * Test to add flight to logged passenger.
 	 */
 	@Test
 	public void testToAddFlightToLoggedPassenger() {
-		//TODO Testa itxeko denboria badao 
+
 	}
 }

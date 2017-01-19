@@ -17,7 +17,7 @@ import actions.passengerMenu.MyProfileAction;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TestMyProfileAction.
  */
@@ -25,13 +25,13 @@ public class TestMyProfileAction {
 
 	/** The action context. */
 	private ActionContext actionContext;
-	
+
 	/** The context map. */
 	private Map<String, Object> contextMap;
-	
+
 	/** The my profile act. */
 	private MyProfileAction myProfileAct;
-	
+
 	/**
 	 * Prepare test.
 	 */
@@ -39,19 +39,18 @@ public class TestMyProfileAction {
 	public void prepareTest() {
 		Passanger p = DAOPassanger.loadPassanger("123", "ane95");
 		contextMap = new HashMap<String, Object>();
-		
+
 		actionContext = Mockito.mock(ActionContext.class);
 		Mockito.when(actionContext.getSession()).thenReturn(contextMap);
-		
+
 		contextMap.put("loggedPassanger", p);
-		
-		
+
 		ActionContext.setContext(actionContext);
-		
+
 		myProfileAct = Mockito.mock(MyProfileAction.class);
 		myProfileAct = Mockito.spy(new MyProfileAction());
 	}
-	
+
 	/**
 	 * Destroy test.
 	 */
@@ -61,7 +60,7 @@ public class TestMyProfileAction {
 		this.setContextMap(null);
 		this.setMyProfileAct(null);
 	}
-	
+
 	/**
 	 * Test if the atribute is filled.
 	 */
@@ -80,7 +79,7 @@ public class TestMyProfileAction {
 		assertNotNull("Atribute not filled", myProfileAct.getUsername());
 		assertNotNull("Atribute not filled", myProfileAct.getPassword());
 	}
-	
+
 	/**
 	 * Redirection is ok.
 	 */
@@ -88,10 +87,9 @@ public class TestMyProfileAction {
 	public void redirectionIsOk() {
 		String ret;
 		ret = myProfileAct.execute();
-		assertEquals("The redirection was NOT OK", ret, "myProfileAction");		
+		assertEquals("The redirection was NOT OK", ret, "myProfileAction");
 	}
-	
-	
+
 
 	/**
 	 * Sets the action context.

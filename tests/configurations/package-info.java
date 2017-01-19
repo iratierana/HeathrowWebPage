@@ -1,6 +1,5 @@
-
 /**
  * @author irati
  *
  */
-package airlineManager;
+package configurations;

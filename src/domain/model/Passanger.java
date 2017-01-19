@@ -42,7 +42,7 @@ public class Passanger {
 
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer passangerId;
-	 	
+
 	/** The first name. */
 	@NotNull
  	private String firstName;
@@ -70,7 +70,7 @@ public class Passanger {
 	/** The email. */
 	@NotNull
 	private String email;
-	
+
 	/** The birth date. */
 	@NotNull @Temporal(TemporalType.DATE)
 	private Date birthDate;

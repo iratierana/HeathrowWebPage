@@ -10,16 +10,15 @@ import org.junit.Test;
 
 import actions.passengerMenu.BookAFlightFinishAction;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TestBookAFlightFinishAction.
  */
 public class TestBookAFlightFinishAction {
-	
+
 	/** The finish booking. */
 	private BookAFlightFinishAction finishBooking;
-	
-	
+
 	/**
 	 * Check if the redirection of the page is OK with existing flight.
 	 */
@@ -27,11 +26,11 @@ public class TestBookAFlightFinishAction {
 	public void checkIfTheRedirectionOfThePageIsOKWithExistingFlight() {
 		String ret;
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-		
+
 		finishBooking = new BookAFlightFinishAction();
 		finishBooking.setFrom("Loiu");
 		finishBooking.setTo("Hatrhow");
-		
+
 		try {
 			finishBooking.setDepartureDay(formatter.parse("09/01/2017"));
 			finishBooking.setArrivalDay(formatter.parse("09/01/2017"));
@@ -39,10 +38,10 @@ public class TestBookAFlightFinishAction {
 			e.printStackTrace();
 		}
 		ret = finishBooking.execute();
-		
+
 		assertEquals("The redirection was NOT OK", ret, "passenger");
 	}
-	
+
 	/**
 	 * Test getters and setters.
 	 */
@@ -51,8 +50,7 @@ public class TestBookAFlightFinishAction {
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		finishBooking = new BookAFlightFinishAction();
 		Date d = null;
-		
-		
+
 		try {
 			d = formatter.parse("09/01/2017");
 			finishBooking.setFrom("a");
@@ -72,7 +70,7 @@ public class TestBookAFlightFinishAction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		assertEquals("From not equal", "a", finishBooking.getFrom());
 		assertEquals("To not equal", "b", finishBooking.getTo());
 		assertEquals("Departure date not equal", d, finishBooking.getDepartureDay());

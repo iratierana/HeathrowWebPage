@@ -7,13 +7,13 @@ import org.junit.Test;
 
 import domain.dao.DAOAirlineManager;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TestDAOAirlineManager.
  */
 public class TestDAOAirlineManager {
 
-	
+
 	/**
 	 * Test if the airline manager is loaded sending correct values.
 	 */
@@ -23,7 +23,7 @@ public class TestDAOAirlineManager {
 		String password = "123";
 		assertNotNull(DAOAirlineManager.loadAirLineManager(username, password));
 	}
-	
+
 	/**
 	 * Test if the airline manager is not loaded sending incorrect values.
 	 */
@@ -33,5 +33,5 @@ public class TestDAOAirlineManager {
 		String password = "c";
 		assertNull((DAOAirlineManager.loadAirLineManager(username, password)));
 	}
-	
+
 }

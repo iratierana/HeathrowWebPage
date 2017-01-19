@@ -11,15 +11,17 @@ import org.mockito.Mockito;
 
 import actions.airlineManager.AirlineInformationEditAction;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TestAirlineInformationEditAction.
  */
 public class TestAirlineInformationEditAction {
-	
+
+	/** The Constant AIRPLANEID9. */
+	private static final int AIRPLANEID9 = 9;
 	/** The air info edit acti. */
 	private AirlineInformationEditAction airInfoEditActi;
-	
+
 	/**
 	 * Prepare test.
 	 */
@@ -28,7 +30,7 @@ public class TestAirlineInformationEditAction {
 		airInfoEditActi = Mockito.mock(AirlineInformationEditAction.class);
 		airInfoEditActi = Mockito.spy(new AirlineInformationEditAction());
 	}
-	
+
 	/**
 	 * Destroy test.
 	 */
@@ -39,17 +41,18 @@ public class TestAirlineInformationEditAction {
 
 	/**
 	 * Check if the function execute and subfunctions are ok.
-	 * @throws UnsupportedEncodingException 
+	 *
+	 * @throws UnsupportedEncodingException the unsupported encoding exception
 	 */
 	@Test
 	public void checkIfTheFunctionExecuteAndSubfunctionsAreOk() throws UnsupportedEncodingException {
-		
-		int airplaneId = 9;
+
+		int airplaneId = AIRPLANEID9;
 		String ret;
-		
+
 		airInfoEditActi.setAirplaneId(airplaneId);
 		ret = airInfoEditActi.execute();
-		
+
 		assertEquals("The atribute was not filled in a correct way, test failled", "airlineEdit", ret);
 	}
 
@@ -61,5 +64,5 @@ public class TestAirlineInformationEditAction {
 	public void setAirInfoEditActi(final AirlineInformationEditAction airInfoEditActi) {
 		this.airInfoEditActi = airInfoEditActi;
 	}
-	
+
 }

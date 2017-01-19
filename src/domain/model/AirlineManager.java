@@ -168,7 +168,7 @@ public class AirlineManager {
 	 *
 	 * @param dni_passport the new dni passport
 	 */
-	public void setDni_passport(String dni_passport) {
+	public void setDni_passport(final String dni_passport) {
 		this.dni_passport = dni_passport;
 	}
 

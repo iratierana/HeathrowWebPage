@@ -21,7 +21,7 @@ import actions.passengerMenu.MyProfileSaveChagesAction;
 import domain.dao.DAOPassanger;
 import domain.model.Passanger;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TestMyProfileSaveChangesAction.
  */
@@ -29,13 +29,13 @@ public class TestMyProfileSaveChangesAction {
 
 	/** The action context. */
 	private ActionContext actionContext;
-	
+
 	/** The context map. */
 	private Map<String, Object> contextMap;
-	
+
 	/** The my profile save change act. */
 	private MyProfileSaveChagesAction myProfileSaveChangeAct;
-	
+
 	/**
 	 * Prepare test.
 	 */
@@ -43,19 +43,18 @@ public class TestMyProfileSaveChangesAction {
 	public void prepareTest() {
 		Passanger p = DAOPassanger.loadPassanger("123", "ane95");
 		contextMap = new HashMap<String, Object>();
-		
+
 		actionContext = Mockito.mock(ActionContext.class);
 		Mockito.when(actionContext.getSession()).thenReturn(contextMap);
-		
+
 		contextMap.put("loggedPassanger", p);
-		
-		
+
 		ActionContext.setContext(actionContext);
-		
+
 		myProfileSaveChangeAct = Mockito.mock(MyProfileSaveChagesAction.class);
 		myProfileSaveChangeAct = Mockito.spy(new MyProfileSaveChagesAction());
 	}
-	
+
 	/**
 	 * Destroy test.
 	 */
@@ -65,7 +64,7 @@ public class TestMyProfileSaveChangesAction {
 		this.setContextMap(null);
 		this.setMyProfileAct(null);
 	}
-	
+
 	/**
 	 * Test if the atribute is filled.
 	 */
@@ -74,9 +73,9 @@ public class TestMyProfileSaveChangesAction {
 		Passanger p;
 		try {
 			Method createPassangerObjectFunction = MyProfileSaveChagesAction.class.getDeclaredMethod("createPassangerObject", null);
-			createPassangerObjectFunction.setAccessible(true);		
+			createPassangerObjectFunction.setAccessible(true);
 			p = (Passanger) createPassangerObjectFunction.invoke(myProfileSaveChangeAct, null);
-			
+
 			assertNotNull("The passenger object is null", p);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
@@ -92,7 +91,7 @@ public class TestMyProfileSaveChangesAction {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Redirection is ok.
 	 */
@@ -100,9 +99,9 @@ public class TestMyProfileSaveChangesAction {
 	public void redirectionIsOk() {
 		String ret;
 		ret = myProfileSaveChangeAct.execute();
-		assertEquals("The redirection was NOT OK", ret, "passanger");		
+		assertEquals("The redirection was NOT OK", ret, "passanger");
 	}
-	
+
 	/**
 	 * Test getters and setters.
 	 */
@@ -111,8 +110,7 @@ public class TestMyProfileSaveChangesAction {
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		myProfileSaveChangeAct = new MyProfileSaveChagesAction();
 		Date d = null;
-		
-		
+
 		try {
 			d = formatter.parse("09/01/2017");
 			myProfileSaveChangeAct.setName("a");
@@ -126,7 +124,7 @@ public class TestMyProfileSaveChangesAction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		assertEquals("Name not equal", "a", myProfileSaveChangeAct.getName());
 		assertEquals("First name not equal", "a", myProfileSaveChangeAct.getFirstName());
 		assertEquals("Second name not equal", "a", myProfileSaveChangeAct.getSecondName());
@@ -143,7 +141,7 @@ public class TestMyProfileSaveChangesAction {
 	 *
 	 * @param actionContext the new action context
 	 */
-	public void setActionContext(ActionContext actionContext) {
+	public void setActionContext(final ActionContext actionContext) {
 		this.actionContext = actionContext;
 	}
 
