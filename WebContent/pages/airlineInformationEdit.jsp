@@ -36,7 +36,7 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-3 col-lg-3 "> 
-                	<img alt="Plane Pic" src="<s:property value= "pString" name= "pString"/>" class="img-circle img-responsive"> 
+                	<img alt="Plane Pic" src="<s:property value= "pString"/>" class="img-circle img-responsive"> 
                 </div>
                 
                 <div class=" col-md-9 col-lg-9 "> 

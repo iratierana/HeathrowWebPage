@@ -28,8 +28,8 @@
       <section class="login-form">
         <form method="post" action="login" role="login">
           <img src="<s:url value="/img/GestAir.png"/>" class="img-responsive" alt="" />    
-          <s:textfield label="Username" name="username" placeholder="Username" class="form-control input-lg"/>
-          <s:password label="Password" name="password" class="form-control input-lg" id="password" placeholder="Password"/>
+          <s:textfield label="Username" required="true" name="username" placeholder="Username" class="form-control input-lg"/>
+          <s:password label="Password" required="true" name="password" class="form-control input-lg" id="password" placeholder="Password"/>
           
           <div class="pwstrength_viewport_progress"></div>
           
