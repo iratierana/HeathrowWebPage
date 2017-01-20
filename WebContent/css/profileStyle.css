@@ -1,0 +1,15 @@
+	body{
+		background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg);
+		background-size: cover;	
+	}
+	
+	label{
+		color:white;
+		font-weight:bold;
+		font-size:16px;
+	}
+	
+	#divPrincipal{
+		border-box: 0px 0px 0px 10px;
+		background-image: url(../img/grisTransparente.png) no-repeat 0px 0px;
+	}

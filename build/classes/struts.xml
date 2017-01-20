@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<constant name="struts.ui.theme" value="simple" />
+
+	<package name="default" extends="struts-default" namespace="/" >
+		<action name="login" class="actions.login.LoginAction">
+			<result name="airportController">/pages/airportController.jsp</result>
+			<result name="passenger">/pages/passenger.jsp</result>
+			<result name="error">/pages/login.jsp</result>
+			<result name="register">/pages/register.jsp</result>
+			<result name="airlineManager">/pages/airlineManagerList.jsp</result>
+		</action>
+
+		<action name="register" class="actions.register.RegisterAction">
+			<result name="login">/pages/login.jsp</result>
+			<result name="emailError">/pages/emailError.jsp</result>
+		</action>
+		<action name="bookAFlight" class="actions.passengerMenu.BookAFlightAction">
+			<result name="bookAFlight">/pages/bookFlight.jsp</result>
+		</action>
+
+		<action name="finishBookingAFlight" class="actions.passengerMenu.BookAFlightFinishAction">
+			<result name="passenger">/pages/passenger.jsp</result>
+		</action>
+
+		<action name="myFlights" class="actions.passengerMenu.MyFlightsAction">
+			<result name="myFlights">/pages/myFlights.jsp</result>
+		</action>
+
+		<action name="allFlights" class="actions.passengerMenu.AllFlightsAction">
+			<result name="allFlights">/pages/allFlights.jsp</result>
+		</action>
+
+		<action name="myProfile" class="actions.passengerMenu.MyProfileAction">
+			<result name="myProfileAction">/pages/myProfile.jsp</result>
+		</action>
+
+		<action name="myProfileSaveChanges" class="actions.passengerMenu.MyProfileSaveChagesAction">
+			<result name="passanger">/pages/passenger.jsp</result>
+		</action>
+
+		<action name="airlineInformation" class="actions.airlineManager.AirlineInformationAction">
+			<result name="airlineInfo">pages/airlineInformation.jsp</result>
+		</action>
+
+		<action name="airlineEdit" class="actions.airlineManager.AirlineInformationEditAction">
+			<result name="airlineEdit">/pages/airlineInformationEdit.jsp</result>
+		</action>
+
+		<action name="airplanesList" class="actions.airlineManager.AirlineInformationEditSaveAction">
+			<result name="airplanesList">/pages/airlineManagerList.jsp</result>
+		</action>
+
+		<action name="deleteAirplane" class="actions.airlineManager.AirlineInformationDeleteAction">
+			<result name="airlineManagerList">/pages/airlineManagerList.jsp</result>
+		</action>
+
+		<action name="idSearcher" class="actions.airportController.AirportControllerAction">
+			<result name="airportController">/pages/airportControllePlaneInfo.jsp</result>
+		</action>
+
+		<action name="firstAction" class="actions.firstLoad.FirstLoadAction">
+			<result name="goToLogin">/pages/login.jsp</result>
+		</action>
+
+		<action name="graphsMoreInfo" class="actions.login.MoreInfoAction">
+			<result name="moreInformation">/pages/moreInfo.jsp</result>
+		</action>
+
+		<action name="*">
+			<result>/pages/404error.jsp</result>
+		</action>
+
+		<action name="505">
+			<result>/pages/500error.jsp</result>
+		</action>
+	</package>
+</struts>
