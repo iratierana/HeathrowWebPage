@@ -98,10 +98,10 @@
 		<h3>Within 15 minutes of schedule</h3>
 		<p class="parafBar" style="margin-top:30px;">The following graph shows the evolution of the number of departures (in percentages) that had been in Heathrow airport (London) since 2007,
 		taking into account 15 minutes of the scheduled time. </p>
-		<div  style="width:850px;" class="barChart">
+		<div  style="width:700px;" class="barChart">
       		<canvas id="myChart"></canvas>
     	<script type="text/javascript">
-    		loadBarChart();
+    		datuakKargatu();
     	</script>
   		</div>
 		
